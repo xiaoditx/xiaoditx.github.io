@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>情人节快乐</title>
+    <style>
+        body {
+            background-color: #fddde6; /* 背景色 */
+            font-family: 'Arial', sans-serif; /* 字体 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #e25555; /* 标题颜色 */
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666; /* 描述文字颜色 */
+            font-size: 20px;
+        }
+        button {
+            background-color: #e25555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c54848;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>情人节快乐！</h1>
+        <p>在这个充满爱的日子里，愿你的每一天都像今天一样甜蜜。</p>
+        <button onclick="showWish()">点击获取祝福</button>
+        <p id="wish" style="margin-top: 20px; display: none;">愿你的情人节充满爱与幸福！</p>
+    </div>
+
+    <script>
+        function showWish() {
+            var wish = document.getElementById('wish');
+            wish.style.display = 'block'; // 显示祝福信息
+        }
+    </script>
+</body>
+</html>
