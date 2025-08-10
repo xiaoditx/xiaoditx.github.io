@@ -33,7 +33,7 @@
             border-radius: 15px;
             padding: 20px;
             transform-style: preserve-3d;
-            transition: all 0.3s ease;
+            transition: all 0.3 ease;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             border: 3px dashed var(--main-color);
         }
@@ -96,7 +96,7 @@
             width: 70%;
             height: 100%;
             background: #ff4500;
-            transition: width 0.3s ease;
+            transition: width 0.3 ease;
         }
 
         .emoji-rating {
@@ -111,7 +111,7 @@
         }
 
         .floating-icon {
-            animation: float 3s ease-in-out infinite;
+            animation: float 3 ease-in-out infinite;
         }
     </style>
 </head>
@@ -176,6 +176,28 @@ if validation_func(value):
             </div>
         </div>
     </div>
+
+            <div class="code-card" onclick="window.location.href='https://github.com/xiaoditx/BeepMusic';">
+            <div class="file-info">
+                <h2>蜂鸣器音乐演奏</h2>
+                <div class="danger-level">
+                    <div class="danger-fill" style="width: 20%"></div>
+                </div>
+                <div class="emoji-rating">🤪😂🤣</div>
+        <span class="tag">Beep</span>
+        <span class="tag">音乐</span>
+        <span class="tag">蜂鸣器</span>
+        <span class="tag">C++</span>
+        <span class="tag">开源</span>
+            </div>
+            <div class="code-preview">
+    // 解析音高调整
+int octaveShift = 0;
+double semitoneShift = 0.0; // 升半音
+size_t pos = 0;
+            </div>
+        </div>
+
 
     <div style="position: fixed; bottom: 20px; right: 20px;" class="floating-icon">
         📌 抽象警告：本站代码仅供娱乐，切勿认真对待！
