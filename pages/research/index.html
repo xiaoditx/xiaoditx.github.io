@@ -1363,9 +1363,9 @@ end start</code></pre>
 <li>原生支持大量操作，简化书写，便于阅读</li>
 </ul>
 <p>当然，缺点也是有的，如果我们使用开源工具“x64dbg”打开C语言<strong>编译</strong>出来的可执行文件（也就是“*.exe”文件）就能看见这样的场面：</p>
-<p><img alt="x64dbg打开“form.exe”" src="./imgs/x64dbg-hello_world_cpl.jpg"></p>
+<p><img alt="x64dbg打开“form.exe”" src="./docs/imgs/x64dbg-hello_world_cpl.jpg"></p>
 <p>我们只看最大的那一栏，可以注意这样的一串数值：</p>
-<p><img alt="可执行文件转为汇编行数" src="./imgs/asm-line.jpg"></p>
+<p><img alt="可执行文件转为汇编行数" src="./docs/imgs/asm-line.jpg"></p>
 <p>则是我们的可执行文件转为汇编语言后的代码行数，根据最后的数值，我们知道，如果这个程序写成汇编，需要"7FFEAC4CAFF"行，换算成十进制是：140,731,789,127,679行。</p>
 <p>这便是C语言的缺点所在，使用结果上的“多写”换来了过程上的“少写”，究其原因还是因为模板化，以这里的输出为例，我们要输出的内容是文本，使用了<code>printf</code>函数，但这个函数也能输出整数、浮点数等，为了保证普适性，编译器不得不都把适配其他数据类型的代码也写进了编译后的文件，但实际上有的功能我们并不会用到。</p>
 <h4 class="atx" id="2-c新生">2. C++新生</h4>
@@ -1564,7 +1564,7 @@ bigint <span class="token keyword">operator</span><span class="token operator">*
     输出框.显示（"无法识别"）</code></pre>
 <p>与其他编程语言不同，易语言的第一课直接就是窗口的开发，软件开发周期短、中文学习编程难度低，一瞬间吸引了很多人前来</p>
 <p>下面是一张易语言的代码编写页面的截图：</p>
-<p><img alt="易语言" src="./imgs/%E6%98%93%E8%AF%AD%E8%A8%80.jpg"></p>
+<p><img alt="易语言" src="./docs/imgs/%E6%98%93%E8%AF%AD%E8%A8%80.jpg"></p>
 <p>易语言优点如下：</p>
 <ul>
 <li>降低英语门槛</li>
@@ -1588,54 +1588,69 @@ bigint <span class="token keyword">operator</span><span class="token operator">*
 <h3 class="atx" id="八总体总结：发展规律">八.总体总结：发展规律</h3>
 <p>根据上面的几个例子，我们可以看出语言的变化特点：</p>
 <ol>
-<li><strong>抽象层级提升</strong><br>机器指令 → 符号化 → 结构化 → 面向对象 → 函数式编程  </li>
-<li><strong>效率平衡演进</strong><br>执行效率优先 → 开发效率优先 → 两者动态平衡  </li>
-<li><strong>领域专业化</strong><br>通用语言 → 领域特定语言（DSL）  </li>
-<li><strong>语法简约化</strong><br>冗余语法 → 简洁表达 → 自然语言逼近（第五代编程语言探索方向） </li>
+<li><p><strong>抽象层级提升</strong></p>
+<p>编程语言不断的向着“抽象”发展，代码复用率逐渐提高，使得开发效率得以提高</p>
+<p><em>演进方式</em> ：机器指令 → 符号化 → 结构化 → 面向对象 → 函数式编程  </p>
+</li>
+<li><p><strong>效率平衡演进</strong></p>
+<p>开发人员们更乐意讨论开发和使用孰轻孰重</p>
+<p><em>演进方式</em> ：执行效率优先 → 开发效率优先 → 两者动态平衡  </p>
+</li>
+<li><p><strong>领域专业化</strong></p>
+<p>各个领域出现了专门性的语言，典型的如Windows系统下的<code>.rc</code>文件、Inno Setup的专门编写安装包的语言</p>
+<p><em>演进方式</em> ：通用语言 → 领域特定语言（DSL）  </p>
+</li>
+<li><p><strong>语法简约化</strong>
+<em>演进方式</em> ：冗余语法 → 简洁表达 → 自然语言逼近（第五代编程语言探索方向） </p>
+</li>
 </ol>
 <h3 class="atx" id="九选择建议">九.选择建议</h3>
+<p>我们研究得出，编程语言各有所长，语言选取，应当针对自己的需求合理搭配，考虑开发效率与应用场景，下面有一些推荐的搭配方案</p>
 <ol>
 <li><p><strong>底层开发</strong>  </p>
 <ul>
-<li>推荐：C/Rust  </li>
-<li>场景：操作系统、嵌入式系统  </li>
+<li>推荐：C/Rust/少量汇编</li>
+<li>场景：操作系统、嵌入式系统</li>
+<li>优点：贴近底层，可以编译为多种形态</li>
 </ul>
 </li>
 <li><p><strong>快速开发</strong>  </p>
 <ul>
-<li>推荐：Python/JavaScript  </li>
-<li>场景：Web应用、数据分析  </li>
+<li>推荐：Python/JavaScript/少量shell/易语言</li>
+<li>场景：Web应用、数据分析</li>
+<li>优点：现成函数，高效开发</li>
 </ul>
 </li>
 <li><p><strong>跨平台需求</strong>  </p>
 <ul>
-<li>推荐：Java/Kotlin  </li>
-<li>场景：企业级应用、移动开发  </li>
+<li>推荐：Java/Kotlin/QT框架</li>
+<li>场景：企业级应用、移动开发</li>
+<li>优点：跨平台，好移植</li>
 </ul>
 </li>
 <li><p><strong>学术研究</strong>  </p>
 <ul>
-<li>推荐：Python/Julia  </li>
-<li>场景：科学计算、机器学习  </li>
+<li>推荐：Python/Julia</li>
+<li>场景：科学计算、机器学习</li>
+<li>优点：简化代码，不让写代码成为累赘</li>
 </ul>
 </li>
 <li><p><strong>兴趣驱动</strong>  </p>
 <ul>
-<li>尝试：文言/易语言  </li>
+<li>尝试：文言/易语言</li>
 <li>价值：理解编程本质，培养计算思维  </li>
 </ul>
 </li>
 </ol>
-<p>关键考量维度：  </p>
+<p>选取编程语言是，以下内容是关键考量维度：  </p>
 <ul>
-<li>项目性能要求  </li>
-<li>团队技术栈现状  </li>
-<li>社区生态成熟度  </li>
-<li>个人学习曲线  </li>
+<li>项目性能要求：高性能需求坚决不找高级语言，专业计算尽量不找低级语言</li>
+<li>团队技术栈现状：根据团队成员的技能决定</li>
+<li>社区生态成熟度：社区是开发的支柱，Rust社区就是典型的案例，良好成熟的社区是总能在各处帮助到每一位开发者</li>
+<li>个人学习曲线：根据个人的学习计划选择</li>
 </ul>
 <h3 class="atx" id="后记">后记</h3>
-<p>这个主题是我很久以前便想要开始研究的，借此次学校的组织得以实现，小组的各位成员忙前忙后，各自出了不少力气，最终将我的这个想法给实现了，这里要向他们的劳苦付出表示感谢。</p>
-<p>组长马赫阳，作为多次参加算法竞赛的“算法人”，总能在关键问题上找到正确的答案或是及时的寻找到帮助力量，这里也要向他义无反顾地带领小组成员一路向前表示感谢。</p>
+<p>这个主题是我很久以前便想要开始研究的，借此次研究性学习得以实现，自是无比兴奋的，因而忙前忙后做了许多事情，虽然也确实添了些乱。</p>
 <p>作为文档的编写者，我就不如组长那般有如此身后的专业素养，和转于一个研究方向的钻劲了，只好接着自己学的不精的知识与自诩尚可的文学水平，苟且写下了这些最终呈现的文字，终究是有些惶恐，担心写下的内容存在瑕疵，如果各位读者能够发现文章中的错误，无论大小，万望可以在GitHub上的Issue中提交。</p>
 <h3 class="atx" id="参考文献">参考文献</h3>
 <ul>
@@ -1646,12 +1661,14 @@ bigint <span class="token keyword">operator</span><span class="token operator">*
 <li><a href="https://baike.baidu.com/item/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/61826">百度百科-汇编语言</a></li>
 <li><a href="https://baike.baidu.com/item/%E5%8A%A9%E8%AE%B0%E7%AC%A6/489287">百度百科-助记符</a></li>
 <li><strong><em>Deep Learning</em></strong> - Ian Goodfellow、Yoshua Bengio、Aaron Courville</li>
+<li>黑马程序员《网页设计与制作项目教程》（第2版） | 人民邮电出版社</li>
 <li><a href="https://zhuanlan.zhihu.com/p/24327574773">从机器到智能：汇编语言的前世今生与未来</a></li>
 <li><a href="https://www.luogu.com.cn/problem/P1009">洛谷-P1009-阶乘之和</a></li>
 <li><a href="https://www.java.com/zh-CN/">Java</a></li>
 <li>张毅刚、赵光权、刘旺《单片机原理及应用》第三版 | 高等教育出版社</li>
 <li>郭卫斌、罗勇军《算法竞赛入门到进阶》 | 清华大学出版社</li>
 <li>汪楚奇《深入浅出程序设计竞赛》 | 高等教育出版社</li>
+<li>郁红英、王磊、武磊、李春强《计算机操作系统》（第三版） | 清华大学出版社</li>
 </ul>
 <h3 class="atx" id="声明">声明</h3>
 <p>文中“机器语言”板块中，机器语言代码由汇编代码通过<a href="https://defuse.ca/online-x86-assembler.htm#disassembly">Online x86 and x64 Intel Instruction Assembler</a>实现，不确定是否存在转换问题，因此不具参考价值，只用于辅助理解机器语言的不便捷性。</p>
