@@ -1363,9 +1363,9 @@ end start</code></pre>
 <li>原生支持大量操作，简化书写，便于阅读</li>
 </ul>
 <p>当然，缺点也是有的，如果我们使用开源工具“x64dbg”打开C语言<strong>编译</strong>出来的可执行文件（也就是“*.exe”文件）就能看见这样的场面：</p>
-<p><img alt="x64dbg打开“form.exe”" src="./docs/imgs/x64dbg-hello_world_cpl.jpg"></p>
+<p><img alt="x64dbg打开“form.exe”" src="./pngs/x64dbg-hello_world_cpl.jpg"></p>
 <p>我们只看最大的那一栏，可以注意这样的一串数值：</p>
-<p><img alt="可执行文件转为汇编行数" src="./docs/imgs/asm-line.jpg"></p>
+<p><img alt="可执行文件转为汇编行数" src="./pngs/asm-line.jpg"></p>
 <p>则是我们的可执行文件转为汇编语言后的代码行数，根据最后的数值，我们知道，如果这个程序写成汇编，需要"7FFEAC4CAFF"行，换算成十进制是：140,731,789,127,679行。</p>
 <p>这便是C语言的缺点所在，使用结果上的“多写”换来了过程上的“少写”，究其原因还是因为模板化，以这里的输出为例，我们要输出的内容是文本，使用了<code>printf</code>函数，但这个函数也能输出整数、浮点数等，为了保证普适性，编译器不得不都把适配其他数据类型的代码也写进了编译后的文件，但实际上有的功能我们并不会用到。</p>
 <h4 class="atx" id="2-c新生">2. C++新生</h4>
@@ -1564,7 +1564,7 @@ bigint <span class="token keyword">operator</span><span class="token operator">*
     输出框.显示（"无法识别"）</code></pre>
 <p>与其他编程语言不同，易语言的第一课直接就是窗口的开发，软件开发周期短、中文学习编程难度低，一瞬间吸引了很多人前来</p>
 <p>下面是一张易语言的代码编写页面的截图：</p>
-<p><img alt="易语言" src="./docs/imgs/%E6%98%93%E8%AF%AD%E8%A8%80.jpg"></p>
+<p><img alt="易语言" src="./pngs/%E6%98%93%E8%AF%AD%E8%A8%80.jpg"></p>
 <p>易语言优点如下：</p>
 <ul>
 <li>降低英语门槛</li>
@@ -1675,3 +1675,4 @@ bigint <span class="token keyword">operator</span><span class="token operator">*
 </article>
 </body>
 </html>
+
