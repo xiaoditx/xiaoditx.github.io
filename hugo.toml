@@ -24,8 +24,8 @@ pageRef = "/docs"
 weight = 30
 
 [[languages.zh-cn.menu.main]]
-name = "关于"
-pageRef = "/about"
+name = "动态"
+pageRef = "/daily"
 weight = 40
 
 [params] # Hextra 主题的一些特定参数可能会影响导航栏的显示

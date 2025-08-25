@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="zh-cn"><head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="index, follow" />
   <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" id="favicon-svg" />
 <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
@@ -10,7 +10,7 @@
 <link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
 <title>小狄同学呀</title>
   <meta name="description" content="项目结构介绍结构与文件功能
-root/ ├── .vscode/ vscode配置文件 │ ├── setting.json │ └── tasks.json ├── head/ │ ├── function.h 封装部分常用的函数（的声明部分） │ └── mainhead.h 头文件（提供大部分cpp）&#43;函数声明（提供main.cpp） ├── HELPS/ │ ├── Color_Print.md 彩色输出帮助 │ ├── Hot_Key.md 热键帮助 │ ├── RC_help.md resources.rc文件的一些帮助内容 │ └── README.md 项目介绍 ├── Icons/ │ ├── favicon.ico 同上级目录的icon.ico，仅名称不同 │ ├── ori.jpg 软件图标原图 │ └── result.png 软件图标透明图 ├── release/ 编译结果（使用build.bat的） │ ├── installer/ 用于放置安装包相关内容 │ │ ├── install_win_64.exe 安装包（编译结果） │ │ └── installer_creator.iss 源码（模板） │ ├── BeepMusic_release_win_x64.exe │ └── BeepMusic_release_win_x86.exe ├── src_c/ │ ├── config.cpp 配置文件读写 │ ├── function.cpp 封装功能函数的定义，简化开发（如彩色输出） │ ├── mods.cpp 菜单栏选项对应激活的函数 │ ├── play_core.cpp 存放核心解析、演奏函数 │ ├── test.cpp 测试文件（保留做纪念也可随时启用进行测试） │ └── UI.cpp UI显示（其实就是输出看起来像是UI的东西） ├── tools/ │ └── XD开发工具-T1 │ ├── 开发工具.exe 热键查询&#43;鼠标查询工具（之前用易语言写的小玩意） │ ├── 源码.e 程序源码，遵守本仓库协议开源 │ ├── iext.fnr 支持库文件 │ └── krnln.fnr 支持库文件 ├── 备忘.txt 更新备忘录，记录需要的功能等 ├── BeepMusic_alpha.exe 开发调试版本的编译结果 ├── build.bat 编译最终版本用的批处理，该批处理会同时编译resources.rc ├── icon.ico 软件图标 ├── LICENSE 开源协议 ├── main.cpp 主函数放置的文件，编译在此处进行 ├── MakeExe.bat 生成调试版用的批处理，不使用VScode的开发者可以借此编译 ├── README.md 本项目的readme └── resources.rc 资源文件，放置图标信息、软件信息ini结构说明还没写" /><link rel="canonical" href="http://localhost:1313/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" itemprop="url" />
+root/ ├── .vscode/ vscode配置文件 │ ├── setting.json │ └── tasks.json ├── head/ │ ├── function.h 封装部分常用的函数（的声明部分） │ └── mainhead.h 头文件（提供大部分cpp）&#43;函数声明（提供main.cpp） ├── HELPS/ │ ├── Color_Print.md 彩色输出帮助 │ ├── Hot_Key.md 热键帮助 │ ├── RC_help.md resources.rc文件的一些帮助内容 │ └── README.md 项目介绍 ├── Icons/ │ ├── favicon.ico 同上级目录的icon.ico，仅名称不同 │ ├── ori.jpg 软件图标原图 │ └── result.png 软件图标透明图 ├── release/ 编译结果（使用build.bat的） │ ├── installer/ 用于放置安装包相关内容 │ │ ├── install_win_64.exe 安装包（编译结果） │ │ └── installer_creator.iss 源码（模板） │ ├── BeepMusic_release_win_x64.exe │ └── BeepMusic_release_win_x86.exe ├── src_c/ │ ├── config.cpp 配置文件读写 │ ├── function.cpp 封装功能函数的定义，简化开发（如彩色输出） │ ├── mods.cpp 菜单栏选项对应激活的函数 │ ├── play_core.cpp 存放核心解析、演奏函数 │ ├── test.cpp 测试文件（保留做纪念也可随时启用进行测试） │ └── UI.cpp UI显示（其实就是输出看起来像是UI的东西） ├── tools/ │ └── XD开发工具-T1 │ ├── 开发工具.exe 热键查询&#43;鼠标查询工具（之前用易语言写的小玩意） │ ├── 源码.e 程序源码，遵守本仓库协议开源 │ ├── iext.fnr 支持库文件 │ └── krnln.fnr 支持库文件 ├── 备忘.txt 更新备忘录，记录需要的功能等 ├── BeepMusic_alpha.exe 开发调试版本的编译结果 ├── build.bat 编译最终版本用的批处理，该批处理会同时编译resources.rc ├── icon.ico 软件图标 ├── LICENSE 开源协议 ├── main.cpp 主函数放置的文件，编译在此处进行 ├── MakeExe.bat 生成调试版用的批处理，不使用VScode的开发者可以借此编译 ├── README.md 本项目的readme └── resources.rc 资源文件，放置图标信息、软件信息ini结构说明还没写" /><link rel="canonical" href="https://xiaoditx.github.io/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" itemprop="url" />
 
 <meta property="og:title" content="" />
 <meta property="og:description" content="项目结构介绍结构与文件功能
@@ -68,7 +68,7 @@ root/
 
 ini结构说明还没写" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://xiaoditx.github.io/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/" /><meta property="article:section" content="docs" />
 
 
 
@@ -80,11 +80,15 @@ root/ ├── .vscode/ vscode配置文件 │ ├── setting.json │ └�
   <meta name="twitter:title" content="小狄同学呀">
   <meta name="twitter:description" content="项目结构介绍结构与文件功能
 root/ ├── .vscode/ vscode配置文件 │ ├── setting.json │ └── tasks.json ├── head/ │ ├── function.h 封装部分常用的函数（的声明部分） │ └── mainhead.h 头文件（提供大部分cpp）&#43;函数声明（提供main.cpp） ├── HELPS/ │ ├── Color_Print.md 彩色输出帮助 │ ├── Hot_Key.md 热键帮助 │ ├── RC_help.md resources.rc文件的一些帮助内容 │ └── README.md 项目介绍 ├── Icons/ │ ├── favicon.ico 同上级目录的icon.ico，仅名称不同 │ ├── ori.jpg 软件图标原图 │ └── result.png 软件图标透明图 ├── release/ 编译结果（使用build.bat的） │ ├── installer/ 用于放置安装包相关内容 │ │ ├── install_win_64.exe 安装包（编译结果） │ │ └── installer_creator.iss 源码（模板） │ ├── BeepMusic_release_win_x64.exe │ └── BeepMusic_release_win_x86.exe ├── src_c/ │ ├── config.cpp 配置文件读写 │ ├── function.cpp 封装功能函数的定义，简化开发（如彩色输出） │ ├── mods.cpp 菜单栏选项对应激活的函数 │ ├── play_core.cpp 存放核心解析、演奏函数 │ ├── test.cpp 测试文件（保留做纪念也可随时启用进行测试） │ └── UI.cpp UI显示（其实就是输出看起来像是UI的东西） ├── tools/ │ └── XD开发工具-T1 │ ├── 开发工具.exe 热键查询&#43;鼠标查询工具（之前用易语言写的小玩意） │ ├── 源码.e 程序源码，遵守本仓库协议开源 │ ├── iext.fnr 支持库文件 │ └── krnln.fnr 支持库文件 ├── 备忘.txt 更新备忘录，记录需要的功能等 ├── BeepMusic_alpha.exe 开发调试版本的编译结果 ├── build.bat 编译最终版本用的批处理，该批处理会同时编译resources.rc ├── icon.ico 软件图标 ├── LICENSE 开源协议 ├── main.cpp 主函数放置的文件，编译在此处进行 ├── MakeExe.bat 生成调试版用的批处理，不使用VScode的开发者可以借此编译 ├── README.md 本项目的readme └── resources.rc 资源文件，放置图标信息、软件信息ini结构说明还没写">
-<link href="/css/compiled/main.css" rel="stylesheet" />
-    <link href="/css/variables.css" rel="stylesheet" />
-    <link href="/css/custom.css" rel="stylesheet" />
+
+    <link rel="preload" href="/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" as="style" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
+    <link href="/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" rel="stylesheet" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
 
   
+
+
+
+
 
 
   <script>
@@ -148,10 +152,10 @@ root/ ├── .vscode/ vscode配置文件 │ ├── setting.json │ └�
 ><span class="hx:text-center">文档</span>
 </a><a
   title=""
-  href="/about"
+  href="/daily"
   
   class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
-><span class="hx:text-center">关于</span>
+><span class="hx:text-center">动态</span>
 </a><button type="button" aria-label="Menu" class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-2 hx:rounded-sm hx:p-2 hx:active:bg-gray-400/20 hx:md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
   </nav>
 </div>
@@ -192,13 +196,6 @@ root/ ├── .vscode/ vscode配置文件 │ ├── setting.json │ └�
           <li class=""><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/about/"
-    
-  >About
-    </a></li>
-          <li class=""><a
-    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
     href="/blogs/"
     
   >Blogs
@@ -218,6 +215,24 @@ root/ ├── .vscode/ vscode配置文件 │ ├── setting.json │ └�
     href="/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/"
     
   >算法真题： Gesp202503四级——荒地开垦（洛谷 B4263）
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/daily/"
+    
+  >Daily
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/daily/%E5%BC%80%E5%8F%91%E6%97%A5%E5%B8%B8/"
+    
+  >开发日常
     </a>
               
             </li></ul>
@@ -503,7 +518,7 @@ root/ ├── .vscode/ vscode配置文件 │ ├── setting.json │ └�
   </a></div></div>
     </div></footer>
     
-    <script defer src="/js/main.js" integrity=""></script>
-<script defer src="/js/flexsearch.js" integrity="" crossorigin="anonymous"></script><script defer src="/zh-cn.search.js" integrity=""></script>
+    <script defer src="/js/main.min.9ed6fed0ece25fbac758360bfa0726d0bededbe81f7db7d325ef0ed533cad819.js" integrity="sha256-ntb&#43;0OziX7rHWDYL&#43;gcm0L7e2&#43;gffbfTJe8O1TPK2Bk="></script>
+<script defer src="/js/flexsearch.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY=" crossorigin="anonymous"></script><script defer src="/zh-cn.search.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY="></script>
   </body>
 </html>
