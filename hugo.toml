@@ -1,0 +1,35 @@
+baseURL = 'https://xiaoditx.github.io/'
+languageCode = 'zh-cn'
+title = '小狄同学呀'
+theme = 'hextra'
+
+[languages.zh-cn] # 如果你有多语言支持，需要在对应的语言块下配置
+weight = 1
+languageName = "中文"
+title = "小狄同学呀"
+
+[[languages.zh-cn.menu.main]]
+name = "首页"
+pageRef = "/"
+weight = 10
+
+[[languages.zh-cn.menu.main]]
+name = "博客"
+pageRef = "/blogs"
+weight = 20
+
+[[languages.zh-cn.menu.main]]
+name = "文档"
+pageRef = "/docs"
+weight = 30
+
+[[languages.zh-cn.menu.main]]
+name = "关于"
+pageRef = "/about"
+weight = 40
+
+[params] # Hextra 主题的一些特定参数可能会影响导航栏的显示
+# 例如，某些主题可能允许通过参数添加图标、配置下拉菜单等
+# 请查阅 Hextra 主题文档以获取其支持的特定参数
+# 假设 Hextra 支持一个 logo 参数（示例，请以实际文档为准）
+# logo = "images/logo.svg"

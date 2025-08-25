@@ -1,0 +1,45 @@
+{{/* Search */}}
+{{- if (site.Params.search.enable | default true) -}}
+  {{- $searchType := site.Params.search.type | default "flexsearch" -}}
+  {{- if eq $searchType "flexsearch" -}}
+    {{- $jsSearchScript := printf "%s.search.js" .Language.Lang -}}
+    {{- $jsSearch := resources.Get "js/flexsearch.js" | resources.ExecuteAsTemplate $jsSearchScript . -}}
+    {{- if hugo.IsProduction -}}
+      {{- $jsSearch = $jsSearch | minify | fingerprint -}}
+    {{- end -}}
+
+    {{- /* ########## 修改从这里开始 ########## */ -}}
+    {{- /* 优先使用本地文件：尝试从 assets 目录获取 */ -}}
+    {{- $localFlexSearch := resources.Get "js/flexsearch.js" -}}
+    {{- if $localFlexSearch -}}
+      {{- /* 找到本地文件，使用它 */ -}}
+      {{- if hugo.IsProduction -}}
+        {{- $localFlexSearch = $localFlexSearch | minify | fingerprint -}}
+      {{- end -}}
+      <script defer src="{{ $localFlexSearch.RelPermalink }}" integrity="{{ $localFlexSearch.Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- else -}}
+      {{- /* 未找到本地文件，尝试从CDN获取（保留原始逻辑作为备用） */ -}}
+      {{- $flexSearchVersion := site.Params.search.flexsearch.version | default "0.8.143" -}}
+      {{- $flexSearchJsUrl := printf "https://cdn.jsdelivr.net/npm/flexsearch@%s/dist/flexsearch.bundle%s.js" $flexSearchVersion (cond hugo.IsProduction ".min" ".debug") -}}
+      {{ with try (resources.GetRemote $flexSearchJsUrl) -}}
+        {{ with .Err -}}
+          {{- /* CDN获取也失败了，报错 */ -}}
+          {{ errorf "Could not retrieve FlexSearch js file from %s. Reason: %s." $flexSearchJsUrl . -}}
+        {{ else with.Value -}}
+          {{- /* CDN获取成功，使用它 */ -}}
+          {{ with resources.Copy (printf "js/flexsearch.js") . -}}
+            {{ $flexSearchJs := . | fingerprint -}}
+            <script defer src="{{ $flexSearchJs.RelPermalink }}" integrity="{{ $flexSearchJs.Data.Integrity }}" crossorigin="anonymous"></script>
+          {{ end -}}
+        {{ end -}}
+      {{ end -}}
+      {{- /* 在CDN方式后给出一个友好的提示 */ -}}
+      {{- warnf "Local FlexSearch file not found at 'assets/js/flexsearch.js'. Falling back to CDN. For offline stability, please place the file in the correct directory." -}}
+    {{- end -}}
+    {{- /* ########## 修改到这里结束 ########## */ -}}
+
+    <script defer src="{{ $jsSearch.RelPermalink }}" integrity="{{ $jsSearch.Data.Integrity }}"></script>
+  {{- else -}}
+    {{- warnf `search type "%s" is not supported` $searchType -}}
+  {{- end -}}
+{{- end -}}
