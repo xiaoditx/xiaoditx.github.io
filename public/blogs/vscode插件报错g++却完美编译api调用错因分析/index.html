@@ -2,12 +2,12 @@
 <html lang="zh-cn"><head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="index, follow" />
-  <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" id="favicon-svg" />
-<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
-<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
-<link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
+  <link rel="icon shortcut" href="/public/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/public/favicon.svg" type="image/svg+xml" id="favicon-svg" />
+<link rel="icon" href="/public/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="/public/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/public/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="/public/site.webmanifest" rel="manifest" />
 <title>小狄同学呀</title>
   <meta name="description" content="VScode插件报错，g&#43;&#43;却完美编译？API调用错因分析前一段时间写了个小软件，想给它加个读写配置项功能，刚学几天C&#43;&#43;的我上网查了半天资料，找到两个Windows的API分别是读ini的GetPrivateProfileString和写ini的WritePrivateProfileString，根据网上的教程，我写出了下面这三行：
 LPTSTR lpPath = new char[MAX_PATH]; strcpy(lpPath, &#34;.\\config.ini&#34;); ::WritePrivateProfileString(&#34;config&#34;, &#34;t&#34;, &#34;120&#34;, lpPath);刚刚写完，VScode安的插件瞬间爆红，然后给出了这样的报错： 但是我确定我是完全按照教程走的，所以到底是哪里的问题呢？
@@ -16,12 +16,12 @@ LPTSTR lpPath = new char[MAX_PATH]; strcpy(lpPath, &#34;.\\config.ini&#34;); ::W
 上MSDN，查WritePrivatePeofileString，却并没有查到，只查到了WritePrivatePeofileStringA和WritePrivatePeofileStringW（末尾都多了个字母）这两个函数
 没办法了，只好点进一个看看，我选择了WritePrivatePeofileStringA，诶，这个参数的类型好像不对，跟着教程写的是LPTSTR，但这里面写的是LPCSTR
 向下划，我在例子板块的下方看到了一串提示
-winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名根据 UNICODE 预处理器常量的定义自动选择此函数的 ANSI 或 Unicode 版本。 将中性编码别名与不中性编码的代码混合使用可能会导致编译或运行时错误不匹配。 有关详细信息，请参阅函数原型的 约定。" /><link rel="canonical" href="https://xiaoditx.github.io/blogs/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/" itemprop="url" />
+winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名根据 UNICODE 预处理器常量的定义自动选择此函数的 ANSI 或 Unicode 版本。 将中性编码别名与不中性编码的代码混合使用可能会导致编译或运行时错误不匹配。 有关详细信息，请参阅函数原型的 约定。" /><link rel="canonical" href="https://xiaoditx.github.io/public/blogs/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/" itemprop="url" />
 
 <meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://xiaoditx.github.io/blogs/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/" />
+<meta property="og:url" content="https://xiaoditx.github.io/public/blogs/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/" />
 
   <meta itemprop="name" content="小狄同学呀">
   <meta itemprop="description" content="VScode插件报错，g&#43;&#43;却完美编译？API调用错因分析前一段时间写了个小软件，想给它加个读写配置项功能，刚学几天C&#43;&#43;的我上网查了半天资料，找到两个Windows的API分别是读ini的GetPrivateProfileString和写ini的WritePrivateProfileString，根据网上的教程，我写出了下面这三行：
@@ -44,8 +44,8 @@ LPTSTR lpPath = new char[MAX_PATH]; strcpy(lpPath, &#34;.\\config.ini&#34;); ::W
 向下划，我在例子板块的下方看到了一串提示
 winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名根据 UNICODE 预处理器常量的定义自动选择此函数的 ANSI 或 Unicode 版本。 将中性编码别名与不中性编码的代码混合使用可能会导致编译或运行时错误不匹配。 有关详细信息，请参阅函数原型的 约定。">
 
-    <link rel="preload" href="/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" as="style" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
-    <link href="/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" rel="stylesheet" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
+    <link rel="preload" href="/public/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" as="style" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
+    <link href="/public/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" rel="stylesheet" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
 
   
 
@@ -90,32 +90,32 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
   ></div>
 
   <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-2 hx:h-16 hx:px-6">
-    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="/">
-    <img class="hx:mr-2 hx:block hx:dark:hidden" src="/images/logo.svg" alt="Logo" height="20" width="20" />
-    <img class="hx:mr-2 hx:hidden hx:dark:block" src="/images/logo.svg" alt="Dark Logo" height="20" width="20" />
+    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="/public/">
+    <img class="hx:mr-2 hx:block hx:dark:hidden" src="/public/images/logo.svg" alt="Logo" height="20" width="20" />
+    <img class="hx:mr-2 hx:hidden hx:dark:block" src="/public/images/logo.svg" alt="Dark Logo" height="20" width="20" />
     <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="小狄同学呀">小狄同学呀</span>
 </a>
 <a
   title=""
-  href="/"
+  href="/public/"
   
   class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
 ><span class="hx:text-center">首页</span>
 </a><a
   title=""
-  href="/blogs"
+  href="/public/blogs"
   
   class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:font-medium"
 ><span class="hx:text-center">博客</span>
 </a><a
   title=""
-  href="/docs"
+  href="/public/docs"
   
   class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
 ><span class="hx:text-center">文档</span>
 </a><a
   title=""
-  href="/daily"
+  href="/public/daily"
   
   class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
 ><span class="hx:text-center">动态</span>
@@ -159,7 +159,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
           <li class="open"><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blogs/"
+    href="/public/blogs/"
     
   >Blogs
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
@@ -167,7 +167,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col open"><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
-    href="/blogs/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/"
+    href="/public/blogs/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/"
     
   >Vscode插件报错，g 却完美编译？ Api调用错因分析
     </a>
@@ -178,7 +178,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/"
+    href="/public/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/"
     
   >算法真题： Gesp202503四级——荒地开垦（洛谷 B4263）
     </a>
@@ -188,7 +188,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
           <li class=""><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/daily/"
+    href="/public/daily/"
     
   >Daily
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
@@ -196,7 +196,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/daily/%E5%BC%80%E5%8F%91%E6%97%A5%E5%B8%B8/"
+    href="/public/daily/%E5%BC%80%E5%8F%91%E6%97%A5%E5%B8%B8/"
     
   >开发日常
     </a>
@@ -206,7 +206,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
           <li class=""><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/"
+    href="/public/docs/"
     
   >Docs
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
@@ -214,7 +214,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/beepmusic/"
+    href="/public/docs/beepmusic/"
     
   >Beep Music
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
@@ -223,7 +223,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/"
+    href="/public/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/"
     
   >Rc文件帮助
     </a>
@@ -231,7 +231,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/"
+    href="/public/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/"
     
   >彩色输出
     </a>
@@ -239,7 +239,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/"
+    href="/public/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/"
     
   >文件结构
     </a>
@@ -247,7 +247,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/"
+    href="/public/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/"
     
   >热键注册
     </a>
@@ -257,7 +257,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/"
+    href="/public/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/"
     
   >编程语言发展历史与选用
     </a>
@@ -271,14 +271,14 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
           <li class="open"><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
-    href="/blogs/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/"
+    href="/public/blogs/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/"
     
   >Vscode插件报错，g 却完美编译？ Api调用错因分析
     </a></li>
           <li class=""><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/"
+    href="/public/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/"
     
   >算法真题： Gesp202503四级——荒地开垦（洛谷 B4263）
     </a></li>
@@ -590,7 +590,7 @@ winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名�
   </a></div></div>
     </div></footer>
     
-    <script defer src="/js/main.min.9ed6fed0ece25fbac758360bfa0726d0bededbe81f7db7d325ef0ed533cad819.js" integrity="sha256-ntb&#43;0OziX7rHWDYL&#43;gcm0L7e2&#43;gffbfTJe8O1TPK2Bk="></script>
-<script defer src="/js/flexsearch.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY=" crossorigin="anonymous"></script><script defer src="/zh-cn.search.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY="></script>
+    <script defer src="/public/js/main.min.4b9db45beb41a4e92ac9b609d116536b24ab16ac5ee4677c9fafe17c9c2c4eee.js" integrity="sha256-S520W&#43;tBpOkqybYJ0RZTaySrFqxe5Gd8n6/hfJwsTu4="></script>
+<script defer src="/public/js/flexsearch.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY=" crossorigin="anonymous"></script><script defer src="/public/zh-cn.search.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY="></script>
   </body>
 </html>

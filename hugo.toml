@@ -1,4 +1,4 @@
-baseURL = 'https://xiaoditx.github.io/'
+baseURL = 'https://xiaoditx.github.io/public'
 languageCode = 'zh-cn'
 title = '小狄同学呀'
 theme = 'hextra'

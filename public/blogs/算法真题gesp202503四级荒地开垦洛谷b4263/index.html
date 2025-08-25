@@ -2,24 +2,24 @@
 <html lang="zh-cn"><head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="index, follow" />
-  <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" id="favicon-svg" />
-<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
-<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
-<link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
+  <link rel="icon shortcut" href="/public/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/public/favicon.svg" type="image/svg+xml" id="favicon-svg" />
+<link rel="icon" href="/public/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="/public/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/public/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="/public/site.webmanifest" rel="manifest" />
 <title>小狄同学呀</title>
   <meta name="description" content="算法真题：GESP202503四级——荒地开垦（洛谷B4263） 一.开始之前同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，当时看完有点思路，用易语言写了一下，结果越写越乱就放弃了，这周上课有些无聊，闲着也是闲着，干脆又把这题拾起来做了，回家试了试又改了改，顺利AC。
 原题是这样的：
 小杨有一大片荒地，可以表示为一个 n 行 m 列的网格图。小杨想要开垦这块荒地，但荒地中一些位置存在杂物，对于一块不存在杂物的荒地，该荒地可以开垦当且仅当其上下左右四个方向相邻的格子均不存在杂物。小杨可以选择至多一个位置，清除该位置的杂物，移除杂物后该位置变为荒地。小杨想知道在清除至多一个位置的杂物的情况下，最多能够开垦多少块荒地。输入输出什么的直接看洛谷吧，我就不一一粘过来了：洛谷B4263
 二.代码虽然我是写出来了，但我毕竟不是专业学算法的，所以我也不知道什么时间复杂度空间复杂度的，更不知道我用的算法叫什么，我只知道我AC了，每次大抵是在7-25ms通过测试点（如下）
 下面是我的代码，这个是带注释的版本，但大概也会被我某些地方原因不明的写法迷惑住，如果看不懂可以直接看解析，会有几乎逐行的解读：
-#include&lt;iostream&gt; #include&lt;cstring&gt; int main(){ int m,n,record_c=0;//长宽与杂物数记录变量 char tmp;//其实想用string的来着 int px[4]={0,0,1,-1},py[4]={1,-1,0,0};//杂物的不可开垦偏移 std::cin&gt;&gt;n&gt;&gt;m;//读入长宽(处于设计原因，被逼无奈反着读了) int imap[m][n];//创建地图数组（二维） int object[m*n][2];//杂物坐标记录数组 memset(imap,0,sizeof(imap));//初始化地图为0（即默认无杂物可开垦） for(int c=0;c&lt;n;c&#43;&#43;){//循环读入内容 for(int vc=0;vc&lt;m;vc&#43;&#43;){ std::cin&gt;&gt;tmp;//暂时读入tmp if(tmp==&#39;#&#39;){//判断是否为#（杂物） imap[vc][c]=-1-imap[vc][c];//是杂物则以负数记录叠加 object[record_c][0]=vc;//记录杂物位置，减少后期工作量，节约时间 object[record_c][1]=c; record_c&#43;&#43;;//把记录的变量&#43;1 for(int dev_c=0;dev_c&lt;4;dev_c&#43;&#43;){//四次计算偏移后的坐标并判断 int tx=px[dev_c]&#43;vc,ty=py[dev_c]&#43;c;//偏移后的X、Y /*边界判断，防止操作数组时超界 实际上，如果你觉得if严重影响执行效率，可以考虑定制化的边界判断，先操作边界再操作内部 这样会有更高的效率，但同样意味着你需要写更多的代码 */ if((tx&gt;=0) &amp;&amp; (tx&lt;m) //这两行是对X的判断 &amp;&amp; (ty&gt;=0) //下面两行是对Y的判断 &amp;&amp; (ty&lt;n)){ if(imap[tx][ty]&gt;-1){//对于“是否为杂物”进行判断 imap[tx][ty]&#43;&#43;;//&gt;-1不为杂物，以&#43;&#43;方式计录影响 }else{//&lt;=-1的情况 imap[tx][ty]--; } } } } } } //读入完成，感受人机缩进的力量吧 //（实则如果看的不舒服你完全可以用goto解决一下，但是不推荐） //下面是调试时使用的代码，在注释里保留了一下 // for(int c=0;c&lt;n;c&#43;&#43;){ // for(int vc=0;vc&lt;m;vc&#43;&#43;){ // std::cout&lt;&lt;imap[vc][c]&lt;&lt;&#34; &#34;; // } // std::cout&lt;&lt;std::endl; // } int ans=0;//初始化一个为0的ans变量，用于存储最后输出 //下面的循环，读imap数组，数“0”的个数 for(int c=0;c&lt;n;c&#43;&#43;){ for(int vc=0;vc&lt;m;vc&#43;&#43;){ //标准的循环遍历 if(imap[vc][c]==0){//当前格子为0 ans&#43;&#43;;//ans用来记录可开垦格子数，0为可开垦，记录为&#43;1 } } } //当前状态下可开垦的格子数已经统计完毕了 //下面要开始遍历每个杂物了 int area,best=0;//两个变量来算杂物去除后变为可开垦的荒地数 //area为临时记录变量，存储每次计算的可开垦数 //best为最优解，也就是每次area中最高的那个 for(int c=0;c&lt;record_c;c&#43;&#43;){ area=0;//area只是临时变量，每次循环初始化为0 //事实上，这里写int area;似乎更好 for(int vc=0;vc&lt;4;vc&#43;&#43;){//四次偏移 int tx=px[vc]&#43;object[c][0],ty=py[vc]&#43;object[c][1];//计算XY if((tx&gt;=0) //边界检测，同前 &amp;&amp; (tx&lt;m) &amp;&amp; (ty&gt;=0) &amp;&amp; (ty&lt;n)){ if(imap[tx][ty]==1){//如果为1，则证明只被当前杂物影响，移除该杂物就能开垦了 area&#43;&#43;;//可开垦荒地数&#43;1 } } } if(imap[object[c][0]][object[c][1]]==-1){//看看这个杂物有没有在别的杂物的影响范围内 area&#43;&#43;;//不在的话再加一 } if(best&lt;area)best=area; if(best==5)break;//最大值是五，不可能在大了（自身&#43;四个偏移），直接break节省时间 } ans&#43;=best;//ans加上挪出杂物腾出来的空间 std::cout&lt;&lt;ans;//输出答案 }三.解析1.分析题目题目说，上下左右四个方向相邻的格子均不存在杂物的荒地才可以开垦，用这个思路想似乎是很难的，但换一个思路或许会容易些，我们假设下面这片$3×3$的荒地：" /><link rel="canonical" href="https://xiaoditx.github.io/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/" itemprop="url" />
+#include&lt;iostream&gt; #include&lt;cstring&gt; int main(){ int m,n,record_c=0;//长宽与杂物数记录变量 char tmp;//其实想用string的来着 int px[4]={0,0,1,-1},py[4]={1,-1,0,0};//杂物的不可开垦偏移 std::cin&gt;&gt;n&gt;&gt;m;//读入长宽(处于设计原因，被逼无奈反着读了) int imap[m][n];//创建地图数组（二维） int object[m*n][2];//杂物坐标记录数组 memset(imap,0,sizeof(imap));//初始化地图为0（即默认无杂物可开垦） for(int c=0;c&lt;n;c&#43;&#43;){//循环读入内容 for(int vc=0;vc&lt;m;vc&#43;&#43;){ std::cin&gt;&gt;tmp;//暂时读入tmp if(tmp==&#39;#&#39;){//判断是否为#（杂物） imap[vc][c]=-1-imap[vc][c];//是杂物则以负数记录叠加 object[record_c][0]=vc;//记录杂物位置，减少后期工作量，节约时间 object[record_c][1]=c; record_c&#43;&#43;;//把记录的变量&#43;1 for(int dev_c=0;dev_c&lt;4;dev_c&#43;&#43;){//四次计算偏移后的坐标并判断 int tx=px[dev_c]&#43;vc,ty=py[dev_c]&#43;c;//偏移后的X、Y /*边界判断，防止操作数组时超界 实际上，如果你觉得if严重影响执行效率，可以考虑定制化的边界判断，先操作边界再操作内部 这样会有更高的效率，但同样意味着你需要写更多的代码 */ if((tx&gt;=0) &amp;&amp; (tx&lt;m) //这两行是对X的判断 &amp;&amp; (ty&gt;=0) //下面两行是对Y的判断 &amp;&amp; (ty&lt;n)){ if(imap[tx][ty]&gt;-1){//对于“是否为杂物”进行判断 imap[tx][ty]&#43;&#43;;//&gt;-1不为杂物，以&#43;&#43;方式计录影响 }else{//&lt;=-1的情况 imap[tx][ty]--; } } } } } } //读入完成，感受人机缩进的力量吧 //（实则如果看的不舒服你完全可以用goto解决一下，但是不推荐） //下面是调试时使用的代码，在注释里保留了一下 // for(int c=0;c&lt;n;c&#43;&#43;){ // for(int vc=0;vc&lt;m;vc&#43;&#43;){ // std::cout&lt;&lt;imap[vc][c]&lt;&lt;&#34; &#34;; // } // std::cout&lt;&lt;std::endl; // } int ans=0;//初始化一个为0的ans变量，用于存储最后输出 //下面的循环，读imap数组，数“0”的个数 for(int c=0;c&lt;n;c&#43;&#43;){ for(int vc=0;vc&lt;m;vc&#43;&#43;){ //标准的循环遍历 if(imap[vc][c]==0){//当前格子为0 ans&#43;&#43;;//ans用来记录可开垦格子数，0为可开垦，记录为&#43;1 } } } //当前状态下可开垦的格子数已经统计完毕了 //下面要开始遍历每个杂物了 int area,best=0;//两个变量来算杂物去除后变为可开垦的荒地数 //area为临时记录变量，存储每次计算的可开垦数 //best为最优解，也就是每次area中最高的那个 for(int c=0;c&lt;record_c;c&#43;&#43;){ area=0;//area只是临时变量，每次循环初始化为0 //事实上，这里写int area;似乎更好 for(int vc=0;vc&lt;4;vc&#43;&#43;){//四次偏移 int tx=px[vc]&#43;object[c][0],ty=py[vc]&#43;object[c][1];//计算XY if((tx&gt;=0) //边界检测，同前 &amp;&amp; (tx&lt;m) &amp;&amp; (ty&gt;=0) &amp;&amp; (ty&lt;n)){ if(imap[tx][ty]==1){//如果为1，则证明只被当前杂物影响，移除该杂物就能开垦了 area&#43;&#43;;//可开垦荒地数&#43;1 } } } if(imap[object[c][0]][object[c][1]]==-1){//看看这个杂物有没有在别的杂物的影响范围内 area&#43;&#43;;//不在的话再加一 } if(best&lt;area)best=area; if(best==5)break;//最大值是五，不可能在大了（自身&#43;四个偏移），直接break节省时间 } ans&#43;=best;//ans加上挪出杂物腾出来的空间 std::cout&lt;&lt;ans;//输出答案 }三.解析1.分析题目题目说，上下左右四个方向相邻的格子均不存在杂物的荒地才可以开垦，用这个思路想似乎是很难的，但换一个思路或许会容易些，我们假设下面这片$3×3$的荒地：" /><link rel="canonical" href="https://xiaoditx.github.io/public/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/" itemprop="url" />
 
 <meta property="og:title" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://xiaoditx.github.io/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/" />
+<meta property="og:url" content="https://xiaoditx.github.io/public/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/" />
 
   <meta itemprop="name" content="小狄同学呀">
   <meta itemprop="description" content="算法真题：GESP202503四级——荒地开垦（洛谷B4263） 一.开始之前同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，当时看完有点思路，用易语言写了一下，结果越写越乱就放弃了，这周上课有些无聊，闲着也是闲着，干脆又把这题拾起来做了，回家试了试又改了改，顺利AC。
@@ -38,8 +38,8 @@
 下面是我的代码，这个是带注释的版本，但大概也会被我某些地方原因不明的写法迷惑住，如果看不懂可以直接看解析，会有几乎逐行的解读：
 #include&lt;iostream&gt; #include&lt;cstring&gt; int main(){ int m,n,record_c=0;//长宽与杂物数记录变量 char tmp;//其实想用string的来着 int px[4]={0,0,1,-1},py[4]={1,-1,0,0};//杂物的不可开垦偏移 std::cin&gt;&gt;n&gt;&gt;m;//读入长宽(处于设计原因，被逼无奈反着读了) int imap[m][n];//创建地图数组（二维） int object[m*n][2];//杂物坐标记录数组 memset(imap,0,sizeof(imap));//初始化地图为0（即默认无杂物可开垦） for(int c=0;c&lt;n;c&#43;&#43;){//循环读入内容 for(int vc=0;vc&lt;m;vc&#43;&#43;){ std::cin&gt;&gt;tmp;//暂时读入tmp if(tmp==&#39;#&#39;){//判断是否为#（杂物） imap[vc][c]=-1-imap[vc][c];//是杂物则以负数记录叠加 object[record_c][0]=vc;//记录杂物位置，减少后期工作量，节约时间 object[record_c][1]=c; record_c&#43;&#43;;//把记录的变量&#43;1 for(int dev_c=0;dev_c&lt;4;dev_c&#43;&#43;){//四次计算偏移后的坐标并判断 int tx=px[dev_c]&#43;vc,ty=py[dev_c]&#43;c;//偏移后的X、Y /*边界判断，防止操作数组时超界 实际上，如果你觉得if严重影响执行效率，可以考虑定制化的边界判断，先操作边界再操作内部 这样会有更高的效率，但同样意味着你需要写更多的代码 */ if((tx&gt;=0) &amp;&amp; (tx&lt;m) //这两行是对X的判断 &amp;&amp; (ty&gt;=0) //下面两行是对Y的判断 &amp;&amp; (ty&lt;n)){ if(imap[tx][ty]&gt;-1){//对于“是否为杂物”进行判断 imap[tx][ty]&#43;&#43;;//&gt;-1不为杂物，以&#43;&#43;方式计录影响 }else{//&lt;=-1的情况 imap[tx][ty]--; } } } } } } //读入完成，感受人机缩进的力量吧 //（实则如果看的不舒服你完全可以用goto解决一下，但是不推荐） //下面是调试时使用的代码，在注释里保留了一下 // for(int c=0;c&lt;n;c&#43;&#43;){ // for(int vc=0;vc&lt;m;vc&#43;&#43;){ // std::cout&lt;&lt;imap[vc][c]&lt;&lt;&#34; &#34;; // } // std::cout&lt;&lt;std::endl; // } int ans=0;//初始化一个为0的ans变量，用于存储最后输出 //下面的循环，读imap数组，数“0”的个数 for(int c=0;c&lt;n;c&#43;&#43;){ for(int vc=0;vc&lt;m;vc&#43;&#43;){ //标准的循环遍历 if(imap[vc][c]==0){//当前格子为0 ans&#43;&#43;;//ans用来记录可开垦格子数，0为可开垦，记录为&#43;1 } } } //当前状态下可开垦的格子数已经统计完毕了 //下面要开始遍历每个杂物了 int area,best=0;//两个变量来算杂物去除后变为可开垦的荒地数 //area为临时记录变量，存储每次计算的可开垦数 //best为最优解，也就是每次area中最高的那个 for(int c=0;c&lt;record_c;c&#43;&#43;){ area=0;//area只是临时变量，每次循环初始化为0 //事实上，这里写int area;似乎更好 for(int vc=0;vc&lt;4;vc&#43;&#43;){//四次偏移 int tx=px[vc]&#43;object[c][0],ty=py[vc]&#43;object[c][1];//计算XY if((tx&gt;=0) //边界检测，同前 &amp;&amp; (tx&lt;m) &amp;&amp; (ty&gt;=0) &amp;&amp; (ty&lt;n)){ if(imap[tx][ty]==1){//如果为1，则证明只被当前杂物影响，移除该杂物就能开垦了 area&#43;&#43;;//可开垦荒地数&#43;1 } } } if(imap[object[c][0]][object[c][1]]==-1){//看看这个杂物有没有在别的杂物的影响范围内 area&#43;&#43;;//不在的话再加一 } if(best&lt;area)best=area; if(best==5)break;//最大值是五，不可能在大了（自身&#43;四个偏移），直接break节省时间 } ans&#43;=best;//ans加上挪出杂物腾出来的空间 std::cout&lt;&lt;ans;//输出答案 }三.解析1.分析题目题目说，上下左右四个方向相邻的格子均不存在杂物的荒地才可以开垦，用这个思路想似乎是很难的，但换一个思路或许会容易些，我们假设下面这片$3×3$的荒地：">
 
-    <link rel="preload" href="/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" as="style" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
-    <link href="/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" rel="stylesheet" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
+    <link rel="preload" href="/public/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" as="style" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
+    <link href="/public/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" rel="stylesheet" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
 
   
 
@@ -84,32 +84,32 @@
   ></div>
 
   <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-2 hx:h-16 hx:px-6">
-    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="/">
-    <img class="hx:mr-2 hx:block hx:dark:hidden" src="/images/logo.svg" alt="Logo" height="20" width="20" />
-    <img class="hx:mr-2 hx:hidden hx:dark:block" src="/images/logo.svg" alt="Dark Logo" height="20" width="20" />
+    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="/public/">
+    <img class="hx:mr-2 hx:block hx:dark:hidden" src="/public/images/logo.svg" alt="Logo" height="20" width="20" />
+    <img class="hx:mr-2 hx:hidden hx:dark:block" src="/public/images/logo.svg" alt="Dark Logo" height="20" width="20" />
     <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="小狄同学呀">小狄同学呀</span>
 </a>
 <a
   title=""
-  href="/"
+  href="/public/"
   
   class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
 ><span class="hx:text-center">首页</span>
 </a><a
   title=""
-  href="/blogs"
+  href="/public/blogs"
   
   class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:font-medium"
 ><span class="hx:text-center">博客</span>
 </a><a
   title=""
-  href="/docs"
+  href="/public/docs"
   
   class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
 ><span class="hx:text-center">文档</span>
 </a><a
   title=""
-  href="/daily"
+  href="/public/daily"
   
   class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
 ><span class="hx:text-center">动态</span>
@@ -153,7 +153,7 @@
           <li class="open"><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blogs/"
+    href="/public/blogs/"
     
   >Blogs
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
@@ -161,7 +161,7 @@
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blogs/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/"
+    href="/public/blogs/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/"
     
   >Vscode插件报错，g 却完美编译？ Api调用错因分析
     </a>
@@ -169,7 +169,7 @@
             </li><li class="hx:flex hx:flex-col open"><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
-    href="/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/"
+    href="/public/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/"
     
   >算法真题： Gesp202503四级——荒地开垦（洛谷 B4263）
     </a>
@@ -212,7 +212,7 @@
           <li class=""><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/daily/"
+    href="/public/daily/"
     
   >Daily
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
@@ -220,7 +220,7 @@
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/daily/%E5%BC%80%E5%8F%91%E6%97%A5%E5%B8%B8/"
+    href="/public/daily/%E5%BC%80%E5%8F%91%E6%97%A5%E5%B8%B8/"
     
   >开发日常
     </a>
@@ -230,7 +230,7 @@
           <li class=""><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/"
+    href="/public/docs/"
     
   >Docs
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
@@ -238,7 +238,7 @@
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/beepmusic/"
+    href="/public/docs/beepmusic/"
     
   >Beep Music
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
@@ -247,7 +247,7 @@
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/"
+    href="/public/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/"
     
   >Rc文件帮助
     </a>
@@ -255,7 +255,7 @@
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/"
+    href="/public/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/"
     
   >彩色输出
     </a>
@@ -263,7 +263,7 @@
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/"
+    href="/public/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/"
     
   >文件结构
     </a>
@@ -271,7 +271,7 @@
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/"
+    href="/public/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/"
     
   >热键注册
     </a>
@@ -281,7 +281,7 @@
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/"
+    href="/public/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/"
     
   >编程语言发展历史与选用
     </a>
@@ -295,14 +295,14 @@
           <li class=""><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blogs/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/"
+    href="/public/blogs/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/"
     
   >Vscode插件报错，g 却完美编译？ Api调用错因分析
     </a></li>
           <li class="open"><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
-    href="/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/"
+    href="/public/blogs/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/"
     
   >算法真题： Gesp202503四级——荒地开垦（洛谷 B4263）
     </a></li>
@@ -762,7 +762,7 @@
   </a></div></div>
     </div></footer>
     
-    <script defer src="/js/main.min.9ed6fed0ece25fbac758360bfa0726d0bededbe81f7db7d325ef0ed533cad819.js" integrity="sha256-ntb&#43;0OziX7rHWDYL&#43;gcm0L7e2&#43;gffbfTJe8O1TPK2Bk="></script>
-<script defer src="/js/flexsearch.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY=" crossorigin="anonymous"></script><script defer src="/zh-cn.search.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY="></script>
+    <script defer src="/public/js/main.min.4b9db45beb41a4e92ac9b609d116536b24ab16ac5ee4677c9fafe17c9c2c4eee.js" integrity="sha256-S520W&#43;tBpOkqybYJ0RZTaySrFqxe5Gd8n6/hfJwsTu4="></script>
+<script defer src="/public/js/flexsearch.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY=" crossorigin="anonymous"></script><script defer src="/public/zh-cn.search.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY="></script>
   </body>
 </html>
