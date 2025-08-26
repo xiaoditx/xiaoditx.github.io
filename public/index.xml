@@ -1,17 +1,597 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>小狄同学呀 – </title>
-    <link>https://xiaoditx.github.io/public/</link>
+    <link>http://localhost:1313/public/</link>
     <description>Recent content on 小狄同学呀</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
-	  <atom:link href="https://xiaoditx.github.io/public/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/public/index.xml" rel="self" type="application/rss+xml" />
     
     
       
       
     
+    
+    <item>
+      <title>VScode插件报错，g&#43;&#43;却完美编译？API调用错因分析</title>
+      <link>http://localhost:1313/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</guid>
+      <description>
+        
+        
+        &lt;p&gt;前一段时间写了个&lt;a href=&#34;https://github.com/xiaoditx/BeepMusic&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;小软件&lt;/a&gt;，想给它加个读写配置项功能，刚学几天C++的我上网查了半天资料，找到两个Windows的API分别是读ini的&lt;code&gt;GetPrivateProfileString&lt;/code&gt;和写ini的&lt;code&gt;WritePrivateProfileString&lt;/code&gt;，根据网上的教程，我写出了下面这三行：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    LPTSTR lpPath &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;[MAX_PATH];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    strcpy(lpPath, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;config.ini&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;WritePrivateProfileString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;config&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;t&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;120&amp;#34;&lt;/span&gt;, lpPath);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;刚刚写完，VScode安的插件瞬间爆红，然后给出了这样的报错：
+&lt;img src=&#34;./imgs/184a967e89d542c3be6e63b16667e2a3.png&#34; alt=&#34;VScode插件报错&#34;  loading=&#34;lazy&#34; /&gt;
+但是我确定我是完全按照教程走的，所以到底是哪里的问题呢？&lt;/p&gt;
+&lt;p&gt;于是我尝试编译，结果非常惊人，g++没有任何报错的编译成功并且在当前目录新建了&lt;code&gt;config.ini&lt;/code&gt;并写入了指定内容&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./imgs/83ab9c632d1e463596644c4afcc60d14.png&#34; alt=&#34;g&amp;#43;&amp;#43;编译结果&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这有些奇怪，还是查查官方文档吧&lt;/p&gt;
+&lt;p&gt;上MSDN，查&lt;code&gt;WritePrivatePeofileString&lt;/code&gt;，却并没有查到，只查到了&lt;code&gt;WritePrivatePeofileStringA&lt;/code&gt;和&lt;code&gt;WritePrivatePeofileStringW&lt;/code&gt;（末尾都多了个字母）这两个函数&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./imgs/9e5fe8e0a5074f0ba5d570c9a3ef2023.png&#34; alt=&#34;MSDN的相关内容&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;没办法了，只好点进一个看看，我选择了&lt;code&gt;WritePrivatePeofileStringA&lt;/code&gt;，诶，这个参数的类型好像不对，跟着教程写的是&lt;code&gt;LPTSTR&lt;/code&gt;，但这里面写的是&lt;code&gt;LPCSTR&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;向下划，我在&lt;code&gt;例子&lt;/code&gt;板块的下方看到了一串提示&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名根据 UNICODE 预处理器常量的定义自动选择此函数的 ANSI 或 Unicode 版本。 将中性编码别名与不中性编码的代码混合使用可能会导致编译或运行时错误不匹配。 有关详细信息，请参阅函数原型的 约定。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也就是说，&lt;code&gt;WritePrivatePeofileString&lt;/code&gt;不是这个API的原名，它只是根据条件进行选择的&lt;/p&gt;
+&lt;p&gt;回到VScode，按住Ctrl并单击&lt;code&gt;WritePrivatePeofileString&lt;/code&gt;，看到了&lt;code&gt;Windows.h&lt;/code&gt;中的内容：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#ifdef UNICODE
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define WritePrivatePeofileString WritePrivatePeofileStringW
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#else
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define WritePrivatePeofileString WritePrivatePeofileStringA
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#endif&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;VScode显示，上方是亮着的，证明VScode的环境下有UNICODE这个宏&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./imgs/389e5b23cc314530822b326a0f848859.png&#34; alt=&#34;t条件编译&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这下破案了，由于VScode有UNICODE宏而g++没有，所以插件检查时是按照&lt;code&gt;WritePrivatePeofileStringW&lt;/code&gt;检查的，此时插件认为需要使用unicode，路径需要使用&lt;code&gt;wchar_t&lt;/code&gt;也就是宽字符存储，g++编译时，按照&lt;code&gt;WritePrivatePeofileStringA&lt;/code&gt;，此时g++认为要用ANSI，路径使用&lt;code&gt;char&lt;/code&gt;也就是普通字符存储，于是我们使用的&lt;code&gt;char&lt;/code&gt;的代码在g++下正常而没有通过VScode的插件检查&lt;/p&gt;
+&lt;p&gt;因此，我们的书写是正确的，但是由于VScode的环境与g++不同，被插件当作了错误，此时我们应当指明我们要使用&lt;code&gt;WritePrivatePeofileStringA&lt;/code&gt;函数：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; lpPath &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;[MAX_PATH];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    strcpy(lpPath, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;config.ini&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;WritePrivateProfileStringA(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;LiMing&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Sex&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Man&amp;#34;&lt;/span&gt;, lpPath); 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;delete&lt;/span&gt;[] lpPath;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;到这里就结束了，烦人的提醒终于消失不见了&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;另附：LPxxxSTR数据类型的具体含义&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;核心基础类型:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CHAR&lt;/code&gt;: 表示一个 &lt;strong&gt;ANSI&lt;/strong&gt; (8-bit) 字符 (&lt;code&gt;char&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WCHAR&lt;/code&gt;: 表示一个 &lt;strong&gt;宽字符&lt;/strong&gt; (Unicode, 通常是 16-bit UTF-16) (&lt;code&gt;wchar_t&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TCHAR&lt;/code&gt;: &lt;strong&gt;自适应字符类型&lt;/strong&gt;。根据项目设置（是否定义了 &lt;code&gt;_UNICODE&lt;/code&gt; 宏）编译为 &lt;code&gt;CHAR&lt;/code&gt; 或 &lt;code&gt;WCHAR&lt;/code&gt;。用于编写既可编译为 ANSI 也可编译为 Unicode 的代码。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;字符串指针类型:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;LPSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to STRing&lt;/strong&gt;。指向以 NULL 结尾的 &lt;strong&gt;ANSI&lt;/strong&gt; 字符串 (&lt;code&gt;CHAR*&lt;/code&gt;)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef CHAR* LPSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPWSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to Wide STRing&lt;/strong&gt;。指向以 NULL 结尾的 &lt;strong&gt;Unicode&lt;/strong&gt; (UTF-16) 字符串 (&lt;code&gt;WCHAR*&lt;/code&gt;)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef WCHAR* LPWSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPTSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to TCHAR STRing&lt;/strong&gt;。指向以 NULL 结尾的 &lt;strong&gt;自适应字符&lt;/strong&gt; (&lt;code&gt;TCHAR*&lt;/code&gt;) 字符串。根据 &lt;code&gt;_UNICODE&lt;/code&gt; 宏定义，编译时等同于 &lt;code&gt;LPSTR&lt;/code&gt; (ANSI) 或 &lt;code&gt;LPWSTR&lt;/code&gt; (Unicode)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef TCHAR* LPTSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;常量字符串指针类型:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;LPCSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to Constant STRing&lt;/strong&gt;。指向以 NULL 结尾的 &lt;strong&gt;常量 ANSI&lt;/strong&gt; 字符串 (&lt;code&gt;const CHAR*&lt;/code&gt;)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef const CHAR* LPCSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPCWSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to Constant Wide STRing&lt;/strong&gt;。指向以 NULL 结尾的 &lt;strong&gt;常量 Unicode&lt;/strong&gt; (UTF-16) 字符串 (&lt;code&gt;const WCHAR*&lt;/code&gt;)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef const WCHAR* LPCWSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPCTSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to Constant TCHAR STRing&lt;/strong&gt;。指向以 NULL 结尾的 &lt;strong&gt;常量自适应字符&lt;/strong&gt; (&lt;code&gt;const TCHAR*&lt;/code&gt;) 字符串。根据 &lt;code&gt;_UNICODE&lt;/code&gt; 宏定义，编译时等同于 &lt;code&gt;LPCSTR&lt;/code&gt; (ANSI) 或 &lt;code&gt;LPCWSTR&lt;/code&gt; (Unicode)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef const TCHAR* LPCTSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;关键区别总结表：&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;类型&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;字符宽度&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;常量性 (const)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;基础类型等价 (ANSI Build)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;基础类型等价 (Unicode Build)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;描述&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ANSI (8-bit)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;非 const&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;char*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;char*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指向 ANSI 字符串的指针&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPCSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ANSI (8-bit)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;const&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const char*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const char*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指向 &lt;strong&gt;只读&lt;/strong&gt; ANSI 字符串的指针&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPWSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unicode (16-bit)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;非 const&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;wchar_t*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;wchar_t*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指向 Unicode (UTF-16) 字符串的指针&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPCWSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unicode (16-bit)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;const&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const wchar_t*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const wchar_t*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指向 &lt;strong&gt;只读&lt;/strong&gt; Unicode (UTF-16) 字符串的指针&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPTSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;自适应&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;非 const&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;char*&lt;/code&gt; (LPSTR)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;wchar_t*&lt;/code&gt; (LPWSTR)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指向自适应字符串的指针 (TCHAR*)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPCTSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;自适应&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;const&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const char*&lt;/code&gt; (LPCSTR)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const wchar_t*&lt;/code&gt; (LPCWSTR)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指向 &lt;strong&gt;只读&lt;/strong&gt; 自适应字符串的指针 (const TCHAR*)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;重要说明:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;LP&lt;/code&gt; 前缀:&lt;/strong&gt; &amp;ldquo;Long Pointer&amp;rdquo; 是一个历史遗留物，在现代 32/64 位系统中，所有指针都是 &amp;ldquo;long&amp;rdquo;，可以简单地把 &lt;code&gt;LP&lt;/code&gt; 理解为 &amp;ldquo;Pointer to&amp;rdquo;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;C&lt;/code&gt; 后缀:&lt;/strong&gt; 表示 &lt;code&gt;const&lt;/code&gt;，即指针指向的内容是只读的，不能通过这个指针修改字符串内容。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;T&lt;/code&gt; 中缀:&lt;/strong&gt; 表示类型是 &lt;code&gt;TCHAR&lt;/code&gt;，它会根据项目字符集设置自适应。这是为了编写同时支持 ANSI 和 Unicode 构建的代码。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;W&lt;/code&gt; 后缀:&lt;/strong&gt; 表示 &amp;ldquo;Wide&amp;rdquo;，即 Unicode (UTF-16)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;STR&lt;/code&gt; 后缀:&lt;/strong&gt; 表示 &amp;ldquo;String&amp;rdquo; (以 NULL 结尾的字符数组)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;现代 Windows 开发实践:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;强烈推荐始终使用 Unicode 构建项目&lt;/strong&gt; (在 Visual Studio 项目属性中设置 &amp;ldquo;字符集&amp;rdquo; 为 &amp;ldquo;使用 Unicode 字符集&amp;rdquo;)。这定义了 &lt;code&gt;_UNICODE&lt;/code&gt; 宏。&lt;/li&gt;
+&lt;li&gt;在 Unicode 构建下：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;TCHAR&lt;/code&gt; = &lt;code&gt;WCHAR&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPTSTR&lt;/code&gt; = &lt;code&gt;LPWSTR&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPCTSTR&lt;/code&gt; = &lt;code&gt;LPCWSTR&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;直接使用 &lt;code&gt;LPCWSTR&lt;/code&gt;/&lt;code&gt;LPWSTR&lt;/code&gt; 或 &lt;code&gt;LPCWSTR&lt;/code&gt;/&lt;code&gt;LPWSTR&lt;/code&gt; 的别名 &lt;code&gt;std::wstring&lt;/code&gt; (C++) 通常更清晰，避免 &lt;code&gt;TCHAR&lt;/code&gt; 系列的歧义，除非你明确需要维护同时支持 ANSI/Unicode 的旧代码库。&lt;/li&gt;
+&lt;li&gt;ANSI (&lt;code&gt;LPSTR&lt;/code&gt;/&lt;code&gt;LPCSTR&lt;/code&gt;) API 函数在内部通常只是将字符串转换为 Unicode 然后调用对应的 Unicode 版本函数，存在性能开销和潜在的字符集转换问题。优先使用显式的 Unicode (W) 版本 API。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;兼容性:&lt;/strong&gt; &lt;code&gt;TCHAR&lt;/code&gt; 系列主要是为了兼容旧的 Windows 9x 系统（主要使用 ANSI）和现代 NT 系统（原生 Unicode）。现代开发（Windows 2000 及以后）应首选 Unicode。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;简单记忆:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;看 &lt;code&gt;W&lt;/code&gt; -&amp;gt; Unicode。&lt;/li&gt;
+&lt;li&gt;看 &lt;code&gt;C&lt;/code&gt; -&amp;gt; &lt;code&gt;const&lt;/code&gt; (不能修改字符串内容)。&lt;/li&gt;
+&lt;li&gt;看 &lt;code&gt;T&lt;/code&gt; -&amp;gt; 自适应，根据项目设置变 ANSI 或 Unicode。&lt;/li&gt;
+&lt;li&gt;没有 &lt;code&gt;W&lt;/code&gt; 也没有 &lt;code&gt;T&lt;/code&gt; -&amp;gt; ANSI。&lt;/li&gt;
+&lt;li&gt;没有 &lt;code&gt;C&lt;/code&gt; -&amp;gt; 字符串内容可修改 (非常量)。&lt;/li&gt;
+&lt;li&gt;有 &lt;code&gt;C&lt;/code&gt; -&amp;gt; 字符串内容只读 (常量)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;使用建议:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新项目：&lt;strong&gt;始终开启 Unicode 构建 (&lt;code&gt;_UNICODE&lt;/code&gt; defined)&lt;/strong&gt;。优先使用 &lt;code&gt;LPCWSTR&lt;/code&gt; (输入参数) 和 &lt;code&gt;LPWSTR&lt;/code&gt; (输出参数)，或者在 C++ 中使用 &lt;code&gt;const wchar_t*&lt;/code&gt; 和 &lt;code&gt;std::wstring&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;维护旧项目/需要 ANSI 兼容：使用 &lt;code&gt;LPCTSTR&lt;/code&gt; (输入) 和 &lt;code&gt;LPTSTR&lt;/code&gt; (输出) 或对应的 &lt;code&gt;TCHAR&lt;/code&gt; 基础类型，并确保正确处理 &lt;code&gt;_UNICODE&lt;/code&gt; 宏定义。&lt;/li&gt;
+&lt;li&gt;与 Windows API 交互时，注意 API 函数通常有 A (ANSI) 和 W (Wide/Unicode) 两个版本（如 &lt;code&gt;MessageBoxA&lt;/code&gt; 和 &lt;code&gt;MessageBoxW&lt;/code&gt;）。使用通用宏 &lt;code&gt;MessageBox&lt;/code&gt; 会根据 &lt;code&gt;_UNICODE&lt;/code&gt; 自动选择正确的版本。传递的字符串指针类型也必须与之匹配（&lt;code&gt;LPCSTR&lt;/code&gt; 对应 A 版本，&lt;code&gt;LPCWSTR&lt;/code&gt; 对应 W 版本，&lt;code&gt;LPCTSTR&lt;/code&gt; 对应通用宏）。&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>算法真题：GESP202503四级——荒地开垦（洛谷B4263）</title>
+      <link>http://localhost:1313/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+&lt;h1&gt;一.开始之前&lt;/h1&gt;&lt;p&gt;同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，当时看完有点思路，用易语言写了一下，结果越写越乱就放弃了，这周上课有些无聊，闲着也是闲着，干脆又把这题拾起来做了，回家试了试又改了改，顺利AC。&lt;/p&gt;
+&lt;p&gt;原题是这样的：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;小杨有一大片荒地，可以表示为一个 n 行 m 列的网格图。
+
+小杨想要开垦这块荒地，但荒地中一些位置存在杂物，对于一块不存在杂物的荒地，该荒地可以开垦当且仅当其上下左右四个方向相邻的格子均不存在杂物。
+
+小杨可以选择至多一个位置，清除该位置的杂物，移除杂物后该位置变为荒地。小杨想知道在清除至多一个位置的杂物的情况下，最多能够开垦多少块荒地。&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;输入输出什么的直接看洛谷吧，我就不一一粘过来了：&lt;a href=&#34;https://www.luogu.com.cn/problem/B4263&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;洛谷B4263&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;二.代码&lt;/h1&gt;&lt;p&gt;虽然我是写出来了，但我毕竟不是专业学算法的，所以我也不知道什么时间复杂度空间复杂度的，更不知道我用的算法叫什么，我只知道我AC了，每次大抵是在7-25ms通过测试点（如下）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./imgs/780cf181312b418da50cb8481a848b15.png&#34; alt=&#34;测试点信息&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;下面是我的代码，这个是带注释的版本，但大概也会被我某些地方原因不明的写法迷惑住，如果看不懂可以直接看解析，会有几乎逐行的解读：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&amp;lt;iostream&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&amp;lt;cstring&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; m,n,record_c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//长宽与杂物数记录变量
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; tmp;&lt;span style=&#34;color:#75715e&#34;&gt;//其实想用string的来着
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; px[&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;},py[&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;};&lt;span style=&#34;color:#75715e&#34;&gt;//杂物的不可开垦偏移
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cin&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;n&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;m;&lt;span style=&#34;color:#75715e&#34;&gt;//读入长宽(处于设计原因，被逼无奈反着读了)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; imap[m][n];&lt;span style=&#34;color:#75715e&#34;&gt;//创建地图数组（二维）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; object[m&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;n][&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;];&lt;span style=&#34;color:#75715e&#34;&gt;//杂物坐标记录数组
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    memset(imap,&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(imap));&lt;span style=&#34;color:#75715e&#34;&gt;//初始化地图为0（即默认无杂物可开垦）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;c&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;n;c&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//循环读入内容
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; vc&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;vc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;m;vc&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cin&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;tmp;&lt;span style=&#34;color:#75715e&#34;&gt;//暂时读入tmp
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(tmp&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#&amp;#39;&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//判断是否为#（杂物）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                imap[vc][c]&lt;span style=&#34;color:#f92672&#34;&gt;=-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;imap[vc][c];&lt;span style=&#34;color:#75715e&#34;&gt;//是杂物则以负数记录叠加
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                object[record_c][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;vc;&lt;span style=&#34;color:#75715e&#34;&gt;//记录杂物位置，减少后期工作量，节约时间
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                object[record_c][&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;c;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                record_c&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//把记录的变量+1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; dev_c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;dev_c&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;;dev_c&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//四次计算偏移后的坐标并判断
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; tx&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;px[dev_c]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;vc,ty&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;py[dev_c]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;c;&lt;span style=&#34;color:#75715e&#34;&gt;//偏移后的X、Y
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                    &lt;span style=&#34;color:#75715e&#34;&gt;/*边界判断，防止操作数组时超界
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;                    实际上，如果你觉得if严重影响执行效率，可以考虑定制化的边界判断，先操作边界再操作内部
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;                    这样会有更高的效率，但同样意味着你需要写更多的代码
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;                    */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;((tx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (tx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;m) &lt;span style=&#34;color:#75715e&#34;&gt;//这两行是对X的判断
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (ty&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;//下面两行是对Y的判断
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (ty&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;n)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(imap[tx][ty]&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//对于“是否为杂物”进行判断
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                            imap[tx][ty]&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//&amp;gt;-1不为杂物，以++方式计录影响
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                        }&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;{&lt;span style=&#34;color:#75715e&#34;&gt;//&amp;lt;=-1的情况
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                            imap[tx][ty]&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//读入完成，感受人机缩进的力量吧
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//（实则如果看的不舒服你完全可以用goto解决一下，但是不推荐）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//下面是调试时使用的代码，在注释里保留了一下
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// for(int c=0;c&amp;lt;n;c++){
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//     for(int vc=0;vc&amp;lt;m;vc++){
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//         std::cout&amp;lt;&amp;lt;imap[vc][c]&amp;lt;&amp;lt;&amp;#34; &amp;#34;;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//     }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//     std::cout&amp;lt;&amp;lt;std::endl;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// }
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ans&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//初始化一个为0的ans变量，用于存储最后输出
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//下面的循环，读imap数组，数“0”的个数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;c&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;n;c&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; vc&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;vc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;m;vc&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#75715e&#34;&gt;//标准的循环遍历
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(imap[vc][c]&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//当前格子为0
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                ans&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//ans用来记录可开垦格子数，0为可开垦，记录为+1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//当前状态下可开垦的格子数已经统计完毕了
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//下面要开始遍历每个杂物了
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; area,best&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//两个变量来算杂物去除后变为可开垦的荒地数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//area为临时记录变量，存储每次计算的可开垦数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//best为最优解，也就是每次area中最高的那个
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;c&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;record_c;c&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        area&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//area只是临时变量，每次循环初始化为0
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;//事实上，这里写int area;似乎更好
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; vc&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;vc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;;vc&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//四次偏移
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; tx&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;px[vc]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;object[c][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;],ty&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;py[vc]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;object[c][&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;];&lt;span style=&#34;color:#75715e&#34;&gt;//计算XY
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;((tx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;//边界检测，同前
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (tx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;m) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (ty&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (ty&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;n)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(imap[tx][ty]&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//如果为1，则证明只被当前杂物影响，移除该杂物就能开垦了
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                    area&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//可开垦荒地数+1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(imap[object[c][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]][object[c][&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]]&lt;span style=&#34;color:#f92672&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//看看这个杂物有没有在别的杂物的影响范围内
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            area&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//不在的话再加一
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(best&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;area)best&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;area;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(best&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;)&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//最大值是五，不可能在大了（自身+四个偏移），直接break节省时间
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ans&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;best;&lt;span style=&#34;color:#75715e&#34;&gt;//ans加上挪出杂物腾出来的空间
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cout&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;ans;&lt;span style=&#34;color:#75715e&#34;&gt;//输出答案
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1&gt;三.解析&lt;/h1&gt;&lt;h2&gt;1.分析题目&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1分析题目&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1%e5%88%86%e6%9e%90%e9%a2%98%e7%9b%ae&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;题目说，&lt;code&gt;上下左右四个方向相邻的格子均不存在杂物&lt;/code&gt;的荒地才可以开垦，用这个思路想似乎是很难的，但换一个思路或许会容易些，我们假设下面这片$3×3$的荒地：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;...
+.#.
+...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;此时中心出现杂物，由于可开垦的荒地上下左右均不能有杂物，因此这一个杂物&lt;strong&gt;影响了&lt;/strong&gt;它上下左右的荒地，我们用&lt;code&gt;!&lt;/code&gt;表示无杂物但不可开垦的荒地：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;.!.
+!#!
+.!.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;也就是说，我们判断荒地是否不可开垦的思路转换为了找杂物，下面的，就是代码内容了。&lt;/p&gt;
+&lt;h2&gt;2.数据读入和初步处理&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2数据读入和初步处理&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2%e6%95%b0%e6%8d%ae%e8%af%bb%e5%85%a5%e5%92%8c%e5%88%9d%e6%ad%a5%e5%a4%84%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;准备“地图”&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;准备地图&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%87%86%e5%a4%87%e5%9c%b0%e5%9b%be&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;想要解题，肯定得先接住题目给的数据，连数据都接不好还怎么分析，于是先写下接收前两个数据的代码，顺手为后面的事做准备：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&amp;lt;iostream&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&amp;lt;cstring&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; m,n,record_c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//长宽与杂物数记录变量
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt; tmp;&lt;span style=&#34;color:#75715e&#34;&gt;//其实想用string的来着
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; px[&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;},py[&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;};&lt;span style=&#34;color:#75715e&#34;&gt;//杂物的不可开垦偏移
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cin&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;n&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;m;&lt;span style=&#34;color:#75715e&#34;&gt;//读入长宽(处于设计原因，被逼无奈反着读了)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; imap[m][n];&lt;span style=&#34;color:#75715e&#34;&gt;//创建地图数组（二维）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; object[m&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;n][&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;];&lt;span style=&#34;color:#75715e&#34;&gt;//杂物坐标记录数组
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    memset(imap,&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(imap));&lt;span style=&#34;color:#75715e&#34;&gt;//初始化地图为0（即默认无杂物可开垦）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这里用到了两个头文件，&lt;code&gt;iostream&lt;/code&gt;和&lt;code&gt;cstring&lt;/code&gt;，一个几乎是必需品，一个则是初始化数组用的。&lt;/p&gt;
+&lt;p&gt;这里可能有人会说：诶？&lt;code&gt;using namespace std&lt;/code&gt;怎么被你吞了？&lt;/p&gt;
+&lt;p&gt;实际上，只要你勤加&lt;code&gt;std::&lt;/code&gt;就可以不写这句话，这样做当然是有好处的，虽然在算法竞赛里不容易体现出来，不过我毕竟是个侧重应用的人（毕竟一上来就学的易语言），所以一直注重少用&lt;code&gt;using&lt;/code&gt;的习惯，有关这个东西，大家可以搜一下“命名空间污染”自行了解。&lt;/p&gt;
+&lt;p&gt;这里定义了整型变量&lt;code&gt;m&lt;/code&gt;、&lt;code&gt;n&lt;/code&gt;、&lt;code&gt;record_c&lt;/code&gt;分别负责：接受输入n、接受输入m、存储杂物数量（这里是由于写的瑕疵，m和n用反了，结果发现不好改，最后只能做出用m接n这种举动了）；一个char型的变量tmp，也就是接受后面&lt;code&gt;.&lt;/code&gt;和&lt;code&gt;#&lt;/code&gt;输入的变量。&lt;/p&gt;
+&lt;p&gt;代码中的&lt;code&gt;px&lt;/code&gt;和&lt;code&gt;py&lt;/code&gt;实际上是“偏移数组”，实际使用中，去一个数字，对于一个点$A$，将其X坐标+px[n]，其Y坐标+py[n]，可以得到一个偏移的点，本代码的偏移对应正的上左下右。&lt;/p&gt;
+&lt;p&gt;定义玩这些变量后，我们可以开始读入了，读入m和n，这两个数就可以得知正片土地的大小，可以帮助我们定义一个恰到好处的数组作为我们的“地图”（我这个人非常喜欢恰到好处，即使有各种风险，不过毕竟是易语言写多了的，似乎也合理）&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;int imap[m][n]&lt;/code&gt;，这是创建了一个二维数组，imap就是地图的意思（本来写的是&lt;code&gt;map&lt;/code&gt;，但是同学说这貌似是个保留字，就改成&lt;code&gt;imap&lt;/code&gt;了），这样我们就可以直接用X和Y操作点了。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;object&lt;/code&gt;是什么呢？这里其实是用它存储杂物的位置信息的，考虑到杂物可能有很多，终归感觉还是定义为$m×s$比较好，这也是个二维数组，只不过是一个类似结构体数组的东西（实则每次存都是&lt;code&gt;object[n][0]&lt;/code&gt;存X、&lt;code&gt;object[n][1]&lt;/code&gt;存Y，完全可以写成结构体，但我懒，而且我喜欢数组，嘻嘻）&lt;/p&gt;
+&lt;p&gt;最后一步，给&lt;code&gt;imap&lt;/code&gt;数组初始化为0，至于为什么是0，请移步下一段。&lt;/p&gt;
+&lt;h3&gt;量化每个位置的信息&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;量化每个位置的信息&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e9%87%8f%e5%8c%96%e6%af%8f%e4%b8%aa%e4%bd%8d%e7%bd%ae%e7%9a%84%e4%bf%a1%e6%81%af&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;对于一个格子，它可以是荒地，可以是杂物，可以是被杂物影响的荒地，也有可能是在杂物影响范围内的杂物，需要注意的是：一个荒地有可能同时被两个甚至更多杂物影响。&lt;/p&gt;
+&lt;p&gt;注意看下面的例子：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;.....
+.#.#.
+.....&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这个例子中，两个&lt;code&gt;#&lt;/code&gt;中间的&lt;code&gt;.&lt;/code&gt;，即使在一边的杂物被去除后，仍然处在另一个杂物的影响之内，仍无法开垦，那么我们就认为，这次移除对于这单个点来说是无效的。&lt;/p&gt;
+&lt;p&gt;那我们该怎么记录这个点在几个杂物的影响范围内呢？我们有一个量化策略，使用0表示可开垦，1表示一个杂物影响，2表示两个，最多可到4。&lt;/p&gt;
+&lt;p&gt;同样的道理，对于放置杂物的格子，如果拿掉了，这一格也有可能无法开垦，我们同样要记录，这里我们使用-1表示杂物，-2表示被在一个杂物影响范围内的杂物，以此类推（这样设定是为了后面记录方便，这个我们姑且不谈）&lt;/p&gt;
+&lt;h3&gt;写地图&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;写地图&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%86%99%e5%9c%b0%e5%9b%be&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;c&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;n;c&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//循环读入内容
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; vc&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;vc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;m;vc&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cin&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt;tmp;&lt;span style=&#34;color:#75715e&#34;&gt;//暂时读入tmp
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(tmp&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#&amp;#39;&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//判断是否为#（杂物）
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            imap[vc][c]&lt;span style=&#34;color:#f92672&#34;&gt;=-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;imap[vc][c];&lt;span style=&#34;color:#75715e&#34;&gt;//是杂物则以负数记录叠加
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            object[record_c][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;vc;&lt;span style=&#34;color:#75715e&#34;&gt;//记录杂物位置，减少后期工作量，节约时间
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            object[record_c][&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;c;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            record_c&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//把记录的变量+1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; dev_c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;dev_c&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;;dev_c&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//四次计算偏移后的坐标并判断
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; tx&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;px[dev_c]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;vc,ty&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;py[dev_c]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;c;&lt;span style=&#34;color:#75715e&#34;&gt;//偏移后的X、Y
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#75715e&#34;&gt;/*边界判断，防止操作数组时超界
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;                实际上，如果你觉得if严重影响执行效率，可以考虑定制化的边界判断，先操作边界再操作内部
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;                这样会有更高的效率，但同样意味着你需要写更多的代码
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;                    */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;((tx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (tx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;m) &lt;span style=&#34;color:#75715e&#34;&gt;//这两行是对X的判断
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (ty&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;//下面两行是对Y的判断
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (ty&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;n)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(imap[tx][ty]&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//对于“是否为杂物”进行判断
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                        imap[tx][ty]&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//&amp;gt;-1不为杂物，以++方式计录影响
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                    }&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;{&lt;span style=&#34;color:#75715e&#34;&gt;//&amp;lt;=-1的情况
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                        imap[tx][ty]&lt;span style=&#34;color:#f92672&#34;&gt;--&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;（请不要在意我诸如&lt;code&gt;c&lt;/code&gt;、&lt;code&gt;dev_c&lt;/code&gt;之类的奇怪的变量名，我只是想写出&lt;code&gt;c++&lt;/code&gt;这样的语句）&lt;/p&gt;
+&lt;p&gt;我们使用一个很简单的循环逐个字符的读入，由于我们已经将地图初始化为了可开垦，所以督读到&lt;code&gt;.&lt;/code&gt;大抵可以直接丢弃，只有&lt;code&gt;#&lt;/code&gt;对我们才是重要的，我们将其记录入&lt;code&gt;imap&lt;/code&gt;和&lt;code&gt;object&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;记录入&lt;code&gt;imap&lt;/code&gt;的操作是这样的：-1-当前格内容，如果原本是0，那么现在就是-1，原本是1，现在就是-2，可以回看&lt;a href=&#34;#%e9%87%8f%e5%8c%96%e6%af%8f%e4%b8%aa%e4%bd%8d%e7%bd%ae%e7%9a%84%e4%bf%a1%e6%81%af&#34;&gt;量化每个位置的信息&lt;/a&gt;那段，看看是不是对上了。&lt;/p&gt;
+&lt;p&gt;写入完毕后，做四次循环，分别对应&lt;code&gt;px&lt;/code&gt;和&lt;code&gt;py&lt;/code&gt;数组的四次偏移，依次计算影响：非杂物块加上一，杂物块减去一。&lt;/p&gt;
+&lt;p&gt;计算偏移时需要注意一点，偏移后的结果有几率超出数组范围，这个时候就不应该对这个不存在的坐标操作了，所以要加个&lt;code&gt;if&lt;/code&gt;对于是否超界进行判断。&lt;/p&gt;
+&lt;h2&gt;3.当前可开垦的数目统计&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3当前可开垦的数目统计&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3%e5%bd%93%e5%89%8d%e5%8f%af%e5%bc%80%e5%9e%a6%e7%9a%84%e6%95%b0%e7%9b%ae%e7%bb%9f%e8%ae%a1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;我们这里的思路是：既然只能除掉一个，那我们就先算一算不除掉能开垦多少，再找找除掉后能够空出地盘最多的杂物，由此，就需要先统计当前可开垦数目：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; ans&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//初始化一个为0的ans变量，用于存储最后输出
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//下面的循环，读imap数组，数“0”的个数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;c&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;n;c&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; vc&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;vc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;m;vc&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;//标准的循环遍历
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(imap[vc][c]&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//当前格子为0
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            ans&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//ans用来记录可开垦格子数，0为可开垦，记录为+1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;显然，当前的状态是好判断的，只要为0，就说明可开垦，这是我们前面量化的数值，那么只要发现0就给&lt;code&gt;ans&lt;/code&gt;变量加上一就行，循环一次后，&lt;code&gt;imap&lt;/code&gt;中0的数量就存到&lt;code&gt;ans&lt;/code&gt;里了。&lt;/p&gt;
+&lt;h2&gt;4.最优解查找&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;4最优解查找&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4%e6%9c%80%e4%bc%98%e8%a7%a3%e6%9f%a5%e6%89%be&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;这是我们就只差找到移除的最优解了，这里最简单的方法就是枚举&lt;code&gt;object&lt;/code&gt;了，但我那个同学貌似是把记录的位置依次变成&lt;code&gt;.&lt;/code&gt;然后分析可开垦数，多少有些低效了（也许我理解错他的意思了？总之这个方法很慢），实际上这个东西只要按照偏移读取就好。&lt;/p&gt;
+&lt;p&gt;当一个杂物被移走的时候，按照定义，周围的格子数值都应该减1，其所在的位置则是变为正数然后减一，则我们可以知道只要其所在的格子是-1时，移走可开垦；只有其周围格子为1时，一走可开垦，由此，得出以下代码：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; area,best&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//两个变量来算杂物去除后变为可开垦的荒地数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; c&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;c&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;record_c;c&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    area&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//area只是临时变量，每次循环初始化为0
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//事实上，这里写int area;似乎更好
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; vc&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;vc&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;;vc&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//四次偏移
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; tx&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;px[vc]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;object[c][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;],ty&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;py[vc]&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;object[c][&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;];&lt;span style=&#34;color:#75715e&#34;&gt;//计算XY
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;((tx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;//边界检测，同前
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (tx&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;m) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (ty&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;) 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; (ty&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;n)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(imap[tx][ty]&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//如果为1，则证明只被当前杂物影响，移除该杂物就能开垦了
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;                area&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//可开垦荒地数+1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;            }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(imap[object[c][&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]][object[c][&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]]&lt;span style=&#34;color:#f92672&#34;&gt;==-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;){&lt;span style=&#34;color:#75715e&#34;&gt;//看看这个杂物有没有在别的杂物的影响范围内
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        area&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//不在的话再加一
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(best&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;area)best&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;area;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(best&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;)&lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;;&lt;span style=&#34;color:#75715e&#34;&gt;//最大值是五，不可能在大了（自身+四个偏移），直接break节省时间
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;通过所谓“打擂台”的方式选出最优方案，由于自身加上偏移也就最多五个点，因此当&lt;code&gt;best&lt;/code&gt;为5时就可以&lt;code&gt;break&lt;/code&gt;了，毕竟已经没用方案能够更优了，这么做可以节省时间，在竞赛中，即使不这么做也能AC，仅仅几行就能做的简单优化也依旧是必须的，毕竟C++的观念就是效率至上。&lt;/p&gt;
+&lt;h2&gt;5.输出&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;5输出&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5%e8%be%93%e5%87%ba&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;由于最优解只看-1和1，这些可开垦荒地都是相对未移除杂物时新增的，直接将&lt;code&gt;ans&lt;/code&gt;和&lt;code&gt;best&lt;/code&gt;简单的相加即可的到最后结果&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ans&lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;best;&lt;span style=&#34;color:#75715e&#34;&gt;//ans加上挪出杂物腾出来的空间
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;std&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;cout&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;ans;&lt;span style=&#34;color:#75715e&#34;&gt;//输出答案
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h1&gt;四.后记&lt;/h1&gt;&lt;p&gt;还是忍不住想给大家分享一下这份我手写的原稿代码，虽然有一些细节上的瑕疵，但总体还是完整的
+&lt;img src=&#34;./imgs/e1f8a85f1285426e8a46e216ae32bc2e.jpg&#34; alt=&#34;在这里插入图片描述&#34;  loading=&#34;lazy&#34; /&gt;
+经过这次的解题，我意识到有一种写题方法是极优的，当你写完了代码运行起来却事与愿违时，不妨想想如何用自然语言来描述你的算法，这样的方式相比对着代码抓头发等容易发现思想上的纰漏，各位搞算法的可以尝试一下。&lt;/p&gt;
+&lt;p&gt;有些困了，脑子也不好用了，可能迷迷糊糊的写了一些原因不明的话，先睡了，等睡醒再改改吧&lt;/p&gt;
+
+      </description>
+    </item>
     
   </channel>
 </rss>

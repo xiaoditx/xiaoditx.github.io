@@ -15,7 +15,7 @@ weight = 10
 
 [[languages.zh-cn.menu.main]]
 name = "博客"
-pageRef = "/blogs"
+pageRef = "/blog"
 weight = 20
 
 [[languages.zh-cn.menu.main]]
@@ -33,3 +33,23 @@ weight = 40
 # 请查阅 Hextra 主题文档以获取其支持的特定参数
 # 假设 Hextra 支持一个 logo 参数（示例，请以实际文档为准）
 # logo = "images/logo.svg"
+    [author]               # 全局默认作者
+		name="Your Name"
+		image="/images/avatar.jpg"
+[params.comments]
+    enable=true
+    type="giscus"
+	[params.comments.sections]
+		blog = true
+
+[params.comments.giscus]
+    repo="xiaoditx/xiaoditx.github.io"
+    repoId="R_kgDOIzfQPg"
+    category="Blog comments"
+    categoryId="DIC_kwDOIzfQPs4CumTH"
+
+	
+[markup]
+    [markup.goldmark]
+		[markup.goldmark.renderer]
+			unsafe = true

@@ -1,0 +1,12 @@
+---
+title: "我的第一篇文章"  # 文章标题
+date: 2025-08-26T16:45:33+08:00  # 创建日期，通常会自动生成
+draft: false  # 是否为草稿。设为 false 才会发布
+description: "这篇文章是关于Hextra主题使用的初步探索"  # 文章摘要
+tags: ["Hugo", "Hextra", "博客"]  # 文章标签，用于分类和关联
+categories: ["教程"]  # 文章分类
+author: "Your Name"  # 作者
+cover: 
+  image: "images/cover.jpg"  # 封面图片路径
+  alt: "文章封面图"
+---

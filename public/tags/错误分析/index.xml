@@ -1,0 +1,250 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>小狄同学呀 – 错误分析</title>
+    <link>http://localhost:1313/public/tags/%E9%94%99%E8%AF%AF%E5%88%86%E6%9E%90/</link>
+    <description>Recent content in 错误分析 on 小狄同学呀</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	  <atom:link href="http://localhost:1313/public/tags/%E9%94%99%E8%AF%AF%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>VScode插件报错，g&#43;&#43;却完美编译？API调用错因分析</title>
+      <link>http://localhost:1313/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</guid>
+      <description>
+        
+        
+        &lt;p&gt;前一段时间写了个&lt;a href=&#34;https://github.com/xiaoditx/BeepMusic&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;小软件&lt;/a&gt;，想给它加个读写配置项功能，刚学几天C++的我上网查了半天资料，找到两个Windows的API分别是读ini的&lt;code&gt;GetPrivateProfileString&lt;/code&gt;和写ini的&lt;code&gt;WritePrivateProfileString&lt;/code&gt;，根据网上的教程，我写出了下面这三行：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    LPTSTR lpPath &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;[MAX_PATH];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    strcpy(lpPath, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;config.ini&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;WritePrivateProfileString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;config&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;t&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;120&amp;#34;&lt;/span&gt;, lpPath);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;刚刚写完，VScode安的插件瞬间爆红，然后给出了这样的报错：
+&lt;img src=&#34;./imgs/184a967e89d542c3be6e63b16667e2a3.png&#34; alt=&#34;VScode插件报错&#34;  loading=&#34;lazy&#34; /&gt;
+但是我确定我是完全按照教程走的，所以到底是哪里的问题呢？&lt;/p&gt;
+&lt;p&gt;于是我尝试编译，结果非常惊人，g++没有任何报错的编译成功并且在当前目录新建了&lt;code&gt;config.ini&lt;/code&gt;并写入了指定内容&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./imgs/83ab9c632d1e463596644c4afcc60d14.png&#34; alt=&#34;g&amp;#43;&amp;#43;编译结果&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这有些奇怪，还是查查官方文档吧&lt;/p&gt;
+&lt;p&gt;上MSDN，查&lt;code&gt;WritePrivatePeofileString&lt;/code&gt;，却并没有查到，只查到了&lt;code&gt;WritePrivatePeofileStringA&lt;/code&gt;和&lt;code&gt;WritePrivatePeofileStringW&lt;/code&gt;（末尾都多了个字母）这两个函数&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./imgs/9e5fe8e0a5074f0ba5d570c9a3ef2023.png&#34; alt=&#34;MSDN的相关内容&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;没办法了，只好点进一个看看，我选择了&lt;code&gt;WritePrivatePeofileStringA&lt;/code&gt;，诶，这个参数的类型好像不对，跟着教程写的是&lt;code&gt;LPTSTR&lt;/code&gt;，但这里面写的是&lt;code&gt;LPCSTR&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;向下划，我在&lt;code&gt;例子&lt;/code&gt;板块的下方看到了一串提示&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;winbase.h 标头将 WritePrivateProfileString 定义为一个别名，该别名根据 UNICODE 预处理器常量的定义自动选择此函数的 ANSI 或 Unicode 版本。 将中性编码别名与不中性编码的代码混合使用可能会导致编译或运行时错误不匹配。 有关详细信息，请参阅函数原型的 约定。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也就是说，&lt;code&gt;WritePrivatePeofileString&lt;/code&gt;不是这个API的原名，它只是根据条件进行选择的&lt;/p&gt;
+&lt;p&gt;回到VScode，按住Ctrl并单击&lt;code&gt;WritePrivatePeofileString&lt;/code&gt;，看到了&lt;code&gt;Windows.h&lt;/code&gt;中的内容：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#ifdef UNICODE
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define WritePrivatePeofileString WritePrivatePeofileStringW
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#else
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#define WritePrivatePeofileString WritePrivatePeofileStringA
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#endif&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;VScode显示，上方是亮着的，证明VScode的环境下有UNICODE这个宏&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./imgs/389e5b23cc314530822b326a0f848859.png&#34; alt=&#34;t条件编译&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;这下破案了，由于VScode有UNICODE宏而g++没有，所以插件检查时是按照&lt;code&gt;WritePrivatePeofileStringW&lt;/code&gt;检查的，此时插件认为需要使用unicode，路径需要使用&lt;code&gt;wchar_t&lt;/code&gt;也就是宽字符存储，g++编译时，按照&lt;code&gt;WritePrivatePeofileStringA&lt;/code&gt;，此时g++认为要用ANSI，路径使用&lt;code&gt;char&lt;/code&gt;也就是普通字符存储，于是我们使用的&lt;code&gt;char&lt;/code&gt;的代码在g++下正常而没有通过VScode的插件检查&lt;/p&gt;
+&lt;p&gt;因此，我们的书写是正确的，但是由于VScode的环境与g++不同，被插件当作了错误，此时我们应当指明我们要使用&lt;code&gt;WritePrivatePeofileStringA&lt;/code&gt;函数：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; lpPath &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;[MAX_PATH];
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    strcpy(lpPath, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;config.ini&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;WritePrivateProfileStringA(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;LiMing&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Sex&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Man&amp;#34;&lt;/span&gt;, lpPath); 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;delete&lt;/span&gt;[] lpPath;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;复制代码&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;到这里就结束了，烦人的提醒终于消失不见了&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;另附：LPxxxSTR数据类型的具体含义&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;核心基础类型:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CHAR&lt;/code&gt;: 表示一个 &lt;strong&gt;ANSI&lt;/strong&gt; (8-bit) 字符 (&lt;code&gt;char&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WCHAR&lt;/code&gt;: 表示一个 &lt;strong&gt;宽字符&lt;/strong&gt; (Unicode, 通常是 16-bit UTF-16) (&lt;code&gt;wchar_t&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TCHAR&lt;/code&gt;: &lt;strong&gt;自适应字符类型&lt;/strong&gt;。根据项目设置（是否定义了 &lt;code&gt;_UNICODE&lt;/code&gt; 宏）编译为 &lt;code&gt;CHAR&lt;/code&gt; 或 &lt;code&gt;WCHAR&lt;/code&gt;。用于编写既可编译为 ANSI 也可编译为 Unicode 的代码。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;字符串指针类型:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;LPSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to STRing&lt;/strong&gt;。指向以 NULL 结尾的 &lt;strong&gt;ANSI&lt;/strong&gt; 字符串 (&lt;code&gt;CHAR*&lt;/code&gt;)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef CHAR* LPSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPWSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to Wide STRing&lt;/strong&gt;。指向以 NULL 结尾的 &lt;strong&gt;Unicode&lt;/strong&gt; (UTF-16) 字符串 (&lt;code&gt;WCHAR*&lt;/code&gt;)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef WCHAR* LPWSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPTSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to TCHAR STRing&lt;/strong&gt;。指向以 NULL 结尾的 &lt;strong&gt;自适应字符&lt;/strong&gt; (&lt;code&gt;TCHAR*&lt;/code&gt;) 字符串。根据 &lt;code&gt;_UNICODE&lt;/code&gt; 宏定义，编译时等同于 &lt;code&gt;LPSTR&lt;/code&gt; (ANSI) 或 &lt;code&gt;LPWSTR&lt;/code&gt; (Unicode)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef TCHAR* LPTSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;常量字符串指针类型:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;LPCSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to Constant STRing&lt;/strong&gt;。指向以 NULL 结尾的 &lt;strong&gt;常量 ANSI&lt;/strong&gt; 字符串 (&lt;code&gt;const CHAR*&lt;/code&gt;)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef const CHAR* LPCSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPCWSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to Constant Wide STRing&lt;/strong&gt;。指向以 NULL 结尾的 &lt;strong&gt;常量 Unicode&lt;/strong&gt; (UTF-16) 字符串 (&lt;code&gt;const WCHAR*&lt;/code&gt;)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef const WCHAR* LPCWSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPCTSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to Constant TCHAR STRing&lt;/strong&gt;。指向以 NULL 结尾的 &lt;strong&gt;常量自适应字符&lt;/strong&gt; (&lt;code&gt;const TCHAR*&lt;/code&gt;) 字符串。根据 &lt;code&gt;_UNICODE&lt;/code&gt; 宏定义，编译时等同于 &lt;code&gt;LPCSTR&lt;/code&gt; (ANSI) 或 &lt;code&gt;LPCWSTR&lt;/code&gt; (Unicode)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef const TCHAR* LPCTSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;关键区别总结表：&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;类型&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;字符宽度&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;常量性 (const)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;基础类型等价 (ANSI Build)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;基础类型等价 (Unicode Build)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;描述&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ANSI (8-bit)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;非 const&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;char*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;char*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指向 ANSI 字符串的指针&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPCSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ANSI (8-bit)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;const&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const char*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const char*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指向 &lt;strong&gt;只读&lt;/strong&gt; ANSI 字符串的指针&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPWSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unicode (16-bit)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;非 const&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;wchar_t*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;wchar_t*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指向 Unicode (UTF-16) 字符串的指针&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPCWSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unicode (16-bit)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;const&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const wchar_t*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const wchar_t*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指向 &lt;strong&gt;只读&lt;/strong&gt; Unicode (UTF-16) 字符串的指针&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPTSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;自适应&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;非 const&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;char*&lt;/code&gt; (LPSTR)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;wchar_t*&lt;/code&gt; (LPWSTR)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指向自适应字符串的指针 (TCHAR*)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPCTSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;自适应&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;const&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const char*&lt;/code&gt; (LPCSTR)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const wchar_t*&lt;/code&gt; (LPCWSTR)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;指向 &lt;strong&gt;只读&lt;/strong&gt; 自适应字符串的指针 (const TCHAR*)&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;重要说明:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;LP&lt;/code&gt; 前缀:&lt;/strong&gt; &amp;ldquo;Long Pointer&amp;rdquo; 是一个历史遗留物，在现代 32/64 位系统中，所有指针都是 &amp;ldquo;long&amp;rdquo;，可以简单地把 &lt;code&gt;LP&lt;/code&gt; 理解为 &amp;ldquo;Pointer to&amp;rdquo;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;C&lt;/code&gt; 后缀:&lt;/strong&gt; 表示 &lt;code&gt;const&lt;/code&gt;，即指针指向的内容是只读的，不能通过这个指针修改字符串内容。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;T&lt;/code&gt; 中缀:&lt;/strong&gt; 表示类型是 &lt;code&gt;TCHAR&lt;/code&gt;，它会根据项目字符集设置自适应。这是为了编写同时支持 ANSI 和 Unicode 构建的代码。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;W&lt;/code&gt; 后缀:&lt;/strong&gt; 表示 &amp;ldquo;Wide&amp;rdquo;，即 Unicode (UTF-16)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;STR&lt;/code&gt; 后缀:&lt;/strong&gt; 表示 &amp;ldquo;String&amp;rdquo; (以 NULL 结尾的字符数组)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;现代 Windows 开发实践:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;强烈推荐始终使用 Unicode 构建项目&lt;/strong&gt; (在 Visual Studio 项目属性中设置 &amp;ldquo;字符集&amp;rdquo; 为 &amp;ldquo;使用 Unicode 字符集&amp;rdquo;)。这定义了 &lt;code&gt;_UNICODE&lt;/code&gt; 宏。&lt;/li&gt;
+&lt;li&gt;在 Unicode 构建下：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;TCHAR&lt;/code&gt; = &lt;code&gt;WCHAR&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPTSTR&lt;/code&gt; = &lt;code&gt;LPWSTR&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPCTSTR&lt;/code&gt; = &lt;code&gt;LPCWSTR&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;直接使用 &lt;code&gt;LPCWSTR&lt;/code&gt;/&lt;code&gt;LPWSTR&lt;/code&gt; 或 &lt;code&gt;LPCWSTR&lt;/code&gt;/&lt;code&gt;LPWSTR&lt;/code&gt; 的别名 &lt;code&gt;std::wstring&lt;/code&gt; (C++) 通常更清晰，避免 &lt;code&gt;TCHAR&lt;/code&gt; 系列的歧义，除非你明确需要维护同时支持 ANSI/Unicode 的旧代码库。&lt;/li&gt;
+&lt;li&gt;ANSI (&lt;code&gt;LPSTR&lt;/code&gt;/&lt;code&gt;LPCSTR&lt;/code&gt;) API 函数在内部通常只是将字符串转换为 Unicode 然后调用对应的 Unicode 版本函数，存在性能开销和潜在的字符集转换问题。优先使用显式的 Unicode (W) 版本 API。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;兼容性:&lt;/strong&gt; &lt;code&gt;TCHAR&lt;/code&gt; 系列主要是为了兼容旧的 Windows 9x 系统（主要使用 ANSI）和现代 NT 系统（原生 Unicode）。现代开发（Windows 2000 及以后）应首选 Unicode。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;简单记忆:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;看 &lt;code&gt;W&lt;/code&gt; -&amp;gt; Unicode。&lt;/li&gt;
+&lt;li&gt;看 &lt;code&gt;C&lt;/code&gt; -&amp;gt; &lt;code&gt;const&lt;/code&gt; (不能修改字符串内容)。&lt;/li&gt;
+&lt;li&gt;看 &lt;code&gt;T&lt;/code&gt; -&amp;gt; 自适应，根据项目设置变 ANSI 或 Unicode。&lt;/li&gt;
+&lt;li&gt;没有 &lt;code&gt;W&lt;/code&gt; 也没有 &lt;code&gt;T&lt;/code&gt; -&amp;gt; ANSI。&lt;/li&gt;
+&lt;li&gt;没有 &lt;code&gt;C&lt;/code&gt; -&amp;gt; 字符串内容可修改 (非常量)。&lt;/li&gt;
+&lt;li&gt;有 &lt;code&gt;C&lt;/code&gt; -&amp;gt; 字符串内容只读 (常量)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;使用建议:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新项目：&lt;strong&gt;始终开启 Unicode 构建 (&lt;code&gt;_UNICODE&lt;/code&gt; defined)&lt;/strong&gt;。优先使用 &lt;code&gt;LPCWSTR&lt;/code&gt; (输入参数) 和 &lt;code&gt;LPWSTR&lt;/code&gt; (输出参数)，或者在 C++ 中使用 &lt;code&gt;const wchar_t*&lt;/code&gt; 和 &lt;code&gt;std::wstring&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;维护旧项目/需要 ANSI 兼容：使用 &lt;code&gt;LPCTSTR&lt;/code&gt; (输入) 和 &lt;code&gt;LPTSTR&lt;/code&gt; (输出) 或对应的 &lt;code&gt;TCHAR&lt;/code&gt; 基础类型，并确保正确处理 &lt;code&gt;_UNICODE&lt;/code&gt; 宏定义。&lt;/li&gt;
+&lt;li&gt;与 Windows API 交互时，注意 API 函数通常有 A (ANSI) 和 W (Wide/Unicode) 两个版本（如 &lt;code&gt;MessageBoxA&lt;/code&gt; 和 &lt;code&gt;MessageBoxW&lt;/code&gt;）。使用通用宏 &lt;code&gt;MessageBox&lt;/code&gt; 会根据 &lt;code&gt;_UNICODE&lt;/code&gt; 自动选择正确的版本。传递的字符串指针类型也必须与之匹配（&lt;code&gt;LPCSTR&lt;/code&gt; 对应 A 版本，&lt;code&gt;LPCWSTR&lt;/code&gt; 对应 W 版本，&lt;code&gt;LPCTSTR&lt;/code&gt; 对应通用宏）。&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
