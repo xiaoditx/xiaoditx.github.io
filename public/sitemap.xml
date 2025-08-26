@@ -4,23 +4,43 @@
   <url>
     <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/</loc>
   </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/</loc>
+  </url><url>
     <loc>https://xiaoditx.github.io/public/docs/paper-lily%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA/qq%E7%BE%A4%E7%BE%A4%E8%A7%84/</loc>
   </url><url>
     <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/</loc>
   </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/</loc>
+  </url><url>
     <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/</loc>
   </url><url>
     <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%8F%E6%84%9F%E6%80%A7/</loc>
   </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/</loc>
+  </url><url>
     <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%B8%B8%E9%87%8F/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/</loc>
   </url><url>
     <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E5%80%BC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
   </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/</loc>
+  </url><url>
     <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%B3%A8%E9%87%8A/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/</loc>
   </url><url>
     <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BC%98%E5%85%88%E7%BA%A7/</loc>
   </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/</loc>
+  </url><url>
     <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%BC%A9%E8%BF%9B/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/</loc>
   </url><url>
     <loc>https://xiaoditx.github.io/public/</loc>
     <lastmod>2025-08-26T00:00:00+00:00</lastmod>
@@ -88,8 +108,26 @@
   </url><url>
     <loc>https://xiaoditx.github.io/public/docs/dcc-script/</loc>
   </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/cpp20-modules/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/examples/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/component/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/dom/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/screen/</loc>
+  </url><url>
     <loc>https://xiaoditx.github.io/public/docs/paper-lily%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA/</loc>
   </url><url>
     <loc>https://xiaoditx.github.io/public/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/</loc>
+  </url><url>
+    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/getting-started/</loc>
   </url>
 </urlset>
