@@ -1,12 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>小狄同学呀 – 模拟</title>
-    <link>http://localhost:1313/public/tags/%E6%A8%A1%E6%8B%9F/</link>
+    <link>https://xiaoditx.github.io/public/tags/%E6%A8%A1%E6%8B%9F/</link>
     <description>Recent content in 模拟 on 小狄同学呀</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/public/tags/%E6%A8%A1%E6%8B%9F/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://xiaoditx.github.io/public/tags/%E6%A8%A1%E6%8B%9F/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,15 +17,14 @@
     
     <item>
       <title>算法真题：GESP202503四级——荒地开垦（洛谷B4263）</title>
-      <link>http://localhost:1313/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://xiaoditx.github.io/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/</link>
+      <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/</guid>
+      <guid>https://xiaoditx.github.io/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/</guid>
       <description>
         
         
-        &lt;hr&gt;
-&lt;h1&gt;一.开始之前&lt;/h1&gt;&lt;p&gt;同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，当时看完有点思路，用易语言写了一下，结果越写越乱就放弃了，这周上课有些无聊，闲着也是闲着，干脆又把这题拾起来做了，回家试了试又改了改，顺利AC。&lt;/p&gt;
+        &lt;h1&gt;一.开始之前&lt;/h1&gt;&lt;p&gt;同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，当时看完有点思路，用易语言写了一下，结果越写越乱就放弃了，这周上课有些无聊，闲着也是闲着，干脆又把这题拾起来做了，回家试了试又改了改，顺利AC。&lt;/p&gt;
 &lt;p&gt;原题是这样的：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
 

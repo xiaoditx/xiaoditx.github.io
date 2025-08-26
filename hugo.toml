@@ -33,9 +33,18 @@ weight = 40
 # 请查阅 Hextra 主题文档以获取其支持的特定参数
 # 假设 Hextra 支持一个 logo 参数（示例，请以实际文档为准）
 # logo = "images/logo.svg"
-    [author]               # 全局默认作者
-		name="Your Name"
-		image="/images/avatar.jpg"
+[params.author]
+	name = "小狄同学呀"
+	email  = "552333302@qq.com"
+
+[params.social]
+    github  = "xiaoditx"
+    twitter = "xiaoditxy"
+    bilibili = "小狄同学呀"
+
+[params.sidebar]
+avatar = "自己的_头像.jpg" # 路径相对于 assets 目录
+
 [params.comments]
     enable=true
     type="giscus"

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh-cn"><head><script src="/public/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=public/livereload" data-no-instant defer></script>
+<html lang="zh-cn"><head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="index, follow" />
   <link rel="icon shortcut" href="/public/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" id="favicon-svg" />
 <link rel="icon" href="/public/favicon-16x16.png" type="image/png" sizes="16x16" />
@@ -9,27 +9,34 @@
 <link rel="apple-touch-icon" href="/public/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/public/site.webmanifest" rel="manifest" />
 <title>算法真题：GESP202503四级——荒地开垦（洛谷B4263） – 小狄同学呀</title>
-  <meta name="description" content="同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，上课有些无聊，干脆把题做了，回家试了试又改了改，顺利AC。" /><link rel="canonical" href="http://localhost:1313/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/" itemprop="url" />
+  <meta name="description" content="同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，上课有些无聊，干脆把题做了，回家试了试又改了改，顺利AC。" /><link rel="canonical" href="https://xiaoditx.github.io/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/" itemprop="url" />
 
 <meta property="og:title" content="算法真题：GESP202503四级——荒地开垦（洛谷B4263）" />
 <meta property="og:description" content="同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，上课有些无聊，干脆把题做了，回家试了试又改了改，顺利AC。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/" /><meta property="article:section" content="blog" />
-
-
+<meta property="og:url" content="https://xiaoditx.github.io/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2025-08-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-08-26T00:00:00+00:00" />
 
   <meta itemprop="name" content="算法真题：GESP202503四级——荒地开垦（洛谷B4263）">
   <meta itemprop="description" content="同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，上课有些无聊，干脆把题做了，回家试了试又改了改，顺利AC。">
+  <meta itemprop="datePublished" content="2025-08-26T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-08-26T00:00:00+00:00">
   <meta itemprop="wordCount" content="284">
   <meta itemprop="keywords" content="算法,C&#43;&#43;,GESP,模拟">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="算法真题：GESP202503四级——荒地开垦（洛谷B4263）">
   <meta name="twitter:description" content="同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，上课有些无聊，干脆把题做了，回家试了试又改了改，顺利AC。">
-<link href="/public/css/compiled/main.css" rel="stylesheet" />
-    <link href="/public/css/variables.css" rel="stylesheet" />
-    <link href="/public/css/custom.css" rel="stylesheet" />
+      <meta name="twitter:site" content="@xiaoditxy">
+
+    <link rel="preload" href="/public/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" as="style" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
+    <link href="/public/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" rel="stylesheet" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
 
   
+
+
+
+
 
 
   <script>
@@ -495,10 +502,9 @@
   </div>
 
         <h1 class="hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">算法真题：GESP202503四级——荒地开垦（洛谷B4263）</h1>
-        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:dark:text-gray-400 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"></div>
+        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:dark:text-gray-400 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"><span class="hx:mr-1">August 26, 2025</span></div>
         <div class="content">
-          <hr>
-<h1>一.开始之前</h1><p>同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，当时看完有点思路，用易语言写了一下，结果越写越乱就放弃了，这周上课有些无聊，闲着也是闲着，干脆又把这题拾起来做了，回家试了试又改了改，顺利AC。</p>
+          <h1>一.开始之前</h1><p>同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，当时看完有点思路，用易语言写了一下，结果越写越乱就放弃了，这周上课有些无聊，闲着也是闲着，干脆又把这题拾起来做了，回家试了试又改了改，顺利AC。</p>
 <p>原题是这样的：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
@@ -972,7 +978,7 @@
   </a></div></div>
     </div></footer>
     
-    <script defer src="/public/js/main.js" integrity=""></script>
-<script defer src="/public/js/flexsearch.js" integrity="" crossorigin="anonymous"></script><script defer src="/public/zh-cn.search.js" integrity=""></script>
+    <script defer src="/public/js/main.min.4b9db45beb41a4e92ac9b609d116536b24ab16ac5ee4677c9fafe17c9c2c4eee.js" integrity="sha256-S520W&#43;tBpOkqybYJ0RZTaySrFqxe5Gd8n6/hfJwsTu4="></script>
+<script defer src="/public/js/flexsearch.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY=" crossorigin="anonymous"></script><script defer src="/public/zh-cn.search.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY="></script>
   </body>
 </html>
