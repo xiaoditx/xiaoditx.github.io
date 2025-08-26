@@ -1,5 +1,5 @@
 # 小狄同学的GitHub Page
 
-暂未开工，正在学习前端技术中~
+个人博客/文档/动态：[https://xiaoditx.github.io/public/](https://xiaoditx.github.io/public/)
 
-预计在本仓库存放个人博客、个人作品等内容，敬请期待
+其他网站：[https://xiaoditx.github.io/pages](https://xiaoditx.github.io/pages)
