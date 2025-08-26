@@ -48,7 +48,7 @@ avatar = "自己的_头像.jpg" # 路径相对于 assets 目录
 [params.comments]
     enable=true
     type="giscus"
-	[params.comments.sections]
+	[sections]
 		blog = true
 
 [params.comments.giscus]
@@ -56,6 +56,7 @@ avatar = "自己的_头像.jpg" # 路径相对于 assets 目录
     repoId="R_kgDOIzfQPg"
     category="Blog comments"
     categoryId="DIC_kwDOIzfQPs4CumTH"
+	lang="zh-CN"
 
 	
 [markup]
