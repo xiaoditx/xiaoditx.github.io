@@ -1,7 +1,7 @@
 小狄の神秘小网页
 
 - HTML示例
-  - [小水珠](./cases/water)
+  - [小水珠](./cases/water/water.html)
 - [捐款](./donate/juankuan.html)
 - [ikun小网站（废）](./ikun/ikun.html)
 - 节日祝福
