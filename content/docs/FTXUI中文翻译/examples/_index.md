@@ -1,90 +1,92 @@
-# 示例文件
+---
+title: "示例文件"
+---
 
 {{< cards >}}
-    {{< card link="./button.md" title="button.cpp">}}
-    {{< card link="./button_animated.md" title="button_animated.cpp">}}
-    {{< card link="./button_in_frame.md" title="button_in_frame.cpp">}}
-    {{< card link="./button_style.md" title="button_style.cpp">}}
-    {{< card link="./canvas_animated.md" title="canvas_animated.cpp">}}
-    {{< card link="./checkbox.md" title="checkbox.cpp">}}
-    {{< card link="./checkbox_in_frame.md" title="checkbox_in_frame.cpp">}}
-    {{< card link="./collapsible.md" title="collapsible.cpp">}}
-    {{< card link="./composition.md" title="composition.cpp">}}
-    {{< card link="./custom_loop.md" title="custom_loop.cpp">}}
-    {{< card link="./dropdown.md" title="dropdown.cpp">}}
-    {{< card link="./dropdown_custom.md" title="dropdown_custom.cpp">}}
-    {{< card link="./flexbox_gallery.md" title="flexbox_gallery.cpp">}}
-    {{< card link="./focus.md" title="focus.cpp">}}
-    {{< card link="./focus_cursor.md" title="focus_cursor.cpp">}}
-    {{< card link="./gallery.md" title="gallery.cpp">}}
-    {{< card link="./homescreen.md" title="homescreen.cpp">}}
-    {{< card link="./input.md" title="input.cpp">}}
-    {{< card link="./input_in_frame.md" title="input_in_frame.cpp">}}
-    {{< card link="./input_style.md" title="input_style.cpp">}}
-    {{< card link="./linear_gradient_gallery.md" title="linear_gradient_gallery.cpp">}}
-    {{< card link="./maybe.md" title="maybe.cpp">}}
-    {{< card link="./menu.md" title="menu.cpp">}}
-    {{< card link="./menu2.md" title="menu2.cpp">}}
-    {{< card link="./menu_entries.md" title="menu_entries.cpp">}}
-    {{< card link="./menu_entries_animated.md" title="menu_entries_animated.cpp">}}
-    {{< card link="./menu_in_frame.md" title="menu_in_frame.cpp">}}
-    {{< card link="./menu_in_frame_horizontal.md" title="menu_in_frame_horizontal.cpp">}}
-    {{< card link="./menu_multiple.md" title="menu_multiple.cpp">}}
-    {{< card link="./menu_style.md" title="menu_style.cpp">}}
-    {{< card link="./menu_underline_animated_gallery.md" title="menu_underline_animated_gallery.cpp">}}
-    {{< card link="./modal_dialog.md" title="modal_dialog.cpp">}}
-    {{< card link="./modal_dialog_custom.md" title="modal_dialog_custom.cpp">}}
-    {{< card link="./nested_screen.md" title="nested_screen.cpp">}}
-    {{< card link="./print_key_press.md" title="print_key_press.cpp">}}
-    {{< card link="./radiobox.md" title="radiobox.cpp">}}
-    {{< card link="./radiobox_in_frame.md" title="radiobox_in_frame.cpp">}}
-    {{< card link="./renderer.md" title="renderer.cpp">}}
-    {{< card link="./resizable_split.md" title="resizable_split.cpp">}}
-    {{< card link="./scrollbar.md" title="scrollbar.cpp">}}
-    {{< card link="./selection.md" title="selection.cpp">}}
-    {{< card link="./slider.md" title="slider.cpp">}}
-    {{< card link="./slider_direction.md" title="slider_direction.cpp">}}
-    {{< card link="./slider_rgb.md" title="slider_rgb.cpp">}}
-    {{< card link="./tab_horizontal.md" title="tab_horizontal.cpp">}}
-    {{< card link="./tab_vertical.md" title="tab_vertical.cpp">}}
-    {{< card link="./textarea.md" title="textarea.cpp">}}
-    {{< card link="./toggle.md" title="toggle.cpp">}}
-    {{< card link="./window.md" title="window.cpp">}}
-    {{< card link="./with_restored_io.md" title="with_restored_io.cpp">}}
-    {{< card link="./border.md" title="border.cpp">}}
-    {{< card link="./border_colored.md" title="border_colored.cpp">}}
-    {{< card link="./border_style.md" title="border_style.cpp">}}
-    {{< card link="./canvas.md" title="canvas.cpp">}}
-    {{< card link="./color_gallery.md" title="color_gallery.cpp">}}
-    {{< card link="./color_info_palette256.md" title="color_info_palette256.cpp">}}
-    {{< card link="./color_truecolor_HSV.md" title="color_truecolor_HSV.cpp">}}
-    {{< card link="./color_truecolor_RGB.md" title="color_truecolor_RGB.cpp">}}
-    {{< card link="./dbox.md" title="dbox.cpp">}}
-    {{< card link="./gauge.md" title="gauge.cpp">}}
-    {{< card link="./gauge_direction.md" title="gauge_direction.cpp">}}
-    {{< card link="./graph.md" title="graph.cpp">}}
-    {{< card link="./gridbox.md" title="gridbox.cpp">}}
-    {{< card link="./hflow.md" title="hflow.cpp">}}
-    {{< card link="./html_like.md" title="html_like.cpp">}}
-    {{< card link="./linear_gradient.md" title="linear_gradient.cpp">}}
-    {{< card link="./package_manager.md" title="package_manager.cpp">}}
-    {{< card link="./paragraph.md" title="paragraph.cpp">}}
-    {{< card link="./separator.md" title="separator.cpp">}}
-    {{< card link="./separator_style.md" title="separator_style.cpp">}}
-    {{< card link="./size.md" title="size.cpp">}}
-    {{< card link="./spinner.md" title="spinner.cpp">}}
-    {{< card link="./style_blink.md" title="style_blink.cpp">}}
-    {{< card link="./style_bold.md" title="style_bold.cpp">}}
-    {{< card link="./style_color.md" title="style_color.cpp">}}
-    {{< card link="./style_dim.md" title="style_dim.cpp">}}
-    {{< card link="./style_gallery.md" title="style_gallery.cpp">}}
-    {{< card link="./style_hyperlink.md" title="style_hyperlink.cpp">}}
-    {{< card link="./style_inverted.md" title="style_inverted.cpp">}}
-    {{< card link="./style_italic.md" title="style_italic.cpp">}}
-    {{< card link="./style_strikethrough.md" title="style_strikethrough.cpp">}}
-    {{< card link="./style_underlined.md" title="style_underlined.cpp">}}
-    {{< card link="./style_underlined_double.md" title="style_underlined_double.cpp">}}
-    {{< card link="./table.md" title="table.cpp">}}
-    {{< card link="./vbox_hbox.md" title="vbox_hbox.cpp">}}
-    {{< card link="./vflow.md" title="vflow.cpp">}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2button_8cpp-example.html" title="button.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2button_animated_8cpp-example.html" title="button_animated.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2button_in_frame_8cpp-example.html" title="button_in_frame.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2button_style_8cpp-example.html" title="button_style.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2canvas_animated_8cpp-example.html" title="canvas_animated.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2checkbox_8cpp-example.html" title="checkbox.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2checkbox_in_frame_8cpp-example.html" title="checkbox_in_frame.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2collapsible_8cpp-example.html" title="collapsible.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2composition_8cpp-example.html" title="composition.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2custom_loop_8cpp-example.html" title="custom_loop.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2dropdown_8cpp-example.html" title="dropdown.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2dropdown_custom_8cpp-example.html" title="dropdown_custom.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2flexbox_gallery_8cpp-example.html" title="flexbox_gallery.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2focus_8cpp-example.html" title="focus.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2focus_cursor_8cpp-example.html" title="focus_cursor.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2gallery_8cpp-example.html" title="gallery.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2homescreen_8cpp-example.html" title="homescreen.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2input_8cpp-example.html" title="input.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2input_in_frame_8cpp-example.html" title="input_in_frame.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2input_style_8cpp-example.html" title="input_style.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2linear_gradient_gallery_8cpp-example.html" title="linear_gradient_gallery.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2maybe_8cpp-example.html" title="maybe.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2menu_8cpp-example.html" title="menu.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2menu2_8cpp-example.html" title="menu2.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2menu_entries_8cpp-example.html" title="menu_entries.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2menu_entries_animated_8cpp-example.html" title="menu_entries_animated.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2menu_in_frame_8cpp-example.html" title="menu_in_frame.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2menu_in_frame_horizontal_8cpp-example.html" title="menu_in_frame_horizontal.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2menu_multiple_8cpp-example.html" title="menu_multiple.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2menu_style_8cpp-example.html" title="menu_style.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2menu_underline_animated_gallery_8cpp-example.html" title="menu_underline_animated_gallery.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2modal_dialog_8cpp-example.html" title="modal_dialog.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2modal_dialog_custom_8cpp-example.html" title="modal_dialog_custom.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2nested_screen_8cpp-example.html" title="nested_screen.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2print_key_press_8cpp-example.html" title="print_key_press.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2radiobox_8cpp-example.html" title="radiobox.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2radiobox_in_frame_8cpp-example.html" title="radiobox_in_frame.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2renderer_8cpp-example.html" title="renderer.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2resizable_split_8cpp-example.html" title="resizable_split.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2scrollbar_8cpp-example.html" title="scrollbar.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2selection_8cpp-example.html" title="selection.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2slider_8cpp-example.html" title="slider.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2slider_direction_8cpp-example.html" title="slider_direction.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2slider_rgb_8cpp-example.html" title="slider_rgb.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2tab_horizontal_8cpp-example.html" title="tab_horizontal.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2tab_vertical_8cpp-example.html" title="tab_vertical.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2textarea_8cpp-example.html" title="textarea.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2toggle_8cpp-example.html" title="toggle.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2window_8cpp-example.html" title="window.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2component_2with_restored_io_8cpp-example.html" title="with_restored_io.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2border_8cpp-example.html" title="border.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2border_colored_8cpp-example.html" title="border_colored.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2border_style_8cpp-example.html" title="border_style.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2canvas_8cpp-example.html" title="canvas.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2color_gallery_8cpp-example.html" title="color_gallery.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2color_info_palette256_8cpp-example.html" title="color_info_palette256.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2color_truecolor_HSV_8cpp-example.html" title="color_truecolor_HSV.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2color_truecolor_RGB_8cpp-example.html" title="color_truecolor_RGB.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2dbox_8cpp-example.html" title="dbox.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2gauge_8cpp-example.html" title="gauge.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2gauge_direction_8cpp-example.html" title="gauge_direction.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2graph_8cpp-example.html" title="graph.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2gridbox_8cpp-example.html" title="gridbox.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2hflow_8cpp-example.html" title="hflow.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2html_like_8cpp-example.html" title="html_like.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2linear_gradient_8cpp-example.html" title="linear_gradient.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2package_manager_8cpp-example.html" title="package_manager.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2paragraph_8cpp-example.html" title="paragraph.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2separator_8cpp-example.html" title="separator.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2separator_style_8cpp-example.html" title="separator_style.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2size_8cpp-example.html" title="size.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2spinner_8cpp-example.html" title="spinner.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2style_blink_8cpp-example.html" title="style_blink.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2style_bold_8cpp-example.html" title="style_bold.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2style_color_8cpp-example.html" title="style_color.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2style_dim_8cpp-example.html" title="style_dim.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2style_gallery_8cpp-example.html" title="style_gallery.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2style_hyperlink_8cpp-example.html" title="style_hyperlink.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2style_inverted_8cpp-example.html" title="style_inverted.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2style_italic_8cpp-example.html" title="style_italic.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2style_strikethrough_8cpp-example.html" title="style_strikethrough.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2style_underlined_8cpp-example.html" title="style_underlined.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2style_underlined_double_8cpp-example.html" title="style_underlined_double.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2table_8cpp-example.html" title="table.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2vbox_hbox_8cpp-example.html" title="vbox_hbox.cpp" >}}
+    {{< card link="https://arthursonzogni.github.io/FTXUI/examples_2dom_2vflow_8cpp-example.html" title="vflow.cpp" >}}
 {{< /cards >}}

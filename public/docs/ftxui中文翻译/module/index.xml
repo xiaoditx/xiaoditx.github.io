@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>小狄同学呀 – </title>
-    <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/</link>
+    <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/</link>
     <description>Recent content on 小狄同学呀</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
-	  <atom:link href="https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title></title>
-      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/component/</link>
+      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/component/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/component/</guid>
+      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/component/</guid>
       <description>
         
         
@@ -343,10 +343,10 @@ You will have to post the event &lt;code&gt;ftxui::Event::Custom&lt;/code&gt;.&l
     
     <item>
       <title></title>
-      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/dom/</link>
+      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/dom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/dom/</guid>
+      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/dom/</guid>
       <description>
         
         
@@ -1082,10 +1082,10 @@ characters:&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/screen/</link>
+      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/screen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/screen/</guid>
+      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/module/screen/</guid>
       <description>
         
         

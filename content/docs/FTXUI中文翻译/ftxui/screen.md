@@ -1,5 +1,6 @@
-@page module-screen ftxui / screen
-@tableofcontents
+---
+title: "screen"
+---
 
 ![title-img](https://nsm09.casimages.com/img/2025/05/31//2505310207423242518595348.png)
 

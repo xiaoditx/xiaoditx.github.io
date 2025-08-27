@@ -5,9 +5,9 @@ weight: 1
 
 本页面介绍如何使用 [CMake](https://cmake.org) 集成 FTXUI。
 
-# 集成方法
+## 集成方法
 
-## 使用 FetchContent
+### 使用 FetchContent
 
 此方法在配置时下载 FTXUI，不需要系统级安装。
 
@@ -31,7 +31,7 @@ target_link_libraries(main
 
 这种方法确保可重现的构建和便捷的依赖管理。
 
-## 使用 find_package
+### 使用 find_package
 
 如果 FTXUI 已通过系统级安装或包管理器（如 vcpkg 或 Conan）安装，可以使用：
 
@@ -48,7 +48,7 @@ target_link_libraries(main
 
 确保包在您的 `CMAKE_PREFIX_PATH` 中可见。
 
-## 使用 Git 子模块
+### 使用 Git 子模块
 
 您也可以将 FTXUI 添加为 [Git 子模块](https://git-scm.com/book/en/v2/Git-Tools-Submodules)，将其保留在您的代码库中：
 
@@ -80,7 +80,7 @@ target_link_libraries(main
 
 如果您希望将 FTXUI 打包到自己的代码库中，这种方法很适用。
 
-# 可选的 CMake 标志
+## 可选的 CMake 标志
 
 FTXUI 支持以下 CMake 选项：
 
@@ -98,7 +98,7 @@ FTXUI 支持以下 CMake 选项：
 cmake -DFTXUI_BUILD_EXAMPLES=ON ..
 ```
 
-# 验证集成
+## 验证集成
 
 要确认设置正常工作，请构建并运行一个最小示例。
 如果需要完整模板，请参阅：[ftxui-starter](https://github.com/ArthurSonzogni/ftxui-starter)

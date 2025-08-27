@@ -3,7 +3,7 @@ title: "Vcpkg"
 weight: 3
 ---
 
-# Vcpkg 软件包
+## Vcpkg 软件包
 
 FTXUI 可在 [Vcpkg 注册表](https://vcpkg.link/ports/ftxui) 中获取。
 
@@ -22,12 +22,12 @@ FTXUI 可在 [Vcpkg 注册表](https://vcpkg.link/ports/ftxui) 中获取。
 }
 ```
 
-# 使用 Vcpkg 安装 FTXUI
+## 使用 Vcpkg 安装 FTXUI
 ```bash
 vcpkg install --triplet x64-linux  # 或 x64-windows / arm64-osx 等
 ```
 
-# 配置构建系统
+## 配置构建系统
 如果您使用 CMake，可以在 `CMakeLists.txt` 中使用以下配置：
 
 **CMakeLists.txt**

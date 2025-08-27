@@ -1,9 +1,10 @@
 ---
 title: "安装指南"
+weight: 2
 ---
 <br>
 
-<img src="https://nsm09.casimages.com/img/2025/05/30//2505300816063242518595255.jpg" alt="头图" style="max-width: 260px; height: auto; float: display: block; margin: 0;">
+<img src="https://nsm09.casimages.com/img/2025/05/30//2505300816063242518595255.jpg" alt="标题图片" style="max-width: 260px; height: auto; float: display: block; margin: 0;">
 
 ## 概述
 

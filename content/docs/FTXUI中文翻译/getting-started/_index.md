@@ -1,16 +1,17 @@
 ---
 title: "开始使用"
+weight: 1
 ---
 
 <br>
 
 <img src="https://nsm09.casimages.com/img/2025/05/30//2505300816063242518595256.jpg" alt="标题图片" style="max-width: 260px; height: auto; display: block; margin: 0;">
 
-# 安装 FTXUI
+## 安装 FTXUI
 
 要在您的项目中配置FTXUI，请遵循[安装指南](installation.html)，该指南提供了针对多种构建系统和包管理器的说明。
 
-# 最小示例
+## 最小示例
 
 将以下代码保存为 `main.cpp`：
 
@@ -45,7 +46,7 @@ int main() {
 └────┘└────────────────────────────────────┘└─────┘
 ```
 
-# 入门模板
+## 入门模板
 
 要获取完整可运行的项目，请克隆官方入门仓库：
 
