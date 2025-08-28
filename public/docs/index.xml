@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>小狄同学呀 – </title>
-    <link>http://localhost:1313/public/docs/</link>
-    <description>Recent content on 小狄同学呀</description>
+    <title>小狄同学呀 – 文档汇总</title>
+    <link>https://xiaoditx.github.io/public/docs/</link>
+    <description>Recent content in 文档汇总 on 小狄同学呀</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
-	  <atom:link href="http://localhost:1313/public/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://xiaoditx.github.io/public/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/</link>
+      <link>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/</guid>
       <description>
         
         
@@ -58,10 +58,10 @@
     
     <item>
       <title>CMake</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/</guid>
       <description>
         
         
@@ -231,10 +231,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title>QQ群群规（总编）</title>
-      <link>http://localhost:1313/public/docs/paper-lily%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA/qq%E7%BE%A4%E7%BE%A4%E8%A7%84/</link>
+      <link>https://xiaoditx.github.io/public/docs/paper-lily%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA/qq%E7%BE%A4%E7%BE%A4%E8%A7%84/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/paper-lily%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA/qq%E7%BE%A4%E7%BE%A4%E8%A7%84/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/paper-lily%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA/qq%E7%BE%A4%E7%BE%A4%E8%A7%84/</guid>
       <description>
         
         
@@ -319,10 +319,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/</link>
+      <link>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/</guid>
       <description>
         
         
@@ -484,10 +484,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title>Bazel</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/</guid>
       <description>
         
         
@@ -540,10 +540,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description>
         
         
@@ -555,10 +555,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title>Vcpkg</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/</guid>
       <description>
         
         
@@ -672,10 +672,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%8F%E6%84%9F%E6%80%A7/</link>
+      <link>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%8F%E6%84%9F%E6%80%A7/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%8F%E6%84%9F%E6%80%A7/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%8F%E6%84%9F%E6%80%A7/</guid>
       <description>
         
         
@@ -707,10 +707,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title>C&#43;&#43;20 模块</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/cpp20-modules/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/cpp20-modules/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/cpp20-modules/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/cpp20-modules/</guid>
       <description>
         
         
@@ -868,10 +868,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title>Conan</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/</guid>
       <description>
         
         
@@ -1116,10 +1116,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%B8%B8%E9%87%8F/</link>
+      <link>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%B8%B8%E9%87%8F/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%B8%B8%E9%87%8F/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%B8%B8%E9%87%8F/</guid>
       <description>
         
         
@@ -1159,10 +1159,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title>待办事项</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/todo_list/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/todo_list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/todo_list/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/todo_list/</guid>
       <description>
         
         
@@ -1182,10 +1182,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title>手动安装</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/</guid>
       <description>
         
         
@@ -1241,10 +1241,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E5%80%BC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+      <link>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E5%80%BC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E5%80%BC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E5%80%BC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
       <description>
         
         
@@ -1291,10 +1291,10 @@ not
     
     <item>
       <title>Nix</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/</guid>
       <description>
         
         
@@ -1347,10 +1347,10 @@ AI 生成。如果您有任何改进建议，请提交 PR。&lt;/p&gt;&lt;/div&g
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%B3%A8%E9%87%8A/</link>
+      <link>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%B3%A8%E9%87%8A/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%B3%A8%E9%87%8A/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%B3%A8%E9%87%8A/</guid>
       <description>
         
         
@@ -1392,10 +1392,10 @@ AI 生成。如果您有任何改进建议，请提交 PR。&lt;/p&gt;&lt;/div&g
     
     <item>
       <title>Debian/Ubuntu</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/</guid>
       <description>
         
         
@@ -1457,10 +1457,10 @@ AI 生成。如果您有任何改进建议，请提交 PR。&lt;/p&gt;&lt;/div&g
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BC%98%E5%85%88%E7%BA%A7/</link>
+      <link>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BC%98%E5%85%88%E7%BA%A7/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BC%98%E5%85%88%E7%BA%A7/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BC%98%E5%85%88%E7%BA%A7/</guid>
       <description>
         
         
@@ -1487,10 +1487,10 @@ AI 生成。如果您有任何改进建议，请提交 PR。&lt;/p&gt;&lt;/div&g
     
     <item>
       <title>Arch Linux</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/</guid>
       <description>
         
         
@@ -1543,10 +1543,10 @@ AI 生成。如果您有任何改进建议，请提交 PR。&lt;/p&gt;&lt;/div&g
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%BC%A9%E8%BF%9B/</link>
+      <link>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%BC%A9%E8%BF%9B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%BC%A9%E8%BF%9B/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%BC%A9%E8%BF%9B/</guid>
       <description>
         
         
@@ -1575,10 +1575,10 @@ AI 生成。如果您有任何改进建议，请提交 PR。&lt;/p&gt;&lt;/div&g
     
     <item>
       <title>openSUSE</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/</guid>
       <description>
         
         
@@ -1621,10 +1621,10 @@ AI 生成。如果您有任何改进建议，请提交 PR。&lt;/p&gt;&lt;/div&g
     
     <item>
       <title>XMake</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/</guid>
       <description>
         
         
@@ -1675,10 +1675,10 @@ AI 生成。如果您有任何改进建议，请提交 PR。&lt;/p&gt;&lt;/div&g
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/</link>
+      <link>https://xiaoditx.github.io/public/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/</guid>
       <description>
         
         
@@ -1897,10 +1897,10 @@ END&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/</link>
+      <link>https://xiaoditx.github.io/public/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/</guid>
       <description>
         
         
@@ -2013,10 +2013,10 @@ END&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/</link>
+      <link>https://xiaoditx.github.io/public/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/</guid>
       <description>
         
         
@@ -2083,10 +2083,10 @@ END&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/</link>
+      <link>https://xiaoditx.github.io/public/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/</guid>
       <description>
         
         
@@ -2098,10 +2098,10 @@ END&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-
     
     <item>
       <title></title>
-      <link>http://localhost:1313/public/docs/dcc-script/2.%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/%E5%B5%8C%E5%A5%97/</link>
+      <link>https://xiaoditx.github.io/public/docs/dcc-script/2.%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/%E5%B5%8C%E5%A5%97/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/dcc-script/2.%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/%E5%B5%8C%E5%A5%97/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/dcc-script/2.%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/%E5%B5%8C%E5%A5%97/</guid>
       <description>
         
         
@@ -2153,10 +2153,10 @@ int main(){
     
     <item>
       <title>component（组件模块）</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component/</guid>
       <description>
         
         
@@ -2462,10 +2462,10 @@ int main(){
     
     <item>
       <title>dom（布局模块）</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/dom/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/dom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/dom/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/dom/</guid>
       <description>
         
         
@@ -3178,10 +3178,10 @@ int main(){
     
     <item>
       <title>screen</title>
-      <link>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/screen/</link>
+      <link>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/screen/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/screen/</guid>
+      <guid>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/screen/</guid>
       <description>
         
         
