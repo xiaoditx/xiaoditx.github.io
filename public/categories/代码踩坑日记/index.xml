@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>小狄同学呀 – 代码：踩坑日记</title>
-    <link>https://xiaoditx.github.io/public/categories/%E4%BB%A3%E7%A0%81%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/</link>
+    <link>http://localhost:1313/public/categories/%E4%BB%A3%E7%A0%81%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/</link>
     <description>Recent content in 代码：踩坑日记 on 小狄同学呀</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://xiaoditx.github.io/public/categories/%E4%BB%A3%E7%A0%81%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/public/categories/%E4%BB%A3%E7%A0%81%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -17,10 +17,10 @@
     
     <item>
       <title>VScode插件报错，g&#43;&#43;却完美编译？API调用错因分析</title>
-      <link>https://xiaoditx.github.io/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</link>
+      <link>http://localhost:1313/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</link>
       <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaoditx.github.io/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</guid>
+      <guid>http://localhost:1313/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</guid>
       <description>
         
         
