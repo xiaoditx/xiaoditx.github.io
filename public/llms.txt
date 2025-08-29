@@ -4,8 +4,10 @@
 
 
 ## 
-- [VScode插件报错，g++却完美编译？API调用错因分析](http://localhost:6587/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g++%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/): 前一段时间写了个小软件，想给它加个读写配置项功能，刚学几天C++的我上网查了半天资料，找到两个Windows的API分别是读ini的GetPrivateProfileString和写ini … - Published 2025-08-26
-- [算法真题：GESP202503四级——荒地开垦（洛谷B4263）](http://localhost:6587/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/): 一.开始之前同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，当时看完有点思路，用易语言写了一下，结果越写越乱就放弃了，这周上课有些无聊，闲着也是闲着，干脆又把这题拾起来做了，回家试 … - Published 2025-08-26
+
+## 
+- [VScode插件报错，g++却完美编译？API调用错因分析](http://localhost:1313/index/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g++%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/): 前一段时间写了个小软件，想给它加个读写配置项功能，刚学几天C++的我上网查了半天资料，找到两个Windows的API分别是读ini的GetPrivateProfileString和写ini … - Published 2025-08-26
+- [算法真题：GESP202503四级——荒地开垦（洛谷B4263）](http://localhost:1313/index/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/): 一.开始之前同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，当时看完有点思路，用易语言写了一下，结果越写越乱就放弃了，这周上课有些无聊，闲着也是闲着，干脆又把这题拾起来做了，回家试 … - Published 2025-08-26
 
 ## 
 
@@ -14,86 +16,86 @@
 ## 文档汇总
 
 ### 
-- [](http://localhost:6587/public/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/): rc文件帮助在 Windows 资源文件 (.rc) 中，这些关键字用于定义可执行文件的版本信息结构，以下是详细解释：
+- [](http://localhost:1313/index/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/): rc文件帮助在 Windows 资源文件 (.rc) 中，这些关键字用于定义可执行文件的版本信息结构，以下是详细解释：
 核心结构解析 FILEFLAGSMASK
 作用：指定哪些位在 FILEFLAGS …
-- [](http://localhost:6587/public/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/): 1.标准方案（原生cout）使用\033[开头m结尾，中间包裹参数
+- [](http://localhost:1313/index/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/): 1.标准方案（原生cout）使用\033[开头m结尾，中间包裹参数
 属性代码 功能 属性代码 功能 属性代码 功能 0 重置所有属性 30 黑色 40 黑色 1 高亮/加粗 31 红色 41 红色 2 …
-- [](http://localhost:6587/public/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/): 项目结构介绍结构与文件功能
+- [](http://localhost:1313/index/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/): 项目结构介绍结构与文件功能
 root/ ├── .vscode/ vscode配置文件 │ ├── setting.json │ └── tasks.json ├── head/ │ ├── …
-- [](http://localhost:6587/public/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/): 热键注册帮助微软键代码查询：Virtual-Key 代码
+- [](http://localhost:1313/index/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/): 热键注册帮助微软键代码查询：Virtual-Key 代码
 键代码查询工具：本地路径./tools/XD开发工具-T1，仅支持10进制查询
 
 ### 
 
 #### 
-- [](http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/): 函数调用DCC是借助函数实现功能的脚本语言，因此几乎所有功能都需要借助函数实现，函数的调用形式如下：
+- [](http://localhost:1313/index/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/): 函数调用DCC是借助函数实现功能的脚本语言，因此几乎所有功能都需要借助函数实现，函数的调用形式如下：
 函数名 [参数1][,参数2][,参数3][,......] 参数是可省略的，但针对指定个参数的函 …
-- [](http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/): 特殊函数DCC拥有一些特殊函数会特殊高亮，这些函数在编译中会被特殊处理，也是DCC的功能核心，这些功能即使不引入库也可以照常使用，而这些函数名也就成为了DCC的保留字，不允许其他任何库用作函数名
-- [](http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/): 数据类型DCC原生支持数据类型包括整数型、小数型、双精度小数型、逻辑型、文本型、大数等数据类型，对于常数的表达，DCC也有相应的符号来描述常数的数据类型
-- [](http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%8F%E6%84%9F%E6%80%A7/): 敏感性DCC对大小写敏感但对符号不敏感，例如，Get和GET对于DCC而言是两个函数，但[]和【】甚至【]对于DCC是同一个符号，下面以引号为例：
-- [](http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%B8%B8%E9%87%8F/): 常量DCC拥有系统常量和自定义常量，使用时需使用#进行表达，如下面的示例：
+- [](http://localhost:1313/index/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/): 特殊函数DCC拥有一些特殊函数会特殊高亮，这些函数在编译中会被特殊处理，也是DCC的功能核心，这些功能即使不引入库也可以照常使用，而这些函数名也就成为了DCC的保留字，不允许其他任何库用作函数名
+- [](http://localhost:1313/index/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/): 数据类型DCC原生支持数据类型包括整数型、小数型、双精度小数型、逻辑型、文本型、大数等数据类型，对于常数的表达，DCC也有相应的符号来描述常数的数据类型
+- [](http://localhost:1313/index/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%8F%E6%84%9F%E6%80%A7/): 敏感性DCC对大小写敏感但对符号不敏感，例如，Get和GET对于DCC而言是两个函数，但[]和【】甚至【]对于DCC是同一个符号，下面以引号为例：
+- [](http://localhost:1313/index/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%B8%B8%E9%87%8F/): 常量DCC拥有系统常量和自定义常量，使用时需使用#进行表达，如下面的示例：
 #asm#iostream#cpp#换行符#逻辑型 实际使用效果：
-- [](http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E5%80%BC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/): 数值/逻辑运算符DCC支持运算符号如下：
+- [](http://localhost:1313/index/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E5%80%BC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/): 数值/逻辑运算符DCC支持运算符号如下：
 *×/÷%&#43;-！!&amp;^&amp;&amp;||^^**~&gt;&gt;&lt;&lt;|andor …
-- [](http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%B3%A8%E9%87%8A/): 注释DCC使用全角或半角的分号来书写注释，如下：
+- [](http://localhost:1313/index/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%B3%A8%E9%87%8A/): 注释DCC使用全角或半角的分号来书写注释，如下：
 ；注释;注释 出现这种注释标记，从标记后面一直到这一行的结束都是注释内容，内容不会生效也不会编译进程序
-- [](http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BC%98%E5%85%88%E7%BA%A7/): 改变优先级DCC改变符号优先级，对于函数调用，在一个参数的位置，可以使用（）或()包裹一个语句，这个语句的执行结果会成为这个参数位的值，括号的包裹内，一定是函数名+参数（参数可空）的形式
-- [](http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%BC%A9%E8%BF%9B/): 缩进DCC借助缩进理解语义
+- [](http://localhost:1313/index/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BC%98%E5%85%88%E7%BA%A7/): 改变优先级DCC改变符号优先级，对于函数调用，在一个参数的位置，可以使用（）或()包裹一个语句，这个语句的执行结果会成为这个参数位的值，括号的包裹内，一定是函数名+参数（参数可空）的形式
+- [](http://localhost:1313/index/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%BC%A9%E8%BF%9B/): 缩进DCC借助缩进理解语义
 对于纯DCC代码，不会存在缩进，缩进只在嵌套中存在（见下一节）
 下面是存DCC代码示例：
 打开剧情如果 （转为文本 （输入））=10 …
 
 #### 
-- [](http://localhost:6587/public/docs/dcc-script/2.%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/%E5%B5%8C%E5%A5%97/): 嵌套 JSON嵌套 DCC通过一定方式是可以嵌套JSON的，因此高亮需要对JSON语法进行支持，JSON内嵌时，相对前行和后行会有缩进，具体缩进多少不会严格规定，如：
+- [](http://localhost:1313/index/docs/dcc-script/2.%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/%E5%B5%8C%E5%A5%97/): 嵌套 JSON嵌套 DCC通过一定方式是可以嵌套JSON的，因此高亮需要对JSON语法进行支持，JSON内嵌时，相对前行和后行会有缩进，具体缩进多少不会严格规定，如：
 
 ### 
-- [C++20 模块](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/cpp20-modules/): 此功能仍处于开发阶段，API 可能在未来的版本中发生变更。
+- [C++20 模块](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/cpp20-modules/): 此功能仍处于开发阶段，API 可能在未来的版本中发生变更。
 我们需要您的贡献来帮助改进 FTXUI 中 C++20 模块的兼容性和可用性。
 如果您遇到任何问题或有建议，请提交 Issue。
-- [待办事项](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/todo_list/): Conan 页面 Conan页面
+- [待办事项](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/todo_list/): Conan 页面 Conan页面
 添加关于如何使用 Conan 构建脚本的说明。
 如果您了解相关流程，请考虑向 Conan Center 添加一个&quot;官方&quot;构建脚本。 …
 
 #### 开始使用
 
 #### 安装指南
-- [CMake](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/): 本页面介绍如何使用 CMake 集成 FTXUI。
+- [CMake](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/): 本页面介绍如何使用 CMake 集成 FTXUI。
 集成方法 使用 FetchContent 此方法在配置时下载 FTXUI，不需要系统级安装。
 include(FetchContent) …
-- [Bazel](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/): FTXUI 可通过 Bazel 和 Bzlmod（Bazel 模块）集成到您的项目中。
+- [Bazel](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/): FTXUI 可通过 Bazel 和 Bzlmod（Bazel 模块）集成到您的项目中。
 该库已注册到 Bazel 中央注册表
 MODULE.bazel
 bazel_dep(name = …
-- [Vcpkg](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/): Vcpkg 软件包 FTXUI 可在 Vcpkg 注册表 中获取。
+- [Vcpkg](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/): Vcpkg 软件包 FTXUI 可在 Vcpkg 注册表 中获取。
 要使用它，您可以在 vcpkg.json 中添加以下内容：
 { &#34;name&#34;: …
-- [Conan](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/): FTXUI 可以通过 Conan 包管理器方便地获取和集成到您的项目中。
+- [Conan](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/): FTXUI 可以通过 Conan 包管理器方便地获取和集成到您的项目中。
 前置条件 首先，确保您的系统已安装 Conan。如果尚未安装，可以使用 pip 安装：
-- [手动安装](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/): 从源码构建（官方方式） 使用 CMake 克隆并构建项目：
+- [手动安装](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/): 从源码构建（官方方式） 使用 CMake 克隆并构建项目：
 git clone https://github.com/ArthurSonzogni/FTXUI.git cd FTXUI cmake …
-- [Nix](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/): Note
+- [Nix](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/): Note
 FTXUI 作者对 Nix 了解有限。本页面内容主要由 AI 生成。如果您有任何改进建议，请提交 PR。
-- [Debian/Ubuntu](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/): Debian 和 Ubuntu 软件包（非官方） 这些发行版提供了预构建的软件包。通过以下命令安装：
+- [Debian/Ubuntu](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/): Debian 和 Ubuntu 软件包（非官方） 这些发行版提供了预构建的软件包。通过以下命令安装：
 sudo apt install libftxui-dev 可用的软件包包括：
-- [Arch Linux](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/): FTXUI 已在 AUR（Arch 用户仓库）中打包。使用 AUR helper安装：
+- [Arch Linux](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/): FTXUI 已在 AUR（Arch 用户仓库）中打包。使用 AUR helper安装：
 yay -S ftxui …
-- [openSUSE](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/): openSUSE 软件包（非官方） FTXUI 似乎可从 devel:libraries:c_c++ 仓库获取。
+- [openSUSE](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/): openSUSE 软件包（非官方） FTXUI 似乎可从 devel:libraries:c_c++ 仓库获取。
 sudo zypper addrepo …
-- [XMake](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/): XMake 软件包（非官方） FTXUI 可在 xmake-repo 中获取。
+- [XMake](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/): XMake 软件包（非官方） FTXUI 可在 xmake-repo 中获取。
 示例 xmake.lua 代码片段：
 add_requires(&#34;ftxui&#34;, {system = …
 
 #### 
-- [component（组件模块）](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component/): ftxui::component 模块定义了产生交互式组件的逻辑，这些组件能够响应用户事件（键盘、鼠标等）。
+- [component（组件模块）](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component/): ftxui::component 模块定义了产生交互式组件的逻辑，这些组件能够响应用户事件（键盘、鼠标等）。
 examples 章节提供了一系列示例。 …
-- [dom（布局模块）](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/dom/): 此模块定义了一组层次化的 ftxui::Element（元素）。元素管理布局，并且可以响应终端尺寸变化。请注意以下使用此模块创建简单布局并运用多个操作符的示例：
-- [screen](http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/screen/): The ftxui::screen module is the low-level foundation. It can be used standalone, but it is …
+- [dom（布局模块）](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/dom/): 此模块定义了一组层次化的 ftxui::Element（元素）。元素管理布局，并且可以响应终端尺寸变化。请注意以下使用此模块创建简单布局并运用多个操作符的示例：
+- [screen](http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/screen/): The ftxui::screen module is the low-level foundation. It can be used standalone, but it is …
 
 #### 示例文件
 
 ### 
-- [QQ群群规（总编）](http://localhost:6587/public/docs/paper-lily%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA/qq%E7%BE%A4%E7%BE%A4%E8%A7%84/): 2025年7月31日第十四次修订
+- [QQ群群规（总编）](http://localhost:1313/index/docs/paper-lily%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA/qq%E7%BE%A4%E7%BE%A4%E8%A7%84/): 2025年7月31日第十四次修订
 第一条——制定依据 本规定的制定，遵守《中华人民共和国宪法》以及相关法律法规。
 第二条——规定适用范围 凡是加入本群者，均代表认同此规定且愿意遵守这一规定，任何群员不 …
 
@@ -101,5 +103,5 @@ examples 章节提供了一系列示例。 …
 
 
 ---
-Generated on 2025-08-29 15:35:24 UTC
-Site: http://localhost:6587/public/
+Generated on 2025-08-29 15:57:16 UTC
+Site: http://localhost:1313/index/

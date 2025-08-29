@@ -12,12 +12,12 @@ module:
 #      unsafe: true
 
 title: '小狄同学呀'
-baseURL: 'https://xiaoditx.github.io/'
+baseURL: 'https://xiaoditx.github.io/index'
 
 hasCJKLanguage: true
 languageCode: 'zh-cn'
 
-#enableGitInfo: true
+enableGitInfo: true
 enableRobotsTXT: true
 
 defaultContentLanguage: 'zh-cn'
@@ -107,7 +107,7 @@ menu:
       weight: 3
     - identifier: daily
       name: 动态
-      pageRef: /blog
+      pageRef: /daily
       weight: 4
     - identifier: about
       name: 关于

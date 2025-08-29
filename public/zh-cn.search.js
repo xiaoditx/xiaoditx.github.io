@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // 
 
 (function () {
-  const searchDataURL = '/public/zh-cn.search-data.json';
+  const searchDataURL = '/index/zh-cn.search-data.json';
 
   const inputElements = document.querySelectorAll('.hextra-search-input');
   for (const el of inputElements) {
