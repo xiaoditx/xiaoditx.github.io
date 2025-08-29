@@ -12,13 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Render the search data as JSON.
-// 
-// 
-// 
-// 
+// {{ $searchDataFile := printf "%s.search-data.json" .Language.Lang }}
+// {{ $searchData := resources.Get "json/search-data.json" | resources.ExecuteAsTemplate $searchDataFile . }}
+// {{ if hugo.IsProduction }}
+//   {{ $searchData := $searchData | minify | fingerprint }}
+// {{ end }}
+// {{ $noResultsFound := (T "noResultsFound") | default "No results found." }}
 
 (function () {
-  const searchDataURL = '/public/ja.search-data.json';
+  const searchDataURL = '{{ $searchData.RelPermalink }}';
 
   const inputElements = document.querySelectorAll('.hextra-search-input');
   for (const el of inputElements) {
@@ -192,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
    * @returns {Promise<void>} A promise that resolves when the index is preloaded.
    */
   async function preloadIndex() {
-    const tokenize = 'forward';
+    const tokenize = '{{- site.Params.search.flexsearch.tokenize | default  "forward" -}}';
 
     // https://github.com/TryGhost/Ghost/pull/21148
     const regex = new RegExp(
@@ -382,7 +384,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!resultsElement) return;
 
     if (!results.length) {
-      resultsElement.innerHTML = `<span class="hextra-search-no-result">結果が見つかりませんでした。</span>`;
+      resultsElement.innerHTML = `<span class="hextra-search-no-result">{{ $noResultsFound | safeHTML }}</span>`;
       return;
     }
 

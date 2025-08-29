@@ -2,19 +2,19 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>https://xiaoditx.github.io/public/zh-cn/sitemap.xml</loc>
+    <loc>http://localhost:6587/public/zh-cn/sitemap.xml</loc>
     
       <lastmod>2025-08-26T00:00:00+00:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>https://xiaoditx.github.io/public/en/sitemap.xml</loc>
+    <loc>http://localhost:6587/public/en/sitemap.xml</loc>
     
   </sitemap>
   
   <sitemap>
-    <loc>https://xiaoditx.github.io/public/ja/sitemap.xml</loc>
+    <loc>http://localhost:6587/public/ja/sitemap.xml</loc>
     
   </sitemap>
   

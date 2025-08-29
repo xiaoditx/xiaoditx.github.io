@@ -2,179 +2,179 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/</loc>
+    <loc>http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/paper-lily%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA/qq%E7%BE%A4%E7%BE%A4%E8%A7%84/</loc>
+    <loc>http://localhost:6587/public/docs/paper-lily%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA/qq%E7%BE%A4%E7%BE%A4%E8%A7%84/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/getting-started/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/getting-started/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/</loc>
+    <loc>http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    <loc>http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%8F%E6%84%9F%E6%80%A7/</loc>
+    <loc>http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%8F%E6%84%9F%E6%80%A7/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/cpp20-modules/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/cpp20-modules/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%B8%B8%E9%87%8F/</loc>
+    <loc>http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%B8%B8%E9%87%8F/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/todo_list/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/todo_list/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E5%80%BC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
+    <loc>http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E5%80%BC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%B3%A8%E9%87%8A/</loc>
+    <loc>http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%B3%A8%E9%87%8A/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BC%98%E5%85%88%E7%BA%A7/</loc>
+    <loc>http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BC%98%E5%85%88%E7%BA%A7/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%BC%A9%E8%BF%9B/</loc>
+    <loc>http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%BC%A9%E8%BF%9B/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/</loc>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/blog/</loc>
+    <loc>http://localhost:6587/public/blog/</loc>
     <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/tags/c&#43;&#43;/</loc>
+    <loc>http://localhost:6587/public/tags/c&#43;&#43;/</loc>
     <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/categories/</loc>
-    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://xiaoditx.github.io/public/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://xiaoditx.github.io/public/ja/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://xiaoditx.github.io/public/categories/"
-                />
-  </url><url>
-    <loc>https://xiaoditx.github.io/public/tags/gesp/</loc>
-    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiaoditx.github.io/public/tags/</loc>
+    <loc>http://localhost:6587/public/categories/</loc>
     <lastmod>2025-08-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xiaoditx.github.io/public/en/tags/"
+                href="http://localhost:6587/public/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://xiaoditx.github.io/public/ja/tags/"
+                href="http://localhost:6587/public/ja/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://xiaoditx.github.io/public/tags/"
+                href="http://localhost:6587/public/categories/"
                 />
   </url><url>
-    <loc>https://xiaoditx.github.io/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</loc>
+    <loc>http://localhost:6587/public/tags/gesp/</loc>
     <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/tags/%E9%94%99%E8%AF%AF%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiaoditx.github.io/public/categories/%E4%BB%A3%E7%A0%81%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/</loc>
-    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiaoditx.github.io/public/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiaoditx.github.io/public/tags/%E6%A8%A1%E6%8B%9F/</loc>
-    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiaoditx.github.io/public/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiaoditx.github.io/public/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</loc>
-    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiaoditx.github.io/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/</loc>
-    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://xiaoditx.github.io/public/</loc>
+    <loc>http://localhost:6587/public/tags/</loc>
     <lastmod>2025-08-26T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://xiaoditx.github.io/public/en/"
+                href="http://localhost:6587/public/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://xiaoditx.github.io/public/ja/"
+                href="http://localhost:6587/public/ja/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://xiaoditx.github.io/public/"
+                href="http://localhost:6587/public/tags/"
                 />
   </url><url>
-    <loc>https://xiaoditx.github.io/public/about/</loc>
+    <loc>http://localhost:6587/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/daily/</loc>
+    <loc>http://localhost:6587/public/tags/%E9%94%99%E8%AF%AF%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/beepmusic/</loc>
+    <loc>http://localhost:6587/public/categories/%E4%BB%A3%E7%A0%81%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/</loc>
+    <loc>http://localhost:6587/public/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/</loc>
+    <loc>http://localhost:6587/public/tags/%E6%A8%A1%E6%8B%9F/</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/</loc>
+    <loc>http://localhost:6587/public/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/</loc>
+    <loc>http://localhost:6587/public/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
+    <loc>http://localhost:6587/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/2.%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/</loc>
+    <loc>http://localhost:6587/public/</loc>
+    <lastmod>2025-08-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:6587/public/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://localhost:6587/public/ja/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="http://localhost:6587/public/"
+                />
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/2.%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/%E5%B5%8C%E5%A5%97/</loc>
+    <loc>http://localhost:6587/public/about/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/dcc-script/</loc>
+    <loc>http://localhost:6587/public/daily/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/</loc>
+    <loc>http://localhost:6587/public/docs/beepmusic/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/paper-lily%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA/</loc>
+    <loc>http://localhost:6587/public/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/</loc>
+    <loc>http://localhost:6587/public/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component/</loc>
+    <loc>http://localhost:6587/public/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/dom/</loc>
+    <loc>http://localhost:6587/public/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/screen/</loc>
+    <loc>http://localhost:6587/public/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/examples/</loc>
+    <loc>http://localhost:6587/public/docs/dcc-script/2.%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/</loc>
   </url><url>
-    <loc>https://xiaoditx.github.io/public/docs/</loc>
+    <loc>http://localhost:6587/public/docs/dcc-script/2.%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/%E5%B5%8C%E5%A5%97/</loc>
+  </url><url>
+    <loc>http://localhost:6587/public/docs/dcc-script/</loc>
+  </url><url>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/</loc>
+  </url><url>
+    <loc>http://localhost:6587/public/docs/paper-lily%E4%B8%AD%E6%96%87%E7%A4%BE%E5%8C%BA/</loc>
+  </url><url>
+    <loc>http://localhost:6587/public/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/</loc>
+  </url><url>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component/</loc>
+  </url><url>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/dom/</loc>
+  </url><url>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/screen/</loc>
+  </url><url>
+    <loc>http://localhost:6587/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/examples/</loc>
+  </url><url>
+    <loc>http://localhost:6587/public/docs/</loc>
   </url>
 </urlset>
