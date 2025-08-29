@@ -1,8 +1,7 @@
 ---
+title: "ftxui"
 weight: 3
 ---
-
-# ftxui
 
 <br>
 
