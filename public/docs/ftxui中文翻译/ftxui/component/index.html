@@ -13,67 +13,14 @@
 ftxui::component 模块定义了产生交互式组件的逻辑，这些组件能够响应用户事件（键盘、鼠标等）。
 examples 章节提供了一系列示例。
 ftxui::ScreenInteractive 定义了渲染组件的主循环。
-ftxui::Component 是指向 ftxui::ComponentBase 的共享指针。后者定义了：
-ftxui::ComponentBase::Render()：如何渲染界面。 ftxui::ComponentBase::OnEvent()：如何响应事件。 ftxui::ComponentBase::Add()：在两个组件之间构建父子关系。组件树用于定义如何使用键盘进行导航。 ftxui::Element 用于渲染单个帧。
-ftxui::Component 用于渲染动态用户界面，生成多个帧，并在事件发生时更新其状态。
-多个组件的图库。（演示）
-所有预定义的组件可在 “ftxui/dom/component.hpp” 中找到。
-\include ftxui/component/component.hpp
-输入框（component::input）示例：
-由 “ftxui/component/component.hpp” 中的 ftxui::Input() 生成。
-@htmlonly
-@endhtmlonly
-过滤输入可以使用 ftxui::CatchEvent 过滤输入组件接收的字符。
-std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话号码&#34;); // 过滤非数字字符。 input |= CatchEvent([&amp;](Event event) { return event.is_character() &amp;&amp; !std::isdigit(event.character()[0]); }); // 过滤超过10个字符后的输入。 input |= CatchEvent([&amp;](Event event) { return event.is_character() &amp;&amp; phone_number.size() &gt;= 10; });菜单 （component-menu）定义一个菜单对象。它包含一个条目列表，其中一项被选中。" /><link rel="canonical" href="https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component/" itemprop="url" />
+ftxui::Component 是指向 ftxui::ComponentBase 的共享指针。后者定义了：" /><link rel="canonical" href="https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component/" itemprop="url" />
 
 <meta property="og:title" content="component（组件模块）" />
 <meta property="og:description" content="
 ftxui::component 模块定义了产生交互式组件的逻辑，这些组件能够响应用户事件（键盘、鼠标等）。
 examples 章节提供了一系列示例。
 ftxui::ScreenInteractive 定义了渲染组件的主循环。
-ftxui::Component 是指向 ftxui::ComponentBase 的共享指针。后者定义了：
-
-ftxui::ComponentBase::Render()：如何渲染界面。
-ftxui::ComponentBase::OnEvent()：如何响应事件。
-ftxui::ComponentBase::Add()：在两个组件之间构建父子关系。组件树用于定义如何使用键盘进行导航。
-
-ftxui::Element 用于渲染单个帧。
-ftxui::Component 用于渲染动态用户界面，生成多个帧，并在事件发生时更新其状态。
-多个组件的图库。（演示）
-
-所有预定义的组件可在 &ldquo;ftxui/dom/component.hpp&rdquo; 中找到。
-\include ftxui/component/component.hpp
-输入框（component::input）
-    示例：
-
-由 &ldquo;ftxui/component/component.hpp&rdquo; 中的 ftxui::Input() 生成。
-@htmlonly
-
-@endhtmlonly
-过滤输入
-    可以使用 ftxui::CatchEvent 过滤输入组件接收的字符。
-
-
-std::string phone_number;
-Component input = Input(&amp;phone_number, &#34;电话号码&#34;);
-
-// 过滤非数字字符。
-input |= CatchEvent([&amp;](Event event) {
-  return event.is_character() &amp;&amp; !std::isdigit(event.character()[0]);
-});
-
-// 过滤超过10个字符后的输入。
-input |= CatchEvent([&amp;](Event event) {
-  return event.is_character() &amp;&amp; phone_number.size() &gt;= 10;
-});
-  
-    
-
-  
-
-
-菜单 （component-menu）
-    定义一个菜单对象。它包含一个条目列表，其中一项被选中。" />
+ftxui::Component 是指向 ftxui::ComponentBase 的共享指针。后者定义了：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xiaoditx.github.io/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component/" /><meta property="article:section" content="docs" />
 
@@ -83,72 +30,40 @@ input |= CatchEvent([&amp;](Event event) {
   <meta itemprop="description" content="ftxui::component 模块定义了产生交互式组件的逻辑，这些组件能够响应用户事件（键盘、鼠标等）。
 examples 章节提供了一系列示例。
 ftxui::ScreenInteractive 定义了渲染组件的主循环。
-ftxui::Component 是指向 ftxui::ComponentBase 的共享指针。后者定义了：
-ftxui::ComponentBase::Render()：如何渲染界面。 ftxui::ComponentBase::OnEvent()：如何响应事件。 ftxui::ComponentBase::Add()：在两个组件之间构建父子关系。组件树用于定义如何使用键盘进行导航。 ftxui::Element 用于渲染单个帧。
-ftxui::Component 用于渲染动态用户界面，生成多个帧，并在事件发生时更新其状态。
-多个组件的图库。（演示）
-所有预定义的组件可在 “ftxui/dom/component.hpp” 中找到。
-\include ftxui/component/component.hpp
-输入框（component::input）示例：
-由 “ftxui/component/component.hpp” 中的 ftxui::Input() 生成。
-@htmlonly
-@endhtmlonly
-过滤输入可以使用 ftxui::CatchEvent 过滤输入组件接收的字符。
-std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话号码&#34;); // 过滤非数字字符。 input |= CatchEvent([&amp;](Event event) { return event.is_character() &amp;&amp; !std::isdigit(event.character()[0]); }); // 过滤超过10个字符后的输入。 input |= CatchEvent([&amp;](Event event) { return event.is_character() &amp;&amp; phone_number.size() &gt;= 10; });菜单 （component-menu）定义一个菜单对象。它包含一个条目列表，其中一项被选中。">
-  <meta itemprop="wordCount" content="348">
+ftxui::Component 是指向 ftxui::ComponentBase 的共享指针。后者定义了：">
+  <meta itemprop="wordCount" content="1478">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="component（组件模块）">
   <meta name="twitter:description" content="ftxui::component 模块定义了产生交互式组件的逻辑，这些组件能够响应用户事件（键盘、鼠标等）。
 examples 章节提供了一系列示例。
 ftxui::ScreenInteractive 定义了渲染组件的主循环。
-ftxui::Component 是指向 ftxui::ComponentBase 的共享指针。后者定义了：
-ftxui::ComponentBase::Render()：如何渲染界面。 ftxui::ComponentBase::OnEvent()：如何响应事件。 ftxui::ComponentBase::Add()：在两个组件之间构建父子关系。组件树用于定义如何使用键盘进行导航。 ftxui::Element 用于渲染单个帧。
-ftxui::Component 用于渲染动态用户界面，生成多个帧，并在事件发生时更新其状态。
-多个组件的图库。（演示）
-所有预定义的组件可在 “ftxui/dom/component.hpp” 中找到。
-\include ftxui/component/component.hpp
-输入框（component::input）示例：
-由 “ftxui/component/component.hpp” 中的 ftxui::Input() 生成。
-@htmlonly
-@endhtmlonly
-过滤输入可以使用 ftxui::CatchEvent 过滤输入组件接收的字符。
-std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话号码&#34;); // 过滤非数字字符。 input |= CatchEvent([&amp;](Event event) { return event.is_character() &amp;&amp; !std::isdigit(event.character()[0]); }); // 过滤超过10个字符后的输入。 input |= CatchEvent([&amp;](Event event) { return event.is_character() &amp;&amp; phone_number.size() &gt;= 10; });菜单 （component-menu）定义一个菜单对象。它包含一个条目列表，其中一项被选中。">
-      <meta name="twitter:site" content="@xiaoditxy">
+ftxui::Component 是指向 ftxui::ComponentBase 的共享指针。后者定义了：">
 
-    <link rel="preload" href="/public/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" as="style" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
-    <link href="/public/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" rel="stylesheet" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
+    <link rel="preload" href="/public/css/compiled/main.min.e63b3479721056ae4904871cc4e511f2a27ebf2445d92ea13b17a10f5f6f5e3d.css" as="style" integrity="sha256-5js0eXIQVq5JBIccxOUR8qJ&#43;vyRF2S6hOxehD19vXj0=" />
+    <link href="/public/css/compiled/main.min.e63b3479721056ae4904871cc4e511f2a27ebf2445d92ea13b17a10f5f6f5e3d.css" rel="stylesheet" integrity="sha256-5js0eXIQVq5JBIccxOUR8qJ&#43;vyRF2S6hOxehD19vXj0=" />
 
   
 
-
-
-
-
-
   <script>
-    
+     
+    const defaultTheme = 'system';
 
-    function setTheme(theme) {
-      document.documentElement.classList.remove("light", "dark");
-
-      if (theme !== "light" && theme !== "dark") {
-       theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      }
-
-      document.documentElement.classList.add(theme);
-      document.documentElement.style.colorScheme = theme;
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
     }
 
-    setTheme("color-theme" in localStorage ? localStorage.getItem("color-theme") : 'system')
-
-  </script>
-
-  <script>
-    
-
-    if (localStorage.getItem('banner-closed')) {
-      document.documentElement.style.setProperty("--hextra-banner-height", "0px");
-      document.documentElement.classList.add("hextra-banner-hidden");
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
     }
   </script>
 
@@ -166,31 +81,75 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
     <img class="hx:mr-2 hx:hidden hx:dark:block" src="/public/images/logo.svg" alt="Dark Logo" height="20" width="20" />
     <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="小狄同学呀">小狄同学呀</span>
 </a>
-<a
-  title=""
-  href="/public/"
-  
-  class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
-><span class="hx:text-center">首页</span>
-</a><a
-  title=""
-  href="/public/blog"
-  
-  class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
-><span class="hx:text-center">博客</span>
-</a><a
-  title=""
-  href="/public/docs"
-  
-  class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:font-medium"
-><span class="hx:text-center">文档</span>
-</a><a
-  title=""
-  href="/public/daily"
-  
-  class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
-><span class="hx:text-center">动态</span>
-</a><button type="button" aria-label="Menu" class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-2 hx:rounded-sm hx:p-2 hx:active:bg-gray-400/20 hx:md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+
+            <a
+              title="首页"
+              href=""
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">首页</span>
+            </a>
+            <a
+              title="文档"
+              href="/public/docs"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:font-medium"
+            >
+              <span class="hx:text-center">文档</span>
+            </a>
+            <a
+              title="博客"
+              href=""
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">博客</span>
+            </a>
+            <a
+              title="动态"
+              href="/public/blog"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">动态</span>
+            </a>
+            <a
+              title="关于"
+              href="/public/about"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">关于</span>
+            </a><div class="hextra-search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="搜索文档..."
+      class="hextra-search-input hx:focus:hextra-focus hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="hextra-search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+          <a class="hx:p-2 hx:text-current" target="_blank" rel="noreferrer" href="https://github.com/imfing/hextra" title="GitHub"><svg height=24 fill="currentColor" viewBox="3 3 18 18">
+  <path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path>
+</svg>
+<span class="hx:sr-only">GitHub</span>
+          </a><button type="button" aria-label="Menu" class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-2 hx:rounded-sm hx:p-2 hx:active:bg-gray-400/20 hx:md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
   </nav>
 </div>
 
@@ -253,6 +212,13 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
               
             </li></ul>
       </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/public/about/"
+    
+  >About
+    </a></li>
           <li class=""><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
@@ -709,6 +675,22 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
               
             </li></ul>
       </div></li>
+      <li class="[word-break:break-word] hx:mt-5 hx:mb-2 hx:px-2 hx:py-1.5 hx:text-sm hx:font-semibold hx:text-gray-900 hx:first:mt-0 hx:dark:text-gray-100">
+        <span class="hx:cursor-default">更多内容 ↓</span>
+      </li>
+    <li><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href=""
+    
+  >GitHub</a></li>
+    <li><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="https://arthursonzogni.github.io/FTXUI/"
+    target="_blank" rel="noreferrer"
+  >FTXUI</a></li>
+    
     </ul>
 
     <ul class="hx:flex hx:flex-col hx:gap-1 hx:max-md:hidden">
@@ -1061,58 +1043,76 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
   >编程语言发展历史与选用
     </a></li>
         
+      <li class="[word-break:break-word] hx:mt-5 hx:mb-2 hx:px-2 hx:py-1.5 hx:text-sm hx:font-semibold hx:text-gray-900 hx:first:mt-0 hx:dark:text-gray-100">
+        <span class="hx:cursor-default">更多内容 ↓</span>
+      </li>
+    <li><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href=""
+    
+  >GitHub</a></li>
+    <li><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="https://arthursonzogni.github.io/FTXUI/"
+    target="_blank" rel="noreferrer"
+  >FTXUI</a></li>
+    
       </ul>
     </div>
   
   
-    <div class="  hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show"><div class="hx:flex hx:grow hx:flex-col"><div class="hx:flex hx:justify-items-start hx:group" data-theme="light">
-  <button
-    title="切换主题"
-    data-state="closed"
-    data-location="bottom"
-    class="hextra-theme-toggle hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:h-7 hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:grow"
-    type="button"
-    aria-label="切换主题"
-  >
-    <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden">浅色</span><svg height=12 class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden">深色</span><svg height=12 class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="currentColor">
-  <path d="M 11.996094,2 C 6.4986225,2.0192368 2.03125,6.5024993 2.03125,12 c 0,5.497501 4.4673725,9.980763 9.964844,10 H 12 12.0039 c 5.497471,-0.01924 9.964844,-4.502499 9.964844,-10 0,-5.4975007 -4.467373,-9.9807632 -9.964844,-10 H 12 Z M 12,4 c 4.417218,0.017598 7.96875,3.5822356 7.96875,8 0,4.417764 -3.551532,7.982402 -7.96875,8 z" />
-</svg>
-<span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden">跟随系统</span></div>
-  </button>
-  <ul
-    class="hextra-theme-toggle-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
-    style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
-    data-theme="light"
-  >
-    <li class="hx:flex hx:flex-col">
-      <p
-        data-item="light"
-        class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
-      >
-        浅色
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </p>
-    </li>
-    <li class="hx:flex hx:flex-col">
-      <p
-        data-item="dark"
-        class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
-      >
-        深色
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </p>
-    </li>
-    <li class="hx:flex hx:flex-col">
-      <p
-        data-item="system"
-        class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
-      >
-        跟随系统
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </p>
-    </li>
-  </ul>
-</div></div></div></aside>
+    <div class=" hx:justify-end hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show"><div class="hx:flex hx:justify-items-start hx:grow">
+    <button
+      title="切换语言"
+      data-state="closed"
+      data-location=""
+      class="hextra-language-switcher hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:h-7 hx:px-2 hx:text-xs hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="切换语言"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>中文</span></div>
+    </button>
+    <ul
+      class="hextra-language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/public/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >中文<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/public/en/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/public/ja/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >日本語</a>
+        </li>
+      </ul>
+  </div><button
+  title="切换主题"
+  data-theme="light"
+  class="hextra-theme-toggle hx:cursor-pointer hx:group hx:rounded-md hx:text-left hx:h-7 hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400"
+  type="button"
+  aria-label="切换主题"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></div>
+</button>
+</div></aside>
     
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">此页上</p><ul>
@@ -1188,7 +1188,7 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
         <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#component-force-redraw">强制帧重绘
         </a>
       </li></ul>
-      <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
+      <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400"><a class="hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50" href="https://github.com/xiaoditx/xiaoditx.github.io/edit/main/content/docs/FTXUI%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/ftxui/component.md" target="_blank" rel="noreferrer">在 GitHub 上编辑此页 →</a>
         <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
           <span>返回顶部</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx:inline hx:ltr:ml-1 hx:rtl:mr-1 hx:h-3.5 hx:w-3.5 hx:rounded-full hx:border hx:border-gray-500 hx:hover:border-gray-900 hx:dark:border-gray-400 hx:dark:hover:border-gray-100 hx:contrast-more:border-gray-800 hx:contrast-more:dark:border-gray-50">
@@ -1219,7 +1219,7 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
           <h1>component（组件模块）</h1>
           <p><img src="https://nsm09.casimages.com/img/2025/05/31//2505310207423242518595349.png" alt="title-img"  loading="lazy" /></p>
 <p><code>ftxui::component</code> 模块定义了产生交互式组件的逻辑，这些组件能够响应用户事件（键盘、鼠标等）。</p>
-<p><a href="../../examples">examples</a> 章节提供了一系列示例。</p>
+<p><a href="../../examples" >examples</a> 章节提供了一系列示例。</p>
 <p><code>ftxui::ScreenInteractive</code> 定义了渲染组件的主循环。</p>
 <p><code>ftxui::Component</code> 是指向 <code>ftxui::ComponentBase</code> 的共享指针。后者定义了：</p>
 <ul>
@@ -1229,12 +1229,12 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 </ul>
 <p><code>ftxui::Element</code> 用于渲染单个帧。</p>
 <p><code>ftxui::Component</code> 用于渲染动态用户界面，生成多个帧，并在事件发生时更新其状态。</p>
-<p>多个组件的<a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2gallery_8cpp-example.html"target="_blank" rel="noopener">图库</a>。（<a href="https://arthursonzogni.github.io/FTXUI/examples/?file=component/gallery"target="_blank" rel="noopener">演示</a>）</p>
+<p>多个组件的<a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2gallery_8cpp-example.html" target="_blank" rel="noopener">图库</a>。（<a href="https://arthursonzogni.github.io/FTXUI/examples/?file=component/gallery" target="_blank" rel="noopener">演示</a>）</p>
 <p><img src="https://user-images.githubusercontent.com/4759106/147247330-b60beb9f-e665-48b4-81c0-4b01ee95bc66.png" alt="image"  loading="lazy" /></p>
-<p>所有预定义的组件可在 <a href="./component_8hpp.html">&ldquo;ftxui/dom/component.hpp&rdquo;</a> 中找到。</p>
+<p>所有预定义的组件可在 <a href="./component_8hpp.html" >&ldquo;ftxui/dom/component.hpp&rdquo;</a> 中找到。</p>
 <p>\include ftxui/component/component.hpp</p>
 <h2>输入框（component::input）<span class="hx:absolute hx:-mt-20" id="输入框componentinput"></span>
-    <a href="#%e8%be%93%e5%85%a5%e6%a1%86componentinput" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2input_8cpp-example.html"target="_blank" rel="noopener">示例</a>：</p>
+    <a href="#%e8%be%93%e5%85%a5%e6%a1%86componentinput" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2input_8cpp-example.html" target="_blank" rel="noopener">示例</a>：</p>
 <p><img src="https://user-images.githubusercontent.com/4759106/147247671-f1d6f606-1845-4e94-a4a0-d4273e9ae6bd.png" alt="image"  loading="lazy" /></p>
 <p>由 &ldquo;ftxui/component/component.hpp&rdquo; 中的 <code>ftxui::Input()</code> 生成。</p>
 <p>@htmlonly</p>
@@ -1244,21 +1244,21 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
     <a href="#%e8%bf%87%e6%bb%a4%e8%be%93%e5%85%a5" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>可以使用 <code>ftxui::CatchEvent</code> 过滤输入组件接收的字符。</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>std<span style="color:#f92672">::</span>string phone_number;
-</span></span><span style="display:flex;"><span>Component input <span style="color:#f92672">=</span> Input(<span style="color:#f92672">&amp;</span>phone_number, <span style="color:#e6db74">&#34;电话号码&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 过滤非数字字符。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>input <span style="color:#f92672">|=</span> CatchEvent([<span style="color:#f92672">&amp;</span>](Event event) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> event.is_character() <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>std<span style="color:#f92672">::</span>isdigit(event.character()[<span style="color:#ae81ff">0</span>]);
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 过滤超过10个字符后的输入。
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>input <span style="color:#f92672">|=</span> CatchEvent([<span style="color:#f92672">&amp;</span>](Event event) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> event.is_character() <span style="color:#f92672">&amp;&amp;</span> phone_number.size() <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>;
-</span></span><span style="display:flex;"><span>});</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">phone_number</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Component</span> <span class="n">input</span> <span class="o">=</span> <span class="n">Input</span><span class="p">(</span><span class="o">&amp;</span><span class="n">phone_number</span><span class="p">,</span> <span class="s">&#34;电话号码&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 过滤非数字字符。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">input</span> <span class="o">|=</span> <span class="n">CatchEvent</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="n">Event</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">event</span><span class="p">.</span><span class="n">is_character</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">std</span><span class="o">::</span><span class="n">isdigit</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">character</span><span class="p">()[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 过滤超过10个字符后的输入。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">input</span> <span class="o">|=</span> <span class="n">CatchEvent</span><span class="p">([</span><span class="o">&amp;</span><span class="p">](</span><span class="n">Event</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">event</span><span class="p">.</span><span class="n">is_character</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">phone_number</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1267,7 +1267,7 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 </div>
 <h2>菜单 （component-menu）<span class="hx:absolute hx:-mt-20" id="菜单-component-menu"></span>
     <a href="#%e8%8f%9c%e5%8d%95-component-menu" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>定义一个菜单对象。它包含一个条目列表，其中一项被选中。</p>
-<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2menu_8cpp-example.html"target="_blank" rel="noopener">示例</a>：</p>
+<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2menu_8cpp-example.html" target="_blank" rel="noopener">示例</a>：</p>
 <p><img src="https://user-images.githubusercontent.com/4759106/147247822-0035fd6f-bb13-4b3a-b057-77eb9291582f.png" alt="image"  loading="lazy" /></p>
 <p>由 &ldquo;ftxui/component/component.hpp&rdquo; 中的 <code>ftxui::Menu()</code> 生成。</p>
 <p>@htmlonly</p>
@@ -1275,7 +1275,7 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p>@endhtmlonly</p>
 <h2>切换按钮<span class="hx:absolute hx:-mt-20" id="component-toggle"></span>
     <a href="#component-toggle" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>一种特殊类型的菜单。条目水平显示。</p>
-<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2toggle_8cpp-example.html"target="_blank" rel="noopener">示例</a>：</p>
+<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2toggle_8cpp-example.html" target="_blank" rel="noopener">示例</a>：</p>
 <p><img src="https://user-images.githubusercontent.com/4759106/147249383-e2201cf1-b7b8-4a5a-916f-d761e3e7ae40.png" alt="image"  loading="lazy" /></p>
 <p>由 &ldquo;ftxui/component/component.hpp&rdquo; 中的 <code>ftxui::Toggle()</code> 生成。</p>
 <p>@htmlonly</p>
@@ -1283,7 +1283,7 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p>@endhtmlonly</p>
 <h2>复选框<span class="hx:absolute hx:-mt-20" id="component-checkbox"></span>
     <a href="#component-checkbox" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>此组件定义一个复选框。它是一个可以打开/关闭的单个条目。</p>
-<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2checkbox_8cpp-example.html"target="_blank" rel="noopener">示例</a>：</p>
+<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2checkbox_8cpp-example.html" target="_blank" rel="noopener">示例</a>：</p>
 <p><img src="https://user-images.githubusercontent.com/4759106/147246646-b86926a9-1ef9-4efb-af98-48a9b62acd81.png" alt="image"  loading="lazy" /></p>
 <p>由 &ldquo;ftxui/component/component.hpp&rdquo; 中的 <code>ftxui::Checkbox()</code> 生成。</p>
 <p>@htmlonly</p>
@@ -1291,7 +1291,7 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p>@endhtmlonly</p>
 <h2>单选按钮<span class="hx:absolute hx:-mt-20" id="component-radiobox"></span>
     <a href="#component-radiobox" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>单选框组件。这是一个条目列表，其中一项可以被选中。</p>
-<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2radiobox_8cpp-example.html"target="_blank" rel="noopener">示例</a>：</p>
+<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2radiobox_8cpp-example.html" target="_blank" rel="noopener">示例</a>：</p>
 <p><img src="https://user-images.githubusercontent.com/4759106/147246401-809d14a5-6621-4e36-8dd9-a2d75ef2a94e.png" alt="image"  loading="lazy" /></p>
 <p>由 &ldquo;ftxui/component/component.hpp&rdquo; 中的 <code>ftxui::Radiobox()</code> 生成。</p>
 <p>@htmlonly</p>
@@ -1299,12 +1299,12 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p>@endhtmlonly</p>
 <h2>下拉菜单<span class="hx:absolute hx:-mt-20" id="component-dropdown"></span>
     <a href="#component-dropdown" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>下拉菜单是一个组件，打开时显示一个元素列表供用户选择。</p>
-<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2dropdown_8cpp-example.html"target="_blank" rel="noopener">示例</a>：</p>
+<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2dropdown_8cpp-example.html" target="_blank" rel="noopener">示例</a>：</p>
 <p><img src="https://user-images.githubusercontent.com/4759106/147246982-1e821751-531c-4e1f-bc37-2fa290e143cd.gif" alt="youtube-video-gif (3)"  loading="lazy" /></p>
 <p>由 &ldquo;ftxui/component/component.hpp&rdquo; 中的 <code>ftxui::Dropdown()</code> 生成。</p>
 <h2>滑块<span class="hx:absolute hx:-mt-20" id="component-slider"></span>
     <a href="#component-slider" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>表示一个滑块对象，它由一个带有分箱中间间隔的范围组成。可以通过 <code>ftxui::Slider()</code> 创建。</p>
-<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2slider_8cpp-example.html"target="_blank" rel="noopener">示例</a>：</p>
+<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2slider_8cpp-example.html" target="_blank" rel="noopener">示例</a>：</p>
 <p><img src="https://user-images.githubusercontent.com/4759106/147249265-7e2cad75-082c-436e-affe-44a550c480ab.png" alt="image"  loading="lazy" /></p>
 <p>由 &ldquo;ftxui/component/component.hpp&rdquo; 中的 <code>ftxui::Slider()</code> 生成。</p>
 <h2>渲染器<span class="hx:absolute hx:-mt-20" id="component-renderer"></span>
@@ -1312,14 +1312,14 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p>示例：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> inner <span style="color:#f92672">=</span> [...]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> renderer <span style="color:#f92672">=</span> Renderer(inner, [<span style="color:#f92672">&amp;</span>] {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> inner<span style="color:#f92672">-&gt;</span>Render() <span style="color:#f92672">|</span> border
-</span></span><span style="display:flex;"><span>});</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">inner</span> <span class="o">=</span> <span class="p">[...]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">renderer</span> <span class="o">=</span> <span class="n">Renderer</span><span class="p">(</span><span class="n">inner</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">inner</span><span class="o">-&gt;</span><span class="n">Render</span><span class="p">()</span> <span class="o">|</span> <span class="n">border</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1329,13 +1329,13 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p><code>ftxui::Renderer</code> 也支持组件装饰器模式：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> component <span style="color:#f92672">=</span> [...]
-</span></span><span style="display:flex;"><span>component <span style="color:#f92672">=</span> component
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">|</span> Renderer([](Element e) { <span style="color:#66d9ef">return</span> e <span style="color:#f92672">|</span> border))
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">|</span> Renderer(bold)</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">component</span> <span class="o">=</span> <span class="p">[...]</span>
+</span></span><span class="line"><span class="cl"><span class="n">component</span> <span class="o">=</span> <span class="n">component</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span> <span class="n">Renderer</span><span class="p">([](</span><span class="n">Element</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">e</span> <span class="o">|</span> <span class="n">border</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span> <span class="n">Renderer</span><span class="p">(</span><span class="n">bold</span><span class="p">)</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1345,11 +1345,11 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p>作为简写形式，您还可以将组件与元素装饰器组合：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> component <span style="color:#f92672">=</span> [...]
-</span></span><span style="display:flex;"><span>component <span style="color:#f92672">=</span> component <span style="color:#f92672">|</span> border <span style="color:#f92672">|</span> bold;</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">component</span> <span class="o">=</span> <span class="p">[...]</span>
+</span></span><span class="line"><span class="cl"><span class="n">component</span> <span class="o">=</span> <span class="n">component</span> <span class="o">|</span> <span class="n">border</span> <span class="o">|</span> <span class="n">bold</span><span class="p">;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1361,21 +1361,21 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p>示例：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> screen <span style="color:#f92672">=</span> ScreenInteractive<span style="color:#f92672">::</span>TerminalOutput();
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> renderer <span style="color:#f92672">=</span> Renderer([] {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">text</span>(<span style="color:#e6db74">&#34;我的界面&#34;</span>);
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> component <span style="color:#f92672">=</span> CatchEvent(renderer, [<span style="color:#f92672">&amp;</span>](Event event) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (event <span style="color:#f92672">==</span> Event<span style="color:#f92672">::</span>Character(<span style="color:#e6db74">&#39;q&#39;</span>)) {
-</span></span><span style="display:flex;"><span>    screen.ExitLoopClosure()();
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> true;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>});
-</span></span><span style="display:flex;"><span>screen.Loop(component);</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">screen</span> <span class="o">=</span> <span class="n">ScreenInteractive</span><span class="o">::</span><span class="n">TerminalOutput</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">renderer</span> <span class="o">=</span> <span class="n">Renderer</span><span class="p">([]</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nf">text</span><span class="p">(</span><span class="s">&#34;我的界面&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">component</span> <span class="o">=</span> <span class="n">CatchEvent</span><span class="p">(</span><span class="n">renderer</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="n">Event</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">event</span> <span class="o">==</span> <span class="n">Event</span><span class="o">::</span><span class="n">Character</span><span class="p">(</span><span class="sc">&#39;q&#39;</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">screen</span><span class="p">.</span><span class="n">ExitLoopClosure</span><span class="p">()();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="n">screen</span><span class="p">.</span><span class="n">Loop</span><span class="p">(</span><span class="n">component</span><span class="p">);</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1385,14 +1385,14 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p><code>ftxui::CatchEvent</code> 也可以用作装饰器：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>component <span style="color:#f92672">=</span> component
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">|</span> CatchEvent(handler_1)
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">|</span> CatchEvent(handler_2)
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">|</span> CatchEvent(handler_3)
-</span></span><span style="display:flex;"><span>  ;</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">component</span> <span class="o">=</span> <span class="n">component</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span> <span class="n">CatchEvent</span><span class="p">(</span><span class="n">handler_1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span> <span class="n">CatchEvent</span><span class="p">(</span><span class="n">handler_2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span> <span class="n">CatchEvent</span><span class="p">(</span><span class="n">handler_3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1403,10 +1403,10 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
     <a href="#component-collapsible" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>对于用户可切换显示/隐藏的视觉元素非常有用。本质上是 <code>ftxui::Checkbox()</code> 和 <code>ftxui::Maybe()</code> 组件的组合。</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> collapsible <span style="color:#f92672">=</span> Collapsible(<span style="color:#e6db74">&#34;显示更多&#34;</span>, inner_element);</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">collapsible</span> <span class="o">=</span> <span class="n">Collapsible</span><span class="p">(</span><span class="s">&#34;显示更多&#34;</span><span class="p">,</span> <span class="n">inner_element</span><span class="p">);</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1418,12 +1418,12 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p>使用布尔值的示例：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> show <span style="color:#f92672">=</span> true;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> component <span style="color:#f92672">=</span> Renderer([]{ <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello World!&#34;</span>; });
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> maybe_component <span style="color:#f92672">=</span> Maybe(component, <span style="color:#f92672">&amp;</span>show)</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">show</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">component</span> <span class="o">=</span> <span class="n">Renderer</span><span class="p">([]{</span> <span class="k">return</span> <span class="s">&#34;Hello World!&#34;</span><span class="p">;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">maybe_component</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">show</span><span class="p">)</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1433,11 +1433,11 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p>使用谓词的示例：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> component <span style="color:#f92672">=</span> Renderer([]{ <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello World!&#34;</span>; });
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> maybe_component <span style="color:#f92672">=</span> Maybe(component, [<span style="color:#f92672">&amp;</span>] { <span style="color:#66d9ef">return</span> time <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>; })</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">component</span> <span class="o">=</span> <span class="n">Renderer</span><span class="p">([]{</span> <span class="k">return</span> <span class="s">&#34;Hello World!&#34;</span><span class="p">;</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="k">auto</span> <span class="n">maybe_component</span> <span class="o">=</span> <span class="n">Maybe</span><span class="p">(</span><span class="n">component</span><span class="p">,</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">{</span> <span class="k">return</span> <span class="n">time</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">;</span> <span class="p">})</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1447,13 +1447,13 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p>通常，<code>ftxui::Maybe</code> 也可以用作装饰器：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>component <span style="color:#f92672">=</span> component
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">|</span> Maybe(<span style="color:#f92672">&amp;</span>a_boolean)
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">|</span> Maybe([<span style="color:#f92672">&amp;</span>] { <span style="color:#66d9ef">return</span> time <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>; })
-</span></span><span style="display:flex;"><span>  ;</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">component</span> <span class="o">=</span> <span class="n">component</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span> <span class="n">Maybe</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a_boolean</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span> <span class="n">Maybe</span><span class="p">([</span><span class="o">&amp;</span><span class="p">]</span> <span class="p">{</span> <span class="k">return</span> <span class="n">time</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">;</span> <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1467,9 +1467,9 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
     <a href="#component-vertical" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>由 &ldquo;ftxui/component/component.hpp&rdquo; 中的 <code>ftxui::Container::Vertical()</code> 生成。它垂直显示组件列表并处理键盘/鼠标导航。</p>
 <h3>标签页容器<span class="hx:absolute hx:-mt-20" id="component-tab"></span>
     <a href="#component-tab" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>由 &ldquo;ftxui/component/component.hpp&rdquo; 中的 <code>ftxui::Container::Tab()</code> 生成。它接收一个组件列表并只显示其中一个。这对于实现标签栏非常有用。</p>
-<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2tab_vertical_8cpp-example.html"target="_blank" rel="noopener">垂直</a>：</p>
+<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2tab_vertical_8cpp-example.html" target="_blank" rel="noopener">垂直</a>：</p>
 <p><img src="https://user-images.githubusercontent.com/4759106/147250144-22ff044a-4773-4ff7-a49c-12ba4034acb4.gif" alt="ezgif com-gif-maker (1)"  loading="lazy" /></p>
-<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2tab_horizontal_8cpp-example.html"target="_blank" rel="noopener">水平</a>：</p>
+<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2tab_horizontal_8cpp-example.html" target="_blank" rel="noopener">水平</a>：</p>
 <p><img src="https://user-images.githubusercontent.com/4759106/147250217-fe447e0f-7a99-4e08-948a-995087d9b40e.gif" alt="ezgif com-gif-maker (2)"  loading="lazy" /></p>
 <h2>可调整分割<span class="hx:absolute hx:-mt-20" id="component-resizable-split"></span>
     <a href="#component-resizable-split" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>定义两个子组件之间的水平或垂直分隔。分隔线的位置可通过鼠标调整和控制。有四种可能的分隔方式：</p>
@@ -1480,7 +1480,7 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <li><code>ftxui::ResizableSplitBottom()</code>
 来自 &ldquo;ftxui/component/component.hpp&rdquo;</li>
 </ul>
-<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2resizable_split_8cpp-example.html"target="_blank" rel="noopener">示例</a>：</p>
+<p><a href="https://arthursonzogni.github.io/FTXUI/examples_2component_2resizable_split_8cpp-example.html" target="_blank" rel="noopener">示例</a>：</p>
 <p><img src="https://user-images.githubusercontent.com/4759106/147248372-c55512fe-9b96-4b08-a1df-d05cf2cae431.gif" alt="ezgif com-gif-maker"  loading="lazy" /></p>
 <p>@htmlonly</p>
 <script id="asciicast-tprMH2EdkUoMb7D2YxgMGgpzx" src="https://asciinema.org/a/tprMH2EdkUoMb7D2YxgMGgpzx.js" async></script>
@@ -1490,10 +1490,10 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p>示例：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>screen<span style="color:#f92672">-&gt;</span>PostEvent(Event<span style="color:#f92672">::</span>Custom);</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">screen</span><span class="o">-&gt;</span><span class="n">PostEvent</span><span class="p">(</span><span class="n">Event</span><span class="o">::</span><span class="n">Custom</span><span class="p">);</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1503,10 +1503,10 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
 <p>如果不需要处理新事件，可以使用：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>screen<span style="color:#f92672">-&gt;</span>RequestAnimationFrame();</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">screen</span><span class="o">-&gt;</span><span class="n">RequestAnimationFrame</span><span class="p">();</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1521,81 +1521,7 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
         title="dom（布局模块）"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
       >dom（布局模块）<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
-        <script>
-  function getGiscusTheme() {
-    const giscusTheme = '';
-    if (giscusTheme === 'light' || giscusTheme === 'dark') {
-      return giscusTheme;
-    }
-
-    const hugoTheme = localStorage.getItem("color-theme");
-    if (hugoTheme === 'light' || hugoTheme === 'dark') {
-      return hugoTheme;
-    }
-
-    if (hugoTheme === 'system') {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-
-    const defaultTheme = '';
-    if (defaultTheme === 'light' || defaultTheme === 'dark') {
-      return defaultTheme;
-    }
-
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
-  function setGiscusTheme() {
-    const iframe = document.querySelector('iframe.giscus-frame');
-    if (!iframe) return;
-
-    const msg = {
-      giscus: {
-        setConfig: {
-          theme: getGiscusTheme(),
-        },
-      },
-    }
-
-    iframe.contentWindow.postMessage(msg, 'https://giscus.app');
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const giscusAttributes = {
-      "src": "https://giscus.app/client.js",
-      "data-repo": "xiaoditx\/xiaoditx.github.io",
-      "data-repo-id": "R_kgDOIzfQPg",
-      "data-category": "Blog comments",
-      "data-category-id": "DIC_kwDOIzfQPs4CumTH",
-      "data-mapping": "pathname",
-      "data-strict": "0",
-      "data-reactions-enabled": "1",
-      "data-emit-metadata": "0",
-      "data-input-position": "top",
-      "data-theme": getGiscusTheme(),
-      "data-lang": "zh-CN",
-      "crossorigin": "anonymous",
-      "async": "",
-    };
-
-    
-    const giscusScript = document.createElement("script");
-    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
-    
-    document.getElementById('giscus-hextra-bb112b9f807c37c1752e5da6a1652a29').appendChild(giscusScript);
-
-    
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", setGiscusTheme);
-
-    
-    const themeToggleOptions = document.querySelectorAll(".hextra-theme-toggle-options p");
-    if (themeToggleOptions) {
-      themeToggleOptions.forEach(toggle => toggle.addEventListener('click', setGiscusTheme));
-    }
-  });
-</script>
-
-<div id="giscus-hextra-bb112b9f807c37c1752e5da6a1652a29"></div>
+        
       </main>
     </article>
   </div>
@@ -1608,7 +1534,9 @@ std::string phone_number; Component input = Input(&amp;phone_number, &#34;电话
   </a></div></div>
     </div></footer>
     
-    <script defer src="/public/js/main.min.4b9db45beb41a4e92ac9b609d116536b24ab16ac5ee4677c9fafe17c9c2c4eee.js" integrity="sha256-S520W&#43;tBpOkqybYJ0RZTaySrFqxe5Gd8n6/hfJwsTu4="></script>
-<script defer src="/public/js/flexsearch.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY=" crossorigin="anonymous"></script><script defer src="/public/zh-cn.search.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY="></script>
+    <script defer src="/public/js/main.min.061e2d003accb54db2abcf688d657e52541224ec8baf9132a8097c3dca42cd8e.js" integrity="sha256-Bh4tADrMtU2yq89ojWV&#43;UlQSJOyLr5EyqAl8PcpCzY4="></script>
+
+    <script defer src="/public/js/flexsearch.433e941a8a573ebb9931fc16fc75266ab6b93f569ac2fb4f3dc66882e0416f4c.js" integrity="sha256-Qz6UGopXPruZMfwW/HUmara5P1aawvtPPcZoguBBb0w=" crossorigin="anonymous"></script>
+    <script defer src="/public/zh-cn.search.min.60ea598e52e57e84f15fa3c2d926c036e04bd3ecf9cb5e0122ed76cb380d8989.js" integrity="sha256-YOpZjlLlfoTxX6PC2SbANuBL0&#43;z5y14BIu12yzgNiYk="></script>
   </body>
 </html>

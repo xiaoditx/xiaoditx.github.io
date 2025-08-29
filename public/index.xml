@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>小狄同学呀 – 小狄同学呀 | 开源，共享，教育教学，引领技术发展</title>
-    <link>https://xiaoditx.github.io/public/</link>
-    <description>Recent content in 小狄同学呀 | 开源，共享，教育教学，引领技术发展 on 小狄同学呀</description>
+    <title>xiaoditx – 小狄同学呀 | 开源，共享，教育教学，引领技术发展</title>
+    <link>http://localhost:2231/</link>
+    <description>Recent content in 小狄同学呀 | 开源，共享，教育教学，引领技术发展 on xiaoditx</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="https://xiaoditx.github.io/public/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:2231/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,14 +16,14 @@
     
     <item>
       <title>VScode插件报错，g&#43;&#43;却完美编译？API调用错因分析</title>
-      <link>https://xiaoditx.github.io/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</link>
+      <link>http://localhost:2231/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</link>
       <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaoditx.github.io/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</guid>
+      <guid>http://localhost:2231/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</guid>
       <description>
         
         
-        &lt;p&gt;前一段时间写了个&lt;a href=&#34;https://github.com/xiaoditx/BeepMusic&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;小软件&lt;/a&gt;，想给它加个读写配置项功能，刚学几天C++的我上网查了半天资料，找到两个Windows的API分别是读ini的&lt;code&gt;GetPrivateProfileString&lt;/code&gt;和写ini的&lt;code&gt;WritePrivateProfileString&lt;/code&gt;，根据网上的教程，我写出了下面这三行：&lt;/p&gt;
+        &lt;p&gt;前一段时间写了个&lt;a href=&#34;https://github.com/xiaoditx/BeepMusic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;小软件&lt;/a&gt;，想给它加个读写配置项功能，刚学几天C++的我上网查了半天资料，找到两个Windows的API分别是读ini的&lt;code&gt;GetPrivateProfileString&lt;/code&gt;和写ini的&lt;code&gt;WritePrivateProfileString&lt;/code&gt;，根据网上的教程，我写出了下面这三行：&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    LPTSTR lpPath &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;char&lt;/span&gt;[MAX_PATH];
@@ -31,7 +31,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;WritePrivateProfileString(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;config&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;t&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;120&amp;#34;&lt;/span&gt;, lpPath);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
@@ -62,7 +62,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#endif&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
@@ -81,7 +81,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;delete&lt;/span&gt;[] lpPath;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
@@ -248,10 +248,10 @@
     
     <item>
       <title>算法真题：GESP202503四级——荒地开垦（洛谷B4263）</title>
-      <link>https://xiaoditx.github.io/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/</link>
+      <link>http://localhost:2231/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/</link>
       <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://xiaoditx.github.io/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/</guid>
+      <guid>http://localhost:2231/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/</guid>
       <description>
         
         
@@ -266,14 +266,14 @@
 小杨可以选择至多一个位置，清除该位置的杂物，移除杂物后该位置变为荒地。小杨想知道在清除至多一个位置的杂物的情况下，最多能够开垦多少块荒地。&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
   &lt;/button&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;输入输出什么的直接看洛谷吧，我就不一一粘过来了：&lt;a href=&#34;https://www.luogu.com.cn/problem/B4263&#34;target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;洛谷B4263&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;输入输出什么的直接看洛谷吧，我就不一一粘过来了：&lt;a href=&#34;https://www.luogu.com.cn/problem/B4263&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;洛谷B4263&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;二.代码&lt;/h1&gt;&lt;p&gt;虽然我是写出来了，但我毕竟不是专业学算法的，所以我也不知道什么时间复杂度空间复杂度的，更不知道我用的算法叫什么，我只知道我AC了，每次大抵是在7-25ms通过测试点（如下）&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./imgs/780cf181312b418da50cb8481a848b15.png&#34; alt=&#34;测试点信息&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;下面是我的代码，这个是带注释的版本，但大概也会被我某些地方原因不明的写法迷惑住，如果看不懂可以直接看解析，会有几乎逐行的解读：&lt;/p&gt;
@@ -370,7 +370,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
@@ -386,7 +386,7 @@
 ...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
@@ -401,7 +401,7 @@
 .!.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
@@ -427,7 +427,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
@@ -453,7 +453,7 @@
 .....&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
@@ -496,7 +496,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
@@ -505,7 +505,7 @@
 &lt;/div&gt;
 &lt;p&gt;（请不要在意我诸如&lt;code&gt;c&lt;/code&gt;、&lt;code&gt;dev_c&lt;/code&gt;之类的奇怪的变量名，我只是想写出&lt;code&gt;c++&lt;/code&gt;这样的语句）&lt;/p&gt;
 &lt;p&gt;我们使用一个很简单的循环逐个字符的读入，由于我们已经将地图初始化为了可开垦，所以督读到&lt;code&gt;.&lt;/code&gt;大抵可以直接丢弃，只有&lt;code&gt;#&lt;/code&gt;对我们才是重要的，我们将其记录入&lt;code&gt;imap&lt;/code&gt;和&lt;code&gt;object&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;记录入&lt;code&gt;imap&lt;/code&gt;的操作是这样的：-1-当前格内容，如果原本是0，那么现在就是-1，原本是1，现在就是-2，可以回看&lt;a href=&#34;#%e9%87%8f%e5%8c%96%e6%af%8f%e4%b8%aa%e4%bd%8d%e7%bd%ae%e7%9a%84%e4%bf%a1%e6%81%af&#34;&gt;量化每个位置的信息&lt;/a&gt;那段，看看是不是对上了。&lt;/p&gt;
+&lt;p&gt;记录入&lt;code&gt;imap&lt;/code&gt;的操作是这样的：-1-当前格内容，如果原本是0，那么现在就是-1，原本是1，现在就是-2，可以回看&lt;a href=&#34;#%e9%87%8f%e5%8c%96%e6%af%8f%e4%b8%aa%e4%bd%8d%e7%bd%ae%e7%9a%84%e4%bf%a1%e6%81%af&#34; &gt;量化每个位置的信息&lt;/a&gt;那段，看看是不是对上了。&lt;/p&gt;
 &lt;p&gt;写入完毕后，做四次循环，分别对应&lt;code&gt;px&lt;/code&gt;和&lt;code&gt;py&lt;/code&gt;数组的四次偏移，依次计算影响：非杂物块加上一，杂物块减去一。&lt;/p&gt;
 &lt;p&gt;计算偏移时需要注意一点，偏移后的结果有几率超出数组范围，这个时候就不应该对这个不存在的坐标操作了，所以要加个&lt;code&gt;if&lt;/code&gt;对于是否超界进行判断。&lt;/p&gt;
 &lt;h2&gt;3.当前可开垦的数目统计&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3当前可开垦的数目统计&#34;&gt;&lt;/span&gt;
@@ -524,7 +524,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
@@ -560,7 +560,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
@@ -577,7 +577,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
   &lt;button
     class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
-    title=&#34;复制代码&#34;
+    title=&#34;Copy code&#34;
   &gt;
     &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
 &lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;

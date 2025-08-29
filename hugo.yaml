@@ -1,0 +1,212 @@
+#baseURL: https://xiaoditx.github.io/
+#languageCode: en-us
+#title: xiaoditx
+
+module:
+  imports:
+    - path: github.com/imfing/hextra
+    
+#markup:
+#  goldmark:
+#    renderer:
+#      unsafe: true
+
+title: '小狄同学呀'
+baseURL: 'https://xiaoditx.github.io/public'
+
+hasCJKLanguage: true
+languageCode: 'zh-cn'
+
+#enableGitInfo: true
+enableRobotsTXT: true
+
+defaultContentLanguage: 'zh-cn'
+
+# 控制输出吧
+outputs:
+  home: [html, llms]
+  page: [html]
+  section: [html, rss]
+
+# 语言对应的配置
+defaultContentLanguage: zh-cn
+languages:
+  zh-cn:
+    weight: 1
+    languageName: 中文
+    title: 小狄同学呀
+  en:
+    weight: 2
+    languageName: English
+    title: XiaoDi
+    menu:
+      main:
+        - name: Home
+          pageRef: /
+          weight: 10
+        - name: Blog
+          pageRef: /blog
+          weight: 20
+        - name: Docs
+          pageRef: /docs
+          weight: 30
+        - name: Daily
+          pageRef: /daily
+          weight: 40
+
+  ja:
+    weight: 3
+    languageName: 日本語
+    title: 狄くん
+    menu:
+      main:
+        - name: ホーム
+          pageRef: /
+          weight: 10
+        - name: ブログ
+          pageRef: /blog
+          weight: 20
+        - name: ドキュメント
+          pageRef: /docs
+          weight: 30
+        - name: 近況
+          pageRef: /daily
+          weight: 40
+              
+# 下面的内容，其实我也不明白是干什么的，但是hextra官方示例网站是这么写的我就抄过来了
+# ————————————————————————————————————————————————————————
+markup:
+  highlight:
+    noClasses: false
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block: [['\[', '\]'], ['$$', '$$']]
+          inline: [['\(', '\)']]
+        enable: true
+
+enableInlineShortcodes: true
+# —————————————————————————————————————————————————————————
+
+menu:
+  main:
+    - identifier: home
+      name: 首页
+      weight: 1
+    - identifier: documentation
+      name: 文档
+      pageRef: /docs
+      weight: 2
+    - identifier: blog
+      name: 博客
+      weight: 3
+    - identifier: daily
+      name: 动态
+      pageRef: /blog
+      weight: 4
+    - identifier: about
+      name: 关于
+      pageRef: /about
+      weight: 5
+    - name: Search
+      weight: 6
+      params:
+        type: search
+    - name: GitHub
+      weight: 7
+      url: "https://github.com/imfing/hextra"
+      params:
+        icon: github
+
+  sidebar:
+    - name: 更多内容 ↓
+      params:
+        type: separator
+      weight: 1
+    - name: "GitHub"
+      pageRef: "https://github.com/xiaoditx"
+      weight: 2
+    - name: "FTXUI"
+      url: "https://arthursonzogni.github.io/FTXUI/"
+      weight: 3
+      
+params:
+  description: 小狄同学呀的个人网站 | 开源软件、文档、博客、动态 | 立志做优秀开源者，最新项目：FreeOS
+  externalLinkDecoration: true # 站外链接特殊标记
+  banner:
+    key: 'announcement-v0_10'
+  
+  # 不知道干什么的，抄来的放这就对了
+  navbar:
+    displayTitle: true
+    displayLogo: true
+#    logo:
+#      path: imgs/touxiang.jpg
+#      #dark: images/logo-dark.svg
+#      # width: 40
+#      # height: 20
+#      # link: /
+#    width: wide
+
+  theme:
+    # light | dark | system
+    default: system
+    displayToggle: true
+
+#  footer:
+#    enable: true
+#    displayCopyright: true
+#    displayPoweredBy: true
+#    width: normal
+
+  # 显示最后一次修改时间
+  displayUpdatedDate: true
+  dateFormat: "January 2, 2006"
+
+  # 搜索设置
+  # 使用默认支持的flexsearch
+  search:
+    enable: true
+    type: flexsearch
+
+    flexsearch:
+      # index page by: content | summary | heading | title
+      index: content
+      # full | forward | reverse | strict
+      # https://github.com/nextapps-de/flexsearch/#tokenizer-prefix-search
+      tokenize: forward
+  
+  # "在github上修改"选项的链接
+  editURL:
+    enable: true
+    base: "https://github.com/xiaoditx/xiaoditx.github.io/edit/main/content"
+
+  blog:
+    list:
+      displayTags: true
+      # date | lastmod | publishDate | title | weight
+      sortBy: date
+      sortOrder: desc # or "asc"
+      # Pagination
+      pagerSize: 20
+
+    article:
+      displayPagination: true
+
+  toc:
+    displayTags: true
+
+  highlight:
+    copy:
+      enable: true
+      # hover | always
+      display: hover
+
+  page:
+    # full (100%), wide (90rem), normal (80rem)
+    width: normal
+    # tabs:
+    #   sync: true

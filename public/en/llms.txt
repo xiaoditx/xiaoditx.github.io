@@ -1,0 +1,9 @@
+# XiaoDi
+
+> 小狄同学呀的个人网站 | 开源软件、文档、博客、动态 | 立志做优秀开源者，最新项目：FreeOS
+
+
+
+---
+Generated on 2025-08-29 14:59:52 UTC
+Site: https://xiaoditx.github.io/public/

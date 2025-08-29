@@ -22,47 +22,37 @@
   <meta itemprop="description" content="同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，上课有些无聊，干脆把题做了，回家试了试又改了改，顺利AC。">
   <meta itemprop="datePublished" content="2025-08-26T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-08-26T00:00:00+00:00">
-  <meta itemprop="wordCount" content="284">
+  <meta itemprop="wordCount" content="5738">
   <meta itemprop="keywords" content="算法,C&#43;&#43;,GESP,模拟">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="算法真题：GESP202503四级——荒地开垦（洛谷B4263）">
   <meta name="twitter:description" content="同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，上课有些无聊，干脆把题做了，回家试了试又改了改，顺利AC。">
-      <meta name="twitter:site" content="@xiaoditxy">
 
-    <link rel="preload" href="/public/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" as="style" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
-    <link href="/public/css/compiled/main.min.a79debb9b9f093a1204fba7f78b8d9b34e88d8607ab5e2330159711e74951f90.css" rel="stylesheet" integrity="sha256-p53rubnwk6EgT7p/eLjZs06I2GB6teIzAVlxHnSVH5A=" />
+    <link rel="preload" href="/public/css/compiled/main.min.e63b3479721056ae4904871cc4e511f2a27ebf2445d92ea13b17a10f5f6f5e3d.css" as="style" integrity="sha256-5js0eXIQVq5JBIccxOUR8qJ&#43;vyRF2S6hOxehD19vXj0=" />
+    <link href="/public/css/compiled/main.min.e63b3479721056ae4904871cc4e511f2a27ebf2445d92ea13b17a10f5f6f5e3d.css" rel="stylesheet" integrity="sha256-5js0eXIQVq5JBIccxOUR8qJ&#43;vyRF2S6hOxehD19vXj0=" />
 
   
 
-
-
-
-
-
   <script>
-    
+     
+    const defaultTheme = 'system';
 
-    function setTheme(theme) {
-      document.documentElement.classList.remove("light", "dark");
-
-      if (theme !== "light" && theme !== "dark") {
-       theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      }
-
-      document.documentElement.classList.add(theme);
-      document.documentElement.style.colorScheme = theme;
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
     }
 
-    setTheme("color-theme" in localStorage ? localStorage.getItem("color-theme") : 'system')
-
-  </script>
-
-  <script>
-    
-
-    if (localStorage.getItem('banner-closed')) {
-      document.documentElement.style.setProperty("--hextra-banner-height", "0px");
-      document.documentElement.classList.add("hextra-banner-hidden");
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
     }
   </script>
 
@@ -80,31 +70,75 @@
     <img class="hx:mr-2 hx:hidden hx:dark:block" src="/public/images/logo.svg" alt="Dark Logo" height="20" width="20" />
     <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="小狄同学呀">小狄同学呀</span>
 </a>
-<a
-  title=""
-  href="/public/"
-  
-  class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
-><span class="hx:text-center">首页</span>
-</a><a
-  title=""
-  href="/public/blog"
-  
-  class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:font-medium"
-><span class="hx:text-center">博客</span>
-</a><a
-  title=""
-  href="/public/docs"
-  
-  class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
-><span class="hx:text-center">文档</span>
-</a><a
-  title=""
-  href="/public/daily"
-  
-  class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-flex hx:items-center hx:gap-1 hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
-><span class="hx:text-center">动态</span>
-</a><button type="button" aria-label="Menu" class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-2 hx:rounded-sm hx:p-2 hx:active:bg-gray-400/20 hx:md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+
+            <a
+              title="首页"
+              href=""
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">首页</span>
+            </a>
+            <a
+              title="文档"
+              href="/public/docs"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">文档</span>
+            </a>
+            <a
+              title="博客"
+              href=""
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">博客</span>
+            </a>
+            <a
+              title="动态"
+              href="/public/blog"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:font-medium"
+            >
+              <span class="hx:text-center">动态</span>
+            </a>
+            <a
+              title="关于"
+              href="/public/about"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">关于</span>
+            </a><div class="hextra-search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="搜索文档..."
+      class="hextra-search-input hx:focus:hextra-focus hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="hextra-search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+          <a class="hx:p-2 hx:text-current" target="_blank" rel="noreferrer" href="https://github.com/imfing/hextra" title="GitHub"><svg height=24 fill="currentColor" viewBox="3 3 18 18">
+  <path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path>
+</svg>
+<span class="hx:sr-only">GitHub</span>
+          </a><button type="button" aria-label="Menu" class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-2 hx:rounded-sm hx:p-2 hx:active:bg-gray-400/20 hx:md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
   </nav>
 </div>
 
@@ -200,6 +234,13 @@
               
             </li></ul>
       </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/public/about/"
+    
+  >About
+    </a></li>
           <li class=""><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
@@ -569,59 +610,77 @@
               
             </li></ul>
       </div></li>
+      <li class="[word-break:break-word] hx:mt-5 hx:mb-2 hx:px-2 hx:py-1.5 hx:text-sm hx:font-semibold hx:text-gray-900 hx:first:mt-0 hx:dark:text-gray-100">
+        <span class="hx:cursor-default">更多内容 ↓</span>
+      </li>
+    <li><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href=""
+    
+  >GitHub</a></li>
+    <li><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="https://arthursonzogni.github.io/FTXUI/"
+    target="_blank" rel="noreferrer"
+  >FTXUI</a></li>
+    
     </ul>
 
     <div class="hx:max-xl:hidden hx:h-0 hx:w-64 hx:shrink-0"></div></div>
   
   
-    <div class="hx:md:hidden  hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show"><div class="hx:flex hx:grow hx:flex-col"><div class="hx:flex hx:justify-items-start hx:group" data-theme="light">
-  <button
-    title="切换主题"
-    data-state="closed"
-    data-location="bottom"
-    class="hextra-theme-toggle hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:h-7 hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:grow"
-    type="button"
-    aria-label="切换主题"
-  >
-    <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden">浅色</span><svg height=12 class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden">深色</span><svg height=12 class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="currentColor">
-  <path d="M 11.996094,2 C 6.4986225,2.0192368 2.03125,6.5024993 2.03125,12 c 0,5.497501 4.4673725,9.980763 9.964844,10 H 12 12.0039 c 5.497471,-0.01924 9.964844,-4.502499 9.964844,-10 0,-5.4975007 -4.467373,-9.9807632 -9.964844,-10 H 12 Z M 12,4 c 4.417218,0.017598 7.96875,3.5822356 7.96875,8 0,4.417764 -3.551532,7.982402 -7.96875,8 z" />
-</svg>
-<span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden">跟随系统</span></div>
-  </button>
-  <ul
-    class="hextra-theme-toggle-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
-    style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
-    data-theme="light"
-  >
-    <li class="hx:flex hx:flex-col">
-      <p
-        data-item="light"
-        class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
-      >
-        浅色
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </p>
-    </li>
-    <li class="hx:flex hx:flex-col">
-      <p
-        data-item="dark"
-        class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
-      >
-        深色
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </p>
-    </li>
-    <li class="hx:flex hx:flex-col">
-      <p
-        data-item="system"
-        class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
-      >
-        跟随系统
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </p>
-    </li>
-  </ul>
-</div></div></div></aside>
+    <div class="hx:md:hidden hx:justify-end hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show"><div class="hx:flex hx:justify-items-start hx:grow">
+    <button
+      title="切换语言"
+      data-state="closed"
+      data-location=""
+      class="hextra-language-switcher hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:h-7 hx:px-2 hx:text-xs hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="切换语言"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>中文</span></div>
+    </button>
+    <ul
+      class="hextra-language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >中文<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/public/en/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/public/ja/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >日本語</a>
+        </li>
+      </ul>
+  </div><button
+  title="切换主题"
+  data-theme="light"
+  class="hextra-theme-toggle hx:cursor-pointer hx:group hx:rounded-md hx:text-left hx:h-7 hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400"
+  type="button"
+  aria-label="切换主题"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></div>
+</button>
+</div></aside>
     
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">此页上</p><ul></ul><ul></ul><ul>
@@ -657,7 +716,12 @@
         <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#5%e8%be%93%e5%87%ba">5.输出
         </a>
       </li></ul><ul></ul>
-      <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
+      <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400"><div class="hx:flex hx:items-start hx:gap-x-2 hx:font-medium hx:text-xs">
+            <div class="hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">标签</div>
+            <div class="hx:flex hx:flex-wrap hx:gap-y-1">
+              <a class="hx:inline-block hx:whitespace-nowrap hx:mr-2 hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50" href="/public/tags/%E7%AE%97%E6%B3%95/">#算法</a><a class="hx:inline-block hx:whitespace-nowrap hx:mr-2 hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50" href="/public/tags/c&#43;&#43;/">#C&#43;&#43;</a><a class="hx:inline-block hx:whitespace-nowrap hx:mr-2 hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50" href="/public/tags/gesp/">#GESP</a><a class="hx:inline-block hx:whitespace-nowrap hx:mr-2 hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50" href="/public/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
+            </div>
+          </div><a class="hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50" href="https://github.com/xiaoditx/xiaoditx.github.io/edit/main/content/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98%EF%BC%9AGESP202503%E5%9B%9B%E7%BA%A7%E2%80%94%E2%80%94%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%EF%BC%88%E6%B4%9B%E8%B0%B7B4263%EF%BC%89/index.md" target="_blank" rel="noreferrer">在 GitHub 上编辑此页 →</a>
         <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
           <span>返回顶部</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx:inline hx:ltr:ml-1 hx:rtl:mr-1 hx:h-3.5 hx:w-3.5 hx:rounded-full hx:border hx:border-gray-500 hx:hover:border-gray-900 hx:dark:border-gray-400 hx:dark:hover:border-gray-100 hx:contrast-more:border-gray-800 hx:contrast-more:dark:border-gray-50">
@@ -692,111 +756,111 @@
 小杨可以选择至多一个位置，清除该位置的杂物，移除杂物后该位置变为荒地。小杨想知道在清除至多一个位置的杂物的情况下，最多能够开垦多少块荒地。</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
   </button>
 </div>
 </div>
-<p>输入输出什么的直接看洛谷吧，我就不一一粘过来了：<a href="https://www.luogu.com.cn/problem/B4263"target="_blank" rel="noopener">洛谷B4263</a></p>
+<p>输入输出什么的直接看洛谷吧，我就不一一粘过来了：<a href="https://www.luogu.com.cn/problem/B4263" target="_blank" rel="noopener">洛谷B4263</a></p>
 <h1>二.代码</h1><p>虽然我是写出来了，但我毕竟不是专业学算法的，所以我也不知道什么时间复杂度空间复杂度的，更不知道我用的算法叫什么，我只知道我AC了，每次大抵是在7-25ms通过测试点（如下）</p>
 <p><img src="./imgs/780cf181312b418da50cb8481a848b15.png" alt="测试点信息"  loading="lazy" /></p>
 <p>下面是我的代码，这个是带注释的版本，但大概也会被我某些地方原因不明的写法迷惑住，如果看不懂可以直接看解析，会有几乎逐行的解读：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include&lt;iostream&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include&lt;cstring&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> m,n,record_c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#75715e">//长宽与杂物数记录变量
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> tmp;<span style="color:#75715e">//其实想用string的来着
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> px[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>},py[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>};<span style="color:#75715e">//杂物的不可开垦偏移
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>cin<span style="color:#f92672">&gt;&gt;</span>n<span style="color:#f92672">&gt;&gt;</span>m;<span style="color:#75715e">//读入长宽(处于设计原因，被逼无奈反着读了)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> imap[m][n];<span style="color:#75715e">//创建地图数组（二维）
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> object[m<span style="color:#f92672">*</span>n][<span style="color:#ae81ff">2</span>];<span style="color:#75715e">//杂物坐标记录数组
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    memset(imap,<span style="color:#ae81ff">0</span>,<span style="color:#66d9ef">sizeof</span>(imap));<span style="color:#75715e">//初始化地图为0（即默认无杂物可开垦）
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;c<span style="color:#f92672">&lt;</span>n;c<span style="color:#f92672">++</span>){<span style="color:#75715e">//循环读入内容
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> vc<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;vc<span style="color:#f92672">&lt;</span>m;vc<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>            std<span style="color:#f92672">::</span>cin<span style="color:#f92672">&gt;&gt;</span>tmp;<span style="color:#75715e">//暂时读入tmp
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span>(tmp<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;#&#39;</span>){<span style="color:#75715e">//判断是否为#（杂物）
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                imap[vc][c]<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>imap[vc][c];<span style="color:#75715e">//是杂物则以负数记录叠加
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                object[record_c][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">=</span>vc;<span style="color:#75715e">//记录杂物位置，减少后期工作量，节约时间
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                object[record_c][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span>c;
-</span></span><span style="display:flex;"><span>                record_c<span style="color:#f92672">++</span>;<span style="color:#75715e">//把记录的变量+1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> dev_c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;dev_c<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">4</span>;dev_c<span style="color:#f92672">++</span>){<span style="color:#75715e">//四次计算偏移后的坐标并判断
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">int</span> tx<span style="color:#f92672">=</span>px[dev_c]<span style="color:#f92672">+</span>vc,ty<span style="color:#f92672">=</span>py[dev_c]<span style="color:#f92672">+</span>c;<span style="color:#75715e">//偏移后的X、Y
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#75715e">/*边界判断，防止操作数组时超界
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                    实际上，如果你觉得if严重影响执行效率，可以考虑定制化的边界判断，先操作边界再操作内部
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                    这样会有更高的效率，但同样意味着你需要写更多的代码
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                    */</span>
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span>((tx<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>) 
-</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&amp;&amp;</span> (tx<span style="color:#f92672">&lt;</span>m) <span style="color:#75715e">//这两行是对X的判断
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">&amp;&amp;</span> (ty<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>) <span style="color:#75715e">//下面两行是对Y的判断
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    <span style="color:#f92672">&amp;&amp;</span> (ty<span style="color:#f92672">&lt;</span>n)){
-</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">if</span>(imap[tx][ty]<span style="color:#f92672">&gt;-</span><span style="color:#ae81ff">1</span>){<span style="color:#75715e">//对于“是否为杂物”进行判断
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                            imap[tx][ty]<span style="color:#f92672">++</span>;<span style="color:#75715e">//&gt;-1不为杂物，以++方式计录影响
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                        }<span style="color:#66d9ef">else</span>{<span style="color:#75715e">//&lt;=-1的情况
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                            imap[tx][ty]<span style="color:#f92672">--</span>;
-</span></span><span style="display:flex;"><span>                        }
-</span></span><span style="display:flex;"><span>                    }
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//读入完成，感受人机缩进的力量吧
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//（实则如果看的不舒服你完全可以用goto解决一下，但是不推荐）
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//下面是调试时使用的代码，在注释里保留了一下
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// for(int c=0;c&lt;n;c++){
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//     for(int vc=0;vc&lt;m;vc++){
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//         std::cout&lt;&lt;imap[vc][c]&lt;&lt;&#34; &#34;;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//     }
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//     std::cout&lt;&lt;std::endl;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// }
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> ans<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#75715e">//初始化一个为0的ans变量，用于存储最后输出
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//下面的循环，读imap数组，数“0”的个数
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;c<span style="color:#f92672">&lt;</span>n;c<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> vc<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;vc<span style="color:#f92672">&lt;</span>m;vc<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//标准的循环遍历
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span>(imap[vc][c]<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>){<span style="color:#75715e">//当前格子为0
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                ans<span style="color:#f92672">++</span>;<span style="color:#75715e">//ans用来记录可开垦格子数，0为可开垦，记录为+1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//当前状态下可开垦的格子数已经统计完毕了
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//下面要开始遍历每个杂物了
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> area,best<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#75715e">//两个变量来算杂物去除后变为可开垦的荒地数
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//area为临时记录变量，存储每次计算的可开垦数
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//best为最优解，也就是每次area中最高的那个
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;c<span style="color:#f92672">&lt;</span>record_c;c<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        area<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#75715e">//area只是临时变量，每次循环初始化为0
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">//事实上，这里写int area;似乎更好
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> vc<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;vc<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">4</span>;vc<span style="color:#f92672">++</span>){<span style="color:#75715e">//四次偏移
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">int</span> tx<span style="color:#f92672">=</span>px[vc]<span style="color:#f92672">+</span>object[c][<span style="color:#ae81ff">0</span>],ty<span style="color:#f92672">=</span>py[vc]<span style="color:#f92672">+</span>object[c][<span style="color:#ae81ff">1</span>];<span style="color:#75715e">//计算XY
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span>((tx<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>) <span style="color:#75715e">//边界检测，同前
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#f92672">&amp;&amp;</span> (tx<span style="color:#f92672">&lt;</span>m) 
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&amp;&amp;</span> (ty<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>) 
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&amp;&amp;</span> (ty<span style="color:#f92672">&lt;</span>n)){
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span>(imap[tx][ty]<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>){<span style="color:#75715e">//如果为1，则证明只被当前杂物影响，移除该杂物就能开垦了
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    area<span style="color:#f92672">++</span>;<span style="color:#75715e">//可开垦荒地数+1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                }
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(imap[object[c][<span style="color:#ae81ff">0</span>]][object[c][<span style="color:#ae81ff">1</span>]]<span style="color:#f92672">==-</span><span style="color:#ae81ff">1</span>){<span style="color:#75715e">//看看这个杂物有没有在别的杂物的影响范围内
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            area<span style="color:#f92672">++</span>;<span style="color:#75715e">//不在的话再加一
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(best<span style="color:#f92672">&lt;</span>area)best<span style="color:#f92672">=</span>area;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(best<span style="color:#f92672">==</span><span style="color:#ae81ff">5</span>)<span style="color:#66d9ef">break</span>;<span style="color:#75715e">//最大值是五，不可能在大了（自身+四个偏移），直接break节省时间
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
-</span></span><span style="display:flex;"><span>    ans<span style="color:#f92672">+=</span>best;<span style="color:#75715e">//ans加上挪出杂物腾出来的空间
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>cout<span style="color:#f92672">&lt;&lt;</span>ans;<span style="color:#75715e">//输出答案
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;iostream&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include&lt;cstring&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">record_c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//长宽与杂物数记录变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">char</span> <span class="n">tmp</span><span class="p">;</span><span class="c1">//其实想用string的来着
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">px</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="n">py</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span><span class="c1">//杂物的不可开垦偏移
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="p">;</span><span class="c1">//读入长宽(处于设计原因，被逼无奈反着读了)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">imap</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">n</span><span class="p">];</span><span class="c1">//创建地图数组（二维）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">object</span><span class="p">[</span><span class="n">m</span><span class="o">*</span><span class="n">n</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span><span class="c1">//杂物坐标记录数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">memset</span><span class="p">(</span><span class="n">imap</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">imap</span><span class="p">));</span><span class="c1">//初始化地图为0（即默认无杂物可开垦）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">c</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">c</span><span class="o">++</span><span class="p">){</span><span class="c1">//循环读入内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">vc</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">vc</span><span class="o">&lt;</span><span class="n">m</span><span class="p">;</span><span class="n">vc</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">tmp</span><span class="p">;</span><span class="c1">//暂时读入tmp
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span><span class="p">(</span><span class="n">tmp</span><span class="o">==</span><span class="sc">&#39;#&#39;</span><span class="p">){</span><span class="c1">//判断是否为#（杂物）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">imap</span><span class="p">[</span><span class="n">vc</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">=-</span><span class="mi">1</span><span class="o">-</span><span class="n">imap</span><span class="p">[</span><span class="n">vc</span><span class="p">][</span><span class="n">c</span><span class="p">];</span><span class="c1">//是杂物则以负数记录叠加
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">object</span><span class="p">[</span><span class="n">record_c</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">vc</span><span class="p">;</span><span class="c1">//记录杂物位置，减少后期工作量，节约时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">object</span><span class="p">[</span><span class="n">record_c</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">record_c</span><span class="o">++</span><span class="p">;</span><span class="c1">//把记录的变量+1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">dev_c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">dev_c</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span><span class="n">dev_c</span><span class="o">++</span><span class="p">){</span><span class="c1">//四次计算偏移后的坐标并判断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="kt">int</span> <span class="n">tx</span><span class="o">=</span><span class="n">px</span><span class="p">[</span><span class="n">dev_c</span><span class="p">]</span><span class="o">+</span><span class="n">vc</span><span class="p">,</span><span class="n">ty</span><span class="o">=</span><span class="n">py</span><span class="p">[</span><span class="n">dev_c</span><span class="p">]</span><span class="o">+</span><span class="n">c</span><span class="p">;</span><span class="c1">//偏移后的X、Y
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="cm">/*边界判断，防止操作数组时超界
+</span></span></span><span class="line"><span class="cl"><span class="cm">                    实际上，如果你觉得if严重影响执行效率，可以考虑定制化的边界判断，先操作边界再操作内部
+</span></span></span><span class="line"><span class="cl"><span class="cm">                    这样会有更高的效率，但同样意味着你需要写更多的代码
+</span></span></span><span class="line"><span class="cl"><span class="cm">                    */</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span><span class="p">((</span><span class="n">tx</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">                    <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">tx</span><span class="o">&lt;</span><span class="n">m</span><span class="p">)</span> <span class="c1">//这两行是对X的判断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">ty</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">//下面两行是对Y的判断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">ty</span><span class="o">&lt;</span><span class="n">n</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">if</span><span class="p">(</span><span class="n">imap</span><span class="p">[</span><span class="n">tx</span><span class="p">][</span><span class="n">ty</span><span class="p">]</span><span class="o">&gt;-</span><span class="mi">1</span><span class="p">){</span><span class="c1">//对于“是否为杂物”进行判断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                            <span class="n">imap</span><span class="p">[</span><span class="n">tx</span><span class="p">][</span><span class="n">ty</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="c1">//&gt;-1不为杂物，以++方式计录影响
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                        <span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="c1">//&lt;=-1的情况
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                            <span class="n">imap</span><span class="p">[</span><span class="n">tx</span><span class="p">][</span><span class="n">ty</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//读入完成，感受人机缩进的力量吧
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//（实则如果看的不舒服你完全可以用goto解决一下，但是不推荐）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//下面是调试时使用的代码，在注释里保留了一下
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// for(int c=0;c&lt;n;c++){
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//     for(int vc=0;vc&lt;m;vc++){
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//         std::cout&lt;&lt;imap[vc][c]&lt;&lt;&#34; &#34;;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//     }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//     std::cout&lt;&lt;std::endl;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//初始化一个为0的ans变量，用于存储最后输出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//下面的循环，读imap数组，数“0”的个数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">c</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">c</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">vc</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">vc</span><span class="o">&lt;</span><span class="n">m</span><span class="p">;</span><span class="n">vc</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//标准的循环遍历
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span><span class="p">(</span><span class="n">imap</span><span class="p">[</span><span class="n">vc</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span><span class="c1">//当前格子为0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">ans</span><span class="o">++</span><span class="p">;</span><span class="c1">//ans用来记录可开垦格子数，0为可开垦，记录为+1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//当前状态下可开垦的格子数已经统计完毕了
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//下面要开始遍历每个杂物了
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">area</span><span class="p">,</span><span class="n">best</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//两个变量来算杂物去除后变为可开垦的荒地数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//area为临时记录变量，存储每次计算的可开垦数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//best为最优解，也就是每次area中最高的那个
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">c</span><span class="o">&lt;</span><span class="n">record_c</span><span class="p">;</span><span class="n">c</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">area</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//area只是临时变量，每次循环初始化为0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//事实上，这里写int area;似乎更好
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">vc</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">vc</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span><span class="n">vc</span><span class="o">++</span><span class="p">){</span><span class="c1">//四次偏移
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">int</span> <span class="n">tx</span><span class="o">=</span><span class="n">px</span><span class="p">[</span><span class="n">vc</span><span class="p">]</span><span class="o">+</span><span class="n">object</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">ty</span><span class="o">=</span><span class="n">py</span><span class="p">[</span><span class="n">vc</span><span class="p">]</span><span class="o">+</span><span class="n">object</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span><span class="c1">//计算XY
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span><span class="p">((</span><span class="n">tx</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">//边界检测，同前
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">tx</span><span class="o">&lt;</span><span class="n">m</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">            <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">ty</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">            <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">ty</span><span class="o">&lt;</span><span class="n">n</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="p">(</span><span class="n">imap</span><span class="p">[</span><span class="n">tx</span><span class="p">][</span><span class="n">ty</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span><span class="c1">//如果为1，则证明只被当前杂物影响，移除该杂物就能开垦了
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">area</span><span class="o">++</span><span class="p">;</span><span class="c1">//可开垦荒地数+1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">imap</span><span class="p">[</span><span class="n">object</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="n">object</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span><span class="o">==-</span><span class="mi">1</span><span class="p">){</span><span class="c1">//看看这个杂物有没有在别的杂物的影响范围内
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">area</span><span class="o">++</span><span class="p">;</span><span class="c1">//不在的话再加一
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">best</span><span class="o">&lt;</span><span class="n">area</span><span class="p">)</span><span class="n">best</span><span class="o">=</span><span class="n">area</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">best</span><span class="o">==</span><span class="mi">5</span><span class="p">)</span><span class="k">break</span><span class="p">;</span><span class="c1">//最大值是五，不可能在大了（自身+四个偏移），直接break节省时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ans</span><span class="o">+=</span><span class="n">best</span><span class="p">;</span><span class="c1">//ans加上挪出杂物腾出来的空间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="p">;</span><span class="c1">//输出答案
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -812,7 +876,7 @@
 ...</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -827,7 +891,7 @@
 .!.</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -840,20 +904,20 @@
     <a href="#%e5%87%86%e5%a4%87%e5%9c%b0%e5%9b%be" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>想要解题，肯定得先接住题目给的数据，连数据都接不好还怎么分析，于是先写下接收前两个数据的代码，顺手为后面的事做准备：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include&lt;iostream&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include&lt;cstring&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> m,n,record_c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#75715e">//长宽与杂物数记录变量
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> tmp;<span style="color:#75715e">//其实想用string的来着
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> px[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>},py[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>};<span style="color:#75715e">//杂物的不可开垦偏移
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    std<span style="color:#f92672">::</span>cin<span style="color:#f92672">&gt;&gt;</span>n<span style="color:#f92672">&gt;&gt;</span>m;<span style="color:#75715e">//读入长宽(处于设计原因，被逼无奈反着读了)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> imap[m][n];<span style="color:#75715e">//创建地图数组（二维）
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> object[m<span style="color:#f92672">*</span>n][<span style="color:#ae81ff">2</span>];<span style="color:#75715e">//杂物坐标记录数组
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    memset(imap,<span style="color:#ae81ff">0</span>,<span style="color:#66d9ef">sizeof</span>(imap));<span style="color:#75715e">//初始化地图为0（即默认无杂物可开垦）
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;iostream&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include&lt;cstring&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">record_c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//长宽与杂物数记录变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">char</span> <span class="n">tmp</span><span class="p">;</span><span class="c1">//其实想用string的来着
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">px</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span><span class="n">py</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span><span class="c1">//杂物的不可开垦偏移
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="p">;</span><span class="c1">//读入长宽(处于设计原因，被逼无奈反着读了)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">imap</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">n</span><span class="p">];</span><span class="c1">//创建地图数组（二维）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">object</span><span class="p">[</span><span class="n">m</span><span class="o">*</span><span class="n">n</span><span class="p">][</span><span class="mi">2</span><span class="p">];</span><span class="c1">//杂物坐标记录数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">memset</span><span class="p">(</span><span class="n">imap</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">imap</span><span class="p">));</span><span class="c1">//初始化地图为0（即默认无杂物可开垦）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -879,7 +943,7 @@
 .....</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -892,37 +956,37 @@
 <h3>写地图<span class="hx:absolute hx:-mt-20" id="写地图"></span>
     <a href="#%e5%86%99%e5%9c%b0%e5%9b%be" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;c<span style="color:#f92672">&lt;</span>n;c<span style="color:#f92672">++</span>){<span style="color:#75715e">//循环读入内容
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> vc<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;vc<span style="color:#f92672">&lt;</span>m;vc<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        std<span style="color:#f92672">::</span>cin<span style="color:#f92672">&gt;&gt;</span>tmp;<span style="color:#75715e">//暂时读入tmp
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(tmp<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;#&#39;</span>){<span style="color:#75715e">//判断是否为#（杂物）
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            imap[vc][c]<span style="color:#f92672">=-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>imap[vc][c];<span style="color:#75715e">//是杂物则以负数记录叠加
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            object[record_c][<span style="color:#ae81ff">0</span>]<span style="color:#f92672">=</span>vc;<span style="color:#75715e">//记录杂物位置，减少后期工作量，节约时间
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            object[record_c][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span>c;
-</span></span><span style="display:flex;"><span>            record_c<span style="color:#f92672">++</span>;<span style="color:#75715e">//把记录的变量+1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> dev_c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;dev_c<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">4</span>;dev_c<span style="color:#f92672">++</span>){<span style="color:#75715e">//四次计算偏移后的坐标并判断
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">int</span> tx<span style="color:#f92672">=</span>px[dev_c]<span style="color:#f92672">+</span>vc,ty<span style="color:#f92672">=</span>py[dev_c]<span style="color:#f92672">+</span>c;<span style="color:#75715e">//偏移后的X、Y
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#75715e">/*边界判断，防止操作数组时超界
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                实际上，如果你觉得if严重影响执行效率，可以考虑定制化的边界判断，先操作边界再操作内部
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                这样会有更高的效率，但同样意味着你需要写更多的代码
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                    */</span>
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span>((tx<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>) 
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&amp;&amp;</span> (tx<span style="color:#f92672">&lt;</span>m) <span style="color:#75715e">//这两行是对X的判断
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#f92672">&amp;&amp;</span> (ty<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>) <span style="color:#75715e">//下面两行是对Y的判断
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#f92672">&amp;&amp;</span> (ty<span style="color:#f92672">&lt;</span>n)){
-</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">if</span>(imap[tx][ty]<span style="color:#f92672">&gt;-</span><span style="color:#ae81ff">1</span>){<span style="color:#75715e">//对于“是否为杂物”进行判断
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                        imap[tx][ty]<span style="color:#f92672">++</span>;<span style="color:#75715e">//&gt;-1不为杂物，以++方式计录影响
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                    }<span style="color:#66d9ef">else</span>{<span style="color:#75715e">//&lt;=-1的情况
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                        imap[tx][ty]<span style="color:#f92672">--</span>;
-</span></span><span style="display:flex;"><span>                    }
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">c</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">c</span><span class="o">++</span><span class="p">){</span><span class="c1">//循环读入内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">vc</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">vc</span><span class="o">&lt;</span><span class="n">m</span><span class="p">;</span><span class="n">vc</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">tmp</span><span class="p">;</span><span class="c1">//暂时读入tmp
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span><span class="p">(</span><span class="n">tmp</span><span class="o">==</span><span class="sc">&#39;#&#39;</span><span class="p">){</span><span class="c1">//判断是否为#（杂物）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">imap</span><span class="p">[</span><span class="n">vc</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">=-</span><span class="mi">1</span><span class="o">-</span><span class="n">imap</span><span class="p">[</span><span class="n">vc</span><span class="p">][</span><span class="n">c</span><span class="p">];</span><span class="c1">//是杂物则以负数记录叠加
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">object</span><span class="p">[</span><span class="n">record_c</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">vc</span><span class="p">;</span><span class="c1">//记录杂物位置，减少后期工作量，节约时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">object</span><span class="p">[</span><span class="n">record_c</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">record_c</span><span class="o">++</span><span class="p">;</span><span class="c1">//把记录的变量+1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">dev_c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">dev_c</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span><span class="n">dev_c</span><span class="o">++</span><span class="p">){</span><span class="c1">//四次计算偏移后的坐标并判断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="kt">int</span> <span class="n">tx</span><span class="o">=</span><span class="n">px</span><span class="p">[</span><span class="n">dev_c</span><span class="p">]</span><span class="o">+</span><span class="n">vc</span><span class="p">,</span><span class="n">ty</span><span class="o">=</span><span class="n">py</span><span class="p">[</span><span class="n">dev_c</span><span class="p">]</span><span class="o">+</span><span class="n">c</span><span class="p">;</span><span class="c1">//偏移后的X、Y
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="cm">/*边界判断，防止操作数组时超界
+</span></span></span><span class="line"><span class="cl"><span class="cm">                实际上，如果你觉得if严重影响执行效率，可以考虑定制化的边界判断，先操作边界再操作内部
+</span></span></span><span class="line"><span class="cl"><span class="cm">                这样会有更高的效率，但同样意味着你需要写更多的代码
+</span></span></span><span class="line"><span class="cl"><span class="cm">                    */</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="p">((</span><span class="n">tx</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">                <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">tx</span><span class="o">&lt;</span><span class="n">m</span><span class="p">)</span> <span class="c1">//这两行是对X的判断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">ty</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">//下面两行是对Y的判断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">ty</span><span class="o">&lt;</span><span class="n">n</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span><span class="p">(</span><span class="n">imap</span><span class="p">[</span><span class="n">tx</span><span class="p">][</span><span class="n">ty</span><span class="p">]</span><span class="o">&gt;-</span><span class="mi">1</span><span class="p">){</span><span class="c1">//对于“是否为杂物”进行判断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                        <span class="n">imap</span><span class="p">[</span><span class="n">tx</span><span class="p">][</span><span class="n">ty</span><span class="p">]</span><span class="o">++</span><span class="p">;</span><span class="c1">//&gt;-1不为杂物，以++方式计录影响
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="c1">//&lt;=-1的情况
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                        <span class="n">imap</span><span class="p">[</span><span class="n">tx</span><span class="p">][</span><span class="n">ty</span><span class="p">]</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -931,26 +995,26 @@
 </div>
 <p>（请不要在意我诸如<code>c</code>、<code>dev_c</code>之类的奇怪的变量名，我只是想写出<code>c++</code>这样的语句）</p>
 <p>我们使用一个很简单的循环逐个字符的读入，由于我们已经将地图初始化为了可开垦，所以督读到<code>.</code>大抵可以直接丢弃，只有<code>#</code>对我们才是重要的，我们将其记录入<code>imap</code>和<code>object</code></p>
-<p>记录入<code>imap</code>的操作是这样的：-1-当前格内容，如果原本是0，那么现在就是-1，原本是1，现在就是-2，可以回看<a href="#%e9%87%8f%e5%8c%96%e6%af%8f%e4%b8%aa%e4%bd%8d%e7%bd%ae%e7%9a%84%e4%bf%a1%e6%81%af">量化每个位置的信息</a>那段，看看是不是对上了。</p>
+<p>记录入<code>imap</code>的操作是这样的：-1-当前格内容，如果原本是0，那么现在就是-1，原本是1，现在就是-2，可以回看<a href="#%e9%87%8f%e5%8c%96%e6%af%8f%e4%b8%aa%e4%bd%8d%e7%bd%ae%e7%9a%84%e4%bf%a1%e6%81%af" >量化每个位置的信息</a>那段，看看是不是对上了。</p>
 <p>写入完毕后，做四次循环，分别对应<code>px</code>和<code>py</code>数组的四次偏移，依次计算影响：非杂物块加上一，杂物块减去一。</p>
 <p>计算偏移时需要注意一点，偏移后的结果有几率超出数组范围，这个时候就不应该对这个不存在的坐标操作了，所以要加个<code>if</code>对于是否超界进行判断。</p>
 <h2>3.当前可开垦的数目统计<span class="hx:absolute hx:-mt-20" id="3当前可开垦的数目统计"></span>
     <a href="#3%e5%bd%93%e5%89%8d%e5%8f%af%e5%bc%80%e5%9e%a6%e7%9a%84%e6%95%b0%e7%9b%ae%e7%bb%9f%e8%ae%a1" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>我们这里的思路是：既然只能除掉一个，那我们就先算一算不除掉能开垦多少，再找找除掉后能够空出地盘最多的杂物，由此，就需要先统计当前可开垦数目：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> ans<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#75715e">//初始化一个为0的ans变量，用于存储最后输出
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//下面的循环，读imap数组，数“0”的个数
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;c<span style="color:#f92672">&lt;</span>n;c<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> vc<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;vc<span style="color:#f92672">&lt;</span>m;vc<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//标准的循环遍历
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(imap[vc][c]<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>){<span style="color:#75715e">//当前格子为0
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            ans<span style="color:#f92672">++</span>;<span style="color:#75715e">//ans用来记录可开垦格子数，0为可开垦，记录为+1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//初始化一个为0的ans变量，用于存储最后输出
+</span></span></span><span class="line"><span class="cl"><span class="c1">//下面的循环，读imap数组，数“0”的个数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">c</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">c</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">vc</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">vc</span><span class="o">&lt;</span><span class="n">m</span><span class="p">;</span><span class="n">vc</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//标准的循环遍历
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span><span class="p">(</span><span class="n">imap</span><span class="p">[</span><span class="n">vc</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span><span class="c1">//当前格子为0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">ans</span><span class="o">++</span><span class="p">;</span><span class="c1">//ans用来记录可开垦格子数，0为可开垦，记录为+1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -963,30 +1027,30 @@
 <p>当一个杂物被移走的时候，按照定义，周围的格子数值都应该减1，其所在的位置则是变为正数然后减一，则我们可以知道只要其所在的格子是-1时，移走可开垦；只有其周围格子为1时，一走可开垦，由此，得出以下代码：</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> area,best<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#75715e">//两个变量来算杂物去除后变为可开垦的荒地数
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;c<span style="color:#f92672">&lt;</span>record_c;c<span style="color:#f92672">++</span>){
-</span></span><span style="display:flex;"><span>    area<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;<span style="color:#75715e">//area只是临时变量，每次循环初始化为0
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//事实上，这里写int area;似乎更好
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> vc<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;vc<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">4</span>;vc<span style="color:#f92672">++</span>){<span style="color:#75715e">//四次偏移
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> tx<span style="color:#f92672">=</span>px[vc]<span style="color:#f92672">+</span>object[c][<span style="color:#ae81ff">0</span>],ty<span style="color:#f92672">=</span>py[vc]<span style="color:#f92672">+</span>object[c][<span style="color:#ae81ff">1</span>];<span style="color:#75715e">//计算XY
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>((tx<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>) <span style="color:#75715e">//边界检测，同前
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#f92672">&amp;&amp;</span> (tx<span style="color:#f92672">&lt;</span>m) 
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&amp;&amp;</span> (ty<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>) 
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&amp;&amp;</span> (ty<span style="color:#f92672">&lt;</span>n)){
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(imap[tx][ty]<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>){<span style="color:#75715e">//如果为1，则证明只被当前杂物影响，移除该杂物就能开垦了
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                area<span style="color:#f92672">++</span>;<span style="color:#75715e">//可开垦荒地数+1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(imap[object[c][<span style="color:#ae81ff">0</span>]][object[c][<span style="color:#ae81ff">1</span>]]<span style="color:#f92672">==-</span><span style="color:#ae81ff">1</span>){<span style="color:#75715e">//看看这个杂物有没有在别的杂物的影响范围内
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        area<span style="color:#f92672">++</span>;<span style="color:#75715e">//不在的话再加一
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(best<span style="color:#f92672">&lt;</span>area)best<span style="color:#f92672">=</span>area;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(best<span style="color:#f92672">==</span><span style="color:#ae81ff">5</span>)<span style="color:#66d9ef">break</span>;<span style="color:#75715e">//最大值是五，不可能在大了（自身+四个偏移），直接break节省时间
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">area</span><span class="p">,</span><span class="n">best</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//两个变量来算杂物去除后变为可开垦的荒地数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">c</span><span class="o">&lt;</span><span class="n">record_c</span><span class="p">;</span><span class="n">c</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">area</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//area只是临时变量，每次循环初始化为0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//事实上，这里写int area;似乎更好
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">vc</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">vc</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span><span class="n">vc</span><span class="o">++</span><span class="p">){</span><span class="c1">//四次偏移
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">int</span> <span class="n">tx</span><span class="o">=</span><span class="n">px</span><span class="p">[</span><span class="n">vc</span><span class="p">]</span><span class="o">+</span><span class="n">object</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">ty</span><span class="o">=</span><span class="n">py</span><span class="p">[</span><span class="n">vc</span><span class="p">]</span><span class="o">+</span><span class="n">object</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span><span class="c1">//计算XY
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span><span class="p">((</span><span class="n">tx</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="c1">//边界检测，同前
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">tx</span><span class="o">&lt;</span><span class="n">m</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">        <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">ty</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">        <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">ty</span><span class="o">&lt;</span><span class="n">n</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">imap</span><span class="p">[</span><span class="n">tx</span><span class="p">][</span><span class="n">ty</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span><span class="c1">//如果为1，则证明只被当前杂物影响，移除该杂物就能开垦了
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">area</span><span class="o">++</span><span class="p">;</span><span class="c1">//可开垦荒地数+1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">imap</span><span class="p">[</span><span class="n">object</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">0</span><span class="p">]][</span><span class="n">object</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span><span class="o">==-</span><span class="mi">1</span><span class="p">){</span><span class="c1">//看看这个杂物有没有在别的杂物的影响范围内
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">area</span><span class="o">++</span><span class="p">;</span><span class="c1">//不在的话再加一
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">best</span><span class="o">&lt;</span><span class="n">area</span><span class="p">)</span><span class="n">best</span><span class="o">=</span><span class="n">area</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">best</span><span class="o">==</span><span class="mi">5</span><span class="p">)</span><span class="k">break</span><span class="p">;</span><span class="c1">//最大值是五，不可能在大了（自身+四个偏移），直接break节省时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -998,12 +1062,12 @@
     <a href="#5%e8%be%93%e5%87%ba" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>由于最优解只看-1和1，这些可开垦荒地都是相对未移除杂物时新增的，直接将<code>ans</code>和<code>best</code>简单的相加即可的到最后结果</p>
 <div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
 
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>ans<span style="color:#f92672">+=</span>best;<span style="color:#75715e">//ans加上挪出杂物腾出来的空间
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>std<span style="color:#f92672">::</span>cout<span style="color:#f92672">&lt;&lt;</span>ans;<span style="color:#75715e">//输出答案
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">ans</span><span class="o">+=</span><span class="n">best</span><span class="p">;</span><span class="c1">//ans加上挪出杂物腾出来的空间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="p">;</span><span class="c1">//输出答案
 </span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
   <button
     class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
-    title="复制代码"
+    title="Copy code"
   >
     <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
 <div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
@@ -1016,138 +1080,67 @@
 经过这次的解题，我意识到有一种写题方法是极优的，当你写完了代码运行起来却事与愿违时，不妨想想如何用自然语言来描述你的算法，这样的方式相比对着代码抓头发等容易发现思想上的纰漏，各位搞算法的可以尝试一下。</p>
 <p>有些困了，脑子也不好用了，可能迷迷糊糊的写了一些原因不明的话，先睡了，等睡醒再改改吧</p>
 
-        </div><div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
+        </div>
+    <div class="hx:mt-12 hx:mb-8 hx:block hx:text-xs hx:text-gray-500 hx:ltr:text-right hx:rtl:text-left hx:dark:text-gray-400">最后更新于 <time datetime="2025-08-26T00:00:00.000Z">August 26, 2025</time></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
         href="/public/blog/vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/"
         title="VScode插件报错，g&#43;&#43;却完美编译？API调用错因分析"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
       >VScode插件报错，g&#43;&#43;却完美编译？API调用错因分析<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
   
-<script>
-  function getGiscusTheme() {
-    const giscusTheme = '';
-    if (giscusTheme === 'light' || giscusTheme === 'dark') {
-      return giscusTheme;
-    }
-
-    const hugoTheme = localStorage.getItem("color-theme");
-    if (hugoTheme === 'light' || hugoTheme === 'dark') {
-      return hugoTheme;
-    }
-
-    if (hugoTheme === 'system') {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-
-    const defaultTheme = '';
-    if (defaultTheme === 'light' || defaultTheme === 'dark') {
-      return defaultTheme;
-    }
-
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
-  function setGiscusTheme() {
-    const iframe = document.querySelector('iframe.giscus-frame');
-    if (!iframe) return;
-
-    const msg = {
-      giscus: {
-        setConfig: {
-          theme: getGiscusTheme(),
-        },
-      },
-    }
-
-    iframe.contentWindow.postMessage(msg, 'https://giscus.app');
-  }
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const giscusAttributes = {
-      "src": "https://giscus.app/client.js",
-      "data-repo": "xiaoditx\/xiaoditx.github.io",
-      "data-repo-id": "R_kgDOIzfQPg",
-      "data-category": "Blog comments",
-      "data-category-id": "DIC_kwDOIzfQPs4CumTH",
-      "data-mapping": "pathname",
-      "data-strict": "0",
-      "data-reactions-enabled": "1",
-      "data-emit-metadata": "0",
-      "data-input-position": "top",
-      "data-theme": getGiscusTheme(),
-      "data-lang": "zh-CN",
-      "crossorigin": "anonymous",
-      "async": "",
-    };
-
-    
-    const giscusScript = document.createElement("script");
-    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
-    
-    document.getElementById('giscus-hextra-bb112b9f807c37c1752e5da6a1652a29').appendChild(giscusScript);
-
-    
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", setGiscusTheme);
-
-    
-    const themeToggleOptions = document.querySelectorAll(".hextra-theme-toggle-options p");
-    if (themeToggleOptions) {
-      themeToggleOptions.forEach(toggle => toggle.addEventListener('click', setGiscusTheme));
-    }
-  });
-</script>
-
-<div id="giscus-hextra-bb112b9f807c37c1752e5da6a1652a29"></div></main>
+</main>
     </article>
   </div>
 
-      <footer class="hextra-footer hx:bg-gray-100 hx:pb-[env(safe-area-inset-bottom)] hx:dark:bg-neutral-900 hx:print:bg-transparent"><div class="hx:mx-auto hx:flex hx:gap-2 hx:py-2 hx:px-4 hextra-max-footer-width"><div class="hx:flex hx:justify-items-start hx:group" data-theme="light">
-  <button
-    title="切换主题"
-    data-state="closed"
-    data-location="bottom"
-    class="hextra-theme-toggle hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:h-7 hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:grow"
-    type="button"
-    aria-label="切换主题"
-  >
-    <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden">浅色</span><svg height=12 class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden">深色</span><svg height=12 class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  fill="currentColor">
-  <path d="M 11.996094,2 C 6.4986225,2.0192368 2.03125,6.5024993 2.03125,12 c 0,5.497501 4.4673725,9.980763 9.964844,10 H 12 12.0039 c 5.497471,-0.01924 9.964844,-4.502499 9.964844,-10 0,-5.4975007 -4.467373,-9.9807632 -9.964844,-10 H 12 Z M 12,4 c 4.417218,0.017598 7.96875,3.5822356 7.96875,8 0,4.417764 -3.551532,7.982402 -7.96875,8 z" />
-</svg>
-<span class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden">跟随系统</span></div>
-  </button>
-  <ul
-    class="hextra-theme-toggle-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
-    style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
-    data-theme="light"
-  >
-    <li class="hx:flex hx:flex-col">
-      <p
-        data-item="light"
-        class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
-      >
-        浅色
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </p>
-    </li>
-    <li class="hx:flex hx:flex-col">
-      <p
-        data-item="dark"
-        class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
-      >
-        深色
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </p>
-    </li>
-    <li class="hx:flex hx:flex-col">
-      <p
-        data-item="system"
-        class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
-      >
-        跟随系统
-         <span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3 hx:group-data-[theme=dark]:hidden hx:group-data-[theme=light]:hidden"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
-      </p>
-    </li>
-  </ul>
-</div></div><hr class="hx:border-gray-200 hx:dark:border-neutral-800" /><div class="hextra-custom-footer hextra-max-footer-width hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div
+      <footer class="hextra-footer hx:bg-gray-100 hx:pb-[env(safe-area-inset-bottom)] hx:dark:bg-neutral-900 hx:print:bg-transparent"><div class="hx:mx-auto hx:flex hx:gap-2 hx:py-2 hx:px-4 hextra-max-footer-width"><div class="hx:flex hx:justify-items-start ">
+    <button
+      title="切换语言"
+      data-state="closed"
+      data-location=""
+      class="hextra-language-switcher hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:h-7 hx:px-2 hx:text-xs hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="切换语言"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>中文</span></div>
+    </button>
+    <ul
+      class="hextra-language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/public/blog/%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >中文<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/public/en/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/public/ja/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >日本語</a>
+        </li>
+      </ul>
+  </div><button
+  title="切换主题"
+  data-theme="light"
+  class="hextra-theme-toggle hx:cursor-pointer hx:group hx:rounded-md hx:text-left hx:h-7 hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400"
+  type="button"
+  aria-label="切换主题"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="hx:group-data-[theme=light]:hidden">浅色</span><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="hx:group-data-[theme=dark]:hidden">深色</span></div>
+</button>
+</div><hr class="hx:border-gray-200 hx:dark:border-neutral-800" /><div class="hextra-custom-footer hextra-max-footer-width hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div
       class="hextra-max-footer-width hx:mx-auto hx:flex hx:justify-center hx:py-12 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400 hx:md:justify-start"
     >
       <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:font-semibold"><a class="hx:flex hx:text-sm hx:items-center hx:gap-1 hx:text-current" target="_blank" rel="noopener noreferrer" title="Hextra GitHub Homepage" href="https://github.com/imfing/hextra">
@@ -1155,7 +1148,9 @@
   </a></div></div>
     </div></footer>
     
-    <script defer src="/public/js/main.min.4b9db45beb41a4e92ac9b609d116536b24ab16ac5ee4677c9fafe17c9c2c4eee.js" integrity="sha256-S520W&#43;tBpOkqybYJ0RZTaySrFqxe5Gd8n6/hfJwsTu4="></script>
-<script defer src="/public/js/flexsearch.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY=" crossorigin="anonymous"></script><script defer src="/public/zh-cn.search.min.1f2f34010c67896f634a37ee8d2acb4d84117268ae1dc4fe4227388419a99c46.js" integrity="sha256-Hy80AQxniW9jSjfujSrLTYQRcmiuHcT&#43;Qic4hBmpnEY="></script>
+    <script defer src="/public/js/main.min.061e2d003accb54db2abcf688d657e52541224ec8baf9132a8097c3dca42cd8e.js" integrity="sha256-Bh4tADrMtU2yq89ojWV&#43;UlQSJOyLr5EyqAl8PcpCzY4="></script>
+
+    <script defer src="/public/js/flexsearch.433e941a8a573ebb9931fc16fc75266ab6b93f569ac2fb4f3dc66882e0416f4c.js" integrity="sha256-Qz6UGopXPruZMfwW/HUmara5P1aawvtPPcZoguBBb0w=" crossorigin="anonymous"></script>
+    <script defer src="/public/zh-cn.search.min.60ea598e52e57e84f15fa3c2d926c036e04bd3ecf9cb5e0122ed76cb380d8989.js" integrity="sha256-YOpZjlLlfoTxX6PC2SbANuBL0&#43;z5y14BIu12yzgNiYk="></script>
   </body>
 </html>
