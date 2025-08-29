@@ -12,7 +12,7 @@ module:
 #      unsafe: true
 
 title: '小狄同学呀'
-baseURL: 'https://xiaoditx.github.io/index'
+baseURL: 'https://xiaoditx.github.io/'
 
 hasCJKLanguage: true
 languageCode: 'zh-cn'

@@ -45,6 +45,12 @@ jobs:
         run: |
           hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
+      # 添加这一步：复制额外的静态文件到 public 目录
+      - name: Copy static folders
+        run: |
+          cp -r pages ./public/
+          cp -r chouxiang ./public/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

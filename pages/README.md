@@ -8,3 +8,4 @@
   - [春节](./festival/Spring_Festival/a.html)
   - [情人节](./festival/Valentine's_Day/qingrenjie.html)
 - [研究性学习汇报](./research) 注：此网站目前已废弃，仅做导航页
+- [抽象小站](../chouxiang/)

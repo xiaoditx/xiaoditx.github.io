@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>小狄同学呀 – 安装指南</title>
-    <link>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/</link>
+    <link>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/</link>
     <description>Recent content in 安装指南 on 小狄同学呀</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
-	  <atom:link href="http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>CMake</title>
-      <link>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/</link>
+      <link>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/</guid>
+      <guid>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/cmake/</guid>
       <description>
         
         
@@ -189,10 +189,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title>Bazel</title>
-      <link>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/</link>
+      <link>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/</guid>
+      <guid>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/bazel/</guid>
       <description>
         
         
@@ -245,10 +245,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title>Vcpkg</title>
-      <link>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/</link>
+      <link>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/</guid>
+      <guid>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/vcpkg/</guid>
       <description>
         
         
@@ -362,10 +362,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title>Conan</title>
-      <link>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/</link>
+      <link>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/</guid>
+      <guid>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/conan/</guid>
       <description>
         
         
@@ -610,10 +610,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title>手动安装</title>
-      <link>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/</link>
+      <link>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/</guid>
+      <guid>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/manual/</guid>
       <description>
         
         
@@ -669,10 +669,10 @@ git submodule update --init --recursive&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;
     
     <item>
       <title>Nix</title>
-      <link>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/</link>
+      <link>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/</guid>
+      <guid>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/nix/</guid>
       <description>
         
         
@@ -725,10 +725,10 @@ AI 生成。如果您有任何改进建议，请提交 PR。&lt;/p&gt;&lt;/div&g
     
     <item>
       <title>Debian/Ubuntu</title>
-      <link>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/</link>
+      <link>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/</guid>
+      <guid>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/debian/</guid>
       <description>
         
         
@@ -790,10 +790,10 @@ AI 生成。如果您有任何改进建议，请提交 PR。&lt;/p&gt;&lt;/div&g
     
     <item>
       <title>Arch Linux</title>
-      <link>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/</link>
+      <link>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/</guid>
+      <guid>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/arch/</guid>
       <description>
         
         
@@ -846,10 +846,10 @@ AI 生成。如果您有任何改进建议，请提交 PR。&lt;/p&gt;&lt;/div&g
     
     <item>
       <title>openSUSE</title>
-      <link>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/</link>
+      <link>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/</guid>
+      <guid>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/opensuse/</guid>
       <description>
         
         
@@ -892,10 +892,10 @@ AI 生成。如果您有任何改进建议，请提交 PR。&lt;/p&gt;&lt;/div&g
     
     <item>
       <title>XMake</title>
-      <link>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/</link>
+      <link>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/index/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/</guid>
+      <guid>http://localhost:1313/docs/ftxui%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91/installation/xmake/</guid>
       <description>
         
         
