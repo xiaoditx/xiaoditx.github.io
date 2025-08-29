@@ -3,15 +3,23 @@ title: "Conan"
 weight: 4
 ---
 
+> [!note]
+> 本文档为站长向FTXUI仓库提交的**尚未被合并**的版本的中文翻译，不保证过程描述绝对清晰、正确
+
 FTXUI 可以通过 Conan 包管理器方便地获取和集成到您的项目中。
 
 ## 前置条件
+
+### Conan
 
 首先，确保您的系统已安装 Conan。如果尚未安装，可以使用 pip 安装：
 
 ```powershell
 pip install conan
 ```
+
+### CMake
+
 Conan 通常与 CMake 协同工作，因此您也需要安装 CMake：
 
 {{< tabs items="Windows,Windows (Chocolatey),Linux (Ubuntu/Debian),MacOS" >}}
@@ -44,6 +52,8 @@ Conan 通常与 CMake 协同工作，因此您也需要安装 CMake：
 
 {{< /tabs >}}
 
+## 准备目录
+
 当你确保拥有了Conan和CMake后，创建一个项目目录，例如`ftxui-demo`：
 
 ```powershell
@@ -53,7 +63,9 @@ cd C:\ftxui-demo
 
 ## 配置
 
-确保环境无误后，创建 Conan 配置文件`conanfile.txt`，此文件用于声明项目依赖。FTXUI 的社区维护包可在[Conan Center](https://conan.io/center/recipes/ftxui) 找到。
+确保环境无误后，获取`conanfile.py`并放置在项目目录下，你可以考虑[从GitHub下载](https://github.com/conan-io/conan-center-index/blob/master/recipes/ftxui/all/conanfile.py) 或是[从本站复制](./conanfile)
+
+FTXUI 的社区维护包可在[Conan Center](https://conan.io/center/recipes/ftxui) 找到。
 
 > [!note]
 > 这是一个非官方构建脚本。这意味着它不是由 FTXUI
@@ -65,18 +77,6 @@ cd C:\ftxui-demo
 这可以是一个 GitHub Action，在发布新版本时自动更新 Conan Center。
 {{< /callout >}}
 
-
-```ini
-[requires]
-ftxui/6.0.2
-
-[generators]
-CMakeDeps
-CMakeToolchain
-
-[layout]
-cmake_layout
-```
 
 ## 安装依赖并构建
 
