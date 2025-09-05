@@ -1,12 +1,14 @@
 ---
-title: "我的第一篇文章"  # 文章标题
-date: 2025-08-26T16:45:33+08:00  # 创建日期，通常会自动生成
+title: "算法真题：GESP202503四级——荒地开垦（洛谷B4263）"  # 文章标题
 draft: false  # 是否为草稿。设为 false 才会发布
-description: "这篇文章是关于Hextra主题使用的初步探索"  # 文章摘要
-tags: ["Hugo", "Hextra", "博客"]  # 文章标签，用于分类和关联
-categories: ["教程"]  # 文章分类
-author: "Your Name"  # 作者
-cover: 
-  image: "images/cover.jpg"  # 封面图片路径
-  alt: "文章封面图"
+data: 2025-8-26
+description: "同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，上课有些无聊，干脆把题做了，回家试了试又改了改，顺利AC。"  # 文章摘要
+tags: ["算法", "C++", "GESP","模拟"]  # 文章标签，用于分类和关联
+categories: ["算法学习日记"]  # 文章分类
+comments: true
+date: 2025-08-26
+authors:
+  - name: xiaoditx
+    link: https://github.com/xiaoditx
+    image: https://github.com/xiaoditx.png
 ---

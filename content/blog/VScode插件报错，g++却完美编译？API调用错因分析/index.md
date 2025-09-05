@@ -4,9 +4,11 @@ draft: false  # 是否为草稿。设为 false 才会发布
 description: "使用WritePrivateProfileString，VScode当场报错，g++却能直接通过编译？那必须分析一下了"  # 文章摘要
 tags: ["开发工具", "C++", "错误分析"]  # 文章标签，用于分类和关联
 categories: ["代码：踩坑日记"]  # 文章分类
-avatar: "自己的_头像.jpg"
-author: "小狄同学呀"
 date: 2025-08-26
+authors:
+  - name: xiaoditx
+    link: https://github.com/xiaoditx
+    image: https://github.com/xiaoditx.png
 ---
  
 前一段时间写了个[小软件](https://github.com/xiaoditx/BeepMusic)，想给它加个读写配置项功能，刚学几天C++的我上网查了半天资料，找到两个Windows的API分别是读ini的`GetPrivateProfileString`和写ini的`WritePrivateProfileString`，根据网上的教程，我写出了下面这三行：

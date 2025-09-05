@@ -6,9 +6,11 @@ description: "同学去考了GESP，回来给我说他有一题TLE了，顺手�
 tags: ["算法", "C++", "GESP","模拟"]  # 文章标签，用于分类和关联
 categories: ["算法学习日记"]  # 文章分类
 comments: true
-avatar: "自己的_头像.jpg"
-author: "小狄同学呀"
 date: 2025-08-26
+authors:
+  - name: xiaoditx
+    link: https://github.com/xiaoditx
+    image: https://github.com/xiaoditx.png
 ---
 
 
