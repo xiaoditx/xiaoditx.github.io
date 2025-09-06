@@ -203,11 +203,14 @@ params:
     enable: false
     type: giscus
     # https://giscus.app/
+    #sections: 
+    #  blog: true
     giscus:
       repo: xiaoditx/xiaoditx.github.io
       repoId: R_kgDOIzfQPg
       category: Blog comments
       categoryId: DIC_kwDOIzfQPs4CumTH
+      lang: zh-CN
       # mapping: pathname
       # strict: 0
       # reactionsEnabled: 1
