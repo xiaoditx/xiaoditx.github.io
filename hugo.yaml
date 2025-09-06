@@ -197,6 +197,24 @@ params:
       enable: true
       # hover | always
       display: hover
+      
+  # 评论区功能
+  comments:
+    enable: false
+    type: giscus
+    # https://giscus.app/
+    giscus:
+      repo: xiaoditx/xiaoditx.github.io
+      repoId: R_kgDOIzfQPg
+      category: Blog comments
+      categoryId: DIC_kwDOIzfQPs4CumTH
+      # mapping: pathname
+      # strict: 0
+      # reactionsEnabled: 1
+      # emitMetadata: 0
+      # inputPosition: top
+      # lang: en
+      # theme: noborder_dark
 
   page:
     # full (100%), wide (90rem), normal (80rem)
