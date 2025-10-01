@@ -2,7 +2,7 @@
 title: "Algorithm Problem: GESP202503 Level 4 — Wasteland Reclamation (Luogu B4263)"  # Article Title
 draft: false  # Is it a draft? Set to false to publish.
 date: 2025-8-26
-description: "A classmate took the GESP exam and came back saying he got TLE on one problem. He顺手 wrote the problem down for me. Being a bit bored in class, I simply solved it. Tried it at home, made some changes, and AC'd smoothly."  # Article summary
+description: "A classmate took the GESP exam and came back saying he got TLE on one problem. He wrote the problem down for me. Being a bit bored in class, I simply solved it. Tried it at home, made some changes, and AC'd smoothly."  # Article summary
 tags: ["Algorithms", "C++", "GESP", "Simulation"]  # Article tags, for categorization and association
 categories: ["Algorithm Learning Diary"]  # Article category
 comments: true
@@ -18,7 +18,7 @@ authors:
 
 # Before We Start
 
-A classmate took the GESP exam and came back saying he got TLE (Time Limit Exceeded) on one problem. He顺手 wrote the problem down for me. I had some ideas after reading it then and tried writing it in Easy Language, but it got messier and I gave up. This week, being a bit bored in class and having nothing better to do, I picked this problem up again. I tried it at home, made some changes, and AC'd (Accepted) smoothly.
+A classmate took the GESP exam and came back saying he got TLE (Time Limit Exceeded) on one problem. He wrote the problem down for me. I had some ideas after reading it then and tried writing it in Easy Language, but it got messier and I gave up. This week, being a bit bored in class and having nothing better to do, I picked this problem up again. I tried it at home, made some changes, and AC'd (Accepted) smoothly.
 
 The original problem goes like this:
 
@@ -34,7 +34,7 @@ For input and output details, just check Luogu directly. I won't paste everythin
 
 Although I managed to write it, I'm not professionally trained in algorithms, so I don't really know about time complexity or space complexity, nor do I know what the algorithm I used is called. I only know I AC'd. Each test case大抵 (probably) passed in about 7-25ms (as shown below).
 
-![Test point information](./imgs/780cf181312b418da50cb8481a848b15.png)
+![Test point information](/imgs/blogs/算法真题荒地开垦/780cf181312b418da50cb8481a848b15.png)
 
 Below is my code. This is the version with comments, but it might still confuse you with some of my inexplicable writing styles in certain places. If you can't understand it, you can just read the analysis, which has an almost line-by-line interpretation:
 
@@ -43,9 +43,9 @@ Below is my code. This is the version with comments, but it might still confuse 
 #include<cstring>
 int main(){
     int m,n,record_c=0;//Length, width, and debris count recording variable
-    char tmp;//Actually wanted to use string来着
+    char tmp;//Actually wanted to use string ...
     int px[4]={0,0,1,-1},py[4]={1,-1,0,0};//Offset for non-reclaimable areas caused by debris
-    std::cin>>n>>m;//Read length and width (Due to design reasons,被迫 read them reversed)
+    std::cin>>n>>m;//Read length and width (Due to design reasons,I cna't but read them reversed)
     int imap[m][n];//Create map array (2D)
     int object[m*n][2];//Debris coordinate recording array
     memset(imap,0,sizeof(imap));//Initialize map to 0 (default no debris, reclaimable)
@@ -53,7 +53,7 @@ int main(){
         for(int vc=0;vc<m;vc++){
             std::cin>>tmp;//Temporarily read into tmp
             if(tmp=='#'){//Check if it's '#' (debris)
-                imap[vc][c]=-1-imap[vc][c];//If debris, record with negative number and叠加 (superimpose)
+                imap[vc][c]=-1-imap[vc][c];//If debris, record with negative number and superimpose
                 object[record_c][0]=vc;//Record debris position to reduce later workload, save time
                 object[record_c][1]=c;
                 record_c++;//Increment the recording variable by 1
@@ -78,7 +78,7 @@ int main(){
         }
     }
 
-    // Reading finished. Feel the power of machine缩进 (indentation)!
+    // Reading finished. Feel the power of machine indentation!
     // (Actually, if it's uncomfortable, you could use goto to fix it, but not recommended)
 
     // Code used for debugging, kept in comments
@@ -134,7 +134,7 @@ int main(){
 
 ## 1. Problem Analysis
 
-The problem states that wasteland can only be reclaimed if `all four adjacent cells (up, down, left, right) contain no debris`. Thinking this way seems difficult, but换个思路 (changing perspective) might be easier. Let's assume the following $3×3$ wasteland:
+The problem states that wasteland can only be reclaimed if `all four adjacent cells (up, down, left, right) contain no debris`. Thinking this way seems difficult, but changing perspective might be easier. Let's assume the following $3×3$ wasteland:
 
 ```
 ...
@@ -142,7 +142,7 @@ The problem states that wasteland can only be reclaimed if `all four adjacent ce
 ...
 ```
 
-Here, debris appears in the center. Since reclaimable wasteland must have no debris in adjacent cells, this one debris **affects** the wasteland above, below, left, and right. Let's use `!` to represent wasteland without debris but不可开垦 (non-reclaimable):
+Here, debris appears in the center. Since reclaimable wasteland must have no debris in adjacent cells, this one debris **affects** the wasteland above, below, left, and right. Let's use `!` to represent wasteland without debris but non-reclaimable:
 
 ```
 .!.
@@ -174,13 +174,13 @@ Two headers are used here, `iostream` and `cstring`, one is almost essential, th
 
 Some might say: Hey? Where did `using namespace std` go?
 
-Actually, as long as you diligently add `std::`, you can omit this line. There are benefits to doing this, although it might not be easily apparent in algorithm competitions. But I'm more application-oriented (after all, I started with Easy Language), so I always注重 (pay attention to) the habit of using `using` sparingly. You can search for "namespace pollution" to learn more.
+Actually, as long as you diligently add `std::`, you can omit this line. There are benefits to doing this, although it might not be easily apparent in algorithm competitions. But I'm more application-oriented (after all, I started with Easy Language), so I always pay attention to the habit of using `using` sparingly. You can search for "namespace pollution" to learn more.
 
 Integer variables `m`, `n`, `record_c` are defined to: receive input n, receive input m, store debris count (due to a flaw, m and n were used reversed, found it hard to change, ended up having to use m for n); a char variable tmp, for receiving the `.` and `#` input later.
 
 `px` and `py` in the code are actually "offset arrays". In practice, take a number n, for a point $A$, add its X coordinate + px[n], its Y coordinate + py[n], you can get an offset point. The offsets in this code correspond to right, left, down, up.
 
-After defining these variables, we can start reading. Read m and n, these two numbers tell us the size of the entire land, helping us define a恰到好处 (just right) array as our "map" (I really like恰到好处, even with various risks, but understandable since I wrote a lot in Easy Language).
+After defining these variables, we can start reading. Read m and n, these two numbers tell us the size of the entire land, helping us define a just right array as our "map" (I personally prefer things to be precisely sized, even with potential risks, but given my extensive experience with EPL, this approach seems quite reasonable).
 
 `int imap[m][n]` creates a 2D array, imap means map (originally wrote `map`, but classmate said it seems to be a reserved word, changed to `imap`). This allows us to directly manipulate points using X and Y.
 
@@ -200,11 +200,11 @@ Note the following example:
 .....
 ```
 
-In this example, the `.` between the two `#`s, even if debris on one side is removed, is still within the influence of the other debris, still cannot be reclaimed. So we consider this removal无效 (invalid) for this single point.
+In this example, the `.` between the two `#`s, even if debris on one side is removed, is still within the influence of the other debris, still cannot be reclaimed. So we consider this removal invalid for this single point.
 
 How should we record how many debris pieces influence this point? We have a quantification strategy: use 0 for reclaimable, 1 for influence from one debris, 2 for two, up to 4.
 
-Similarly, for the cell放置 (placing) the debris, if removed, this cell might also become reclaimable or not, we also need to record it. Here we use -1 for debris, -2 for debris within the influence range of one other debris, and so on (this setting is for later recording convenience, we'll talk about it later).
+Similarly, for the cell placing the debris, if removed, this cell might also become reclaimable or not, we also need to record it. Here we use -1 for debris, -2 for debris within the influence range of one other debris, and so on (this setting is for later recording convenience, we'll talk about it later).
 
 ### Writing the Map
 
@@ -240,11 +240,11 @@ for(int c=0;c<n;c++){//Loop to read content
 ```
 (Please don't mind my strange variable names like `c`, `dev_c`, I just wanted to write statements like `c++`)
 
-We use a simple loop to read character by character. Since we initialized the map to reclaimable, reading `.` can大抵 (probably) be directly discarded. Only `#` is important to us. We record it into `imap` and `object`.
+We use a simple loop to read character by character. Since we initialized the map to reclaimable, reading `.` can probably be directly discarded. Only `#` is important to us. We record it into `imap` and `object`.
 
 The operation to record into `imap` is: -1 - current cell content. If it was originally 0, now it's -1; originally 1, now it's -2. You can look back at the [Quantifying Information for Each Position](#quantifying-information-for-each-position) section to see if it matches.
 
-After writing, do four loops, corresponding to the four offsets of the `px` and `py` arrays, calculating the impact依次 (in turn): non-debris cells add one, debris cells subtract one.
+After writing, do four loops, corresponding to the four offsets of the `px` and `py` arrays, calculating the impact in turn : non-debris cells add one, debris cells subtract one.
 
 When calculating offsets, note that the result might exceed the array range. At this time, we shouldn't operate on this non-existent coordinate, so add an `if` to check for out-of-bounds.
 ## 3. Statistics of Currently Reclaimable Number
@@ -268,7 +268,7 @@ Obviously, the current state is easy to judge. If it's 0, it means reclaimable. 
 
 ## 4. Finding the Optimal Solution
 
-Now we only need to find the optimal removal solution. The simplest method here is to enumerate `object`. But my classmate貌似 (seemingly) turned the recorded positions into `.` one by one and analyzed the reclaimable count, which is somewhat inefficient (maybe I misunderstood him? Anyway, this method is slow). Actually, we can just read according to the offsets.
+Now we only need to find the optimal removal solution. The simplest method here is to enumerate `object`. But my classmate seemingly turned the recorded positions into `.` one by one and analyzed the reclaimable count, which is somewhat inefficient (maybe I misunderstood him? Anyway, this method is slow). Actually, we can just read according to the offsets.
 
 When a debris is removed, according to the definition, the values of the surrounding cells should decrease by 1, and its own position becomes positive and then decreases by 1. Thus, we know that only if its own cell is -1, removal makes it reclaimable; only if its surrounding cells are 1, removal makes them reclaimable. Thus, we get the following code:
 
@@ -311,7 +311,7 @@ std::cout<<ans;//Output answer
 # Postscript
 
 I can't help but share this original handwritten code draft. Although there are some minor flaws, it's overall complete.
-![在这里插入图片描述](./imgs/e1f8a85f1285426e8a46e216ae32bc2e.jpg)
+![在这里插入图片描述](/imgs/blogs/算法真题荒地开垦/e1f8a85f1285426e8a46e216ae32bc2e.jpg)
 Through solving this problem, I realized there is an excellent way to approach problems. When your code runs but doesn't work as desired, try thinking about how to describe your algorithm in natural language. This way, compared to staring at code and pulling hair, it's easier to find flaws in thinking. Those working on algorithms can try this.
 
 I'm a bit sleepy, my brain isn't working well.可能 (Maybe) I wrote some inexplicable things迷迷糊糊 (drowsily). Going to sleep now, will modify after waking up.

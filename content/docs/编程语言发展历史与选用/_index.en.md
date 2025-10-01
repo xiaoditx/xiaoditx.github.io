@@ -5,7 +5,8 @@ title: "Comprehensive Research Study Report"
 > [!note]
 > This page uses AI technology for translation. The content is for reference only.
 
-Written by: xiaoditx  
+Written by: xiaoditx
+
 Proofread by: Ma Heyang
 
 ### 0. Preface
@@ -164,11 +165,11 @@ Therefore, the advantages of the C language are the following:
 
 Of course, there are also disadvantages. When we use the `gcc -S -masm=intel m.c -o m.s` command to compile the program, we can see the compiler translates the C code into something like this:
 
-![g++ compiled masm](./cp-asm.png)
+![g++ compiled masm](/imgs/docs/research/cp-asm.png)
 
 A total of thirty lines. Now, let's write the equivalent assembly code in the usual way (the output has an extra word but it doesn't affect the point):
 
-![Pure assembly written version](./masm.png)
+![Pure assembly written version](/imgs/docs/research/masm.png)
 
 The pure assembly version uses only fifteen lines. That is, the compiler wrote twice as much just to achieve the same effect. In fact, this difference becomes more pronounced in the later stages of compilation. Usually, GCC compiled programs need to link some library files during the linking stage, and the final product can sometimes be dozens of times larger than pure assembly.
 
@@ -402,7 +403,7 @@ Unlike other programming languages, Easy Language's first lesson is directly abo
 
 Below is a screenshot of Easy Language's code writing interface:
 
-![Easy Language](./易语言.jpg)
+![Easy Language](/imgs/docs/research/易语言.jpg)
 
 Advantages of Easy Language:
 

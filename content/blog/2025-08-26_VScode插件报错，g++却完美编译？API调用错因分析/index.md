@@ -20,19 +20,19 @@ authors:
 ```
 
 刚刚写完，VScode安的插件瞬间爆红，然后给出了这样的报错：
-![VScode插件报错](./imgs/184a967e89d542c3be6e63b16667e2a3.png)
+![VScode插件报错](/imgs/blogs/VScode报错，g++通过，GetPrivateProfileString/184a967e89d542c3be6e63b16667e2a3.png)
 但是我确定我是完全按照教程走的，所以到底是哪里的问题呢？
 
 于是我尝试编译，结果非常惊人，g++没有任何报错的编译成功并且在当前目录新建了`config.ini`并写入了指定内容
 
-![g++编译结果](./imgs/83ab9c632d1e463596644c4afcc60d14.png)
+![g++编译结果](/imgs/blogs/VScode报错，g++通过，GetPrivateProfileString/83ab9c632d1e463596644c4afcc60d14.png)
 
 
 这有些奇怪，还是查查官方文档吧
 
 上MSDN，查`WritePrivatePeofileString`，却并没有查到，只查到了`WritePrivatePeofileStringA`和`WritePrivatePeofileStringW`（末尾都多了个字母）这两个函数
 
-![MSDN的相关内容](./imgs/9e5fe8e0a5074f0ba5d570c9a3ef2023.png)
+![MSDN的相关内容](/imgs/blogs/VScode报错，g++通过，GetPrivateProfileString/9e5fe8e0a5074f0ba5d570c9a3ef2023.png)
 
 
 没办法了，只好点进一个看看，我选择了`WritePrivatePeofileStringA`，诶，这个参数的类型好像不对，跟着教程写的是`LPTSTR`，但这里面写的是`LPCSTR`
@@ -55,7 +55,7 @@ authors:
 
 VScode显示，上方是亮着的，证明VScode的环境下有UNICODE这个宏
 
-![t条件编译](./imgs/389e5b23cc314530822b326a0f848859.png)
+![t条件编译](/imgs/blogs/VScode报错，g++通过，GetPrivateProfileString/389e5b23cc314530822b326a0f848859.png)
 
 
 这下破案了，由于VScode有UNICODE宏而g++没有，所以插件检查时是按照`WritePrivatePeofileStringW`检查的，此时插件认为需要使用unicode，路径需要使用`wchar_t`也就是宽字符存储，g++编译时，按照`WritePrivatePeofileStringA`，此时g++认为要用ANSI，路径使用`char`也就是普通字符存储，于是我们使用的`char`的代码在g++下正常而没有通过VScode的插件检查

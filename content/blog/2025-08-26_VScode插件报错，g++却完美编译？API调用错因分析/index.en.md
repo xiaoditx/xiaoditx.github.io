@@ -23,18 +23,18 @@ A while ago, I wrote a [small application](https://github.com/xiaoditx/BeepMusic
 ```
 
 Right after writing, the plugin in VScode instantly flagged it in red and gave the following error:
-![VScode plugin error](./imgs/184a967e89d542c3be6e63b16667e2a3.png)
+![VScode plugin error](/imgs/blogs/VScode报错，g++通过，GetPrivateProfileString/184a967e89d542c3be6e63b16667e2a3.png)
 But I was sure I followed the tutorial exactly. So where was the problem?
 
 I tried to compile it, and the result was surprising: g++ compiled successfully without any errors and created `config.ini` in the current directory, writing the specified content.
 
-![g++ compilation result](./imgs/83ab9c632d1e463596644c4afcc60d14.png)
+![g++ compilation result](/imgs/blogs/VScode报错，g++通过，GetPrivateProfileString/83ab9c632d1e463596644c4afcc60d14.png)
 
 This was strange. Time to check the official documentation.
 
 I went to MSDN and searched for `WritePrivateProfileString` but couldn't find it. I only found `WritePrivateProfileStringA` and `WritePrivateProfileStringW` (both have an extra letter at the end).
 
-![MSDN related content](./imgs/9e5fe8e0a5074f0ba5d570c9a3ef2023.png)
+![MSDN related content](/imgs/blogs/VScode报错，g++通过，GetPrivateProfileString/9e5fe8e0a5074f0ba5d570c9a3ef2023.png)
 
 No choice, I clicked on one to check. I chose `WritePrivateProfileStringA`. Hmm, the parameter types seemed wrong. The tutorial used `LPTSTR`, but here it specified `LPCSTR`.
 
@@ -56,7 +56,7 @@ Back in VScode, I held Ctrl and clicked on `WritePrivateProfileString` to see th
 
 VScode showed that the upper condition was active, proving that the `UNICODE` macro was defined in VScode's environment.
 
-![Conditional compilation](./imgs/389e5b23cc314530822b326a0f848859.png)
+![Conditional compilation](/imgs/blogs/VScode报错，g++通过，GetPrivateProfileString/389e5b23cc314530822b326a0f848859.png)
 
 Mystery solved! Because VScode had the `UNICODE` macro defined while g++ did not, the plugin checked the code against `WritePrivateProfileStringW`, expecting Unicode and a path stored in `wchar_t` (wide characters). When g++ compiled, it used `WritePrivateProfileStringA`, expecting ANSI and a path stored in `char` (regular characters). Thus, our code using `char` worked fine under g++ but failed the VScode plugin's check.
 

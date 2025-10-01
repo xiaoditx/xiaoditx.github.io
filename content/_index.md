@@ -11,13 +11,13 @@ layout: "hextra-home"
 
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
-  小狄同学呀&nbsp;<br class="hx:sm:block hx:hidden" />励志成为优秀程序员
+  小狄同学呀&nbsp;<br class="hx:sm:block hx:hidden" />WTFPL协议狂热爱好者
 {{< /hextra/hero-headline >}}
 </div>
 
 <div class="hx:mb-12">
 {{< hextra/hero-subtitle >}}
-  WTFPL的忠实使用者&nbsp;<br class="hx:sm:block hx:hidden" />不怎么工作的视频制作人
+  半吊子程序员&nbsp;<br class="hx:sm:block hx:hidden" />不怎么工作的视频制作人
 {{< /hextra/hero-subtitle >}}
 </div>
 
@@ -29,12 +29,12 @@ layout: "hextra-home"
 <div class="hx:mt-6"></div>
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
-    title="B站UP主"
-    subtitle="初中开始再B站发视频，当时想着做MC生存视频，不会剪视频以为互动视频是抖音那样的剪辑界面，直接把素材丢上去乱连剧情树，黑历史了算是"
+    title="更多页面导航"
+    subtitle="还没写呢，嘻嘻"
   >}}
   {{< hextra/feature-card
-    title="开源程序员"
-    subtitle="只做开源？不不哥们我要吃饭的，不吃饭也得赚点零花钱买galgame，不过如果我做开源我就选WTFPL，特殊情况可能会考虑别的但也不会太紧"
+    title="喵"
+    subtitle="喵喵喵喵喵喵喵喵喵"
   >}}
   {{< hextra/feature-card
     title="没写"

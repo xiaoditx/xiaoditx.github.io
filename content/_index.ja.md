@@ -1,7 +1,7 @@
 ---
 title: "小狄同学呀 | オープンソース、共有、教育、技術発展の先導"
 layout: "hextra-home"
----
+--- 
 
 {{< hextra/hero-badge >}}
   <div class="hx:w-2 hx:h-2 hx:rounded-full hx:bg-primary-400"></div>

@@ -23,18 +23,18 @@ authors:
 ```
 
 書き終えた直後、VScodeのプラグインが即座に赤く警告を出し、次のようなエラーを表示しました：
-![VScodeプラグインエラー](./imgs/184a967e89d542c3be6e63b16667e2a3.png)
+![VScodeプラグインエラー](/imgs/blogs/VScode报错，g++通过，GetPrivateProfileString/184a967e89d542c3be6e63b16667e2a3.png)
 しかし、私はチュートリアル通りに正確に書いたと確信していました。どこが問題なのでしょうか？
 
 コンパイルを試みると、結果は驚くべきものでした：g++は一切エラーなくコンパイルに成功し、カレントディレクトリに`config.ini`を作成して指定内容を書き込みました。
 
-![g++コンパイル結果](./imgs/83ab9c632d1e463596644c4afcc60d14.png)
+![g++コンパイル結果](/imgs/blogs/VScode报错，g++通过，GetPrivateProfileString/83ab9c632d1e463596644c4afcc60d14.png)
 
 これは奇妙です。公式ドキュメントを調べてみましょう。
 
 MSDNに行き、`WritePrivateProfileString`を検索しましたが、見つかりませんでした。見つかったのは`WritePrivateProfileStringA`と`WritePrivateProfileStringW`（どちらも末尾に文字が一つ追加）だけでした。
 
-![MSDN関連内容](./imgs/9e5fe8e0a5074f0ba5d570c9a3ef2023.png)
+![MSDN関連内容](/imgs/blogs/VScode报错，g++通过，GetPrivateProfileString/9e5fe8e0a5074f0ba5d570c9a3ef2023.png)
 
 仕方ないので、一つクリックして確認しました。`WritePrivateProfileStringA`を選びました。ん？パラメータの型が違うようです。チュートリアルでは`LPTSTR`を使っていましたが、ここでは`LPCSTR`と書かれています。
 
@@ -56,7 +56,7 @@ VScodeに戻り、Ctrlを押しながら`WritePrivateProfileString`をクリッ�
 
 VScodeでは上の条件が有効（強調表示）になっており、VScodeの環境では`UNICODE`マクロが定義されていることを証明していました。
 
-![条件付きコンパイル](./imgs/389e5b23cc314530822b326a0f848859.png)
+![条件付きコンパイル](/imgs/blogs/VScode报错，g++通过，GetPrivateProfileString/389e5b23cc314530822b326a0f848859.png)
 
 これで真相がわかりました！VScodeには`UNICODE`マクロが定義されている一方、g++には定義されていなかったため、プラグインはコードを`WritePrivateProfileStringW`に対してチェックし、Unicodeと`wchar_t`（ワイド文字）で格納されたパスを要求しました。g++でコンパイルするときは、`WritePrivateProfileStringA`を使い、ANSIと`char`（通常の文字）で格納されたパスを要求しました。その結果、私たちが`char`を使ったコードはg++では正常に動作しましたが、VScodeプラグインのチェックには通りませんでした。
 
