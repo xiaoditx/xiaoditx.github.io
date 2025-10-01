@@ -151,4 +151,4 @@ Rest: 0 => Duration: 1000ms
 
 ## 开发者帮助
 
-`HELPS`文件夹下是项目帮助，有些教程文档（我怕我自己忘了怎么写了放进去的），其中[Introduce.md](./HELPS/Introduce.md)会介绍项目的整体结构、各个文件的功能
+`HELPS`文件夹下是项目帮助，有些教程文档（我怕我自己忘了怎么写了放进去的），其中[README.md](./HELPS/README.md)会介绍项目的整体结构、各个文件的功能
