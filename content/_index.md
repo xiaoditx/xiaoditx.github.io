@@ -29,8 +29,9 @@ layout: "hextra-home"
 <div class="hx:mt-6"></div>
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
-    title="更多页面导航"
-    subtitle="还没写呢，嘻嘻"
+    title="柚子厨蒸鹅心"
+	link="https://www.yuzu-soft.com/index.html"
+    subtitle="Ciallo～ (∠・ω< )⌒★"
   >}}
   {{< hextra/feature-card
     title="喵"
