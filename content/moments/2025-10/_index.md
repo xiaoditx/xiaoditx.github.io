@@ -22,7 +22,7 @@ weight: 2400
 
 I'm a robot.
 
-![i'm a robot](imarobot.png)
+![i'm a robot](/imgs/moment/202510/imarobot.png)
 
 ## 2025/10/1 18:52
 
