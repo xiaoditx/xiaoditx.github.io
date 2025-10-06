@@ -1004,18 +1004,25 @@ ptr = a;
 
 转发本文章到以下平台？
 
-<div style="display: flex;justify-content: flex-start;align-items: center;gap: 10px;">
+<style>
+/* 在深色模式下反转图标颜色 */
+.dark .share-buttons img {
+  filter: invert(1);
+}
+</style>
+
+<div class="share-buttons" style="display: flex;justify-content: flex-start;align-items: center;gap: 10px;">
 
 <a href="https://connect.qq.com/widget/shareqq/index.html?url=http://xiaoditx.github.io/blog/2025-09-06_2357_c%2B%2B%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95&title=C/C%2B%2B指针种类+常见错误+组合技巧，挑战写出全网最全指针文章&source=小狄同学呀&desc=指针是一个很让人头痛的东西，今天，就让我们一起去探究指针的使用与常见的那些问题&pics=http://xiaoditx.github.io/blog/2025-09-06_2357_c%2B%2B%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/pic.png">
     <img src="https://cdn.simpleicons.org/qq/black?size=35" alt="QQ">
 </a>
 
-<a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xiaoditx.github.io/blog/2025-09-06_2357_c++%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/&title=C/C%2B%2B指针种类+常见错误+组合技巧，挑战写出全网最全指针文章&desc=找到一篇很好的技术文章！&summary=指针想必是很多C/C%2B%2B学习者的噩梦了，今天就让我写篇这样的文章，带着大家逐步探索指针吧！&site=http://xiaoditx.github.io/blog/2025-09-06_2357_c%2B%2B%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/&pics=http://xiaoditx.github.io/blog/2025-09-06_2357_c%2B%2B%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/pic.png">
+<a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xiaoditx.github.io/blog/2025-09-06_2357_c%252B%252B%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/&title=C/C%2B%2B指针种类%2B常见错误%2B组合技巧，挑战写出全网最全指针文章&desc=找到一篇很好的技术文章！&summary=指针想必是很多C/C%2B%2B学习者的噩梦了，今天就让我写篇这样的文章，带着大家逐步探索指针吧！&site=http://xiaoditx.github.io/blog/2025-09-06_2357_c%2B%2B%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/&pics=http://xiaoditx.github.io/blog/2025-09-06_2357_c%2B%2B%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/pic.png">
     <img src="https://cdn.simpleicons.org/qzone/black?size=35" alt="QQ空间">
 </a>
 
 <a href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://xiaoditx.github.io/blog/2025-09-06_2357_c%2B%2B%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/#3%e6%8c%87%e9%92%88%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96">
-    <img src="https://cdn.simpleicons.org/wechat/black?size=35" alt="微信">
+    <img src="https://cdn.simpleicons.org/wechat/black?size=35" alt="微信"
 </a>
 
 <a href="https://service.weibo.com/share/share.php?url=http://xiaoditx.github.io/blog/2025-09-06_2357_c%2B%2B%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/#3%e6%8c%87%e9%92%88%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96&title=C/C%2B%2B指针种类、常见错误、组合技巧&pic=http://xiaoditx.github.io/blog/2025-09-06_2357_c%2B%2B%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/#3%e6%8c%87%e9%92%88%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96/pic.png">
