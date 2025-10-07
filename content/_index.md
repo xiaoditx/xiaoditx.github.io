@@ -34,16 +34,17 @@ layout: "hextra-home"
     subtitle="Ciallo～ (∠・ω< )⌒★"
   >}}
   {{< hextra/feature-card
-    title="喵"
-    subtitle="喵喵喵喵喵喵喵喵喵"
+    title="共享资源库"
+    subtitle="来自Q群 Covi的技术神殿 的文件分享"
+	link="https://github.com/Covi-shared-files/files-share"
   >}}
   {{< hextra/feature-card
     title="没写"
     subtitle="抄的hextra官方的主页，留着吧，还没想好写啥呢"
   >}}
   {{< hextra/feature-card
-    title="没写"
-    subtitle="没写"
+    title="喵喵喵"
+    subtitle="喵喵喵喵喵喵喵喵喵"
   >}}
   {{< hextra/feature-card
     title="没写"
