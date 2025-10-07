@@ -13,11 +13,11 @@ weight: 2400
 
 **我怎么那么平均**
 
-![测试结果](/imgs/moment/202510/ceshi.jpg)
+![测试结果](/imgs/moment/202510/ceshi.png)
 
 **神人班长给我点的外卖，我快笑死了，这玩意还被我爸看到了**
 
-![](/imgs/moment/202510/beizhu.jpg)
+![神人](/imgs/moment/202510/beizhu.jpg)
 
 **自己炒的土豆片，说实话，这是这几天做的菜最像样的一个了，起码看起来**
 
