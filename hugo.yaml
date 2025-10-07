@@ -200,7 +200,7 @@ params:
       
   # 评论区功能
   comments:
-    enable: false
+    enable: true
     type: giscus
     # https://giscus.app/
     #sections: 
