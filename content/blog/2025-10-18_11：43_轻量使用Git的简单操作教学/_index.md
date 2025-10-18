@@ -1,16 +1,15 @@
 ---
 title: "轻量化使用为目的的Git简单命令行操作教程"  # 文章标题
 draft: false  # 是否为草稿。设为 false 才会发布
-date: 2025-10-18
 description: "有时Git的使用是基于轻量化的目的的，所以不需要劳烦VSc的可视化插件了，这时命令行的使用就尤为重要了，本文将介绍Git的基本使用方法，以便应用与简单项目中"  # 文章摘要
 tags: ["Git", "软件", "项目实战"]  # 文章标签，用于分类和关联
 categories: ["项目实战合集"]  # 文章分类
+date: 2025-10-19
 comments: true
 authors:
   - name: xiaoditx
     link: https://github.com/xiaoditx
     image: https://github.com/xiaoditx.png
-
 ---
 
 Git 是一个分布式版本控制系统，用于跟踪文件的更改，特别是源代码文件的更改。以下是一些 Git 的简单操作，适合初学者入门：
