@@ -71,8 +71,9 @@ languages:
           pageRef: /moments
           weight: 40
               
-# 下面的内容，其实我也不明白是干什么的，但是hextra官方示例网站是这么写的我就抄过来了
-# ————————————————————————————————————————————————————————
+
+# 开启hugo对数学公式的检索
+
 markup:
   highlight:
     noClasses: false
@@ -87,7 +88,6 @@ markup:
         enable: true
 
 enableInlineShortcodes: true
-# —————————————————————————————————————————————————————————
 
 menu:
   main:
