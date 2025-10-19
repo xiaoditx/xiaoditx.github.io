@@ -71,7 +71,7 @@ authors:
 
 此时打开软件，会发现音乐无法播放，这是因为这个软件被腾讯法国律师函，因此不敢提供音源，只能做一个壳子，真音源需要自己找
 
-点入设置，找到“自定义源管理”，选择在线导入，然后从下面的三个链接指向的文章中找到一个能连上的复制进输入框，点击导入，确定后勾上即可
+点入设置，找到“自定义源管理”，选择在线导入，然后从下面的三个链接指向的文章中找到一个能连上的复制进输入框，点击导入，确定后勾上便可以使用了
 
 - [洛雪音乐源](https://awaw.cc/post/lx-music-source)
 - [洛雪音乐助手音乐源](https://github.com/piko017/-LX-luoxue_yinyuan/diffs/1?base_sha=6b35139b917e83ca770894406562d8e7c38b8c50&head_user=2061360308&name=master&pull_number=3&qualified_name=refs%2Fheads%2Fmaster&sha1=6b35139b917e83ca770894406562d8e7c38b8c50&sha2=f0e2cee0c021c17877b6d27646af70a4f2d9fe91&short_path=b335630&unchanged=expanded&w=false)
@@ -82,6 +82,8 @@ authors:
 附带一张我设置好的lx的截图
 
 ![lx-music设置好的状态](/imgs/blogs/电脑开荒windows/lxmusic.png)
+
+这个设置包含歌单可以从[网盘下载](https://wwxf.lanzouu.com/ing4X38t137c )，设置中有导入选项，不再赘述
 
 ## 一.游戏环境
 

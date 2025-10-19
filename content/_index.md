@@ -39,12 +39,13 @@ layout: "hextra-home"
 	link="https://github.com/Covi-shared-files/files-share"
   >}}
   {{< hextra/feature-card
-    title="没写"
-    subtitle="抄的hextra官方的主页，留着吧，还没想好写啥呢"
+    title="死了没"
+    subtitle="查看站长存活状态"
+    link="https://xiaoditx.github.io/pages/silemei/"
   >}}
   {{< hextra/feature-card
-    title="喵喵喵"
-    subtitle="喵喵喵喵喵喵喵喵喵"
+    title="没写"
+    subtitle="抄的hextra官方的主页，留着吧，还没想好写啥呢"
   >}}
   {{< hextra/feature-card
     title="没写"
