@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub活动检测 - xiaoditx</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #4cc9f0, #4361ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: #a5b4fc;
+            font-size: 1.1rem;
+        }
+        
+        .github-card {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 3px solid #4361ee;
+        }
+        
+        .user-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .user-info p {
+            color: #a5b4fc;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4cc9f0;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #a5b4fc;
+        }
+        
+        .status-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .status-card.active {
+            border-left: 5px solid #4ade80;
+        }
+        
+        .status-card.inactive {
+            border-left: 5px solid #f87171;
+        }
+        
+        .status-card.very-inactive {
+            border-left: 5px solid #ef4444;
+        }
+        
+        .status-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #c7d2fe;
+        }
+        
+        .time-display {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin: 15px 0;
+            background: linear-gradient(90deg, #4cc9f0, #4361ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .last-activity {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            color: #a5b4fc;
+        }
+        
+        .activity-details {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            text-align: left;
+        }
+        
+        .activity-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #c7d2fe;
+        }
+        
+        .activity-repo {
+            color: #4cc9f0;
+            margin-bottom: 5px;
+        }
+        
+        .activity-date {
+            color: #a5b4fc;
+            font-size: 0.9rem;
+        }
+        
+        .activity-type {
+            display: inline-block;
+            background: rgba(76, 201, 240, 0.2);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+        
+        .activity-chart {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .chart-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #c7d2fe;
+        }
+        
+        .chart-bars {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 150px;
+            margin-top: 20px;
+        }
+        
+        .bar {
+            width: 8%;
+            background: linear-gradient(to top, #4361ee, #4cc9f0);
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            transition: height 0.5s ease;
+        }
+        
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #a5b4fc;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            color: #a5b4fc;
+        }
+        
+        .refresh-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #4361ee, #4cc9f0);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            margin-top: 20px;
+        }
+        
+        .refresh-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .error-message {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .activity-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        .activity-type-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .github-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .time-display {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                flex-wrap: wrap;
+            }
+            
+            .stat-item {
+                width: 50%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GitHub 活动检测</h1>
+            <p class="subtitle">跟踪 xiaoditx 的所有 GitHub 活动</p>
+        </header>
+        
+        <div class="github-card">
+            <img id="avatar" src="" alt="GitHub Avatar" class="avatar">
+            <div class="user-info">
+                <h2 id="username">xiaoditx</h2>
+                <p id="user-bio">正在获取用户信息...</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="repo-count">-</div>
+                        <div class="stat-label">仓库</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="follower-count">-</div>
+                        <div class="stat-label">关注者</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="activity-count">-</div>
+                        <div class="stat-label">总活动</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="status-card" id="status-card">
+            <div class="status-title">最后活动时间</div>
+            <div class="time-display" id="time-display">加载中...</div>
+            <p id="last-activity" class="last-activity">正在获取数据...</p>
+            
+            <div class="activity-details" id="activity-details" style="display: none;">
+                <div class="activity-title" id="activity-title"></div>
+                <div class="activity-repo" id="activity-repo"></div>
+                <div class="activity-date" id="activity-date"></div>
+                <div class="activity-type" id="activity-type"></div>
+            </div>
+        </div>
+        
+        <div class="activity-chart">
+            <div class="chart-title">最近活动概览</div>
+            <div class="loading" id="chart-loading">
+                <i class="fas fa-spinner fa-spin"></i> 正在获取活动数据...
+            </div>
+            <div class="chart-bars" id="chart-bars" style="display: none;">
+                <!-- 图表柱状图将通过JavaScript动态生成 -->
+            </div>
+        </div>
+        
+        <div class="activity-types" id="activity-types">
+            <!-- 活动类型标签将通过JavaScript动态生成 -->
+        </div>
+        
+        <button class="refresh-btn" id="refresh-btn">
+            <i class="fas fa-sync-alt"></i> 刷新数据
+        </button>
+        
+        <footer>
+            <p>数据来自 GitHub API | 最后更新: <span id="last-updated">-</span></p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const timeDisplay = document.getElementById('time-display');
+            const lastActivity = document.getElementById('last-activity');
+            const statusCard = document.getElementById('status-card');
+            const refreshBtn = document.getElementById('refresh-btn');
+            const lastUpdated = document.getElementById('last-updated');
+            const chartBars = document.getElementById('chart-bars');
+            const chartLoading = document.getElementById('chart-loading');
+            const username = document.getElementById('username');
+            const userBio = document.getElementById('user-bio');
+            const avatar = document.getElementById('avatar');
+            const repoCount = document.getElementById('repo-count');
+            const followerCount = document.getElementById('follower-count');
+            const activityCount = document.getElementById('activity-count');
+            const activityDetails = document.getElementById('activity-details');
+            const activityTitle = document.getElementById('activity-title');
+            const activityRepo = document.getElementById('activity-repo');
+            const activityDate = document.getElementById('activity-date');
+            const activityType = document.getElementById('activity-type');
+            const activityTypesContainer = document.getElementById('activity-types');
+            
+            // 活动类型映射
+            const activityTypeMap = {
+                'PushEvent': '推送代码',
+                'CreateEvent': '创建仓库/分支',
+                'DeleteEvent': '删除分支/标签',
+                'PullRequestEvent': 'Pull Request',
+                'PullRequestReviewEvent': 'PR 审查',
+                'IssuesEvent': '问题',
+                'IssueCommentEvent': '问题评论',
+                'WatchEvent': '星标仓库',
+                'ForkEvent': '复刻仓库',
+                'ReleaseEvent': '发布',
+                'PublicEvent': '公开仓库',
+                'MemberEvent': '成员事件',
+                'CommitCommentEvent': '提交评论',
+                'GollumEvent': 'Wiki 更新'
+            };
+            
+            // 更新最后更新时间
+            function updateLastUpdated() {
+                const now = new Date();
+                lastUpdated.textContent = now.toLocaleString('zh-CN');
+            }
+            
+            // 计算时间差
+            function timeSince(date) {
+                const now = new Date();
+                const then = new Date(date);
+                const diffInMs = now - then;
+                
+                const years = Math.floor(diffInMs / (1000 * 60 * 60 * 24 * 365));
+                const months = Math.floor(diffInMs / (1000 * 60 * 60 * 24 * 30));
+                const days = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diffInMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diffInMs % (1000 * 60 * 60)) / (1000 * 60));
+                
+                return { years, months, days, hours, minutes };
+            }
+            
+            // 格式化时间显示
+            function formatTimeDisplay(days, hours, minutes) {
+                if (days > 365) {
+                    const years = Math.floor(days / 365);
+                    const remainingDays = days % 365;
+                    return `${years} 年 ${remainingDays} 天`;
+                } else if (days > 30) {
+                    const months = Math.floor(days / 30);
+                    const remainingDays = days % 30;
+                    return `${months} 个月 ${remainingDays} 天`;
+                } else if (days > 0) {
+                    return `${days} 天 ${hours} 小时`;
+                } else if (hours > 0) {
+                    return `${hours} 小时 ${minutes} 分钟`;
+                } else {
+                    return `${minutes} 分钟`;
+                }
+            }
+            
+            // 更新状态卡片样式
+            function updateStatusCard(days) {
+                statusCard.classList.remove('active', 'inactive', 'very-inactive');
+                
+                if (days < 7) {
+                    statusCard.classList.add('active');
+                } else if (days < 30) {
+                    // 默认状态，不添加特殊类
+                } else if (days < 90) {
+                    statusCard.classList.add('inactive');
+                } else {
+                    statusCard.classList.add('very-inactive');
+                }
+            }
+            
+            // 获取用户信息
+            async function fetchUserInfo() {
+                try {
+                    const response = await fetch('https://api.github.com/users/xiaoditx');
+                    if (!response.ok) throw new Error('用户信息获取失败');
+                    const userData = await response.json();
+                    
+                    username.textContent = userData.login || 'xiaoditx';
+                    userBio.textContent = userData.bio || 'GitHub 用户';
+                    avatar.src = userData.avatar_url || 'https://github.com/xiaoditx.png';
+                    repoCount.textContent = userData.public_repos || '0';
+                    followerCount.textContent = userData.followers || '0';
+                    
+                    return userData;
+                } catch (error) {
+                    console.error('获取用户信息时出错:', error);
+                    userBio.textContent = '无法获取用户信息';
+                    return null;
+                }
+            }
+            
+            // 获取活动数据
+            async function fetchActivityData() {
+                try {
+                    // 获取用户的所有活动事件
+                    const response = await fetch('https://api.github.com/users/xiaoditx/events?per_page=100');
+                    if (!response.ok) throw new Error('活动数据获取失败');
+                    const activityData = await response.json();
+                    
+                    if (activityData && activityData.length > 0) {
+                        // 找到最新的活动
+                        const latestActivity = activityData[0];
+                        const activityTime = new Date(latestActivity.created_at);
+                        const timeDiff = timeSince(activityTime);
+                        
+                        timeDisplay.textContent = formatTimeDisplay(timeDiff.days, timeDiff.hours, timeDiff.minutes);
+                        lastActivity.textContent = `最后活动: ${activityTime.toLocaleDateString('zh-CN')}`;
+                        
+                        // 显示活动详情
+                        activityTitle.textContent = getActivityDescription(latestActivity);
+                        activityRepo.textContent = `仓库: ${latestActivity.repo.name}`;
+                        activityDate.textContent = `时间: ${activityTime.toLocaleString('zh-CN')}`;
+                        activityType.textContent = activityTypeMap[latestActivity.type] || latestActivity.type;
+                        activityDetails.style.display = 'block';
+                        
+                        // 更新活动计数
+                        activityCount.textContent = activityData.length;
+                        
+                        updateStatusCard(timeDiff.days);
+                        updateLastUpdated();
+                        
+                        // 生成活动图表和类型标签
+                        generateActivityChart(activityData);
+                        generateActivityTypes(activityData);
+                    } else {
+                        timeDisplay.textContent = '无活动记录';
+                        lastActivity.textContent = '该用户暂无 GitHub 活动';
+                        activityCount.textContent = '0';
+                    }
+                    
+                    return activityData;
+                } catch (error) {
+                    console.error('获取活动数据时出错:', error);
+                    timeDisplay.textContent = '获取失败';
+                    lastActivity.textContent = '无法获取活动数据，请稍后重试';
+                    return null;
+                }
+            }
+            
+            // 获取活动描述 - 修复了PushEvent显示0个提交的问题
+            function getActivityDescription(activity) {
+                switch(activity.type) {
+                    case 'PushEvent':
+                        // 修复：使用payload.size而不是commits.length
+                        const commitCount = activity.payload.size || 
+                                          (activity.payload.commits ? activity.payload.commits.length : 1);
+                        const branch = activity.payload.ref ? 
+                                     activity.payload.ref.split('/').pop() : '默认分支';
+                        return `推送了 ${commitCount} 个提交到 ${branch}`;
+                    case 'CreateEvent':
+                        return `创建了 ${activity.payload.ref_type}: ${activity.payload.ref || activity.payload.description || '新资源'}`;
+                    case 'DeleteEvent':
+                        return `删除了 ${activity.payload.ref_type}: ${activity.payload.ref || '资源'}`;
+                    case 'PullRequestEvent':
+                        return `${activity.payload.action} Pull Request: ${activity.payload.pull_request ? activity.payload.pull_request.title : '未知标题'}`;
+                    case 'IssuesEvent':
+                        return `${activity.payload.action} Issue: ${activity.payload.issue ? activity.payload.issue.title : '未知标题'}`;
+                    case 'WatchEvent':
+                        return '星标了一个仓库';
+                    case 'ForkEvent':
+                        return '复刻了一个仓库';
+                    case 'ReleaseEvent':
+                        return `发布了 ${activity.payload.release ? activity.payload.release.tag_name : '新版本'}`;
+                    case 'PublicEvent':
+                        return '将仓库设为公开';
+                    default:
+                        return activityTypeMap[activity.type] || activity.type;
+                }
+            }
+            
+            // 生成活动图表
+            function generateActivityChart(activityItems) {
+                chartLoading.style.display = 'none';
+                chartBars.style.display = 'flex';
+                chartBars.innerHTML = '';
+                
+                // 计算最近7个月的活动
+                const months = [];
+                const now = new Date();
+                
+                for (let i = 6; i >= 0; i--) {
+                    const date = new Date(now.getFullYear(), now.getMonth() - i, 1);
+                    months.push({
+                        label: `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`,
+                        count: 0
+                    });
+                }
+                
+                // 统计每个月的活动数量
+                activityItems.forEach(activity => {
+                    const activityDate = new Date(activity.created_at);
+                    const monthKey = `${activityDate.getFullYear()}-${(activityDate.getMonth() + 1).toString().padStart(2, '0')}`;
+                    
+                    const monthData = months.find(m => m.label === monthKey);
+                    if (monthData) {
+                        monthData.count++;
+                    }
+                });
+                
+                // 找到最大值用于比例计算
+                const maxCount = Math.max(...months.map(m => m.count), 1);
+                
+                // 生成柱状图
+                months.forEach(month => {
+                    const bar = document.createElement('div');
+                    bar.className = 'bar';
+                    const height = (month.count / maxCount) * 100;
+                    bar.style.height = `${height}px`;
+                    
+                    const label = document.createElement('div');
+                    label.className = 'bar-label';
+                    label.textContent = month.label;
+                    
+                    const count = document.createElement('div');
+                    count.className = 'bar-label';
+                    count.textContent = month.count;
+                    count.style.bottom = '-45px';
+                    count.style.color = '#4cc9f0';
+                    
+                    bar.appendChild(label);
+                    bar.appendChild(count);
+                    chartBars.appendChild(bar);
+                });
+            }
+            
+            // 生成活动类型标签
+            function generateActivityTypes(activityItems) {
+                activityTypesContainer.innerHTML = '';
+                
+                // 统计各种活动类型的数量
+                const typeCounts = {};
+                activityItems.forEach(activity => {
+                    const typeName = activityTypeMap[activity.type] || activity.type;
+                    typeCounts[typeName] = (typeCounts[typeName] || 0) + 1;
+                });
+                
+                // 创建类型标签
+                for (const [typeName, count] of Object.entries(typeCounts)) {
+                    const badge = document.createElement('div');
+                    badge.className = 'activity-type-badge';
+                    badge.textContent = `${typeName}: ${count}`;
+                    activityTypesContainer.appendChild(badge);
+                }
+            }
+            
+            // 初始化
+            async function initialize() {
+                refreshBtn.disabled = true;
+                refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 加载中...';
+                
+                await Promise.all([fetchUserInfo(), fetchActivityData()]);
+                
+                refreshBtn.disabled = false;
+                refreshBtn.innerHTML = '<i class="fas fa-sync-alt"></i> 刷新数据';
+            }
+            
+            // 刷新按钮事件
+            refreshBtn.addEventListener('click', function() {
+                initialize();
+            });
+            
+            // 页面加载时初始化
+            initialize();
+        });
+    </script>
+</body>
+</html>
