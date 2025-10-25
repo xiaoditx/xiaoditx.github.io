@@ -165,6 +165,99 @@ B站的剪辑工具，和B站绑定的很紧
 
 [跳转至官网下载](https://maruko.appinn.me/)
 
+### 8.来自设备制造商的HEVC视频扩展
+
+严格来讲这不叫软件，算是个补丁（吧？），微软官方很多软件不支持HEVC视频格式，包括但不限于官方播放器、浏览器，所以有些视频是放不了的，因此需要装HEVC视频扩展
+
+但是这个牢微不讲武德，直接收费六块人民币，于是便有了如下一招：来自设备制造商的HEVC视频扩展
+
+这玩意起初是微软给设备制造商用的，设备制造商买过了这个扩展，用户不需要再次支付，而是可以直接通过这样一个特殊版本享受扩展，但微软又有一个我不知道是干什么的网站可以下载静态的文件，就导致我们可以直接拿到扩展文件
+
+这是[我拿到的版本的文件链接](https://wwxf.lanzouu.com/iFSHE39d5fja)
+
+下载后双击选择安装即可，如果不行，则需要上网探寻了，这就不再本文讨论范围之内了（人话就是这文章我赶不完了）
+
+### 9.PotPlayer
+
+PotPlayer是一款极为强大的视频播放器，在播放器这个领域它基本上算得上是最权威的了，不过国内也难找官网：[官网链接](https://potplayer.tv/?lang=zh_CN)
+
+### 10.VLC media Player
+
+很老的一款视频播放器，功能也还行，依旧[官网下载](https://www.videolan.org/vlc/index.zh_CN.html)
+
+### 11.Mediainfo
+
+这个算是很强的一个软件了，可以查看视频文件的视频格式编码等信息，展示的各种内容都很详细，如果遇到视频损坏等问题，可以先用Mediainfo取一下视频信息再去找AI，效率会相当之高
+
+还是点入[官网下载链接](https://mediaarea.net/zh-CN/MediaInfo/Download/Windows)，但是相对就比较难找到合适的版本了，可以跟着我来：
+
+首先看`Version`，你用的是什么系统就选择那一栏，最后向右看到`Architecture`，这里根据自己的电脑系统位数判断，一般电脑都是64位，如果不知道，可以在[版本选择的相关问题](#版本选择的相关问题)板块中学习如何查看（哦对了，如果你实在不知道选什么，就选那个`Universal installer`，那玩意是个通用选项）
+
+找到合适位数后，找到右边的`GUI`字样，如果你选择的是`Universal installer`则可以直接向右边点链接了，如果不是，则需要点**64 bit only installer**，这样就能下到安装包了
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 12.ffmpeg
+
+## 七.技术
+
+哎呀，终于进领域了，我等待这一刻多时了，技术方面可以谈的那就真的太多了
+
+### Bz
+### CMake
+### 游戏开发软件
+#### GameMaker
+#### Godot
+### GARbro
+### Git
+### Vim
+### Python
+### Dev-C++
+### MSY32
+### debug工具
+#### x64dbg
+#### ollydbg
+### VScode
+### Visual Studio
+### VMware
+### Resource Hacker
+### MarkText
+### Notepad++
+### 终端（Terminal）
+### wireshark
+### Inno Setup
+### Cheat Engine
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 一.游戏环境
 
 ### 1.Steam
