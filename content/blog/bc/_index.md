@@ -85,6 +85,86 @@ authors:
 
 这个设置包含歌单可以从[网盘下载](https://wwxf.lanzouu.com/ing4X38t137c )，设置中有导入选项，不再赘述
 
+## 五.系统工具
+
+Windows的很多功能是很杂乱的，一些问题也没有很好的解决方案，所以就需要引入一些软件去管理，有些人可能会选择360系列，但与之相对应的，广告会十分泛滥
+
+我们需要引入一些安全的、无广告的且方便的软件：
+
+首先是国内安装比较方便的、产自较知名公司的软件产品
+
+- [腾讯电脑管家](https://guanjia.qq.com/)
+- [微软电脑管家](https://pcmanager.microsoft.com/zh-cn)
+
+两者都是非常简单的点下载就行，但是后者是打开的微软商店，因此安装步骤很简洁，不过不会默认创建快捷方式，需要去开始菜单寻找
+
+下面是一些不好安装的，我将会详细的讲解安装步骤
+
+### FixWin
+
+首先打开下载页面（好像是篇文章？）：[FixWin 11 is the best PC Repair software to fix Windows 11/10 problems](https://www.thewindowsclub.com/fixwin-windows-pc-repair-software)
+
+打开后，忽视所有废话，向下滑找到“Download FixWin”，一般来讲伴随着一个蓝色的按钮，点击即可下载一个zip文件，解压后就可以使用了
+
+### Yasb
+
+这个软件是一个开源软件，开源在[Github](https://github.com/amnweb/yasb)，其用途是改善状态栏
+
+可以通过开源页中的命令获取软件，当然，你也可以使用开源页右侧栏目中的Release选项下载msi版本。软件安装时注意字体问题，开源页中有过讲解，你需要先行下载支持的字体
+
+这里有[一篇安装的介绍文章](https://x1g.la/yasb.html)，我当时就是看的这个文章安装的
+
+### ZyperWin++
+
+[ZyperWin++](https://github.com/ZyperWave/ZyperWinOptimize?tab=readme-ov-file)是一个Windows优化工具，可以一键式的优化Windows的各项问题，同样是在Release中选择适当的版本，然后安装，软件操作很简单，所以不再详细说明。
+
+## 六.视频工具
+
+### 1.唧唧down
+
+打开[官方网站](https://client.sabe.cc/installation/windows/)，点击“JiJiDownCore 文件列表”，`选择JiJiDownCore-win64.exe`
+
+> [!note]
+> 这个网站不保证安全性，因为我是两年前下的，之后没管过，当时并没有官方网站，所以这个只能存疑（说白了就是我懒得查证了，那个安装包我都懒得运行，嘻嘻）
+
+### 2.downkyi
+
+唧唧down下不了的downkyi就不一定，前者提供了高清画质，后者提供最后保证（额两年前是这样的，现在不知道）
+
+这是官方[Release页面](https://github.com/leiurayer/downkyi/releases)，在最新的版本中点开`Assets`，然后选择其中的zip下载就好
+
+### 3.oCam
+
+强大的录屏软件，我的大多数视频都是它录的，不过这玩意在国内搜出来的网站要么就是软件园，要么就是下不了，要么就是压根连不上，总之很难装（真不知道我小学是怎么折腾到这玩意的安装包的）
+
+感谢[CSDN上的一篇博客](https://blog.csdn.net/u010942212/article/details/149294104)提供了安装包（虽然我没有亲自检验，但大概可行），这个链接是夸克网盘的，你看，我在[浏览器](#二浏览器)那边说了什么来着，夸克会派上用场的
+
+当然当然，如果你没有，我帮你传到蓝奏云了，这玩意不需要账号也不需要什么客户端：[跳转蓝奏云](https://wwxf.lanzouu.com/b00jetb70h)，密码是`7bb4`（这玩意没VIP居然无法取消文件夹密码）
+
+### 4.OBS-studio
+
+一款直播软件，兼有录屏功能，可以搞一些画面实时合成的活，想要下载，首先点开[这玩意的官网](https://obsproject.com/zh-cn/download)，不过我被一个假的官网戏耍了一次，所以不大放心，这里还是给一下GitHub仓库为妙：[GitHub](https://github.com/obsproject/obs-studio)（你可以自己去找release）
+
+### 5.剪映专业版
+
+很出名了，不过VIP横行，不建议使用，我主要是因为有几个功能用得顺手才留着的，下载很简单，开[官网](https://www.capcut.cn/)找下载就行
+
+### 6.必剪
+
+B站的剪辑工具，和B站绑定的很紧
+
+搜的时候我都快笑死了，满屏剪映广告，还有一个金山软件管家做的假官网
+
+官网链接[放这里了](https://bcut.bilibili.cn/)，点开下载
+
+### 7.小丸工具箱
+
+这个玩意还是当时B站推荐的，我个人用的很少，不过有的时候很实用的来着
+
+主要作用就是把视频音频什么的压到一起或者分离
+
+[跳转至官网下载](https://maruko.appinn.me/)
+
 ## 一.游戏环境
 
 ### 1.Steam
