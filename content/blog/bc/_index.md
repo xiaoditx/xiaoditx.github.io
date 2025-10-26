@@ -195,27 +195,34 @@ PotPlayer是一款极为强大的视频播放器，在播放器这个领域它�
 
 找到合适位数后，找到右边的`GUI`字样，如果你选择的是`Universal installer`则可以直接向右边点链接了，如果不是，则需要点**64 bit only installer**，这样就能下到安装包了
 
-
-
-
-
-
-
-
-
-
-
-
-
 ### 12.ffmpeg
+
+ffmpeg属于一个非常知名且重要的软件了，它值得称得上是音视频处理领域的**最强软件**，几乎所有的视频平台、软件都会使用它的功能，比如bilibili、抖音
+
+日常使用上，它可以提供优秀的转码操作，也能处理某些特定的音视频文件，它可以和[Mediainfo](#11mediainfo)组合使用用于视频格式等修正，因此在遇到视频问题需要求助AI或网友时，可以提供条件：**我已安装ffmpeg**
+
+其下载可以在[Github release页面](https://github.com/BtbN/FFmpeg-Builds/releases)进行，一般选取**ffmpeg-master-latest-win64-gpl-shared.zip**，你也可以去[gyan.dev](https://www.gyan.dev/ffmpeg/builds/)下载，但限于篇幅将不再介绍详细流程
+
+### 13.FFmpegFreeUI
+
+前面讲了FFmpeg功能强大，但是属于控制台程序，只能在命令行中使用，下面的软件可以为其安装UI：[FFmpegFreeUI](https://github.com/Lake1059/FFmpegFreeUI)
+
+该软件简称为3FUI，详细安装请见开源页介绍（看得出来原作者很讨厌新手，怕是被问烦了）
 
 ## 七.技术
 
 哎呀，终于进领域了，我等待这一刻多时了，技术方面可以谈的那就真的太多了
 
-### Bz
-### CMake
-### 游戏开发软件
+### 1.Bz
+
+Bz是一个开源的二进制编辑器，不过不是很出名（虽然使用范围也不是很广），可以直接编辑很多文件的二进制内容，这玩意好像是很古早的软件了来着，并没有找到官网，可以从[我传的网盘版本](https://wwxf.lanzouu.com/iSa3F39eqm3i)中下载
+
+### 2.Make
+
+### 3.CMake
+
+
+
 #### GameMaker
 #### Godot
 ### GARbro
