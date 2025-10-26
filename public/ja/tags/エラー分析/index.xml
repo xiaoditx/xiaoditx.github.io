@@ -1,0 +1,258 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>狄くん – エラー分析</title>
+    <link>http://localhost:11633/ja/tags/%E3%82%A8%E3%83%A9%E3%83%BC%E5%88%86%E6%9E%90/</link>
+    <description>Recent content in エラー分析 on 狄くん</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:11633/ja/tags/%E3%82%A8%E3%83%A9%E3%83%BC%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>VScodeプラグインはエラーを報告するのに、g&#43;&#43;は完璧にコンパイル？API呼び出しの誤り原因分析</title>
+      <link>http://localhost:11633/ja/blog/2025-08-26_vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</link>
+      <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:11633/ja/blog/2025-08-26_vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/</guid>
+      <description>
+        
+        
+        &lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:flex-col hx:rounded-lg hx:border hx:py-4 hx:px-4 hx:border-gray-200 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200&#34;&gt;
+  &lt;p class=&#34;hx:flex hx:items-center hx:font-medium&#34;&gt;&lt;svg height=16px class=&#34;hx:inline-block hx:align-middle hx:mr-2&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; fill=&#34;none&#34; viewBox=&#34;0 0 24 24&#34; stroke-width=&#34;2&#34; stroke=&#34;currentColor&#34; aria-hidden=&#34;true&#34;&gt;&lt;path stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; d=&#34;M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z&#34;/&gt;&lt;/svg&gt;Note&lt;/p&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;&lt;p&gt;本ページはAI技術による翻訳を使用しています。内容は参考までにご覧ください。&lt;/p&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;少し前にある&lt;a href=&#34;https://github.com/xiaoditx/BeepMusic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;小さなソフトウェア&lt;/a&gt;を書き、それに設定読み書き機能を追加したくなりました。C++を学び始めて数日の私は、ネットでかなり調べ、INI読み込みの&lt;code&gt;GetPrivateProfileString&lt;/code&gt;とINI書き込みの&lt;code&gt;WritePrivateProfileString&lt;/code&gt;という2つのWindows APIを見つけました。ネットのチュートリアルに従い、以下の3行を書きました：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;LPTSTR&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lpPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MAX_PATH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;strcpy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lpPath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;.&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;config.ini&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;WritePrivateProfileString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;config&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;t&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;120&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lpPath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;書き終えた直後、VScodeのプラグインが即座に赤く警告を出し、次のようなエラーを表示しました：
+&lt;img src=&#34;http://localhost:11633/imgs/blogs/VScode%e6%8a%a5%e9%94%99%ef%bc%8cg&amp;#43;&amp;#43;%e9%80%9a%e8%bf%87%ef%bc%8cGetPrivateProfileString/184a967e89d542c3be6e63b16667e2a3.png&#34; alt=&#34;VScodeプラグインエラー&#34;  loading=&#34;lazy&#34; /&gt;
+しかし、私はチュートリアル通りに正確に書いたと確信していました。どこが問題なのでしょうか？&lt;/p&gt;
+&lt;p&gt;コンパイルを試みると、結果は驚くべきものでした：g++は一切エラーなくコンパイルに成功し、カレントディレクトリに&lt;code&gt;config.ini&lt;/code&gt;を作成して指定内容を書き込みました。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:11633/imgs/blogs/VScode%e6%8a%a5%e9%94%99%ef%bc%8cg&amp;#43;&amp;#43;%e9%80%9a%e8%bf%87%ef%bc%8cGetPrivateProfileString/83ab9c632d1e463596644c4afcc60d14.png&#34; alt=&#34;g&amp;#43;&amp;#43;コンパイル結果&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;これは奇妙です。公式ドキュメントを調べてみましょう。&lt;/p&gt;
+&lt;p&gt;MSDNに行き、&lt;code&gt;WritePrivateProfileString&lt;/code&gt;を検索しましたが、見つかりませんでした。見つかったのは&lt;code&gt;WritePrivateProfileStringA&lt;/code&gt;と&lt;code&gt;WritePrivateProfileStringW&lt;/code&gt;（どちらも末尾に文字が一つ追加）だけでした。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:11633/imgs/blogs/VScode%e6%8a%a5%e9%94%99%ef%bc%8cg&amp;#43;&amp;#43;%e9%80%9a%e8%bf%87%ef%bc%8cGetPrivateProfileString/9e5fe8e0a5074f0ba5d570c9a3ef2023.png&#34; alt=&#34;MSDN関連内容&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;仕方ないので、一つクリックして確認しました。&lt;code&gt;WritePrivateProfileStringA&lt;/code&gt;を選びました。ん？パラメータの型が違うようです。チュートリアルでは&lt;code&gt;LPTSTR&lt;/code&gt;を使っていましたが、ここでは&lt;code&gt;LPCSTR&lt;/code&gt;と書かれています。&lt;/p&gt;
+&lt;p&gt;下にスクロールすると、&lt;code&gt;Example&lt;/code&gt;セクションの下に注記がありました：&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;winbase.h ヘッダーは、UNICODE プリプロセッサ定数の定義に基づいて、この関数の ANSI バージョンと Unicode バージョンを自動的に選択するエイリアスとして WritePrivateProfileString を定義します。エンコード中立エイリアスとエンコード中立ではないコードを混在させると、コンパイル エラーまたはランタイム エラーの不一致が発生する可能性があります。詳細については、「関数プロトタイプの規約」を参照してください。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;つまり、&lt;code&gt;WritePrivateProfileString&lt;/code&gt;はAPIの本来の名前ではなく、条件に応じて選択されるものなのです。&lt;/p&gt;
+&lt;p&gt;VScodeに戻り、Ctrlを押しながら&lt;code&gt;WritePrivateProfileString&lt;/code&gt;をクリックして、&lt;code&gt;Windows.h&lt;/code&gt;の内容を確認しました：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#ifdef UNICODE
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define WritePrivateProfileString  WritePrivateProfileStringW
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#else
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define WritePrivateProfileString  WritePrivateProfileStringA
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#endif&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;VScodeでは上の条件が有効（強調表示）になっており、VScodeの環境では&lt;code&gt;UNICODE&lt;/code&gt;マクロが定義されていることを証明していました。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:11633/imgs/blogs/VScode%e6%8a%a5%e9%94%99%ef%bc%8cg&amp;#43;&amp;#43;%e9%80%9a%e8%bf%87%ef%bc%8cGetPrivateProfileString/389e5b23cc314530822b326a0f848859.png&#34; alt=&#34;条件付きコンパイル&#34;  loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;これで真相がわかりました！VScodeには&lt;code&gt;UNICODE&lt;/code&gt;マクロが定義されている一方、g++には定義されていなかったため、プラグインはコードを&lt;code&gt;WritePrivateProfileStringW&lt;/code&gt;に対してチェックし、Unicodeと&lt;code&gt;wchar_t&lt;/code&gt;（ワイド文字）で格納されたパスを要求しました。g++でコンパイルするときは、&lt;code&gt;WritePrivateProfileStringA&lt;/code&gt;を使い、ANSIと&lt;code&gt;char&lt;/code&gt;（通常の文字）で格納されたパスを要求しました。その結果、私たちが&lt;code&gt;char&lt;/code&gt;を使ったコードはg++では正常に動作しましたが、VScodeプラグインのチェックには通りませんでした。&lt;/p&gt;
+&lt;p&gt;したがって、私たちのコードは正しかったのですが、環境の違いによりプラグインがエラーと判断したのです。この場合の解決策は、明示的に&lt;code&gt;WritePrivateProfileStringA&lt;/code&gt;関数を使用することを指定することです：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lpPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MAX_PATH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;strcpy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lpPath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;.&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\\&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;config.ini&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;WritePrivateProfileStringA&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;LiMing&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Sex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Man&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lpPath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;delete&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lpPath&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;これで完了です。煩わしい警告はついに消えました。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;付録：&lt;/strong&gt; LPxxxSTRデータ型の具体的な意味&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;核心的基本型:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CHAR&lt;/code&gt;: &lt;strong&gt;ANSI&lt;/strong&gt; (8ビット) 文字を表す (&lt;code&gt;char&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;WCHAR&lt;/code&gt;: &lt;strong&gt;ワイド文字&lt;/strong&gt; (Unicode, 通常は16ビット UTF-16) を表す (&lt;code&gt;wchar_t&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TCHAR&lt;/code&gt;: &lt;strong&gt;適応型文字タイプ&lt;/strong&gt;。プロジェクト設定（&lt;code&gt;_UNICODE&lt;/code&gt;マクロが定義されているかどうか）に基づいて、&lt;code&gt;CHAR&lt;/code&gt; または &lt;code&gt;WCHAR&lt;/code&gt; にコンパイルされる。ANSIとUnicodeのどちらにもコンパイル可能なコードを書くために使用される。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;文字列ポインタ型:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;LPSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to STRing&lt;/strong&gt;。NULL終端された &lt;strong&gt;ANSI&lt;/strong&gt; 文字列を指す (&lt;code&gt;CHAR*&lt;/code&gt;)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef CHAR* LPSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPWSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to Wide STRing&lt;/strong&gt;。NULL終端された &lt;strong&gt;Unicode&lt;/strong&gt; (UTF-16) 文字列を指す (&lt;code&gt;WCHAR*&lt;/code&gt;)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef WCHAR* LPWSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPTSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to TCHAR STRing&lt;/strong&gt;。NULL終端された &lt;strong&gt;適応型文字&lt;/strong&gt; (&lt;code&gt;TCHAR*&lt;/code&gt;) 文字列を指す。&lt;code&gt;_UNICODE&lt;/code&gt;マクロ定義に依存し、コンパイル時に&lt;code&gt;LPSTR&lt;/code&gt; (ANSI) または &lt;code&gt;LPWSTR&lt;/code&gt; (Unicode) と等しくなる。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef TCHAR* LPTSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定数文字列ポインタ型:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;LPCSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to Constant STRing&lt;/strong&gt;。NULL終端された &lt;strong&gt;定数ANSI&lt;/strong&gt; 文字列を指す (&lt;code&gt;const CHAR*&lt;/code&gt;)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef const CHAR* LPCSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPCWSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to Constant Wide STRing&lt;/strong&gt;。NULL終端された &lt;strong&gt;定数Unicode&lt;/strong&gt; (UTF-16) 文字列を指す (&lt;code&gt;const WCHAR*&lt;/code&gt;)。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef const WCHAR* LPCWSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPCTSTR&lt;/code&gt;: &lt;strong&gt;Long Pointer to Constant TCHAR STRing&lt;/strong&gt;。NULL終端された &lt;strong&gt;定数適応型文字&lt;/strong&gt; (&lt;code&gt;const TCHAR*&lt;/code&gt;) 文字列を指す。&lt;code&gt;_UNICODE&lt;/code&gt;マクロ定義に依存し、コンパイル時に&lt;code&gt;LPCSTR&lt;/code&gt; (ANSI) または &lt;code&gt;LPCWSTR&lt;/code&gt; (Unicode) と等しくなる。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;typedef const TCHAR* LPCTSTR;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;主な違いのまとめ表：&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;型&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;文字幅&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Const性&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;基本型相当 (ANSIビルド)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;基本型相当 (Unicodeビルド)&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;説明&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ANSI (8-bit)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;非 const&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;char*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;char*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ANSI文字列へのポインタ&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPCSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;ANSI (8-bit)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;const&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const char*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const char*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;読み取り専用&lt;/strong&gt; ANSI文字列へのポインタ&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPWSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unicode (16-bit)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;非 const&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;wchar_t*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;wchar_t*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unicode (UTF-16) 文字列へのポインタ&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPCWSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Unicode (16-bit)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;const&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const wchar_t*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const wchar_t*&lt;/code&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;読み取り専用&lt;/strong&gt; Unicode (UTF-16) 文字列へのポインタ&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPTSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;適応型&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;非 const&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;char*&lt;/code&gt; (LPSTR)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;wchar_t*&lt;/code&gt; (LPWSTR)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;適応型文字列 (TCHAR*) へのポインタ&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;LPCTSTR&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;適応型&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;const&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const char*&lt;/code&gt; (LPCSTR)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;const wchar_t*&lt;/code&gt; (LPCWSTR)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;読み取り専用&lt;/strong&gt; 適応型文字列 (const TCHAR*) へのポインタ&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;重要な注意点:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;LP&lt;/code&gt; 接頭辞:&lt;/strong&gt; &amp;ldquo;Long Pointer&amp;rdquo; は歴史的な名残。現代の32/64ビットシステムでは、全てのポインタが &amp;ldquo;long&amp;rdquo; です。&lt;code&gt;LP&lt;/code&gt;は単に &amp;ldquo;Pointer to&amp;rdquo; と考えて差し支えありません。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;C&lt;/code&gt; 接尾辞:&lt;/strong&gt; &lt;code&gt;const&lt;/code&gt; を意味する。指し示す内容は読み取り専用。このポインタを通して文字列を変更することはできない。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;T&lt;/code&gt; 接中辞:&lt;/strong&gt; 型が &lt;code&gt;TCHAR&lt;/code&gt; であることを意味し、プロジェクトの文字セット設定に基づいて適応する。ANSIとUnicodeの両方のビルドをサポートするコードを書くためのもの。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;W&lt;/code&gt; 接尾辞:&lt;/strong&gt; &amp;ldquo;Wide&amp;rdquo;、つまりUnicode (UTF-16) を意味する。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;STR&lt;/code&gt; 接尾辞:&lt;/strong&gt; &amp;ldquo;String&amp;rdquo; (NULL終端文字配列) を意味する。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;現代のWindows開発における実践:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;常にUnicodeビルドを使用することを強く推奨&lt;/strong&gt; (Visual Studio のプロジェクトプロパティで「文字セット」を「Unicode 文字セットを使用する」に設定)。これは &lt;code&gt;_UNICODE&lt;/code&gt; マクロを定義する。&lt;/li&gt;
+&lt;li&gt;Unicodeビルドでは:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;TCHAR&lt;/code&gt; = &lt;code&gt;WCHAR&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPTSTR&lt;/code&gt; = &lt;code&gt;LPWSTR&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LPCTSTR&lt;/code&gt; = &lt;code&gt;LPCWSTR&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TCHAR&lt;/code&gt;ファミリーの曖昧さを避けるため、&lt;code&gt;LPCWSTR&lt;/code&gt;/&lt;code&gt;LPWSTR&lt;/code&gt; またはそのエイリアスである &lt;code&gt;std::wstring&lt;/code&gt; (C++) を直接使用する方が、多くの場合明確である (ANSI/Unicodeの両方をサポートするレガシーコードベースを維持する明示的な必要性がない限り)。&lt;/li&gt;
+&lt;li&gt;ANSI (&lt;code&gt;LPSTR&lt;/code&gt;/&lt;code&gt;LPCSTR&lt;/code&gt;) API関数は、内部的には多くの場合、文字列をUnicodeに変換して対応するUnicode版関数を呼び出しており、パフォーマンスオーバーヘッドと潜在的な文字セット変換問題が存在する。明示的なUnicode (W) 版APIの使用を優先する。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;互換性:&lt;/strong&gt; &lt;code&gt;TCHAR&lt;/code&gt;ファミリーは、主に古いWindows 9xシステム (主にANSIを使用) と現代のNTシステム (ネイティブUnicode) との互換性のために存在する。現代の開発 (Windows 2000以降) ではUnicodeを優先すべき。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;簡単な覚え方:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;W&lt;/code&gt; があれば -&amp;gt; Unicode。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C&lt;/code&gt; があれば -&amp;gt; &lt;code&gt;const&lt;/code&gt; (文字列内容は変更不可)。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;T&lt;/code&gt; があれば -&amp;gt; 適応型。プロジェクト設定に応じてANSIまたはUnicodeに変化。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;W&lt;/code&gt; も &lt;code&gt;T&lt;/code&gt; もなければ -&amp;gt; ANSI。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C&lt;/code&gt; がなければ -&amp;gt; 文字列内容は変更可能 (非定数)。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C&lt;/code&gt; があれば -&amp;gt; 文字列内容は読み取り専用 (定数)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;使用上のアドバイス:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新しいプロジェクト: &lt;strong&gt;常にUnicodeビルドを有効にする (&lt;code&gt;_UNICODE&lt;/code&gt; 定義)&lt;/strong&gt;。&lt;code&gt;LPCWSTR&lt;/code&gt; (入力パラメータ) と &lt;code&gt;LPWSTR&lt;/code&gt; (出力パラメータ)、またはC++では &lt;code&gt;const wchar_t*&lt;/code&gt; と &lt;code&gt;std::wstring&lt;/code&gt; の使用を優先する。&lt;/li&gt;
+&lt;li&gt;旧プロジェクトの維持/ANSI互換性が必要: &lt;code&gt;LPCTSTR&lt;/code&gt; (入力) と &lt;code&gt;LPTSTR&lt;/code&gt; (出力)、または対応する &lt;code&gt;TCHAR&lt;/code&gt; 基本型を使用し、&lt;code&gt;_UNICODE&lt;/code&gt; マクロ定義の取り扱いを確実に行う。&lt;/li&gt;
+&lt;li&gt;Windows APIと相互作用する場合、API関数には通常A (ANSI) とW (Wide/Unicode) の2つのバージョンがあることに注意 (例: &lt;code&gt;MessageBoxA&lt;/code&gt; と &lt;code&gt;MessageBoxW&lt;/code&gt;)。汎用マクロ &lt;code&gt;MessageBox&lt;/code&gt; は &lt;code&gt;_UNICODE&lt;/code&gt; に基づいて自動的に正しいバージョンを選択する。渡される文字列ポインタ型もそれと一致しなければならない (&lt;code&gt;LPCSTR&lt;/code&gt; はA版に、&lt;code&gt;LPCWSTR&lt;/code&gt; はW版に、&lt;code&gt;LPCTSTR&lt;/code&gt; は汎用マクロにそれぞれ対応)。&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

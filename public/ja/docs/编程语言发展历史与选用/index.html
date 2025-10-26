@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="ja"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=11633&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
+  <link rel="icon shortcut" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" id="favicon-svg" />
+<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="/site.webmanifest" rel="manifest" />
+<title>研究性学習総合報告書 – 狄くん</title>
+  <meta name="description" content=" Note
+本ページはAI技術による翻訳を使用しています。内容は参考までにご覧ください。" /><link rel="canonical" href="http://localhost:11633/ja/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/" itemprop="url" />
+
+<meta property="og:title" content="研究性学習総合報告書" />
+<meta property="og:description" content="小狄同学呀的个人网站 | 开源软件、文档、博客、动态 | 立志做优秀开源者，最新项目：FreeOS" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:11633/ja/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/" />
+
+  <meta itemprop="name" content="研究性学習総合報告書">
+  <meta itemprop="description" content="Note
+本ページはAI技術による翻訳を使用しています。内容は参考までにご覧ください。">
+  <meta itemprop="wordCount" content="12123">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="研究性学習総合報告書">
+  <meta name="twitter:description" content="Note
+本ページはAI技術による翻訳を使用しています。内容は参考までにご覧ください。">
+<link href="/css/compiled/main.css" rel="stylesheet" />
+    <link href="/css/variables.css" rel="stylesheet" />
+    <link href="/css/custom.css" rel="stylesheet" />
+
+  
+
+  <script>
+     
+    const defaultTheme = 'system';
+
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
+    }
+
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
+    }
+  </script>
+
+  
+  
+  </head>
+<body dir="ltr"><div class="hextra-nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden">
+  <div
+    class="hextra-nav-container-blur hx:pointer-events-none hx:absolute hx:z-[-1] hx:h-full hx:w-full hx:bg-white hx:dark:bg-dark hx:shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] hx:contrast-more:shadow-[0_0_0_1px_#000] hx:dark:shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] hx:contrast-more:dark:shadow-[0_0_0_1px_#fff]"
+  ></div>
+
+  <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-2 hx:h-16 hx:px-6">
+    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="/ja/">
+    <img class="hx:mr-2 hx:block hx:dark:hidden" src="/images/logo.svg" alt="Logo" height="20" width="20" />
+    <img class="hx:mr-2 hx:hidden hx:dark:block" src="/images/logo.svg" alt="Dark Logo" height="20" width="20" />
+    <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="狄くん">狄くん</span>
+</a>
+
+            <a
+              title="ホーム"
+              href="/ja/"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">ホーム</span>
+            </a>
+            <a
+              title="ブログ"
+              href="/ja/blog"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">ブログ</span>
+            </a>
+            <a
+              title="ドキュメント"
+              href="/ja/docs"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:font-medium"
+            >
+              <span class="hx:text-center">ドキュメント</span>
+            </a>
+            <a
+              title="つぶやき"
+              href="/ja/moments"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">つぶやき</span>
+            </a><button type="button" aria-label="Menu" class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-2 hx:rounded-sm hx:p-2 hx:active:bg-gray-400/20 hx:md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+  </nav>
+</div>
+
+  <div class='hx:mx-auto hx:flex hextra-max-page-width'>
+    <aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-16 hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] hx:md:sticky">
+  
+  <div class="hx:px-4 hx:pt-4 hx:md:hidden">
+    <div class="hextra-search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="検索..."
+      class="hextra-search-input hx:focus:hextra-focus hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="hextra-search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+  </div>
+  <div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--navbar-height)-var(--menu-height))]">
+    <ul class="hx:flex hx:flex-col hx:gap-1 hx:md:hidden">
+      
+      
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/about/"
+    
+  >About
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/moments/"
+    
+  >つぶやき
+    </a></li>
+          <li class="open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/"
+    
+  >ドキュメント一覧
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/beepmusic/"
+    
+  >Beep Music
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a>
+              <div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/"
+    
+  >彩色输出.ja
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/"
+    
+  >文件结构.ja
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/"
+    
+  >热键注册.ja
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/"
+    
+  >rc文件帮助
+    </a>
+              
+            </li></ul>
+      </div>
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/"
+    
+  >DCC script
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a>
+              <div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"
+    
+  >基础语法
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a>
+              <div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/"
+    
+  >函数调用
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/"
+    
+  >特殊函数
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"
+    
+  >数据类型
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%8F%E6%84%9F%E6%80%A7/"
+    
+  >敏感性
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%B8%B8%E9%87%8F/"
+    
+  >常量
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E5%80%BC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/"
+    
+  >数值/逻辑运算符
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%B3%A8%E9%87%8A/"
+    
+  >注释
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BC%98%E5%85%88%E7%BA%A7/"
+    
+  >改变优先级
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%BC%A9%E8%BF%9B/"
+    
+  >缩进
+    </a>
+              
+            </li></ul>
+      </div>
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/2.%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/"
+    
+  >高级语法
+    </a>
+              
+            </li></ul>
+      </div>
+            </li><li class="hx:flex hx:flex-col open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+    href="/ja/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/"
+    
+  >研究性学習総合報告書
+    </a>
+  
+    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
+              <a
+                href="#"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              ></a>
+            </li>
+          </ul>
+  
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/blog/"
+    
+  >小狄同学さんのブログ
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/blog/2025-08-26_vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g&#43;&#43;%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/"
+    
+  >VScodeプラグインはエラーを報告するのに、g&#43;&#43;は完璧にコンパイル？API呼び出しの誤り原因分析
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/blog/2025-08-26_%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/"
+    
+  >アルゴリズム問題: GESP202503 レベル4 — 荒地開墾 (Luogu B4263)
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/blog/2025-09-06_2357_c&#43;&#43;%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/"
+    
+  >アルゴリズム問題: GESP202503 レベル4 — 荒地開墾 (Luogu B4263)
+    </a>
+              
+            </li></ul>
+      </div></li>
+    </ul>
+
+    <ul class="hx:flex hx:flex-col hx:gap-1 hx:max-md:hidden">
+        
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/beepmusic/"
+    
+  >Beep Music
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/"
+    
+  >彩色输出.ja
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/"
+    
+  >文件结构.ja
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/"
+    
+  >热键注册.ja
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/"
+    
+  >rc文件帮助
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/"
+    
+  >DCC script
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"
+    
+  >基础语法
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a>
+              <div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/"
+    
+  >函数调用
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/"
+    
+  >特殊函数
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"
+    
+  >数据类型
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%8F%E6%84%9F%E6%80%A7/"
+    
+  >敏感性
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%B8%B8%E9%87%8F/"
+    
+  >常量
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E5%80%BC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/"
+    
+  >数值/逻辑运算符
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%B3%A8%E9%87%8A/"
+    
+  >注释
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BC%98%E5%85%88%E7%BA%A7/"
+    
+  >改变优先级
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%BC%A9%E8%BF%9B/"
+    
+  >缩进
+    </a>
+              
+            </li></ul>
+      </div>
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/ja/docs/dcc-script/2.%E9%AB%98%E7%BA%A7%E8%AF%AD%E6%B3%95/"
+    
+  >高级语法
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class="open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+    href="/ja/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/"
+    
+  >研究性学習総合報告書
+    </a></li>
+        
+      </ul>
+    </div>
+  
+  
+    <div class=" hx:justify-end hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show"><div class="hx:flex hx:justify-items-start hx:grow">
+    <button
+      title="言語を変更"
+      data-state="closed"
+      data-location=""
+      class="hextra-language-switcher hx:cursor-pointer hx:rounded-md hx:text-left hx:font-medium hx:h-7 hx:px-2 hx:text-xs hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="言語を変更"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>日本語</span></div>
+    </button>
+    <ul
+      class="hextra-language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >中文</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/en/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/ja/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >日本語<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      </ul>
+  </div><button
+  title="テーマを変更"
+  data-theme="light"
+  class="hextra-theme-toggle hx:cursor-pointer hx:group hx:rounded-md hx:text-left hx:h-7 hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400"
+  type="button"
+  aria-label="テーマを変更"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></div>
+</button>
+</div></aside>
+    
+<nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
+    <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">このページの内容</p><ul>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#-%e5%ba%8f%e6%96%87">〇. 序文
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%80-%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e8%a8%80%e8%aa%9e%e3%81%ae%e8%aa%95%e7%94%9f">一. プログラミング言語の誕生
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%ba%8c-%e7%ac%ac%e4%b8%80%e4%b8%96%e4%bb%a3%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e8%a8%80%e8%aa%9e%e6%a9%9f%e6%a2%b0%e8%aa%9e">二. 第一世代プログラミング言語——機械語
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%89-%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%aa%e8%a8%80%e8%aa%9e%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9e%e3%83%bc%e3%81%9f%e3%81%a1%e3%81%ae%e8%87%aa%e7%84%b6%e8%a8%80%e8%aa%9e%e3%81%b8%e3%81%ae%e6%9c%80%e5%88%9d%e3%81%ae%e8%bf%bd%e5%8f%8a">三. アセンブリ言語：プログラマーたちの自然言語への最初の追及
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%9b%9b-%e9%ab%98%e7%b4%9a%e8%a8%80%e8%aa%9e%e3%81%ae%e5%a4%9c%e6%98%8e%e3%81%91cc%e3%81%ae%e9%9d%a9%e5%91%bd">四. 高級言語の夜明け：C/C&#43;&#43;の革命
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#1-c%e8%a8%80%e8%aa%9e%e3%81%ae%e8%aa%95%e7%94%9f">1. C言語の誕生
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#2-c%e3%81%ae%e6%96%b0%e7%94%9f">2. C&#43;&#43;の新生
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#3-%e7%89%b9%e5%be%b4%e6%af%94%e8%bc%83">3. 特徴比較
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%ba%94-java%e3%82%af%e3%83%ad%e3%82%b9%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%81%ae%e5%a4%a2%e3%81%ae%e5%ae%9f%e7%8f%be">五. Java：クロスプラットフォームの夢の実現
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%85%ad-python%e7%b0%a1%e6%bd%94%e3%81%95%e3%81%ae%e5%93%b2%e5%ad%a6%e3%81%ae%e5%8b%9d%e5%88%a9">六. Python：簡潔さの哲学の勝利
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#1-%e7%b0%a1%e6%bd%94%e3%81%aa%e6%a7%8b%e6%96%87">1. 簡潔な構文
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#2-%e5%bc%b7%e5%8a%9b%e3%81%aa%e6%a8%99%e6%ba%96%e3%83%a9%e3%82%a4%e3%83%96%e3%83%a9%e3%83%aa">2. 強力な標準ライブラリ
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#python%e3%81%ae%e5%88%a9%e7%82%b9">Pythonの利点
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%83-%e4%b8%ad%e5%9b%bd%e8%aa%9e%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%bc%e3%83%8d%e3%83%83%e3%83%88%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8b%e6%8e%a2%e6%b1%82">七. 中国語インターネットにおける探求
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#1-%e6%98%93%e8%af%ad%e8%a8%80easy-language">1. 易语言（Easy Language）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#2-%e6%96%87%e8%a8%80wenyan-lang">2. 文言（Wenyan-lang）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%85%ab-%e7%b7%8f%e6%8b%ac%e7%99%ba%e5%b1%95%e3%81%ae%e6%b3%95%e5%89%87">八. 総括：発展の法則
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b9%9d-%e9%81%b8%e6%8a%9e%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e6%8f%90%e6%a1%88">九. 選択に関する提案
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%8d%81-%e5%be%8c%e6%9b%b8%e3%81%8d">十. 後書き
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%8d%81%e4%b8%80-%e5%86%8d%e7%89%88%e9%9a%8f%e7%ac%94%e9%9a%8f%e6%83%b3">十一. 再版随笔（随想）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae">参考文献
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%a3%b0%e6%98%8e">声明
+        </a>
+      </li></ul>
+      <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400"><a class="hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50" href="https://github.com/xiaoditx/xiaoditx.github.io/edit/main/content/docs/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2%E4%B8%8E%E9%80%89%E7%94%A8/_index.ja.md" target="_blank" rel="noreferrer">このページをGitHubで編集 →</a>
+        <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
+          <span>トップにスクロール</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx:inline hx:ltr:ml-1 hx:rtl:mr-1 hx:h-3.5 hx:w-3.5 hx:rounded-full hx:border hx:border-gray-500 hx:hover:border-gray-900 hx:dark:border-gray-400 hx:dark:hover:border-gray-100 hx:contrast-more:border-gray-800 hx:contrast-more:dark:border-gray-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
+        
+  <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
+        <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
+          <a href="/ja/docs/">ドキュメント一覧</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">研究性学習総合報告書</div>
+  </div>
+
+        <div class="content">
+          <h1>研究性学習総合報告書</h1>
+          <div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:flex-col hx:rounded-lg hx:border hx:py-4 hx:px-4 hx:border-gray-200 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200">
+  <p class="hx:flex hx:items-center hx:font-medium"><svg height=16px class="hx:inline-block hx:align-middle hx:mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Note</p>
+
+  <div class="hx:w-full hx:min-w-0 hx:leading-7">
+    <div class="hx:mt-6 hx:leading-7 hx:first:mt-0"><p>本ページはAI技術による翻訳を使用しています。内容は参考までにご覧ください。</p></div>
+  </div>
+</div>
+<p>編著：xiaoditx</p>
+<p>校閲：馬赫陽</p>
+<h3>〇. 序文<span class="hx:absolute hx:-mt-20" id="-序文"></span>
+    <a href="#-%e5%ba%8f%e6%96%87" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>コンピュータ技術は様々なプログラミング言語なしには成り立ちません。したがって、<strong>プログラミング言語の発展は、コンピュータ技術の発展を側面から反映している</strong>と言えます。プログラミング言語の各進化は、時代のコンピュータ技術に対する要求を証言しており、プログラミング言語の発展史は、コンピュータ技術の発展史そのものだと言えるでしょう。</p>
+<p>本研究性学習報告書は、「プログラミング言語」の歴史から着手し、各時代における異なる言語の特徴を分析し、コンピュータ技術の発展過程を覗き見ようと試みます。同時に、<strong>どのようにして自分に適したプログラミング言語を選択するか</strong>を分析することも目的としています。</p>
+<p>本文の基本構成は以下の通りです：</p>
+<ol>
+<li>プログラミング言語の先史的な原型</li>
+<li>機械語とアセンブリ言語</li>
+<li>高級言語の進化経路</li>
+<li>現代プログラミング言語の多次元的発展</li>
+<li>プログラミング言語の発展法則と選択に関する提案</li>
+</ol>
+<h3>一. プログラミング言語の誕生<span class="hx:absolute hx:-mt-20" id="一-プログラミング言語の誕生"></span>
+    <a href="#%e4%b8%80-%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e8%a8%80%e8%aa%9e%e3%81%ae%e8%aa%95%e7%94%9f" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>人類は怠惰であり、昔からそうでした。後漢時代、<code>ジャカード織機</code>と呼ばれるものが広く利用されました。この装置は<strong>商代まで遡ることができ</strong>、その機能から、それが置かれた時代とはほとんど<strong>相容れない</strong>ものでした：</p>
+<blockquote>
+  <p>紋様式ジャカード織機は後漢に出現し、花楼とも呼ばれました。それは線製の花本（紋様 pattern chain）で<em><strong>提花プログラム</strong></em>を保存し、衢線（ harness cords）で経糸を引き上げ開口（shed）を作りました。<em><strong>花本は提花機上に紋様情報を保存する一連のプログラム</strong></em>であり、紋様の要求に従って経線を代表する脚子線（lingzi threads）と緯線を代表する耳子線（erzi threads）で編成されました。</p>
+</blockquote>
+<p>客観的物体を利用してプログラムを記録し労力を節約するという点で、ジャカード織機は、後漢の時代に、時代を先取りした種を静かに埋めました。<strong>シルクロード</strong>が開通すると、ジャカード織機はヨーロッパに流入し、何世代もの工人、物理学者、数学者の手によって、次第に根を下ろし発芽し、「<strong>コンピュータ技術</strong>」という大木に成長しました。</p>
+<h3>二. 第一世代プログラミング言語——機械語<span class="hx:absolute hx:-mt-20" id="二-第一世代プログラミング言語機械語"></span>
+    <a href="#%e4%ba%8c-%e7%ac%ac%e4%b8%80%e4%b8%96%e4%bb%a3%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e8%a8%80%e8%aa%9e%e6%a9%9f%e6%a2%b0%e8%aa%9e" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>人類と機械の初めての「<strong>対話</strong>」は、<strong>機械語</strong>によって行われました。これは純粋な0と1だけで構成される「言語」であり、これが定義上の<strong>第一世代コンピュータ言語</strong>です。</p>
+<p>0と1の世界は、コンピュータの最も根底にある「本質」です。したがって、十分に基本的で、十分に複雑であり、記述効率も比較的低くなります。以下に、機械語コードの短い例を示します。感じ取ってみてください。</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">2進数表現：
+</span></span><span class="line"><span class="cl">10001011 01000101 00000100
+</span></span><span class="line"><span class="cl">01011011
+</span></span><span class="line"><span class="cl">10001001 11000011
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">16進数表現：
+</span></span><span class="line"><span class="cl">8b 45 04
+</span></span><span class="line"><span class="cl">5b
+</span></span><span class="line"><span class="cl">89 c3</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>0と1の混在により、コードの内容が識別しにくいことが明らかにわかります。したがって、人間が所謂筋肉記憶のようなもので素早く認識することは<strong>非常に困難</strong>です。</p>
+<p>実際、上記の長い文字列は、簡単な加算演算さえ<strong>支えるには不十分</strong>です。もし今、誤って一文字書き間違えたら：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">誤り：
+</span></span><span class="line"><span class="cl">10001011 01000101 00000100
+</span></span><span class="line"><span class="cl">01011011
+</span></span><span class="line"><span class="cl">10001101 11000011
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">正解：
+</span></span><span class="line"><span class="cl">10001011 01000101 00000100
+</span></span><span class="line"><span class="cl">01011011
+</span></span><span class="line"><span class="cl">10001001 11000011</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>どちらが間違っているか一目でわかる人はいるでしょうか？おそらくいないでしょう。機械語で加算を実装するには少なくとも3行必要です。たった3行以内でさえ、誤り修正の難しさがこれほど高いのですから、実際のソフトウェア開発に使用する際の困難は想像に難くありません。</p>
+<p>これが機械語の長所と短所を引き起こします：</p>
+<p>長所は以下の通りです：</p>
+<ul>
+<li>最も低水準に近く、実行速度が<strong>十分に速い</strong></li>
+<li>機械が<strong>直接認識</strong>して実行でき、補助プログラムが不要</li>
+<li>余計な無駄な内容が出現しない（プログラム<strong>サイズが小さい</strong>）</li>
+</ul>
+<p>短所は以下の通りです：</p>
+<ul>
+<li><strong>記憶难度が大きい</strong></li>
+<li>低水準を直視するため、学習難易度が高い</li>
+<li>機械への依存性が強く、一種類の機械に対して一種類の構造であり、<strong>移植が困難</strong></li>
+<li><strong>0と1のみ</strong>であるため、誤りを書きやすく、誤り修正も困難</li>
+</ul>
+<p>王爽氏の『アセンブリ言語』における以下の記述を思わず思い出します：</p>
+<blockquote>
+  <p>機械語プログラムの書取りと読取りは簡単な仕事ではなく、すべての抽象的な2進コードを覚えなければならない。上記は非常に単純な小さなプログラムであるが、機械語の晦渋難解さと誤り確認の難しさを暴露している。こんなに小さなプログラムを書くのでさえこうなのだから、実際に役立つプログラムは少なくとも数十行の機械語が必要だとすると、状況はどうなるだろうか？</p>
+</blockquote>
+<h3>三. アセンブリ言語：プログラマーたちの自然言語への最初の追及<span class="hx:absolute hx:-mt-20" id="三-アセンブリ言語プログラマーたちの自然言語への最初の追及"></span>
+    <a href="#%e4%b8%89-%e3%82%a2%e3%82%bb%e3%83%b3%e3%83%96%e3%83%aa%e8%a8%80%e8%aa%9e%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9e%e3%83%bc%e3%81%9f%e3%81%a1%e3%81%ae%e8%87%aa%e7%84%b6%e8%a8%80%e8%aa%9e%e3%81%b8%e3%81%ae%e6%9c%80%e5%88%9d%e3%81%ae%e8%bf%bd%e5%8f%8a" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>機械語がそんなに書きにくいなら、どうすればいいのでしょうか？プログラマーたちは考えました：機械と直接「会話」するのが少し困難なら、<strong>翻訳者を見つければいいのではないか</strong>？こうして<strong>アセンブリ言語</strong>が誕生しました。</p>
+<p>百度百科はアセンブリ言語を次のように定義しています：</p>
+<blockquote>
+  <p>アセンブリ言語（Assembly Language）は、電子計算機、マイクロプロセッサ、マイクロコントローラ、またはその他のプログラミング可能なデバイスのための任何一种の低水準言語であり、記号言語とも呼ばれる。</p>
+</blockquote>
+<p>簡単に言えば、アセンブリ言語は万能の通訳者のようなものです。この「通訳者」は一種の言語を制定しました。あなたが任意の機械と「対話」する必要があるときは、この「通訳者」を見つけ、その制定した言語を話せば、状況に応じて異なる表現で機械に伝えてくれます。</p>
+<p>例えば、機械Aは<code>0000</code>を加算演算と規定し、機械Bは<code>1010</code>を加算演算と規定します。この時、アセンブリ言語は加算演算を<code>+</code>であると規定します。そうすれば、私たちがプログラムを書くときは<code>+</code>と書くだけでいいのです。アセンブリ言語は機械Aに対しては<code>0000</code>を伝え、機械Bに対しては<code>1010</code>を伝えます。</p>
+<p>アセンブリ言語のこの「人によって異なる」翻訳により、機械語の機械への強い依存性の問題が<strong>一定程度解決され</strong>ました。同時に、<code>0000</code>を<code>+</code>に変えるような操作を通じて、プログラムの作成がより直感的になり、記憶しやすくなりました（<code>1 0000 2</code>と<code>1+2</code>、どちらが覚えやすく書きやすいでしょうか？これは明らかです）。</p>
+<p>したがって、アセンブリ言語は時に<strong>記憶を補助するテキスト</strong>という意味で、ニーモニック（助記符）とも呼ばれます。以下の<a href="https://baike.baidu.com/item/%E5%8A%A9%E8%AE%B0%E7%AC%A6/489287" target="_blank" rel="noopener">定義</a>を参照してください：</p>
+<blockquote>
+  <p>ニーモニック（mnemonic）は、人々の記憶を容易にし、命令の機能と命令オペランドを記述できる記号である。ニーモニックは、命令機能を示す英語の単語またはその略語である。</p>
+</blockquote>
+<p>アセンブリの導入により、記憶はもはや退屈で理解しにくいものではなくなりました。例えば、<code>MOV</code>、<code>ADD</code>、<code>CALL</code>などの命令があり、少しでも英語の基礎があれば十分に理解でき、2進数よりも速く記憶できるようになります。</p>
+<p>異なる設計の機械間には無視できない違いがあることを考慮し、アセンブリもIBM PCアセンブリ、ARMアセンブリ、GNU ASM、MASM、NASMなど、さまざまなバージョンが<strong>派生して</strong>きました。ここでは詳細には触れません。</p>
+<p>ここで、アセンブリ言語に関する<a href="https://zhuanlan.zhihu.com/p/24327574773" target="_blank" rel="noopener">ある記事</a>の評価を引用します：</p>
+<blockquote>
+  <p>アセンブリ言語の出現は、プログラマーを煩雑な2進数プログラミングから解放し、プログラムの論理と機能実装により集中できるようになり、コンピュータソフトウェアの発展に重要な基礎を築いた。</p>
+</blockquote>
+<p>要するに、アセンブリ言語は人々に「その然（ぜん）を知って其の所以（ゆえん）を知らず」の状態に到達させます。コンピュータ技術の学習において、これはほとんどの場合実際には良い状態です。なぜなら、これにより煩雑な低水準の原理から<strong>解放され</strong>、コンピュータで問題を解決したいとき、<strong>機械の低水準アーキテクチャがどうなっているかをまず見るのではなく、どのようなアルゴリズムを使うかを直接考えられるようになる</strong>からです。</p>
+<blockquote>
+  <p>tips：筆者はアセンブリ言語が非常に好きです。それは低水準に近く、コンピュータ科学の基礎への扉を開く鍵です。これは非常に挑戦的な言語であり、ソフトウェアの動作原理を最も学べる言語です。</p>
+</blockquote>
+<h3>四. 高級言語の夜明け：C/C++の革命<span class="hx:absolute hx:-mt-20" id="四-高級言語の夜明けccの革命"></span>
+    <a href="#%e5%9b%9b-%e9%ab%98%e7%b4%9a%e8%a8%80%e8%aa%9e%e3%81%ae%e5%a4%9c%e6%98%8e%e3%81%91cc%e3%81%ae%e9%9d%a9%e5%91%bd" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4>1. C言語の誕生<span class="hx:absolute hx:-mt-20" id="1-c言語の誕生"></span>
+    <a href="#1-c%e8%a8%80%e8%aa%9e%e3%81%ae%e8%aa%95%e7%94%9f" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>1972年、ベル研究所の<strong>デニス・リッチー</strong>（Dennis MacAlistair Ritchie）がUNIXオペレーティングシステムの開発中にC言語を創造しました。これはアセンブリ言語と比べて自然言語により近い言語であり、アセンブリ言語よりも可読性に優れています。</p>
+<p>以下は、<code>Hello World</code>を出力する古典的なコードです。これはC言語開発を学ぶほぼ全員が経験する共通の第一歩です。</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Hello, World!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>この5行は、一つの仕事を完了します：コンソールにテキスト文字列を出力する。</p>
+<p>これは簡単なことだと思う人もいるかもしれません。C言語はこれだけであり、大した意義はないと考えるなら、それは大きな間違いです。同じ機能をアセンブリ言語で実装したものを見てみましょう：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">data</span> <span class="no">segment</span> <span class="c1">;データセグメント
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">string</span> <span class="no">db</span> <span class="err">&#39;</span><span class="no">Hello</span><span class="p">,</span><span class="no">World</span><span class="p">!</span><span class="no">$</span><span class="err">&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">data</span> <span class="no">ends</span>
+</span></span><span class="line"><span class="cl"><span class="nf">code</span> <span class="no">segment</span> <span class="c1">;コードセグメント
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">assume</span> <span class="no">cs</span><span class="p">:</span><span class="no">code</span><span class="p">,</span><span class="no">ds</span><span class="p">:</span><span class="no">data</span>
+</span></span><span class="line"><span class="cl"><span class="nl">start:</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">mov</span> <span class="no">ax</span><span class="p">,</span><span class="no">data</span> <span class="c1">;セグメントベースアドレスを取得
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">mov</span> <span class="no">ds</span><span class="p">,</span><span class="no">ax</span> <span class="c1">;レジスタにセグメントベースアドレスを送入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">mov</span> <span class="no">dx</span><span class="p">,</span><span class="no">offset</span> <span class="no">string</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">mov</span> <span class="no">ah</span><span class="p">,</span><span class="mi">9</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">int</span> <span class="mi">21</span><span class="no">h</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">mov</span> <span class="no">ah</span><span class="p">,</span><span class="mi">4</span><span class="no">ch</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">int</span> <span class="mi">21</span><span class="no">h</span>
+</span></span><span class="line"><span class="cl"><span class="nf">code</span> <span class="no">ends</span>
+</span></span><span class="line"><span class="cl"><span class="nf">end</span> <span class="no">start</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>このようなアセンブリコードを書くには、少なくとも以下の知識が必要です：レジスタの概念、コードセグメントとは何か、データセグメントとは何か、ベースアドレスとは何か、アセンブリの多くの構文。ほとんどのアセンブリ言語の教科書は50ページ以上を費やしても、外部ソフトウェアの助けがなければソフトウェアレベルで効果を少しも見ることができません。C言語は<strong>明らかに</strong>はるかに優れています。</p>
+<p>C言語のあの数行に対して、ほとんどのチュートリアルは千字を超えることはほとんどありません：ヘッダファイルとは何か、メイン関数とは何か、これらの概念は非常に簡単で、説明すれば理解できます。</p>
+<p>したがって、C言語の利点は以下の通りです：</p>
+<ul>
+<li>ハードウェアレベルではなくソフトウェアレベルから出発し、学習コストを削減</li>
+<li>多数の操作をネイティブサポートし、記述を簡素化し、読みやすくする</li>
+</ul>
+<p>もちろん、欠点もあります。<code>gcc -S -masm=intel m.c -o m.s</code>コマンドを使ってプログラムをコンパイルすると、コンパイラがCコードを以下のような内容に翻訳しているのがわかります：</p>
+<p><img src="/imgs/docs/research/cp-asm.png" alt="g&#43;&#43;でコンパイルされたmasm"  loading="lazy" /></p>
+<p>合計30行です。では、通常の書き方で同等のアセンブリコードを書いてみましょう（出力内容に語が一つ追加されていますが要点には影響しません）：</p>
+<p><img src="/imgs/docs/research/masm.png" alt="純粋なアセンブリの記述バージョン"  loading="lazy" /></p>
+<p>純粋なアセンブリのバージョンは15行しか使用していません。つまり、コンパイラは同じ効果を実現するために倍書いたことになります。実際、この差異はコンパイルの後期段階でより顕著になります。通常のGCCコンパイルプログラムはリンク段階でいくつかのライブラリファイルをリンクする必要があり、最終的な生成物は純粋なアセンブリよりも数十倍大きくなる可能性さえあります。</p>
+<p>これがC言語の欠点です。過程における「少ない記述」と引き換えに、結果において「多い記述」を使用しています。その理由は結局のところテンプレート化にあります。ここでの出力を例にとると、出力したい内容はテキストであり、<code>printf</code>関数を使用します。しかし、この関数は整数や浮動小数点数なども出力できます。普遍性を確保するために、コンパイラは他のデータ型に適合するコードもコンパイル後のファイルに書き込まざるを得ませんが、実際には使用しない機能もあるでしょう。</p>
+<blockquote>
+  <p>tips：筆者は実際のところCにはあまり好感を持っていません。メモリリークの問題はさておき、手続き型言語そのものがそれほど便利ではないからです。時々C++でソフトウェアを書くのにCの構文を使わざるを得なくなり、正直言って、本当に面倒です（現在のGCCコンパイラでさえまだC++で書かれていると聞きました、なかなかおかしいです）。</p>
+</blockquote>
+<h4>2. C++の新生<span class="hx:absolute hx:-mt-20" id="2-cの新生"></span>
+    <a href="#2-c%e3%81%ae%e6%96%b0%e7%94%9f" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>C言語は確かに強力ですが、それは人々がすでにC言語の開発効率に満足していたことを意味するわけではありません。C言語には依然としていくつか<strong>不尽意</strong>（不十分）な点がありました：C言語は<strong>手続き型言語</strong>であり、コードの再利用率が不十分です。自身の設計上の問題により、危険な型変換や様々なエラーが発生しやすく、メモリリークのリスクも高いです。開発過程では、C言語のエラー報告機制は完全ではなく、万行のコード内でしか安定した実行を保証できません。</p>
+<p>したがって、1983年、C++が出現しました。デンマークの<strong>ビャーネ・ストロヴストルップ</strong>（Bjarne Stroustrup）教授がC言語を基にクラスなどの概念を追加し、所謂「<strong>オブジェクト指向プログラミングをサポート</strong>する」C++を創造しました。この言語はメモリリーク率を著しく低下させ、百万行規模の大規模プロジェクトにも対応しました。</p>
+<p>C++の出現は間違いなく画期的な出来事でした。その出現に伴い、<strong>多態性、カプセル化、オブジェクト、継承、名前空間、仮想関数、テンプレート</strong>などの概念が急速に流行し、後の言語（Javaなど）にも多かれ少なかれ影響を与え、言語の抽象化能力を最重要視するようになりました。</p>
+<p>以下はC++のいくつかの機能のデモンストレーションです：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">SenRen_BanKa</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">DiYongJie</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Person</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">play</span> <span class="o">=</span> <span class="s">&#34;YuZu soft!&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">SenRen_BanKa</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Ciallo!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>多くの概念が追加されましたが、C++とC言語は依然として強く関連しています。C言語のコードについては、C++は基本的に互換性があります（ただし古いヘッダファイルは確実に置き換える必要があります）。両方の言語は実際非常に似ています：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;iostream&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;Hello World&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>この<strong>保持</strong>と<strong>進化</strong>の共存により、C++は急速に成功し、大規模ソフトウェア開発が可能になりました。今日でもゲームエンジン、オペレーティングシステムなどの高性能分野で広く応用されています。</p>
+<h4>3. 特徴比較<span class="hx:absolute hx:-mt-20" id="3-特徴比較"></span>
+    <a href="#3-%e7%89%b9%e5%be%b4%e6%af%94%e8%bc%83" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th>C</th>
+          <th>C++</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>プログラミングパラダイム</td>
+          <td>手続き型</td>
+          <td>マルチパラダイム</td>
+      </tr>
+      <tr>
+          <td>メモリ管理</td>
+          <td>手動</td>
+          <td>手動 + スマートポインタ</td>
+      </tr>
+      <tr>
+          <td>標準ライブラリのサイズ</td>
+          <td>最小</td>
+          <td>巨大</td>
+      </tr>
+      <tr>
+          <td>名前空間管理</td>
+          <td>欠如</td>
+          <td>完全</td>
+      </tr>
+      <tr>
+          <td>ヘッダファイル包含機構</td>
+          <td>原始的</td>
+          <td>改良済み</td>
+      </tr>
+      <tr>
+          <td>アプリケーションシナリオ</td>
+          <td>組み込みシステム</td>
+          <td>大規模商業ソフトウェア</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+  <p>tips：C++は多くのCスタイルの操作を保持しながら優れた便利な標準ライブラリを追加したため、算法界では時々「C with STL」と冗談交じりに呼ばれることさえあります。</p>
+</blockquote>
+<h3>五. Java：クロスプラットフォームの夢の実現<span class="hx:absolute hx:-mt-20" id="五-javaクロスプラットフォームの夢の実現"></span>
+    <a href="#%e4%ba%94-java%e3%82%af%e3%83%ad%e3%82%b9%e3%83%97%e3%83%a9%e3%83%83%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%83%a0%e3%81%ae%e5%a4%a2%e3%81%ae%e5%ae%9f%e7%8f%be" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>高級言語が誕生してしばらく後、インターネットが<strong>蓬勃に発展</strong>（急成長）しました。しかし当時は、<strong>静的ページ</strong>を表示するためにHTMLのようなマークアップ言語だけに依存していました。そのため、当時インターネットにアクセスすることは、実質的にはオンラインのWord文書を閲覧することであり、これはインターネットの可能性を大幅に制限しました。人々はすぐにこれに気づき、ウェブサイトを<strong>動的にする</strong>手段を探し求めていました。しかし、初期の言語はデバイスに対する要求が非常に特化しており、コンピュータソフトウェアは<strong>決して</strong>（絶対に）マイコンなどのハードウェア上では実行できませんでした。そのため、探求の方向は、クロスプラットフォーム伝播能力を持つソフトウェアを開発する技術を持つことになりました。</p>
+<p>このような背景の中で、Sun MicrosystemsはJava言語を発表し、「Write Once, Run Anywhere」（一度書けば、どこでも実行）という革命的な<strong>理念</strong>（コンセプト）を伴って登場しました。発表されるとすぐに急速に成功しました。1996年1月、Sunは最初のJava Development Kit（JDK 1.0）をリリースし、Javaが独立した開発ツールとなったことを示しました。わずか8か月後、約8万3千のウェブページがJava技術を応用していました。</p>
+<p>以下はJavaのコードです：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Hello World!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>実際、Javaは依然としてC/C++の多くの考え方を保持しています。なぜなら、それ自体がSun Microsystemsによって開発されたOak言語から発展したものであり、Oak言語はSunがマイコンプログラムを開発するために作成した簡略化されたC++だからです。</p>
+<p>Javaは設計当初から<strong>消費者向け家電製品ソフトウェア</strong>の開発を目的としていたため、「<strong>信頼性</strong>」に対して多くの最適化が行われました。したがって、Javaには以下の利点があります：</p>
+<ul>
+<li>C/C++から進化したため、習得が容易で、構文がより簡潔</li>
+<li>ポインタという概念を削除した。ハードウェアは開発者にとってほとんど完全なブラックボックスとなり、ソフトウェアの安全性を保証すると同時に学習コストを削減</li>
+<li>高い移植性</li>
+</ul>
+<p>これらの利点により、Javaはエンタープライズ級アプリケーション開発で主導的立場を占め、Android開発の基礎言語の一つとなりました。しかし、移植性のためにもたらされた性能上の損失もあり、高性能計算シナリオには適していません。</p>
+<blockquote>
+  <p>tips：Javaは冗長で有名で、多くのプログラマーから<strong>からかわれる</strong>点です。正直なところ、私のJavaに対する初期の印象は「C++のクラスを単独で引き出した」というものでした。</p>
+</blockquote>
+<h3>六. Python：簡潔さの哲学の勝利<span class="hx:absolute hx:-mt-20" id="六-python簡潔さの哲学の勝利"></span>
+    <a href="#%e5%85%ad-python%e7%b0%a1%e6%bd%94%e3%81%95%e3%81%ae%e5%93%b2%e5%ad%a6%e3%81%ae%e5%8b%9d%e5%88%a9" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4>1. 簡潔な構文<span class="hx:absolute hx:-mt-20" id="1-簡潔な構文"></span>
+    <a href="#1-%e7%b0%a1%e6%bd%94%e3%81%aa%e6%a7%8b%e6%96%87" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>1989年、<strong>グイド・ヴァンロッサム</strong>（Guido van Rossum）によって設計されたPythonは、コードの可読性を極限まで推し進めました。自然言語に<strong>極めて近い</strong>構文を使用することで、Pythonの習得難易度は<strong>大幅に減少</strong>し、大量のプログラミング初心者が殺到して学びました。</p>
+<p>以下は、Pythonで<code>Hello World</code>を出力するサンプルプログラムです：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hello World&#34;</span><span class="p">)</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>わずか一行で、Pythonは出力を完了できます。これはその大きな特色の一つを体现しています：簡潔さ。Pythonはそれ以前の言語のいくつかの<strong>冗長な内容</strong>を簡略化し、開発者が機能の実装ではなく本当のアルゴリズムに集中できるようにしました。</p>
+<h4>2. 強力な標準ライブラリ<span class="hx:absolute hx:-mt-20" id="2-強力な標準ライブラリ"></span>
+    <a href="#2-%e5%bc%b7%e5%8a%9b%e3%81%aa%e6%a8%99%e6%ba%96%e3%83%a9%e3%82%a4%e3%83%96%e3%83%a9%e3%83%aa" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>PythonをC++と比較すると、争う事実は、C++の<code>int</code>型変数は-2,147,483,648～2,147,483,647の間の内容しか保存できず、最も長い<code>long long</code>型変数でさえ、-9,223,372,036,854,775,808～9,223,372,036,854,775,807の内容しか表現できないのに対し、Pythonの<code>int</code>変数にはいかなる制限もなく、オーバーフローすることなく任意の大きさのデータを保存できることです。</p>
+<p>上記の差異を実際の開発に当てはめて、C++とPythonの高精度計算を比較すると理解できます。算法プラットフォーム<a href="https://www.luogu.com.cn/" target="_blank" rel="noopener">洛谷</a>には<a href="https://www.luogu.com.cn/problem/P1009" target="_blank" rel="noopener">一道题目</a>（一つの問題）があります：1からnまでの階乗の和を求めるものです。Pythonの解答を見てみましょう：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">ans</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#最終答案存储 (最終答えの保存)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rec</span><span class="o">=</span><span class="mi">1</span> <span class="c1">#阶乘累加的变量 (階乗を累積する変数)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rec</span><span class="o">*=</span><span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ans</span><span class="o">+=</span><span class="n">rec</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>数行で搞定（解決）しました。とても簡単な問題ですよね？</p>
+<p>しかし、洛谷で標示されている難易度は比較的高いままです。なぜでしょうか？以下のC++コードを見ればわかります：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="p">...</span> <span class="p">(</span><span class="err">長い</span><span class="n">C</span><span class="o">++</span><span class="err">コードのため省略</span><span class="p">)</span> <span class="p">...</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>C++でこの問題を書くのは<strong>異常に長い</strong>です。これは、この問題のデータ計算結果が非常に長くなるため、C++は結果のオーバーフローを防ぐためにシミュレーションアルゴリズムを使用する必要があるからです。一方、Pythonには元々シミュレーション機構が組み込まれており、<strong>ユーザーが自分で書く必要はありません</strong>。</p>
+<h4>Pythonの利点<span class="hx:absolute hx:-mt-20" id="pythonの利点"></span>
+    <a href="#python%e3%81%ae%e5%88%a9%e7%82%b9" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>定義上、Pythonはインタプリタ型言語であり、Javaと同じ柔軟性と高い移植性を持っています。そしてスクリプト言語として、Pythonはデータ計算などの自動化作業により<strong>長けて</strong>いるため、大規模言語モデル、ウェブクローラーなどで広く応用されています。</p>
+<p>Pythonの利点は以下の通りです：</p>
+<ul>
+<li>標準ライブラリが強力で、操作が簡潔</li>
+<li>オープンソースコミュニティが<strong>継続的に維護</strong>（メンテナンス）されている</li>
+<li>サードパーティ製ライブラリが豊富</li>
+<li>インタプリタ型言語のため、デバッグ時間の節約</li>
+</ul>
+<blockquote>
+  <p>tips：ここ数年、Pythonを一无是处（全く役に立たない）と非難する人々がいます。インタプリタ型言語は実行效率（実行効率）が奇低（異常に低い）と考えています。私は<strong>各有各的好处</strong>（それぞれに利点がある）と言うしかありません。例えば、Pythonは情報技術の必修1の段階でTKというウィンドウライブラリを教えることができますが、C++はMSDNの中で<strong>自分で摸爬滾打</strong>（這いずり回って苦労する）しなければ文档（ドキュメント）を見つけられません（実体験）。</p>
+</blockquote>
+<h3>七. 中国語インターネットにおける探求<span class="hx:absolute hx:-mt-20" id="七-中国語インターネットにおける探求"></span>
+    <a href="#%e4%b8%83-%e4%b8%ad%e5%9b%bd%e8%aa%9e%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%bc%e3%83%8d%e3%83%83%e3%83%88%e3%81%ab%e3%81%8a%e3%81%91%e3%82%8b%e6%8e%a2%e6%b1%82" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4>1. 易语言（Easy Language）<span class="hx:absolute hx:-mt-20" id="1-易语言easy-language"></span>
+    <a href="#1-%e6%98%93%e8%af%ad%e8%a8%80easy-language" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>プログラミング言語は発展を続け、中国にも及びました。2000年、中国語プログラミング言語が<strong>横空出世</strong>（突然現れ）ました。表計算プログラミングを採用し、同樣に解释运行（インタプリタ実行）され、簡単な中国語を使用してソフトウェア開発を行います。これが易语言です：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>.如果（もし）（用户输入（ユーザー入力）==&#34;你好（こんにちは）&#34;）
+    输出框（出力ボックス）.显示（表示）（&#34;你好，世界！（こんにちは、世界！）&#34;）
+.否则（そうでなければ）
+    输出框（出力ボックス）.显示（表示）（&#34;无法识别（認識できません）&#34;）</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>他のプログラミング言語とは異なり、易语言の第一课（最初のレッスン）は直接ウィンドウの開発です。软件开发周期（ソフトウェア開発サイクル）が短く、中文学习编程难度（中国語でプログラミングを学ぶ難易度）が低いため、一瞬间（一瞬）で多くの人々を引き付けました。</p>
+<p>以下は易语言のコード記述ページのスクリーンショットです：</p>
+<p><img src="/imgs/docs/research/%e6%98%93%e8%af%ad%e8%a8%80.jpg" alt="易语言"  loading="lazy" /></p>
+<p>易语言の利点は以下の通りです：</p>
+<ul>
+<li>英語の壁を低くする</li>
+<li>開発を简化（簡素化）し、開発效率（効率）を加速する</li>
+<li>强力的な官方组件（強力な公式コンポーネント）、各方面の内容（あらゆる側面の内容）をカバー</li>
+</ul>
+<p>欠点もあります：</p>
+<ul>
+<li>Windowsプラットフォームに限定される</li>
+<li>オープンソースエコシステムが欠如している</li>
+<li>32ビット编译（コンパイル）のみサポートであり、运行效率（実行効率）が不足している</li>
+</ul>
+<h4>2. 文言（Wenyan-lang）<span class="hx:absolute hx:-mt-20" id="2-文言wenyan-lang"></span>
+    <a href="#2-%e6%96%87%e8%a8%80wenyan-lang" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>易语言の後、中国語プログラミングは<strong>一時的に興隆</strong>しました。2019年には、文言（Wenyan-lang）という名前のプログラミング言語が再び興りました。</p>
+<p>名前が示す通り、文言は文言文（古典中国語）を使用してプログラムを書くため、それはほとんど一種の芸術形態となり、プログラミングツールではなくなりました：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>吾有一數。曰三。名之曰「甲」。
+為是「甲」遍。
+    吾有一言。曰「「問天地好在。」」。書之。
+云云。</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>文言プログラミング言語は一種の実験的な言語であり、文言文化とコンピュータ文化を传播（広める）ために使用されます。Chicken言語、///、Glass言語、Piet言語などと同様に、一種の<strong>半藝術品</strong>（セミアート作品）であり、これはプログラミング言語の高度な発展を示しており、人々がある程度の創造性と芸術性を持つ分野の探求を考慮し始めるきっかけとなりました。</p>
+<blockquote>
+  <p>tips：易语言は筆者が最初に接触したプログラミング言語です。これは間違いなく「初心者に優しい言語」です。なぜなら、あまりにも便利だからです。グラフィカルインターフェース下でウィンドウ設計を完了できるため、すべてのチュートリアルの第一课はウィンドウから講義を始めます。正にこのため、私は後に他の言語のGUI作成が極めて面倒だと感じるようになりました。</p>
+</blockquote>
+<h3>八. 総括：発展の法則<span class="hx:absolute hx:-mt-20" id="八-総括発展の法則"></span>
+    <a href="#%e5%85%ab-%e7%b7%8f%e6%8b%ac%e7%99%ba%e5%b1%95%e3%81%ae%e6%b3%95%e5%89%87" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>上記のいくつかの例から、言語の変化の特徴を見ることができます：</p>
+<ol>
+<li>
+<p><strong>抽象化レベル</strong>の向上
+プログラミング言語は不断に「抽象化」に向かって発展し、コードの再利用率が逐渐に向上し、開発効率の向上を可能にします。
+<em>进化方式</em>（進化の方法）：機械命令 → 記号化 → 構造化 → オブジェクト指向 → 関数型プログラミング</p>
+</li>
+<li>
+<p><strong>效率</strong>（効率）のバランスの進化
+開発者たちは、開発と使用のどちらが重要かについてより喜んで議論するようになりました。
+<em>进化方式</em>：実行效率優先 → 開発效率優先 → 両者の動的バランス</p>
+</li>
+<li>
+<p><strong>領域特化</strong>
+各領域で专门性的な言語（専門的な言語）が出現しました。典型的な例は、Windowsシステム下的<code>.rc</code>ファイル、Inno Setupの専用インストーラパッケージ記述言語などです。
+<em>进化方式</em>：汎用言語 → ドメイン固有言語（DSL）</p>
+</li>
+<li>
+<p><strong>構文の簡素化</strong>
+<em>进化方式</em>：冗長な構文 → 簡潔な表現 → 自然言語への接近（第五世代プログラミング言語の探求方向）</p>
+</li>
+</ol>
+<h3>九. 選択に関する提案<span class="hx:absolute hx:-mt-20" id="九-選択に関する提案"></span>
+    <a href="#%e4%b9%9d-%e9%81%b8%e6%8a%9e%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e6%8f%90%e6%a1%88" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>私たちの研究は、プログラミング言語が<strong>各有所长</strong>（それぞれ長所がある）と結論付けています。言語の選択は、自身のニーズに応じて合理的に組み合わせ、開発効率とアプリケーションシナリオを考慮して行うべきです。以下にいくつか推奨される組み合わせ方案を示します。</p>
+<ol>
+<li>
+<p><strong>低水準開発</strong></p>
+<ul>
+<li>推奨：C / Rust / 少量のアセンブリ</li>
+<li>シナリオ：オペレーティングシステム、組み込みシステム</li>
+<li>利点：ハードウェアに近く、多种の形態（多种の形態）にコンパイル可能</li>
+</ul>
+</li>
+<li>
+<p><strong>迅速な開発</strong></p>
+<ul>
+<li>推奨：Python / JavaScript / 少量のshell / 易语言</li>
+<li>シナリオ：Webアプリケーション、データ分析</li>
+<li>利点：既成の関数、効率的な開発</li>
+</ul>
+</li>
+<li>
+<p><strong>クロスプラットフォーム要件</strong></p>
+<ul>
+<li>推奨：Java / Kotlin / QTフレームワーク</li>
+<li>シナリオ：エンタープライズ級アプリケーション、モバイル開発</li>
+<li>利点：クロスプラットフォーム、移植性が良い</li>
+</ul>
+</li>
+<li>
+<p><strong>学術研究</strong></p>
+<ul>
+<li>推奨：Python / Julia</li>
+<li>シナリオ：科学技術計算、機械学習</li>
+<li>利点：コードを简化（簡素化）、コードを書くことが負担にならないようにする</li>
+</ul>
+</li>
+<li>
+<p><strong>興味駆動</strong></p>
+<ul>
+<li>試す：文言 / 易语言</li>
+<li>価値：プログラミングの本質を理解し、計算思维（計算論的思考）を育成する</li>
+</ul>
+</li>
+</ol>
+<p>プログラミング言語を選択する際、以下の内容が<strong>关键考量维度</strong>（重要な考察次元）です：</p>
+<ul>
+<li>プロジェクトの性能要求：高性能要件には断じて高級言語を選ばず、専門的计算（計算）にはなるべく低級言語を選ばない。</li>
+<li>チームの技術スタック现状（現状）：チームメンバーのスキルに基づいて決定する。</li>
+<li>コミュニティエコシステムの成熟度：コミュニティは開発の支柱です。Rustコミュニティは典型的な案例（ケース）です。良好で成熟したコミュニティは、常にどこでもすべての開発者を助けることができます。</li>
+<li>個人の学習曲線：個人の学習計画に基づいて選択する。</li>
+</ul>
+<h3>十. 後書き<span class="hx:absolute hx:-mt-20" id="十-後書き"></span>
+    <a href="#%e5%8d%81-%e5%be%8c%e6%9b%b8%e3%81%8d" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>このテーマは、私がずっと以前から研究を始めたかったものです。今回の研究性学習によって実現でき、<strong>自是无比兴奋</strong>（もちろんこの上なく興奮しています）。そのため、<strong>忙前忙后</strong>（前後に忙しく）多くのことをしましたが、確かに少し混乱も追加しました。</p>
+<p>文档の编写者（文書の編著者）として、私は组长（リーダー）のように深厚な专业素养（深い専門的素養）や、一つの研究方向に専念する钻劲（集中力）を持っていません。<strong>不精</strong>（熟達していない）な知識と自ら尚可（まだまあまあ）と称する文学的水平（文章力）を借りて、これらの最终呈现的文字（最終的に提示された文章）を<strong>苟且</strong>（やむを得ず）書きました。<strong>终究</strong>（結局）少し<strong>惶恐</strong>（恐れ多い）であり、書かれた内容に欠陥があるのではないかと心配しています。読者の各位が記事中の誤りを発見されたならば、大小に関わらず、どうかGitHubのIssueで提交（提出）していただければ幸いです。</p>
+<h3>十一. 再版随笔（随想）<span class="hx:absolute hx:-mt-20" id="十一-再版随笔随想"></span>
+    <a href="#%e5%8d%81%e4%b8%80-%e5%86%8d%e7%89%88%e9%9a%8f%e7%ac%94%e9%9a%8f%e6%83%b3" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>言語というもの自体が<strong>争议</strong>（論争）に満ちています。绝对的な正しいとか間違いとか良いとか悪いとかはありません。<strong>php</strong>が多くのプログラマーによって「世界上最好的语言」（世界で最高の言語）と皮肉られているように、結局は広く使用されています。どんな言語であれ、自分に<strong>适合</strong>（合う）さえすれば、それは良い言語です。</p>
+<p>少し前に、C++とPythonの対話というジョークを見ました。以下に大致（おおむね）記録します。</p>
+<blockquote>
+  <p>C++がPythonに「あなたの名前は何ですか」と尋ね、Pythonは答えません。C++は自分が礼儀正しくないと思い、自己紹介を始めます。しかし、自分の名前を言おうとしたところで行き詰まります。スタックエラーが発生したため、エラーを報告しながら去らざるを得ません。C++が遠くへ行ってしまった後、Pythonはようやく叫びます：「Python！」</p>
+</blockquote>
+<p>このジョークは、C++が書きにくく、いつもエラーやクラッシュを起こすのに対し、Pythonの反応はとても遅く、C++が何百行もコードを実行し終わってもまだ入口にいるかもしれない、と言いたいのです。このジョークがうまい点は、<strong>C++とPythonの欠点を同時に阐明</strong>（明らかに）していること、つまり、<strong>完璧な言語は存在しない</strong>という概念を伝えていることです。</p>
+<h3>参考文献<span class="hx:absolute hx:-mt-20" id="参考文献"></span>
+    <a href="#%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li>川合秀实『30日でできる！OS自作入門』| 人民郵電出版社</li>
+<li><a href="https://blog.csdn.net/lywstuding/article/details/123216486" target="_blank" rel="noopener">プログラミング言語発展簡史</a></li>
+<li><a href="https://www.runoob.com/w3cnote/history-of-programming-languages-must-know.html" target="_blank" rel="noopener">プログラマーとして知っておくべきプログラミング言語年代記</a></li>
+<li>王爽『アセンブリ言語』| 清華大学出版社</li>
+<li><a href="https://baike.baidu.com/item/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/61826" target="_blank" rel="noopener">百度百科-アセンブリ言語</a></li>
+<li><a href="https://baike.baidu.com/item/%E5%8A%A9%E8%AE%B0%E7%AC%A6/489287" target="_blank" rel="noopener">百度百科-ニーモニック</a></li>
+<li><em><strong>Deep Learning</strong></em> - Ian Goodfellow、Yoshua Bengio、Aaron Courville</li>
+<li>黒馬程序员『Webデザインと制作プロジェクト教程』（第2版） | 人民郵電出版社</li>
+<li><a href="https://zhuanlan.zhihu.com/p/24327574773" target="_blank" rel="noopener">機械から知能へ：アセンブリ言語の過去、現在、未来</a></li>
+<li><a href="https://www.luogu.com.cn/problem/P1009" target="_blank" rel="noopener">洛谷-P1009-階乗之和</a></li>
+<li><a href="https://www.java.com/zh-CN/" target="_blank" rel="noopener">Java</a></li>
+<li>張毅剛、趙光权、劉旺『単片機原理及応用』第三版 | 高等教育出版社</li>
+<li>郭衛斌、羅勇軍『算法競賽入門到進階』 | 清華大学出版社</li>
+<li><a href="https://learn.microsoft.com/en-us/" target="_blank" rel="noopener">MSDN - Microsoft Learn</a></li>
+<li><a href="https://learn.microsoft.com/zh-cn/cpp/cpp/cpp-language-reference?view=msvc-170" target="_blank" rel="noopener">C++、C およびアセンブラー\C++ 構文リファレンス</a></li>
+<li><a href="https://en.cppreference.com/w/cpp.html" target="_blank" rel="noopener">C++ reference</a></li>
+<li>汪楚奇『深入浅出程序設計競賽』 | 高等教育出版社</li>
+<li>郁紅英、王磊、武磊、李春強『計算機操作系統』（第三版） | 清華大学出版社</li>
+</ul>
+<h3>声明<span class="hx:absolute hx:-mt-20" id="声明"></span>
+    <a href="#%e5%a3%b0%e6%98%8e" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>文中の「機械語」セクションにおいて、機械語コードはアセンブリコードを<a href="https://defuse.ca/online-x86-assembler.htm#disassembly" target="_blank" rel="noopener">Online x86 and x64 Intel Instruction Assembler</a>で変換したものです。変換に問題があるかどうか不确定（不確実）であるため、参考価値はなく、機械語の不便さを<strong>辅助理解</strong>（理解を助ける）するためにのみ使用されています。</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code></code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+
+        </div>
+        <div class="hx:mt-16"></div>
+        
+        <script>
+  
+
+  function getHugoTheme() {
+    return localStorage.getItem("color-theme");
+  }
+  
+  function getGiscusTheme() {
+    let giscusTheme = "light";
+    let hugoTheme = getHugoTheme();
+    if(hugoTheme == 'light') {
+      return giscusTheme.replace('dark', 'light');
+    }
+    if(hugoTheme == 'dark') {
+      return giscusTheme.replace('light', 'dark');
+    }
+    return giscusTheme;
+  }
+
+  function setGiscusTheme() {
+    function sendMessage(message) {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (!iframe) return;
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    }
+    sendMessage({
+      setConfig: {
+        theme: getGiscusTheme(),
+      },
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const giscusAttributes = {
+      "src": "https://giscus.app/client.js",
+      "data-repo": "xiaoditx\/xiaoditx.github.io",
+      "data-repo-id": "R_kgDOIzfQPg",
+      "data-category": "Blog comments",
+      "data-category-id": "DIC_kwDOIzfQPs4CumTH",
+      "data-mapping": "pathname",
+      "data-strict": "0",
+      "data-reactions-enabled": "1",
+      "data-emit-metadata": "0",
+      "data-input-position": "top",
+      "data-theme": getGiscusTheme(),
+      "data-lang": "zh-CN",
+      "crossorigin": "anonymous",
+      "async": "",
+    };
+
+    
+    const giscusScript = document.createElement("script");
+    Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+    document.getElementById('giscus').appendChild(giscusScript);
+
+    
+    const toggles = document.querySelectorAll(".hextra-theme-toggle");
+    if (toggles) {
+      toggles.forEach(toggle => toggle.addEventListener('click', setGiscusTheme));
+    }
+  });
+</script>
+
+<div id="giscus"></div>
+      </main>
+    </article>
+  </div>
+
+      <footer class="hextra-footer hx:bg-gray-100 hx:pb-[env(safe-area-inset-bottom)] hx:dark:bg-neutral-900 hx:print:bg-transparent"><div class="hextra-custom-footer hextra-max-footer-width hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div
+      class="hextra-max-footer-width hx:mx-auto hx:flex hx:justify-center hx:py-12 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400 hx:md:justify-start"
+    >
+      <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:font-semibold"><a class="hx:flex hx:text-sm hx:items-center hx:gap-1 hx:text-current" target="_blank" rel="noopener noreferrer" title="Hextra GitHub Homepage" href="https://github.com/imfing/hextra">
+    <span>提供元 Hextra<svg height=1em class="hx:inline-block hx:ltr:ml-1 hx:rtl:mr-1 hx:align-[-2.5px]" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="m 105.50024,22.224647 c -9.59169,-5.537563 -21.40871,-5.537563 -31.000093,0 L 39.054693,42.689119 C 29.463353,48.226675 23.55484,58.460531 23.55484,69.535642 v 40.928918 c 0,11.07542 5.908513,21.3092 15.499853,26.84652 l 35.445453,20.46446 c 9.591313,5.53732 21.408404,5.53732 31.000094,0 l 35.44507,-20.46446 c 9.59131,-5.53732 15.49985,-15.7711 15.49985,-26.84652 V 69.535642 c 0,-11.075111 -5.90854,-21.308967 -15.49985,-26.846523 z M 34.112797,85.737639 c -1.384445,2.397827 -1.384445,5.352099 0,7.749927 l 24.781554,42.922974 c 1.38437,2.39783 3.942853,3.87496 6.711592,3.87496 h 49.563107 c 2.76905,0 5.3273,-1.47713 6.71144,-3.87496 l 24.78194,-42.922974 c 1.38414,-2.397828 1.38414,-5.3521 0,-7.749927 L 121.88049,42.814746 c -1.38414,-2.397828 -3.94239,-3.874964 -6.71144,-3.874964 H 65.605944 c -2.768739,0 -5.327223,1.477059 -6.711592,3.874964 z" style="stroke-width:0.774993" /></svg></span>
+  </a></div></div>
+    </div></footer>
+    
+    <script defer src="/js/main.js" integrity=""></script>
+<script defer src="/js/flexsearch.9f5b5908f93ae86f1ecd4b043b799f580c2d1654e703dd9357d568ac41b2547a.js" integrity="sha256-n1tZCPk66G8ezUsEO3mfWAwtFlTnA92TV9VorEGyVHo=" crossorigin="anonymous"></script>
+        <script defer src="/ja.search.js" integrity=""></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XiaoDi – 指针</title>
+    <link>http://localhost:11633/en/tags/%E6%8C%87%E9%92%88/</link>
+    <description>Recent content in 指针 on XiaoDi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 07 Sep 2025 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:11633/en/tags/%E6%8C%87%E9%92%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>C/C&#43;&#43;指针种类&#43;常见错误&#43;组合技巧，挑战写出全网最全指针文章</title>
+      <link>http://localhost:11633/en/blog/2025-09-06_2357_c&#43;&#43;%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/</link>
+      <pubDate>Sun, 07 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:11633/en/blog/2025-09-06_2357_c&#43;&#43;%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/</guid>
+      <description>
+        
+        
+        &lt;p&gt;学习C/C++时，常常会遇到一个很烦人的东西：&lt;strong&gt;指针&lt;/strong&gt;，说实话，指针在很多人入门C/C++时都是属于噩梦级的，它牵涉了庞大的知识体系，容易出现各种未定义行为，因此被称为C/C++中的最难知识点，那么这篇文章，就让我们好好聊一聊，这个BOSS级的指针。&lt;/p&gt;
+&lt;h2&gt;一.汇编层面的指针理解&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;一汇编层面的指针理解&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%80%e6%b1%87%e7%bc%96%e5%b1%82%e9%9d%a2%e7%9a%84%e6%8c%87%e9%92%88%e7%90%86%e8%a7%a3&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;我们都知道，程序运行是依赖&lt;strong&gt;CPU&lt;/strong&gt;的，CPU将可执行程序的指令一步步地执行，呈现出我们看到的各种运行效果，但，在程序的运行中，变量是必要的，因此CPU中设计了一些暂存数据的元件，这些元件就叫做&lt;strong&gt;寄存器&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;寄存器对于汇编程序，可以理解为变量，比如这样：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-asm&#34; data-lang=&#34;asm&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;MOV&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;EAX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0x0d00&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;; 效果近似于&amp;#34;EAX=0x0d00&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;MOV&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;EBX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;EAX&lt;/span&gt;      &lt;span class=&#34;err&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;类似于&amp;#34;&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;EBX&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;EAX&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;但是寄存器的问题很明显，为了足够快，寄存器往往造起来非常的昂贵，再加上各种限制，导致寄存器的数目非常的少，截止到本文书写的2025年9月7日，最新的x86_64架构CPU也只是提供了16个64位通用寄存器（硬算的话倒是还有800个不是通用寄存器的寄存器，不过不是不可见就是会影响CPU的行为），算下来也就$16*(64/8)=128$字节的数据，&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
