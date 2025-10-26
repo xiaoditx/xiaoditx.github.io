@@ -1,60 +1,0 @@
-# 狄くん
-
-> 小狄同学呀的个人网站 | 开源软件、文档、博客、动态 | 立志做优秀开源者，最新项目：FreeOS
-
-
-## About
-
-## つぶやき
-
-## ドキュメント一覧
-
-### 
-- [](http://localhost:11633/ja/docs/beepmusic/%E5%BD%A9%E8%89%B2%E8%BE%93%E5%87%BA/): 1.标准方案（原生cout）使用\033[开头m结尾，中间包裹参数
-属性代码 功能 属性代码 功能 属性代码 功能 0 重置所有属性 30 黑色 40 黑色 1 高亮/加粗 31 红色 41 红色 2 …
-- [](http://localhost:11633/ja/docs/beepmusic/%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/): 项目结构介绍结构与文件功能
-root/ ├── .vscode/ vscode配置文件 │ ├── setting.json │ └── tasks.json ├── head/ │ ├── …
-- [](http://localhost:11633/ja/docs/beepmusic/%E7%83%AD%E9%94%AE%E6%B3%A8%E5%86%8C/): 热键注册帮助微软键代码查询：Virtual-Key 代码
-键代码查询工具：本地路径./tools/XD开发工具-T1，仅支持10进制查询
-- [rc文件帮助](http://localhost:11633/ja/docs/beepmusic/rc%E6%96%87%E4%BB%B6%E5%B8%AE%E5%8A%A9/): 在 Windows 资源文件 (.rc) 中，这些关键字用于定义可执行文件的版本信息结构，以下是详细解释：
-核心结构解析 FILEFLAGSMASK
-作用：指定哪些位在 FILEFLAGS 字段中是有 …
-
-### DCC script
-
-#### 基础语法
-- [函数调用](http://localhost:11633/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/): DCC程序的骨架就是函数，纯DCC程序不含缩进，因此函数名会整齐的排列在左侧
-程序中，标准的函数调用是这样写的：
-函数名 [参数1][,参数2][,参数3][,......] 参数是可省略的，但针对指 …
-- [特殊函数](http://localhost:11633/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%89%B9%E6%AE%8A%E5%87%BD%E6%95%B0/): DCC拥有一些特殊函数会特殊高亮，这些函数在编译中会被特殊处理，也是DCC的功能核心，这些功能即使不引入库也可以照常使用，而这些函数名也就成为了DCC的保留字，不允许其他任何库用作函数名
-- [数据类型](http://localhost:11633/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/): DCC原生支持数据类型包括整数型、小数型、双精度小数型、逻辑型、文本型、大数等数据类型，对于常数的表达，DCC也有相应的符号来描述常数的数据类型
-- [敏感性](http://localhost:11633/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%8F%E6%84%9F%E6%80%A7/): DCC对大小写敏感但对符号不敏感，例如，Get和GET对于DCC而言是两个函数，但[]和【】甚至【]对于DCC是同一个符号，下面以引号为例：
-；合法的引号：“你好”&#34;你好&#34;“你 …
-- [常量](http://localhost:11633/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%B8%B8%E9%87%8F/): DCC拥有系统常量和自定义常量，使用时需使用#进行表达，如下面的示例：
-#asm#iostream#cpp#换行符#逻辑型 实际使用效果：
-- [数值/逻辑运算符](http://localhost:11633/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E5%80%BC%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6/): DCC支持运算符号如下：
-*×/÷%&#43;-！!&amp;^&amp;&amp;||^^**~&gt;&gt;&lt;&lt;|andornot且或 …
-- [注释](http://localhost:11633/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%B3%A8%E9%87%8A/): DCC使用全角或半角的分号来书写注释，如下：
-；注释;注释 出现这种注释标记，从标记后面一直到这一行的结束都是注释内容，内容不会生效也不会编译进程序
-- [改变优先级](http://localhost:11633/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BC%98%E5%85%88%E7%BA%A7/): DCC改变符号优先级，对于函数调用，在一个参数的位置，可以使用（）或()包裹一个语句，这个语句的执行结果会成为这个参数位的值，括号的包裹内，一定是函数名+参数（参数可空）的形式
-- [缩进](http://localhost:11633/ja/docs/dcc-script/1.%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%BC%A9%E8%BF%9B/): DCC借助缩进理解语义
-对于纯DCC代码，不会存在缩进，缩进只在嵌套中存在（见下一节）
-下面是存DCC代码示例：
-打开剧情如果 （转为文本 （输入））=10输出 &#34;ciallo&#34; …
-
-#### 高级语法
-
-### 研究性学習総合報告書
-
-## 小狄同学さんのブログ
-- [VScodeプラグインはエラーを報告するのに、g++は完璧にコンパイル？API呼び出しの誤り原因分析](http://localhost:11633/ja/blog/2025-08-26_vscode%E6%8F%92%E4%BB%B6%E6%8A%A5%E9%94%99g++%E5%8D%B4%E5%AE%8C%E7%BE%8E%E7%BC%96%E8%AF%91api%E8%B0%83%E7%94%A8%E9%94%99%E5%9B%A0%E5%88%86%E6%9E%90/): Note
-本ページはAI技術による翻訳を使用しています。内容は参考までにご覧ください。 - Published 2025-08-26
-- [アルゴリズム問題: GESP202503 レベル4 — 荒地開墾 (Luogu B4263)](http://localhost:11633/ja/blog/2025-08-26_%E7%AE%97%E6%B3%95%E7%9C%9F%E9%A2%98gesp202503%E5%9B%9B%E7%BA%A7%E8%8D%92%E5%9C%B0%E5%BC%80%E5%9E%A6%E6%B4%9B%E8%B0%B7b4263/): Note
-本ページはAI技術による翻訳を使用しています。内容は参考までにご覧ください。 - Published 2025-08-26
-- [アルゴリズム問題: GESP202503 レベル4 — 荒地開墾 (Luogu B4263)](http://localhost:11633/ja/blog/2025-09-06_2357_c++%E6%8C%87%E9%92%88%E5%85%A8%E7%9F%A5%E8%AF%86%E6%94%B6%E5%BD%95/): Note
-本ページはAI技術による翻訳を使用しています。内容は参考までにご覧ください。 - Published 2025-08-26
-
-
----
-Generated on 2025-10-26 13:57:44 UTC
-Site: http://localhost:11633/
