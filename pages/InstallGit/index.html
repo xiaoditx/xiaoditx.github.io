@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git安装配置指南 - 交互式配置工具（AI开发版）</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0366d6;
+            --success-color: #28a745;
+            --warning-color: #ffd33d;
+            --error-color: #cb2431;
+            --bg-color: #f6f8fa;
+            --card-bg: #ffffff;
+            --text-primary: #24292e;
+            --text-secondary: #586069;
+            --border-color: #e1e4e8;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            padding: 12px 24px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #0256cc;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(3, 102, 214, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 6px;
+            padding: 12px 24px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .progress-bar {
+            background-color: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background-color: var(--primary-color);
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+
+        .option-card {
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-card:hover {
+            border-color: var(--primary-color);
+            background-color: rgba(3, 102, 214, 0.05);
+        }
+
+        .option-card.selected {
+            border-color: var(--primary-color);
+            background-color: rgba(3, 102, 214, 0.1);
+        }
+
+        .option-card.recommended {
+            border-color: var(--success-color);
+            background-color: rgba(40, 167, 69, 0.05);
+        }
+
+        .option-card.recommended::before {
+            content: "推荐";
+            position: absolute;
+            top: -8px;
+            right: 12px;
+            background-color: var(--success-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .checkbox-custom {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox-custom:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .checkbox-custom:checked::after {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .radio-custom {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .radio-custom:checked {
+            border-color: var(--primary-color);
+        }
+
+        .radio-custom:checked::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        .geometric-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle at 25% 25%, var(--primary-color) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, var(--primary-color) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+        }
+
+        .step-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--border-color);
+            color: var(--text-secondary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .step-indicator.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .step-indicator.completed {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .card {
+                margin-bottom: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="geometric-bg"></div>
+    
+    <!-- 主题切换按钮 -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <span id="theme-icon">🌙</span>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">G</span>
+                        </div>
+                        <h1 class="text-xl font-bold text-gray-900 dark:text-white">Git安装配置指南（AI开发版）</h1>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        关于
+                    </a>
+                    <a href="guide.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        安装指南
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- 欢迎区域 -->
+        <section id="welcome-section" class="text-center mb-12 fade-in">
+            <div class="card p-8 max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+                    欢迎使用Git安装配置指南
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                    通过交互式界面轻松配置Git安装选项，生成个性化的安装指南
+                </p>
+                
+                <!-- 模式选择 -->
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="card p-6 cursor-pointer hover:shadow-lg transition-all" onclick="selectMode('beginner')">
+                        <div class="text-4xl mb-4">🌱</div>
+                        <h3 class="text-xl font-semibold mb-2 text-blue-600">初学者模式</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            通过简单问题了解您的技术背景，为您推荐最适合的配置选项
+                        </p>
+                    </div>
+                    <div class="card p-6 cursor-pointer hover:shadow-lg transition-all" onclick="selectMode('advanced')">
+                        <div class="text-4xl mb-4">⚙️</div>
+                        <h3 class="text-xl font-semibold mb-2 text-green-600">高级模式</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            直接查看所有配置选项，适合有经验的开发者快速配置
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 初学者问卷 -->
+        <section id="questionnaire-section" class="hidden mb-8">
+            <div class="card p-6 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6 text-center">让我们了解您的技术背景</h3>
+                <div id="questions-container">
+                    <!-- 问卷内容将通过JavaScript动态生成 -->
+                </div>
+                <div class="flex justify-center mt-6">
+                    <button class="btn-primary" onclick="completeQuestionnaire()">
+                        完成问卷，开始配置
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 配置界面 -->
+        <section id="config-section" class="hidden">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- 左侧：选项列表 -->
+                <div class="lg:col-span-2">
+                    <!-- 进度指示器 -->
+                    <div class="card p-4 mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold">配置进度（此版本有问题，默认选项需手动点击才计入）</h3>
+                            <span id="progress-text" class="text-sm text-gray-600 dark:text-gray-300">
+                                步骤 1 / 14
+                            </span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill" style="width: 7.14%"></div>
+                        </div>
+                    </div>
+
+                    <!-- 当前步骤内容 -->
+                    <div id="step-content" class="card p-6">
+                        <!-- 步骤内容将通过JavaScript动态生成 -->
+                    </div>
+
+                    <!-- 导航按钮 -->
+                    <div class="flex justify-between mt-6">
+                        <button id="prev-btn" class="btn-secondary" onclick="previousStep()" disabled>
+                            上一步
+                        </button>
+                        <button id="next-btn" class="btn-primary" onclick="nextStep()">
+                            下一步
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 右侧：预览面板 -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-8">
+                        <div class="card p-6">
+                            <h3 class="text-lg font-semibold mb-4">配置预览</h3>
+                            <div id="config-preview" class="space-y-3">
+                                <!-- 预览内容将通过JavaScript动态生成 -->
+                            </div>
+                            
+                            <div class="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <button class="btn-primary w-full" onclick="generateGuide()">
+                                    生成安装指南
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center">
+                <p class="text-gray-600 dark:text-gray-300">
+                    © 2025 Git安装配置指南. 帮助开发者轻松配置Git环境.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

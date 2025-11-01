@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 - Git安装配置指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0366d6;
+            --success-color: #28a745;
+            --warning-color: #ffd33d;
+            --error-color: #cb2431;
+            --bg-color: #f6f8fa;
+            --card-bg: #ffffff;
+            --text-primary: #24292e;
+            --text-secondary: #586069;
+            --border-color: #e1e4e8;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        .geometric-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.02;
+            background-image: 
+                radial-gradient(circle at 25% 25%, var(--primary-color) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, var(--primary-color) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background-color: var(--primary-color);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: white;
+            margin: 0 auto 16px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 24px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 24px;
+            width: 2px;
+            height: calc(100% - 8px);
+            background-color: var(--border-color);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="geometric-bg"></div>
+    
+    <!-- 主题切换按钮 -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <span id="theme-icon">🌙</span>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">G</span>
+                        </div>
+                        <h1 class="text-xl font-bold text-gray-900 dark:text-white">Git安装配置指南</h1>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        配置工具
+                    </a>
+                    <a href="guide.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        安装指南
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- 项目介绍 -->
+        <section class="text-center mb-16 fade-in">
+            <div class="card p-8 max-w-4xl mx-auto">
+                <div class="text-6xl mb-6">🎯</div>
+                <h2 class="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+                    Git安装配置指南
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                    一个专为中文用户设计的交互式Git安装配置工具，通过直观的界面和详细的说明，
+                    帮助开发者轻松完成Git的个性化配置，让版本控制变得简单易懂。
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mt-12">
+                    <div class="text-center">
+                        <div class="feature-icon">🚀</div>
+                        <h3 class="text-lg font-semibold mb-2">快速配置</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            通过智能问答和直观界面，快速完成Git配置
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="feature-icon">🎨</div>
+                        <h3 class="text-lg font-semibold mb-2">个性化推荐</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            基于您的技术背景，提供最适合的配置建议
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="feature-icon">📋</div>
+                        <h3 class="text-lg font-semibold mb-2">详细指南</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            生成个性化的安装步骤和配置说明
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 功能特性 -->
+        <section class="mb-16">
+            <div class="card p-8 max-w-6xl mx-auto fade-in">
+                <h3 class="text-2xl font-bold mb-8 text-center text-gray-900 dark:text-white">
+                    核心功能特性
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-2xl">🤖</div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">智能问答系统</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    通过简单的问题了解您的技术背景，自动推荐最适合的配置选项，
+                                    让新手也能轻松配置Git。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="text-2xl">⚙️</div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">完整配置覆盖</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    涵盖Git安装过程中的所有14个主要配置选项，
+                                    从安装目录到高级功能设置，一应俱全。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="text-2xl">📝</div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">个性化指南生成</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    基于您的配置选择，生成详细的安装步骤说明，
+                                    包含具体操作指导和注意事项。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-2xl">🎨</div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">现代化界面设计</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    采用现代化的UI设计，支持浅色和深色主题切换，
+                                    提供流畅的交互动画和响应式布局。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="text-2xl">💾</div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">配置持久化</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    自动保存您的配置进度，支持导出和导入功能，
+                                    方便在不同设备间同步配置。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="text-2xl">📱</div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">多设备支持</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    完全响应式设计，支持桌面端、平板端和移动端访问，
+                                    随时随地配置Git环境。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使用指南 -->
+        <section class="mb-16">
+            <div class="card p-8 max-w-4xl mx-auto fade-in">
+                <h3 class="text-2xl font-bold mb-8 text-center text-gray-900 dark:text-white">
+                    使用指南
+                </h3>
+                
+                <div class="space-y-8">
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg mb-2">第一步：选择配置模式</h4>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            根据您的技术背景选择合适的配置模式。初学者模式通过问答了解您的需求，
+                            高级模式直接展示所有配置选项。
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg mb-2">第二步：回答问题（初学者模式）</h4>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            回答几个关于Git使用经验、命令行熟练度等简单问题，
+                            系统会根据您的回答推荐最适合的配置。
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg mb-2">第三步：配置选项</h4>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            逐步完成Git安装的各项配置选择。每个选项都有详细说明和推荐值，
+                            您可以随时修改已选择的配置。
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg mb-2">第四步：生成指南</h4>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            完成配置后，系统会生成个性化的安装指南，
+                            包含详细的步骤说明和注意事项。
+                        </p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h4 class="font-semibold text-lg mb-2">第五步：按照指南安装</h4>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            按照生成的指南逐步安装Git，每个步骤都有具体操作说明，
+                            确保您能正确完成安装和配置。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技术规格 -->
+        <section class="mb-16">
+            <div class="card p-8 max-w-4xl mx-auto fade-in">
+                <h3 class="text-2xl font-bold mb-8 text-center text-gray-900 dark:text-white">
+                    技术规格
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold text-lg mb-4">支持的Git版本</h4>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li>• Git 2.28.0 及以上版本</li>
+                            <li>• 主要针对 Git 2.48.1 优化</li>
+                            <li>• 支持Windows 64位系统</li>
+                            <li>• 兼容Windows 10/11</li>
+                        </ul>
+                        
+                        <h4 class="font-semibold text-lg mb-4 mt-6">浏览器兼容性</h4>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li>• Chrome 80+</li>
+                            <li>• Firefox 75+</li>
+                            <li>• Safari 13+</li>
+                            <li>• Edge 80+</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-lg mb-4">技术栈</h4>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li>• HTML5 + CSS3 + JavaScript ES6+</li>
+                            <li>• Tailwind CSS 样式框架</li>
+                            <li>• Anime.js 动画库</li>
+                            <li>• 纯前端实现，无需服务器</li>
+                        </ul>
+                        
+                        <h4 class="font-semibold text-lg mb-4 mt-6">功能特性</h4>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li>• 14个配置选项全覆盖</li>
+                            <li>• 双模式用户引导</li>
+                            <li>• 实时配置预览</li>
+                            <li>• 主题切换支持</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 更新日志 -->
+        <section class="mb-16">
+            <div class="card p-8 max-w-4xl mx-auto fade-in">
+                <h3 class="text-2xl font-bold mb-8 text-center text-gray-900 dark:text-white">
+                    更新日志
+                </h3>
+                
+                <div class="space-y-6">
+                    <div class="border-l-4 border-blue-500 pl-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold text-lg">版本 1.0.0</h4>
+                            <span class="text-sm text-gray-500 dark:text-gray-400">2025年1月1日</span>
+                        </div>
+                        <ul class="space-y-1 text-gray-600 dark:text-gray-300">
+                            <li>• 🎉 首次发布</li>
+                            <li>• ✨ 支持Git 2.48.1版本配置</li>
+                            <li>• 🎨 现代化UI设计</li>
+                            <li>• 🤖 智能问答系统</li>
+                            <li>• 📱 响应式设计</li>
+                            <li>• 🌓 深色主题支持</li>
+                            <li>• 💾 配置导出功能</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系我们 -->
+        <section class="mb-16">
+            <div class="card p-8 max-w-4xl mx-auto fade-in text-center">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                    联系我们
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                    如果您在使用过程中遇到问题，或有任何建议和反馈，
+                    欢迎通过以下方式联系我们。
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div>
+                        <div class="text-3xl mb-2">📧</div>
+                        <h4 class="font-semibold mb-2">邮件反馈</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            发送邮件至 feedback@git-guide.com
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <div class="text-3xl mb-2">💬</div>
+                        <h4 class="font-semibold mb-2">问题报告</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            在GitHub上提交Issue
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <div class="text-3xl mb-2">⭐</div>
+                        <h4 class="font-semibold mb-2">项目支持</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            给项目点个Star支持我们
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center">
+                <p class="text-gray-600 dark:text-gray-300">
+                    © 2025 Git安装配置指南. 帮助开发者轻松配置Git环境.
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                    开源项目 | 持续更新 | 社区驱动
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePage();
+            animateElements();
+        });
+
+        // 初始化页面
+        function initializePage() {
+            // 检查本地存储的主题设置
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        }
+
+        // 主题切换
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+            
+            // 主题切换动画
+            anime({
+                targets: 'body',
+                duration: 300,
+                easing: 'easeOutQuart'
+            });
+        }
+
+        // 更新主题图标
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('theme-icon');
+            icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // 动画效果
+        function animateElements() {
+            anime({
+                targets: '.fade-in',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                duration: 800,
+                easing: 'easeOutQuart',
+                delay: anime.stagger(200, {start: 200})
+            });
+        }
+    </script>
+</body>
+</html>

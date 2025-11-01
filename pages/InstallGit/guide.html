@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git安装指南 - 个性化配置结果</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0366d6;
+            --success-color: #28a745;
+            --warning-color: #ffd33d;
+            --error-color: #cb2431;
+            --bg-color: #f6f8fa;
+            --card-bg: #ffffff;
+            --text-primary: #24292e;
+            --text-secondary: #586069;
+            --border-color: #e1e4e8;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            padding: 12px 24px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #0256cc;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(3, 102, 214, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 6px;
+            padding: 12px 24px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .step-card {
+            border-left: 4px solid var(--primary-color);
+            background-color: var(--card-bg);
+            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .config-item {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 8px;
+            background-color: var(--card-bg);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        .geometric-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.02;
+            background-image: 
+                radial-gradient(circle at 25% 25%, var(--primary-color) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, var(--primary-color) 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+        }
+
+        .code-block {
+            background-color: #f6f8fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 16px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+
+        [data-theme="dark"] .code-block {
+            background-color: #161b22;
+            border-color: #30363d;
+            color: #e6edf3;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 12px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            opacity: 1;
+        }
+
+        .progress-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--success-color);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .step-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="geometric-bg"></div>
+    
+    <!-- 主题切换按钮 -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <span id="theme-icon">🌙</span>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">G</span>
+                        </div>
+                        <h1 class="text-xl font-bold text-gray-900 dark:text-white">Git安装配置指南</h1>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        返回配置
+                    </a>
+                    <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        关于
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- 标题区域 -->
+        <section class="text-center mb-12 fade-in">
+            <div class="card p-8 max-w-4xl mx-auto">
+                <div class="text-6xl mb-4">🎉</div>
+                <h2 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+                    您的Git安装指南已生成完成！
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                    基于您的配置选择，我们为您生成了个性化的安装步骤指南
+                </p>
+                
+                <!-- 操作按钮 -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="btn-primary" onclick="copyGuide()">
+                        📋 复制指南
+                    </button>
+                    <button class="btn-secondary" onclick="exportGuide()">
+                        💾 导出指南
+                    </button>
+                    <button class="btn-secondary" onclick="window.print()">
+                        🖨️ 打印指南
+                    </button>
+                    <a href="index.html" class="btn-secondary">
+                        🔙 返回修改配置
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- 左侧：配置摘要 -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-8">
+                    <div class="card p-6 mb-6">
+                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                            <span class="progress-indicator mr-3">✓</span>
+                            配置摘要
+                        </h3>
+                        <div id="config-summary" class="space-y-3">
+                            <!-- 配置摘要将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+
+                    <!-- 快速导航 -->
+                    <div class="card p-6">
+                        <h3 class="text-lg font-semibold mb-4">快速导航</h3>
+                        <div class="space-y-2">
+                            <a href="#installation-steps" class="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                                📋 安装步骤
+                            </a>
+                            <a href="#post-installation" class="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                                ⚙️ 安装后配置
+                            </a>
+                            <a href="#command-reference" class="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                                💻 命令参考
+                            </a>
+                            <a href="#troubleshooting" class="block text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors">
+                                🔧 常见问题
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：详细指南 -->
+            <div class="lg:col-span-2">
+                <!-- 安装步骤 -->
+                <section id="installation-steps" class="mb-12 slide-in-left">
+                    <div class="card p-6">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center">
+                            <span class="text-3xl mr-3">📋</span>
+                            详细安装步骤
+                        </h3>
+                        <div id="installation-guide">
+                            <!-- 安装指南将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 安装后配置 -->
+                <section id="post-installation" class="mb-12 slide-in-left">
+                    <div class="card p-6">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center">
+                            <span class="text-3xl mr-3">⚙️</span>
+                            安装后配置
+                        </h3>
+                        <div id="post-install-guide">
+                            <!-- 安装后指南将通过JavaScript动态生成 -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 命令参考 -->
+                <section id="command-reference" class="mb-12 slide-in-left">
+                    <div class="card p-6">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center">
+                            <span class="text-3xl mr-3">💻</span>
+                            常用命令参考
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="relative">
+                                <div class="code-block">
+                                    <button class="copy-btn" onclick="copyToClipboard('git config --global user.name \"您的名字\"')">
+                                        复制
+                                    </button>
+                                    <div>git config --global user.name "您的名字"</div>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">
+                                    设置Git用户名，用于标识您的提交
+                                </p>
+                            </div>
+
+                            <div class="relative">
+                                <div class="code-block">
+                                    <button class="copy-btn" onclick="copyToClipboard('git config --global user.email \"your.email@example.com\"')">
+                                        复制
+                                    </button>
+                                    <div>git config --global user.email "your.email@example.com"</div>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">
+                                    设置Git用户邮箱，用于接收Git通知
+                                </p>
+                            </div>
+
+                            <div class="relative">
+                                <div class="code-block">
+                                    <button class="copy-btn" onclick="copyToClipboard('git init')">
+                                        复制
+                                    </button>
+                                    <div>git init</div>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">
+                                    初始化一个新的Git仓库
+                                </p>
+                            </div>
+
+                            <div class="relative">
+                                <div class="code-block">
+                                    <button class="copy-btn" onclick="copyToClipboard('git clone https://github.com/username/repository.git')">
+                                        复制
+                                    </button>
+                                    <div>git clone https://github.com/username/repository.git</div>
+                                </div>
+                                <p class="text-sm text-gray-600 dark:text-gray-300 mt-2">
+                                    克隆远程仓库到本地
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 常见问题 -->
+                <section id="troubleshooting" class="mb-12 slide-in-left">
+                    <div class="card p-6">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center">
+                            <span class="text-3xl mr-3">🔧</span>
+                            常见问题解决
+                        </h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Git命令无法识别</h4>
+                                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                                    如果在命令提示符中输入git命令显示"不是内部或外部命令"：
+                                </p>
+                                <ol class="list-decimal list-inside space-y-1 text-gray-600 dark:text-gray-300">
+                                    <li>确认Git已正确安装</li>
+                                    <li>检查系统环境变量PATH是否包含Git的安装路径</li>
+                                    <li>重启命令提示符或计算机</li>
+                                </ol>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">SSH密钥配置问题</h4>
+                                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                                    如果无法通过SSH连接到远程仓库：
+                                </p>
+                                <ol class="list-decimal list-inside space-y-1 text-gray-600 dark:text-gray-300">
+                                    <li>检查SSH密钥是否正确生成：ssh-keygen -t rsa -b 4096</li>
+                                    <li>确认公钥已添加到GitHub等平台的账户设置中</li>
+                                    <li>测试SSH连接：ssh -T git@github.com</li>
+                                </ol>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">行尾符问题</h4>
+                                <p class="text-gray-600 dark:text-gray-300 mb-2">
+                                    如果在不同操作系统间出现文件差异：
+                                </p>
+                                <ol class="list-decimal list-inside space-y-1 text-gray-600 dark:text-gray-300">
+                                    <li>检查Git的行尾符配置：git config core.autocrlf</li>
+                                    <li>根据需要设置为true、false或input</li>
+                                    <li>重新规范化仓库文件</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="text-center">
+                <p class="text-gray-600 dark:text-gray-300">
+                    © 2025 Git安装配置指南. 帮助开发者轻松配置Git环境.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 全局变量
+        let gitConfig = {};
+        let userProfile = {};
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePage();
+            loadConfiguration();
+            generateGuide();
+            animateElements();
+        });
+
+        // 初始化页面
+        function initializePage() {
+            // 检查本地存储的主题设置
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        }
+
+        // 加载配置
+        function loadConfiguration() {
+            try {
+                const savedConfig = localStorage.getItem('gitConfig');
+                const savedProfile = localStorage.getItem('userProfile');
+
+                if (savedConfig) {
+                    gitConfig = JSON.parse(savedConfig);
+                }
+
+                if (savedProfile) {
+                    userProfile = JSON.parse(savedProfile);
+                }
+            } catch (error) {
+                console.error('加载配置失败:', error);
+                showNotification('加载配置失败，请返回重新配置', 'error');
+            }
+        }
+
+        // 生成指南
+        function generateGuide() {
+            generateConfigSummary();
+            generateInstallationSteps();
+            generatePostInstallGuide();
+        }
+
+        // 生成配置摘要
+        function generateConfigSummary() {
+            const summaryContainer = document.getElementById('config-summary');
+            const configEntries = Object.entries(gitConfig);
+
+            if (configEntries.length === 0) {
+                summaryContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400">暂无配置信息</p>';
+                return;
+            }
+
+            let summaryHTML = '';
+            configEntries.forEach(([key, value]) => {
+                const displayValue = Array.isArray(value) ? value.join(', ') : value;
+                const displayKey = formatConfigKey(key);
+                
+                summaryHTML += `
+                    <div class="config-item">
+                        <div class="flex-1">
+                            <div class="font-medium text-sm">${displayKey}</div>
+                            <div class="text-xs text-gray-600 dark:text-gray-400">${displayValue}</div>
+                        </div>
+                        <div class="text-green-500 text-xl">✓</div>
+                    </div>
+                `;
+            });
+
+            summaryContainer.innerHTML = summaryHTML;
+        }
+
+        // 格式化配置键名
+        function formatConfigKey(key) {
+            const keyMap = {
+                'installation_directory': '安装目录',
+                'default_editor': '默认编辑器',
+                'default_branch_name': '默认分支名',
+                'path_environment': 'PATH环境变量',
+                'ssh_executable': 'SSH客户端',
+                'https_transport_backend': 'HTTPS后端',
+                'line_ending_conversion': '行尾符转换',
+                'terminal_emulator': '终端模拟器'
+            };
+            return keyMap[key] || key;
+        }
+
+        // 生成安装步骤
+        function generateInstallationSteps() {
+            const guideContainer = document.getElementById('installation-guide');
+            
+            const installationSteps = [
+                {
+                    title: '下载Git安装程序',
+                    description: '访问Git官方网站下载最新版本的Git安装程序',
+                    details: [
+                        '打开浏览器，访问 https://git-scm.com/downloads',
+                        '选择Windows版本的Git安装程序',
+                        '下载完成后，双击运行安装程序'
+                    ],
+                    code: null
+                },
+                {
+                    title: '运行安装程序',
+                    description: '启动Git安装向导，开始安装过程',
+                    details: [
+                        '双击下载的Git安装程序（如：Git-2.48.1-64-bit.exe）',
+                        '如果出现用户账户控制提示，点击"是"继续',
+                        '阅读并接受GNU通用公共许可证'
+                    ],
+                    code: null
+                },
+                {
+                    title: '选择安装目录',
+                    description: '选择Git的安装位置',
+                    details: [
+                        `您选择的安装目录：${gitConfig.installation_directory || 'C:\\Program Files\\Git'}`,
+                        '点击"Browse..."可以更改安装目录',
+                        '建议保持默认设置，点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '选择组件',
+                    description: '选择需要安装的Git组件',
+                    details: [
+                        '保持默认选择的组件',
+                        '确保以下组件被选中：',
+                        '  - Git Bash（必需）',
+                        '  - Git GUI（推荐）',
+                        '  - Git LFS（大文件支持）',
+                        '点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '配置Git默认编辑器',
+                    description: '选择Git使用的默认文本编辑器',
+                    details: [
+                        `您选择的编辑器：${getEditorDisplayName(gitConfig.default_editor)}`,
+                        '如果选择的编辑器未安装，需要先安装',
+                        'Vim是默认选项，但对新手不太友好',
+                        '点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '配置默认分支名称',
+                    description: '设置新仓库的默认分支名称',
+                    details: [
+                        `您选择的默认分支：${getBranchDisplayName(gitConfig.default_branch_name)}`,
+                        '推荐选择"main"，这是现代标准',
+                        '传统的"master"分支名称正在逐步被淘汰',
+                        '点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '配置PATH环境变量',
+                    description: '设置Git在系统中的可访问性',
+                    details: [
+                        '选择"Git from the command line and also from 3rd-party software"',
+                        '这样可以从任何位置使用Git命令',
+                        '这是最安全的配置选项',
+                        '点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '配置SSH客户端',
+                    description: '选择Git使用的SSH客户端',
+                    details: [
+                        '选择"Use bundled OpenSSH"',
+                        '使用Git自带的SSH客户端',
+                        '除非有特殊需求，否则不建议使用外部SSH',
+                        '点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '配置HTTPS传输后端',
+                    description: '选择Git的HTTPS后端',
+                    details: [
+                        '选择"Use the OpenSSL library"',
+                        'OpenSSL提供更好的兼容性',
+                        '除非在企业环境，否则不建议使用Windows安全通道',
+                        '点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '配置行尾符号转换',
+                    description: '处理不同操作系统的行尾符差异',
+                    details: [
+                        '选择"Checkout Windows-style, commit Unix-style"',
+                        '这是Windows用户的最佳选择',
+                        '可以避免跨平台协作时的问题',
+                        '点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '配置终端模拟器',
+                    description: '选择Git Bash使用的终端',
+                    details: [
+                        '选择"Use MinTTY"',
+                        'MinTTY功能更强大，支持更多特性',
+                        '比Windows默认控制台更好用',
+                        '点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '完成安装',
+                    description: '执行最后的安装步骤',
+                    details: [
+                        '保持其他选项的默认设置',
+                        '点击"Next"直到安装开始',
+                        '等待安装完成',
+                        '点击"Finish"完成安装'
+                    ],
+                    code: null
+                }
+            ];
+
+            let stepsHTML = '';
+            installationSteps.forEach((step, index) => {
+                stepsHTML += `
+                    <div class="step-card">
+                        <div class="flex items-start space-x-4">
+                            <div class="step-number">${index + 1}</div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-semibold mb-2">${step.title}</h4>
+                                <p class="text-gray-600 dark:text-gray-300 mb-3">${step.description}</p>
+                                <ul class="space-y-1">
+                                    ${step.details.map(detail => `<li class="text-sm text-gray-600 dark:text-gray-300">${detail}</li>`).join('')}
+                                </ul>
+                                ${step.code ? `
+                                    <div class="code-block mt-3">
+                                        <button class="copy-btn" onclick="copyToClipboard('${step.code.replace(/'/g, "\\'")}')">复制</button>
+                                        <div>${step.code}</div>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            guideContainer.innerHTML = stepsHTML;
+        }
+
+        // 生成安装后配置指南
+        function generatePostInstallGuide() {
+            const guideContainer = document.getElementById('post-install-guide');
+            
+            const postInstallSteps = [
+                {
+                    title: '配置Git用户信息',
+                    description: '设置您的姓名和邮箱，用于标识提交',
+                    commands: [
+                        'git config --global user.name "您的姓名"',
+                        'git config --global user.email "your.email@example.com"'
+                    ]
+                },
+                {
+                    title: '验证安装',
+                    description: '确认Git已正确安装并可以正常使用',
+                    commands: [
+                        'git --version',
+                        'git config --list'
+                    ]
+                },
+                {
+                    title: '配置SSH密钥（可选）',
+                    description: '如果使用SSH连接远程仓库，需要配置SSH密钥',
+                    commands: [
+                        'ssh-keygen -t rsa -b 4096 -C "your.email@example.com"',
+                        'cat ~/.ssh/id_rsa.pub'
+                    ]
+                }
+            ];
+
+            let stepsHTML = '';
+            postInstallSteps.forEach((step, index) => {
+                stepsHTML += `
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold mb-2">${step.title}</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">${step.description}</p>
+                        ${step.commands.map(cmd => `
+                            <div class="relative mb-2">
+                                <div class="code-block">
+                                    <button class="copy-btn" onclick="copyToClipboard('${cmd.replace(/'/g, "\\'")}')">复制</button>
+                                    <div>${cmd}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            });
+
+            guideContainer.innerHTML = stepsHTML;
+        }
+
+        // 获取编辑器显示名称
+        function getEditorDisplayName(editor) {
+            const editorMap = {
+                'vim': 'Vim',
+                'notepad++': 'Notepad++',
+                'vscode': 'Visual Studio Code',
+                'sublime': 'Sublime Text',
+                'notepad': '记事本'
+            };
+            return editorMap[editor] || editor;
+        }
+
+        // 获取分支显示名称
+        function getBranchDisplayName(branch) {
+            const branchMap = {
+                'main': 'main',
+                'master': 'master',
+                'git_decide': 'Let Git decide'
+            };
+            return branchMap[branch] || branch;
+        }
+
+        // 复制指南
+        function copyGuide() {
+            const guideContent = generatePlainTextGuide();
+            copyToClipboard(guideContent);
+            showNotification('安装指南已复制到剪贴板', 'success');
+        }
+
+        // 导出指南
+        function exportGuide() {
+            const guideContent = generatePlainTextGuide();
+            const blob = new Blob([guideContent], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `git-install-guide-${new Date().toISOString().split('T')[0]}.txt`;
+            link.click();
+            showNotification('安装指南已导出', 'success');
+        }
+
+        // 生成纯文本指南
+        function generatePlainTextGuide() {
+            let content = 'Git安装配置指南\n';
+            content += '================\n\n';
+            content += `生成时间：${new Date().toLocaleString()}\n\n`;
+            
+            content += '配置摘要：\n';
+            Object.entries(gitConfig).forEach(([key, value]) => {
+                const displayKey = formatConfigKey(key);
+                const displayValue = Array.isArray(value) ? value.join(', ') : value;
+                content += `- ${displayKey}: ${displayValue}\n`;
+            });
+            
+            content += '\n安装步骤请参考网页详细说明。\n';
+            return content;
+        }
+
+        // 复制到剪贴板
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showNotification('已复制到剪贴板', 'success');
+                }).catch(() => {
+                    fallbackCopyTextToClipboard(text);
+                });
+            } else {
+                fallbackCopyTextToClipboard(text);
+            }
+        }
+
+        // 备用复制方法
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.top = '0';
+            textArea.style.left = '0';
+            textArea.style.position = 'fixed';
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showNotification('已复制到剪贴板', 'success');
+            } catch (err) {
+                console.error('复制失败:', err);
+                showNotification('复制失败，请手动复制', 'error');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // 主题切换
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        // 更新主题图标
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('theme-icon');
+            icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // 显示通知
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-20 right-4 z-50 p-4 rounded-lg shadow-lg max-w-sm ${
+                type === 'success' ? 'bg-green-500 text-white' :
+                type === 'warning' ? 'bg-yellow-500 text-white' :
+                type === 'error' ? 'bg-red-500 text-white' :
+                'bg-blue-500 text-white'
+            }`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            anime({
+                targets: notification,
+                opacity: [0, 1],
+                translateX: [100, 0],
+                duration: 300,
+                easing: 'easeOutQuart'
+            });
+            
+            setTimeout(() => {
+                anime({
+                    targets: notification,
+                    opacity: [1, 0],
+                    translateX: [0, 100],
+                    duration: 300,
+                    easing: 'easeInQuart',
+                    complete: () => {
+                        document.body.removeChild(notification);
+                    }
+                });
+            }, 3000);
+        }
+
+        // 动画效果
+        function animateElements() {
+            anime({
+                targets: '.fade-in',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                duration: 800,
+                easing: 'easeOutQuart',
+                delay: 200
+            });
+
+            anime({
+                targets: '.slide-in-left',
+                opacity: [0, 1],
+                translateX: [-30, 0],
+                duration: 600,
+                easing: 'easeOutQuart',
+                delay: anime.stagger(200, {start: 400})
+            });
+        }
+    </script>
+</body>
+</html>

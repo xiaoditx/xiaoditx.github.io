@@ -1,0 +1,507 @@
+{
+  "gitInstallationOptions": {
+    "version": "2.48.1",
+    "lastUpdated": "2025-01-01",
+    "steps": [
+      {
+        "id": "installation_directory",
+        "stepNumber": 1,
+        "title": "选择安装目录",
+        "description": "选择Git的安装位置，建议使用默认位置或自定义到合适的目录",
+        "type": "directory",
+        "required": true,
+        "defaultValue": "C:\\Program Files\\Git",
+        "recommendation": "建议使用默认路径，或改为D盘以节省C盘空间",
+        "options": [
+          {
+            "label": "默认位置",
+            "value": "C:\\Program Files\\Git",
+            "description": "安装到C盘的Program Files目录",
+            "recommended": true
+          },
+          {
+            "label": "自定义位置",
+            "value": "custom",
+            "description": "选择自定义安装目录",
+            "recommended": false
+          }
+        ],
+        "output": "选择安装目录为: {value}",
+        "tips": "如果C盘空间不足，可以安装到D盘或其他分区"
+      },
+      {
+        "id": "installation_components",
+        "stepNumber": 2,
+        "title": "选择安装组件",
+        "description": "选择需要安装的Git组件，包括Git Bash、Git GUI等工具",
+        "type": "checkbox",
+        "required": true,
+        "defaultValue": ["git_bash", "git_gui", "git_cheetah", "git_lfs", "associate_git_files", "associate_sh_files", "use_true_type_font", "enable_file_system_caching", "enable_git_credential_manager"],
+        "recommendation": "建议保持默认选择，包含所有核心功能",
+        "options": [
+          {
+            "label": "Git Bash",
+            "value": "git_bash",
+            "description": "Git的命令行工具，必须安装",
+            "recommended": true
+          },
+          {
+            "label": "Git GUI",
+            "value": "git_gui",
+            "description": "Git的图形界面工具",
+            "recommended": true
+          },
+          {
+            "label": "Git Cheetah",
+            "value": "git_cheetah",
+            "description": "Windows资源管理器集成",
+            "recommended": true
+          },
+          {
+            "label": "Git LFS",
+            "value": "git_lfs",
+            "description": "大文件存储支持",
+            "recommended": true
+          },
+          {
+            "label": "关联.git文件",
+            "value": "associate_git_files",
+            "description": "将.git文件关联到Git",
+            "recommended": true
+          },
+          {
+            "label": "关联.sh文件",
+            "value": "associate_sh_files",
+            "description": "将.sh文件关联到Git Bash",
+            "recommended": true
+          },
+          {
+            "label": "使用TrueType字体",
+            "value": "use_true_type_font",
+            "description": "在控制台中使用TrueType字体",
+            "recommended": true
+          },
+          {
+            "label": "启用文件系统缓存",
+            "value": "enable_file_system_caching",
+            "description": "提高Git性能的文件系统缓存",
+            "recommended": true
+          },
+          {
+            "label": "Git凭证管理器",
+            "value": "enable_git_credential_manager",
+            "description": "管理Git远程仓库的凭证",
+            "recommended": true
+          },
+          {
+            "label": "Windows Terminal集成",
+            "value": "windows_terminal_integration",
+            "description": "与Windows Terminal集成（需要单独安装Windows Terminal）",
+            "recommended": false
+          }
+        ],
+        "output": "选择安装组件: {value}",
+        "tips": "新手建议保持默认选择，包含所有必要功能"
+      },
+      {
+        "id": "start_menu_folder",
+        "stepNumber": 3,
+        "title": "选择开始菜单文件夹",
+        "description": "选择Git在开始菜单中的文件夹名称",
+        "type": "text",
+        "required": true,
+        "defaultValue": "Git",
+        "recommendation": "建议使用默认名称'Git'",
+        "output": "开始菜单文件夹命名为: {value}",
+        "tips": "可以修改为其他名称以便识别"
+      },
+      {
+        "id": "default_editor",
+        "stepNumber": 4,
+        "title": "选择Git默认编辑器",
+        "description": "选择Git在需要编辑文本时使用的默认编辑器",
+        "type": "radio",
+        "required": true,
+        "defaultValue": "vim",
+        "recommendation": "新手建议选择Notepad++或VS Code，Vim需要学习成本",
+        "options": [
+          {
+            "label": "Vim",
+            "value": "vim",
+            "description": "功能强大的命令行编辑器，但需要学习",
+            "recommended": false
+          },
+          {
+            "label": "Notepad++",
+            "value": "notepad++",
+            "description": "免费的源代码编辑器，功能丰富",
+            "recommended": true
+          },
+          {
+            "label": "Visual Studio Code",
+            "value": "vscode",
+            "description": "微软开发的免费代码编辑器",
+            "recommended": true
+          },
+          {
+            "label": "Sublime Text",
+            "value": "sublime",
+            "description": "轻量级的代码编辑器",
+            "recommended": false
+          },
+          {
+            "label": "Atom",
+            "value": "atom",
+            "description": "GitHub开发的开源编辑器",
+            "recommended": false
+          },
+          {
+            "label": "Notepad",
+            "value": "notepad",
+            "description": "Windows自带的记事本",
+            "recommended": false
+          }
+        ],
+        "output": "选择默认编辑器为: {value}",
+        "tips": "如果选择的编辑器未安装，需要先安装才能继续"
+      },
+      {
+        "id": "default_branch_name",
+        "stepNumber": 5,
+        "title": "选择默认分支名称",
+        "description": "决定新仓库的默认分支名称，这是Git 2.28版本后的新功能",
+        "type": "radio",
+        "required": true,
+        "defaultValue": "main",
+        "recommendation": "建议选择'main'，这是现代标准",
+        "options": [
+          {
+            "label": "Let Git decide",
+            "value": "git_decide",
+            "description": "让Git自动选择（当前为master，未来可能改变）",
+            "recommended": false
+          },
+          {
+            "label": "main",
+            "value": "main",
+            "description": "使用'main'作为默认分支名，符合现代标准",
+            "recommended": true
+          },
+          {
+            "label": "master",
+            "value": "master",
+            "description": "使用传统的'master'作为默认分支名",
+            "recommended": false
+          },
+          {
+            "label": "自定义",
+            "value": "custom",
+            "description": "输入自定义的默认分支名称",
+            "recommended": false
+          }
+        ],
+        "output": "选择默认分支名称为: {value}",
+        "tips": "很多团队已将默认分支从master重命名为main"
+      },
+      {
+        "id": "path_environment",
+        "stepNumber": 6,
+        "title": "调整PATH环境变量",
+        "description": "选择如何从命令行使用Git，影响Git在系统中的可访问性",
+        "type": "radio",
+        "required": true,
+        "defaultValue": "git_from_command_line_and_3rd_party_tools",
+        "recommendation": "建议选择中间选项，既能从命令行使用，又不会影响系统工具",
+        "options": [
+          {
+            "label": "Use Git from Git Bash only",
+            "value": "git_bash_only",
+            "description": "仅从Git Bash使用Git，不修改PATH",
+            "recommended": false
+          },
+          {
+            "label": "Git from command line and 3rd-party software",
+            "value": "git_from_command_line_and_3rd_party_tools",
+            "description": "从命令行和第三方软件使用Git，推荐选择",
+            "recommended": true
+          },
+          {
+            "label": "Use Git and optional Unix tools from the Command Prompt",
+            "value": "use_git_and_optional_unix_tools",
+            "description": "使用Git和可选的Unix工具，可能覆盖系统工具",
+            "recommended": false
+          }
+        ],
+        "output": "PATH环境变量配置: {value}",
+        "tips": "中间选项是最安全的选择，适合大多数用户"
+      },
+      {
+        "id": "ssh_executable",
+        "stepNumber": 7,
+        "title": "选择SSH可执行文件",
+        "description": "选择Git使用哪个SSH客户端进行安全连接",
+        "type": "radio",
+        "required": true,
+        "defaultValue": "use bundled ssh",
+        "recommendation": "建议使用Git捆绑的OpenSSH，除非有特殊需求",
+        "options": [
+          {
+            "label": "Use bundled SSH",
+            "value": "use bundled ssh",
+            "description": "使用Git捆绑的OpenSSH，推荐选择",
+            "recommended": true
+          },
+          {
+            "label": "Use external SSH",
+            "value": "use external ssh",
+            "description": "使用外部SSH客户端（如PuTTY）",
+            "recommended": false
+          }
+        ],
+        "output": "SSH客户端选择: {value}",
+        "tips": "大多数用户应该选择使用Git捆绑的OpenSSH"
+      },
+      {
+        "id": "https_transport_backend",
+        "stepNumber": 8,
+        "title": "选择HTTPS传输后端",
+        "description": "选择Git在进行HTTPS操作时使用的后端库",
+        "type": "radio",
+        "required": true,
+        "defaultValue": "use openssl",
+        "recommendation": "建议使用OpenSSL，兼容性更好",
+        "options": [
+          {
+            "label": "Use OpenSSL",
+            "value": "use openssl",
+            "description": "使用OpenSSL库，更好的兼容性",
+            "recommended": true
+          },
+          {
+            "label": "Use Windows Secure Channel",
+            "value": "use windows secure channel",
+            "description": "使用Windows安全通道，与企业CA更好集成",
+            "recommended": false
+          }
+        ],
+        "output": "HTTPS传输后端: {value}",
+        "tips": "OpenSSL通常提供更好的兼容性"
+      },
+      {
+        "id": "line_ending_conversion",
+        "stepNumber": 9,
+        "title": "配置行尾符号转换",
+        "description": "选择Git如何处理不同操作系统间的行尾符差异",
+        "type": "radio",
+        "required": true,
+        "defaultValue": "checkout windows style commit unix style",
+        "recommendation": "建议选择第一个选项，这是Windows下的标准配置",
+        "options": [
+          {
+            "label": "Checkout Windows-style, commit Unix-style",
+            "value": "checkout windows style commit unix style",
+            "description": "检出时使用Windows风格(CRLF)，提交时使用Unix风格(LF)",
+            "recommended": true
+          },
+          {
+            "label": "Checkout as-is, commit Unix-style",
+            "value": "checkout as is commit unix style",
+            "description": "检出时保持原样，提交时使用Unix风格",
+            "recommended": false
+          },
+          {
+            "label": "Checkout as-is, commit as-is",
+            "value": "checkout as is commit as is",
+            "description": "完全不做任何转换，保持文件原样",
+            "recommended": false
+          }
+        ],
+        "output": "行尾符号转换配置: {value}",
+        "tips": "第一个选项最适合Windows用户，避免跨平台问题"
+      },
+      {
+        "id": "terminal_emulator",
+        "stepNumber": 10,
+        "title": "配置终端模拟器",
+        "description": "选择与Git Bash一起使用的终端模拟器",
+        "type": "radio",
+        "required": true,
+        "defaultValue": "use mintty",
+        "recommendation": "建议使用Mintty，功能更强大",
+        "options": [
+          {
+            "label": "Use MinTTY",
+            "value": "use mintty",
+            "description": "使用MinTTY终端，功能更强大，支持更多特性",
+            "recommended": true
+          },
+          {
+            "label": "Use Windows' default console",
+            "value": "use windows default console",
+            "description": "使用Windows默认控制台窗口",
+            "recommended": false
+          }
+        ],
+        "output": "终端模拟器选择: {value}",
+        "tips": "MinTTY提供更好的Unicode支持和窗口大小调整"
+      },
+      {
+        "id": "git_pull_behavior",
+        "stepNumber": 11,
+        "title": "选择默认的'git pull'行为",
+        "description": "配置git pull命令的默认行为，影响代码合并方式",
+        "type": "radio",
+        "required": true,
+        "defaultValue": "merge",
+        "recommendation": "建议选择'Merge'，这是传统的安全选择",
+        "options": [
+          {
+            "label": "Merge",
+            "value": "merge",
+            "description": "使用merge方式合并，创建合并提交",
+            "recommended": true
+          },
+          {
+            "label": "Rebase",
+            "value": "rebase",
+            "description": "使用rebase方式合并，保持线性历史",
+            "recommended": false
+          },
+          {
+            "label": "Only ever fast-forward",
+            "value": "fast forward only",
+            "description": "仅快进合并，如果无法快进则失败",
+            "recommended": false
+          }
+        ],
+        "output": "默认git pull行为: {value}",
+        "tips": "Merge是最安全的选择，Rebase可以保持更清晰的提交历史"
+      },
+      {
+        "id": "credential_helper",
+        "stepNumber": 12,
+        "title": "选择凭证帮助程序",
+        "description": "选择如何管理Git远程仓库的登录凭证",
+        "type": "radio",
+        "required": true,
+        "defaultValue": "git credential manager",
+        "recommendation": "建议使用Git凭证管理器，安全且方便",
+        "options": [
+          {
+            "label": "Git Credential Manager",
+            "value": "git credential manager",
+            "description": "使用Git凭证管理器，安全存储凭证",
+            "recommended": true
+          },
+          {
+            "label": "None",
+            "value": "none",
+            "description": "不使用凭证帮助程序，每次都需要输入密码",
+            "recommended": false
+          }
+        ],
+        "output": "凭证帮助程序选择: {value}",
+        "tips": "Git凭证管理器可以安全地存储你的登录信息"
+      },
+      {
+        "id": "extra_options",
+        "stepNumber": 13,
+        "title": "配置额外选项",
+        "description": "选择一些额外的配置选项来增强Git功能",
+        "type": "checkbox",
+        "required": false,
+        "defaultValue": ["enable file system caching", "enable symbolic links"],
+        "recommendation": "建议启用文件系统缓存和符号链接支持",
+        "options": [
+          {
+            "label": "Enable file system caching",
+            "value": "enable file system caching",
+            "description": "启用文件系统缓存，提高Git性能",
+            "recommended": true
+          },
+          {
+            "label": "Enable symbolic links",
+            "value": "enable symbolic links",
+            "description": "启用符号链接支持（需要管理员权限）",
+            "recommended": true
+          }
+        ],
+        "output": "额外选项配置: {value}",
+        "tips": "文件系统缓存可以显著提升Git性能"
+      },
+      {
+        "id": "experimental_options",
+        "stepNumber": 14,
+        "title": "配置实验性选项",
+        "description": "选择一些实验性功能（不推荐新手使用）",
+        "type": "checkbox",
+        "required": false,
+        "defaultValue": [],
+        "recommendation": "不建议启用任何实验性选项，除非你知道自己在做什么",
+        "options": [
+          {
+            "label": "Enable experimental support for pseudo consoles",
+            "value": "enable pseudo consoles",
+            "description": "启用伪控制台的实验性支持",
+            "recommended": false
+          },
+          {
+            "label": "Enable experimental built-in file system monitor",
+            "value": "enable file system monitor",
+            "description": "启用实验性的内置文件系统监视器",
+            "recommended": false
+          }
+        ],
+        "output": "实验性选项配置: {value}",
+        "tips": "实验性功能可能不稳定，不建议在生产环境中使用"
+      }
+    ],
+    "userProfiles": {
+      "beginner": {
+        "name": "初学者",
+        "description": "首次安装Git的用户",
+        "recommendations": {
+          "default_editor": "notepad++",
+          "default_branch_name": "main",
+          "path_environment": "git_from_command_line_and_3rd_party_tools",
+          "ssh_executable": "use bundled ssh",
+          "https_transport_backend": "use openssl",
+          "line_ending_conversion": "checkout windows style commit unix style",
+          "terminal_emulator": "use mintty",
+          "git_pull_behavior": "merge",
+          "credential_helper": "git credential manager"
+        }
+      },
+      "experienced": {
+        "name": "有经验的开发者",
+        "description": "有Git使用经验的开发者",
+        "recommendations": {
+          "default_editor": "vscode",
+          "default_branch_name": "main",
+          "path_environment": "git_from_command_line_and_3rd_party_tools",
+          "ssh_executable": "use bundled ssh",
+          "https_transport_backend": "use openssl",
+          "line_ending_conversion": "checkout windows style commit unix style",
+          "terminal_emulator": "use mintty",
+          "git_pull_behavior": "rebase",
+          "credential_helper": "git credential manager"
+        }
+      },
+      "enterprise": {
+        "name": "企业用户",
+        "description": "在企业环境中使用Git的用户",
+        "recommendations": {
+          "default_editor": "vscode",
+          "default_branch_name": "main",
+          "path_environment": "git_from_command_line_and_3rd_party_tools",
+          "ssh_executable": "use bundled ssh",
+          "https_transport_backend": "use windows secure channel",
+          "line_ending_conversion": "checkout windows style commit unix style",
+          "terminal_emulator": "use mintty",
+          "git_pull_behavior": "merge",
+          "credential_helper": "git credential manager"
+        }
+      }
+    }
+  }
+}
