@@ -563,6 +563,11 @@ function generateRadioOptions(step) {
         const isSelected = gitConfig[step.id] === option.value || 
                           (!gitConfig[step.id] && option.value === step.defaultValue);
         
+        // 如果还没有选择且这是默认选项，设置默认值
+        if (!gitConfig[step.id] && option.value === step.defaultValue) {
+            gitConfig[step.id] = option.value;
+        }
+        
         html += `
             <div class="option-card ${isRecommended ? 'recommended' : ''} ${isSelected ? 'selected' : ''}" 
                  onclick="selectOption('${step.id}', '${option.value}')">

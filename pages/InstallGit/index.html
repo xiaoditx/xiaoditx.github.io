@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git安装配置指南 - 交互式配置工具（AI开发版）</title>
+    <title>Git安装配置指南 - 交互式配置工具</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -119,6 +119,12 @@
         .option-card.recommended {
             border-color: var(--success-color);
             background-color: rgba(40, 167, 69, 0.05);
+        }
+
+        .option-card.recommended {
+            border-color: var(--success-color);
+            background-color: rgba(40, 167, 69, 0.05);
+            position: relative;
         }
 
         .option-card.recommended::before {
@@ -292,7 +298,7 @@
                         <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                             <span class="text-white font-bold text-lg">G</span>
                         </div>
-                        <h1 class="text-xl font-bold text-gray-900 dark:text-white">Git安装配置指南（AI开发版）</h1>
+                        <h1 class="text-xl font-bold text-gray-900 dark:text-white">Git安装配置指南</h1>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -362,7 +368,7 @@
                     <!-- 进度指示器 -->
                     <div class="card p-4 mb-6">
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-lg font-semibold">配置进度（此版本有问题，默认选项需手动点击才计入）</h3>
+                            <h3 class="text-lg font-semibold">配置进度</h3>
                             <span id="progress-text" class="text-sm text-gray-600 dark:text-gray-300">
                                 步骤 1 / 14
                             </span>
