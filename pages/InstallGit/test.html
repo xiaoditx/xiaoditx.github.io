@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试页面</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .option-card { border: 2px solid #ccc; padding: 10px; margin: 10px 0; cursor: pointer; }
+        .option-card.selected { border-color: blue; background-color: #f0f8ff; }
+        .option-card.recommended { border-color: green; background-color: #f0fff0; position: relative; }
+        .option-card.recommended::before {
+            content: "推荐";
+            position: absolute;
+            top: -8px;
+            right: 12px;
+            background-color: green;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>测试选项显示</h1>
+    
+    <div class="option-card recommended selected" onclick="selectOption(this)">
+        <h4>Notepad++ (推荐)</h4>
+        <p>免费的源代码编辑器，功能丰富</p>
+    </div>
+    
+    <div class="option-card" onclick="selectOption(this)">
+        <h4>Vim</h4>
+        <p>功能强大的命令行编辑器</p>
+    </div>
+    
+    <div class="option-card recommended" onclick="selectOption(this)">
+        <h4>VS Code (推荐)</h4>
+        <p>微软开发的免费代码编辑器</p>
+    </div>
+
+    <script>
+        function selectOption(element) {
+            // 移除所有选中状态
+            document.querySelectorAll('.option-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            
+            // 添加选中状态
+            element.classList.add('selected');
+        }
+    </script>
+</body>
+</html>

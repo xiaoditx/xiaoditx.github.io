@@ -11,13 +11,13 @@ layout: "hextra-home"
 
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
-  小狄同学呀&nbsp;<br class="hx:sm:block hx:hidden" />WTFPL协议狂热爱好者
+  小狄同学呀 <br class="hx:sm:block hx:hidden" />WTFPL协议狂热爱好者
 {{< /hextra/hero-headline >}}
 </div>
 
 <div class="hx:mb-12">
 {{< hextra/hero-subtitle >}}
-  半吊子程序员&nbsp;<br class="hx:sm:block hx:hidden" />不怎么工作的视频制作人
+  半吊子程序员 <br class="hx:sm:block hx:hidden" />不怎么工作的视频制作人
 {{< /hextra/hero-subtitle >}}
 </div>
 
@@ -30,18 +30,23 @@ layout: "hextra-home"
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
     title="柚子厨蒸鹅心"
-	link="https://www.yuzu-soft.com/index.html"
+    link="https://www.yuzu-soft.com/index.html"
     subtitle="Ciallo～ (∠・ω< )⌒★"
   >}}
   {{< hextra/feature-card
     title="共享资源库"
     subtitle="来自Q群 Covi的技术神殿 的文件分享"
-	link="https://github.com/Covi-shared-files/files-share"
+    link="https://github.com/Covi-shared-files/files-share"
   >}}
   {{< hextra/feature-card
     title="死了没"
     subtitle="查看站长存活状态"
     link="https://xiaoditx.github.io/pages/silemei/"
+  >}}
+  {{< hextra/feature-card
+    title="Git配置生成器"
+    subtitle="根据问答确定Git安装流程"
+    link="https://xiaoditx.github.io/pages/InstallGit/"
   >}}
   {{< hextra/feature-card
     title="没写"
