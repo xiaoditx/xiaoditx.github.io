@@ -76,7 +76,7 @@ authors:
 
 - [洛雪音乐源](https://awaw.cc/post/lx-music-source)
 - [洛雪音乐助手音乐源](https://github.com/piko017/-LX-luoxue_yinyuan/diffs/1?base_sha=6b35139b917e83ca770894406562d8e7c38b8c50&head_user=2061360308&name=master&pull_number=3&qualified_name=refs%2Fheads%2Fmaster&sha1=6b35139b917e83ca770894406562d8e7c38b8c50&sha2=f0e2cee0c021c17877b6d27646af70a4f2d9fe91&short_path=b335630&unchanged=expanded&w=false)
-- [开源音乐播放器和音源分享\(洛雪\)](https://blog.csdn.net/qq_38869359/article/details/147562391)
+- [开源音乐播放器和音源分享（洛雪）](https://blog.csdn.net/qq_38869359/article/details/147562391)
 
 音乐下载需要去单独设置
 
