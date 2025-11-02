@@ -1,11 +1,11 @@
 ---
 title: "如何从一无所有配置一台编程+日常环境完善的电脑（软件环境）"  # 文章标题
-draft: true  # 是否为草稿。设为 false 才会发布
+draft: falte  # 是否为草稿。设为 false 才会发布
 data: 2025-11-01
 description: "电脑开荒不知道安什么软件？学习编程不会配环境？一篇文章介绍大量常用软件的配置"  # 文章摘要
 tags: ["软件", "环境配置"]  # 文章标签，用于分类和关联
 categories: ["计算机技术零基础到精通"]  # 文章分类
-comments: false
+comments: true
 date: 2025-08-26
 authors:
   - name: xiaoditx
