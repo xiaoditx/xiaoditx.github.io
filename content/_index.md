@@ -13,13 +13,13 @@ layout: "hextra-home"
 
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
-  小狄同学呀&nbsp;<br class="hx:sm:block hx:hidden" />WTFPL协议狂热爱好者
+  小狄同学呀&nbsp;<br class="hx:sm:block hx:hidden" />高度使用WTFPL协议的半吊子程序员
 {{< /hextra/hero-headline >}}
 </div>
 
 <div class="hx:mb-12">
 {{< hextra/hero-subtitle >}}
-  半吊子程序员&nbsp;<br class="hx:sm:block hx:hidden" />不怎么工作的视频制作人
+  项目是不做的&nbsp;<br class="hx:sm:block hx:hidden" />视频是不剪的
 {{< /hextra/hero-subtitle >}}
 </div>
 
@@ -53,9 +53,11 @@ layout: "hextra-home"
     subtitle="根据问答确定Git安装流程"
     link="https://xiaoditx.github.io/pages/InstallGit/"
   >}}
-
+  
 {{< /hextra/feature-grid >}}
   
+<div class="hx:mt-6"></div>
+
 {{< hextra/hero-section >}} 友情链接 {{< /hextra/hero-section >}}
 
 <div class="hx:mt-6"></div>
@@ -74,6 +76,8 @@ layout: "hextra-home"
   >}}
 
 {{< /hextra/feature-grid >}}
+
+<div class="hx:mt-6"></div>
 
 {{< hextra/hero-section >}} 没写 {{< /hextra/hero-section >}}
   
