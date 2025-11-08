@@ -12,4 +12,4 @@ weight: 3
 
 来来回回改了好几次，总算是能看了
 
-![提交记录](imgs/moment/202511/gitcommits.png)
+![提交记录](/imgs/moment/202511/gitcommits.png)
