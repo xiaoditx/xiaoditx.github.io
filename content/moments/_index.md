@@ -1,5 +1,6 @@
 ---
 title: 动态
+type: doc
 cascade:
     params:
         reversePagination: false
