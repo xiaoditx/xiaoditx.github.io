@@ -37,6 +37,8 @@ layout: "hextra-home"
 
 {{< hextra/hero-section >}} 网页项目 {{< /hextra/hero-section >}}
 
+<div class="hx:mt-6"></div>
+
 {{< hextra/feature-grid >}}
 
   {{< hextra/feature-card
@@ -56,6 +58,8 @@ layout: "hextra-home"
   
 {{< hextra/hero-section >}} 友情链接 {{< /hextra/hero-section >}}
 
+<div class="hx:mt-6"></div>
+
 {{< hextra/feature-grid >}}
 
   {{< hextra/feature-card
@@ -72,6 +76,8 @@ layout: "hextra-home"
 {{< /hextra/feature-grid >}}
 
 {{< hextra/hero-section >}} 没写 {{< /hextra/hero-section >}}
+  
+<div class="hx:mt-6"></div>
   
 {{< hextra/feature-grid >}}
 
