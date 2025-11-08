@@ -35,12 +35,23 @@ layout: "hextra-home"
 
 
 
-{{< hextra/hero-section >}} 网页项目 {{< /hextra/hero-section >}}
+{{< hextra/hero-section >}} 个人项目 {{< /hextra/hero-section >}}
 
 <div class="hx:mt-6"></div>
 
 {{< hextra/feature-grid >}}
 
+  {{< hextra/feature-card
+    title="抽象小站"
+    subtitle="一些抽象的项目会在这里放置"
+    link="https://xiaoditx.github.io/chouxiang/"
+  >}}
+  {{< hextra/feature-card
+    title="Git在线闯关"
+    subtitle="基于简单HTML开发实现的Git学习网站，采用交互式的操作进行学习"
+    link="https://xiaoditx.github.io/OnlineGitGame/"
+  >}}
+  
   {{< hextra/feature-card
     title="死了没"
     subtitle="查看站长存活状态"
@@ -52,6 +63,18 @@ layout: "hextra-home"
     title="Git配置生成器"
     subtitle="根据问答确定Git安装流程"
     link="https://xiaoditx.github.io/pages/InstallGit/"
+  >}}
+  
+    {{< hextra/feature-card
+    title="向站长捐款"
+    subtitle="给我钱！嘻嘻"
+    link="https://xiaoditx.github.io/pages/donate/juankuan.html"
+  >}}
+  
+  {{< hextra/feature-card
+    title="研究性学习报告"
+    subtitle="学校组织的研究性学习，所以写了个报告"
+    link="https://xiaoditx.github.io/pages/research/"
   >}}
   
 {{< /hextra/feature-grid >}}
