@@ -3,6 +3,8 @@ title: "小狄同学呀 | 开源，共享，教育教学，引领技术发展"
 layout: "hextra-home"
 ---
 
+{{< hextra/hero-container image="imgs/yumo.png" imageClass="hx-block hx-overflow-hidden hx-rounded-3xl" imageWidth="300" imageHeight="300" imageTitle="yumo" >}}
+
 {{< hextra/hero-badge >}}
   <div class="hx:w-2 hx:h-2 hx:rounded-full hx:bg-primary-400"></div>
   <span>做最好的开源</span>
@@ -25,6 +27,8 @@ layout: "hextra-home"
 {{< hextra/hero-button text="去查文档" link="docs" >}}
 {{< hextra/hero-button text="看看博客" link="blog" >}}
 </div>
+
+{{< /hextra/hero-container >}}
 
 <div class="hx:mt-6"></div>
 
