@@ -48,8 +48,6 @@ layout: "hextra-home"
   
 {{< hextra/hero-section >}} 友情链接 {{< /hextra/hero-section >}}
 
-  {{< hextra/feature-grid >}}
-
   {{< hextra/feature-card
     title="柚子厨蒸鹅心"
     link="https://www.yuzu-soft.com/index.html"
