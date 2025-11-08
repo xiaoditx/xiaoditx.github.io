@@ -120,4 +120,5 @@ layout: "hextra-home"
 
 {{< /hextra/feature-grid >}}
 
+<div class="hx:mt-6"></div>
 
