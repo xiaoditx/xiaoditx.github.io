@@ -13,7 +13,7 @@ layout: "hextra-home"
 
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
-  小狄同学呀&nbsp;<br class="hx:sm:block hx:hidden" />高度使用WTFPL协议的半吊子程序员
+  小狄同学呀&nbsp;<br class="hx:sm:block hx:hidden" />WTFPL照亮世界！
 {{< /hextra/hero-headline >}}
 </div>
 
