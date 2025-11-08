@@ -29,6 +29,8 @@ layout: "hextra-home"
 
 {{< /hextra/hero-container >}}
 
+{{< hextra/feature-grid >}}
+
 {{< hextra/hero-section >}} 网页项目 {{< /hextra/hero-section >}}
 
   {{< hextra/feature-card
@@ -36,6 +38,7 @@ layout: "hextra-home"
     subtitle="查看站长存活状态"
     link="https://xiaoditx.github.io/pages/silemei/"
   >}}
+  
   {{< hextra/feature-card
     title="Git配置生成器"
     subtitle="根据问答确定Git安装流程"
@@ -45,7 +48,7 @@ layout: "hextra-home"
 {{< hextra/hero-section >}} 友情链接 {{< /hextra/hero-section >}}
 
 <div class="hx:mt-6"></div>
-{{< hextra/feature-grid >}}
+
   {{< hextra/feature-card
     title="柚子厨蒸鹅心"
     link="https://www.yuzu-soft.com/index.html"
@@ -56,7 +59,7 @@ layout: "hextra-home"
     subtitle="来自Q群 Covi的技术神殿 的文件分享"
     link="https://github.com/Covi-shared-files/files-share"
   >}}
-  
+
 {{< hextra/hero-section >}} 没写 {{< /hextra/hero-section >}}
   
   {{< hextra/feature-card
