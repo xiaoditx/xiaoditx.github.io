@@ -28,10 +28,12 @@ layout: "hextra-home"
 
 <div class="hx:mt-6"></div>
 
-{{< hextra/feature-grid >}}
+
 
 
 {{< hextra/hero-section >}} 网页项目 {{< /hextra/hero-section >}}
+
+{{< hextra/feature-grid >}}
 
   {{< hextra/feature-card
     title="死了没"
@@ -45,8 +47,12 @@ layout: "hextra-home"
     subtitle="根据问答确定Git安装流程"
     link="https://xiaoditx.github.io/pages/InstallGit/"
   >}}
+
+{{< /hextra/feature-grid >}}
   
 {{< hextra/hero-section >}} 友情链接 {{< /hextra/hero-section >}}
+
+{{< hextra/feature-grid >}}
 
   {{< hextra/feature-card
     title="柚子厨蒸鹅心"
@@ -59,8 +65,12 @@ layout: "hextra-home"
     link="https://github.com/Covi-shared-files/files-share"
   >}}
 
+{{< /hextra/feature-grid >}}
+
 {{< hextra/hero-section >}} 没写 {{< /hextra/hero-section >}}
   
+{{< hextra/feature-grid >}}
+
   {{< hextra/feature-card
     title="没写"
     subtitle="抄的hextra官方的主页，留着吧，还没想好写啥呢"
@@ -71,6 +81,6 @@ layout: "hextra-home"
     subtitle="没写"
   >}}
 
-
-
 {{< /hextra/feature-grid >}}
+
+
