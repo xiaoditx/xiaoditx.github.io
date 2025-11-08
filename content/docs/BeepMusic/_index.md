@@ -1,3 +1,7 @@
+---
+next: docs/BeepMusic/rc文件帮助
+---
+
 <!-- markdownlint-disable -->
 
 <div align="center">

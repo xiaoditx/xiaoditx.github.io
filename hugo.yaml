@@ -1,7 +1,7 @@
+# 把hextra作为模块导入
 module:
   imports:
     - path: github.com/imfing/hextra
-
 
 # 网站基础信息
 title: '小狄同学呀'
@@ -21,6 +21,16 @@ outputs:
   home: [html, llms]
   page: [html]
   section: [html, rss]
+
+markup:
+  # 允许原始html内容
+  goldmark:
+    renderer:
+      unsafe: true
+
+  # 允许hextra语法高亮（官方模板就是这么写的）
+  highlight:
+    noClasses: false
 
 # 语言对应的配置
 defaultContentLanguage: zh-cn
