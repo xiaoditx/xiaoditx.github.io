@@ -558,7 +558,11 @@
                 'ssh_executable': 'SSH客户端',
                 'https_transport_backend': 'HTTPS后端',
                 'line_ending_conversion': '行尾符转换',
-                'terminal_emulator': '终端模拟器'
+                'terminal_emulator': '终端模拟器',
+                'git_pull_behavior': 'Git Pull 行为',
+                'credential_helper': '凭证管理器',
+                'extra_options': '额外选项',
+                'experimental_options': '实验性选项'
             };
             return keyMap[key] || key;
         }
@@ -566,7 +570,7 @@
         // 生成安装步骤
         function generateInstallationSteps() {
             const guideContainer = document.getElementById('installation-guide');
-            
+
             const installationSteps = [
                 {
                     title: '下载Git安装程序',
@@ -605,7 +609,7 @@
                         '保持默认选择的组件',
                         '确保以下组件被选中：',
                         '  - Git Bash（必需）',
-                        '  - Git GUI（推荐）',
+                        '  - Git GUI（推荐，还挺好用的，虽然VSc也有但是VSc开的太慢了）',
                         '  - Git LFS（大文件支持）',
                         '点击"Next"继续'
                     ],
@@ -615,9 +619,9 @@
                     title: '配置Git默认编辑器',
                     description: '选择Git使用的默认文本编辑器',
                     details: [
-                        `您选择的编辑器：${getEditorDisplayName(gitConfig.default_editor)}`,
+                        `在下拉栏中找到包含：${getEditorDisplayName(gitConfig.default_editor)}的选项`,
                         '如果选择的编辑器未安装，需要先安装',
-                        'Vim是默认选项，但对新手不太友好',
+                        'Vim是默认选项，不需要自行安装，但对新手不太友好',
                         '点击"Next"继续'
                     ],
                     code: null
@@ -626,9 +630,7 @@
                     title: '配置默认分支名称',
                     description: '设置新仓库的默认分支名称',
                     details: [
-                        `您选择的默认分支：${getBranchDisplayName(gitConfig.default_branch_name)}`,
-                        '推荐选择"main"，这是现代标准',
-                        '传统的"master"分支名称正在逐步被淘汰',
+                        `选择：${getBranchDisplayName(gitConfig.default_branch_name)}`,
                         '点击"Next"继续'
                     ],
                     code: null
@@ -637,9 +639,7 @@
                     title: '配置PATH环境变量',
                     description: '设置Git在系统中的可访问性',
                     details: [
-                        '选择"Git from the command line and also from 3rd-party software"',
-                        '这样可以从任何位置使用Git命令',
-                        '这是最安全的配置选项',
+                        `选择：${getPathEnvironmentDisplayName(gitConfig.path_environment)}`,
                         '点击"Next"继续'
                     ],
                     code: null
@@ -648,9 +648,7 @@
                     title: '配置SSH客户端',
                     description: '选择Git使用的SSH客户端',
                     details: [
-                        '选择"Use bundled OpenSSH"',
-                        '使用Git自带的SSH客户端',
-                        '除非有特殊需求，否则不建议使用外部SSH',
+                        `选择：${getSshExecutableDisplayName(gitConfig.ssh_executable)}`,
                         '点击"Next"继续'
                     ],
                     code: null
@@ -659,9 +657,7 @@
                     title: '配置HTTPS传输后端',
                     description: '选择Git的HTTPS后端',
                     details: [
-                        '选择"Use the OpenSSL library"',
-                        'OpenSSL提供更好的兼容性',
-                        '除非在企业环境，否则不建议使用Windows安全通道',
+                        `选择：${getHttpsTransportBackendDisplayName(gitConfig.https_transport_backend)}`,
                         '点击"Next"继续'
                     ],
                     code: null
@@ -670,9 +666,7 @@
                     title: '配置行尾符号转换',
                     description: '处理不同操作系统的行尾符差异',
                     details: [
-                        '选择"Checkout Windows-style, commit Unix-style"',
-                        '这是Windows用户的最佳选择',
-                        '可以避免跨平台协作时的问题',
+                        `选择：${getLineEndingConversionDisplayName(gitConfig.line_ending_conversion)}`,
                         '点击"Next"继续'
                     ],
                     code: null
@@ -681,9 +675,43 @@
                     title: '配置终端模拟器',
                     description: '选择Git Bash使用的终端',
                     details: [
-                        '选择"Use MinTTY"',
-                        'MinTTY功能更强大，支持更多特性',
-                        '比Windows默认控制台更好用',
+                        `选择：${getTerminalEmulatorDisplayName(gitConfig.terminal_emulator)}`,
+                        '点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '选择Git pull行为',
+                    description: '设定Git以什么方式拉取远程代码',
+                    details: [
+                        `选择：${getGitPullBehaviorDisplayName(gitConfig.git_pull_behavior)}`,
+                        '点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '选择凭证管理器',
+                    description: '选择Git为你管理凭证的方式',
+                    details: [
+                        `选择：${getCredentialHelperDisplayName(gitConfig.credential_helper)}`,
+                        '点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '配置额外选项',
+                    description: '一些额外的扩展选项',
+                    details: [
+                        `选择：${getExtraOptionsDisplayName(gitConfig.extra_options)}`,
+                        '点击"Next"继续'
+                    ],
+                    code: null
+                },
+                {
+                    title: '实验性功能',
+                    description: '实验性功能可能不稳定，不建议在生产环境中使用，除非您知道自己在做什么，否则不建议启用',
+                    details: [
+                        `您选择的实验性选项：${getExperimentalOptionsDisplayName(gitConfig.experimental_options)}`,
                         '点击"Next"继续'
                     ],
                     code: null
@@ -780,6 +808,8 @@
             guideContainer.innerHTML = stepsHTML;
         }
 
+
+        //下面的函数用于将选项值对应到实际名称（我真的很难理解为什么要这么设计而不是直接传过来一个原名）
         // 获取编辑器显示名称
         function getEditorDisplayName(editor) {
             const editorMap = {
@@ -795,11 +825,102 @@
         // 获取分支显示名称
         function getBranchDisplayName(branch) {
             const branchMap = {
-                'main': 'main',
-                'master': 'master',
+                'main': 'Override the default branch name for new repositories\n在下方输入框输入main',
+                'master': 'Override the default branch name for new repositories\n在下方输入框输入master',
+                'custom': 'Override the default branch name for new repositories\n在下方输入自己想要的分支名',
                 'git_decide': 'Let Git decide'
             };
             return branchMap[branch] || branch;
+        }
+
+        // PATH环境变量
+        function getPathEnvironmentDisplayName(value) {
+            const map = {
+                'git_bash_only': 'Use Git from Bash_only',
+                'git_from_command_line_and_3rd_party_tools': 'Git from command line and 3rd party tools',
+                'use_git_and_optional_unix_tools': 'Use Git and optional Unix tools and Command Prompt'
+            };
+            return map[value] || value;
+        }
+
+        // SSH客户端
+        function getSshExecutableDisplayName(value) {
+            const map = {
+                'use bundled ssh': 'Use bundled OpenSSH',
+                'use external ssh': 'Use external OpenSSH'
+            };
+            return map[value] || value;
+        }
+
+        // HTTPS传输后端
+        function getHttpsTransportBackendDisplayName(value) {
+            const map = {
+                'use openssl': 'use the OpenSSL library ',
+                'use windows secure channel': 'Use the native Windows Secure Channel library '
+            };
+            return map[value] || value;
+        }
+
+        // 行尾符号转换
+        function getLineEndingConversionDisplayName(value) {
+            const map = {
+                'checkout windows style commit unix style': 'Checkout Windows-style, commit Unix-style line endings ',
+                'checkout as is commit unix style': 'Checkout as-is, commit Unix-style line endings ',
+                'checkout as is commit as is': 'Checkout as-is, commit as-is '
+            };
+            return map[value] || value;
+        }
+
+        // 终端模拟器
+        function getTerminalEmulatorDisplayName(value) {
+            const map = {
+                'use mintty': 'Use MinTTY(the default terminal of MSYS2) ',
+                'use windows default console': 'Use Windows\' default console '
+            };
+            return map[value] || value;
+        }
+
+        // Git Pull行为
+        function getGitPullBehaviorDisplayName(value) {
+            const map = {
+                'merge': 'Fast-forward or merge',
+                'rebase': 'Rebase',
+                'fast forward only': 'Only ever fast-forward'
+            };
+            return map[value] || value;
+        }
+
+        // 凭证管理器
+        function getCredentialHelperDisplayName(value) {
+            const map = {
+                'git credential manager': 'Git Credential Manager',
+                'none': 'None'
+            };
+            return map[value] || value;
+        }
+
+        // 额外选项（数组处理）
+        function getExtraOptionsDisplayName(values) {
+            if (!values || values.length === 0) return '无';
+            
+            const map = {
+                'enable file system caching': 'Enable file system caching ',
+                'enable symbolic links': 'Enable symbolic links'
+            };
+            
+            return values.map(v => map[v] || v).join('，');
+        }
+
+        // 实验性选项（数组处理）
+        function getExperimentalOptionsDisplayName(values) {
+            if (!values || values.length === 0) return '无';
+            
+            const map = {
+                'enable pseudo consoles': 'Enable experimental support for pseudo consoles.',
+                'enable file system monitor': 'Enable experimental built-in file system monitor'
+            };
+            
+            return values.map(v => map[v] || v).join('，');
         }
 
         // 复制指南

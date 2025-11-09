@@ -1,5 +1,8 @@
 # Git安装配置指南
 
+> [!note]
+> 本项目基于kimiAI OK Computer功能制作，项目文件并没有特别大的改动，如有问题，可以提交PR修正
+
 一个专为中文用户设计的交互式Git安装配置工具，通过直观的界面和详细的说明，帮助开发者轻松完成Git的个性化配置。
 
 ## 🌟 项目特色
@@ -14,7 +17,7 @@
 
 ### 在线使用
 
-1. 访问项目网站：[Git安装配置指南](https://your-domain.com)
+1. 访问项目网站：[Git安装配置指南](https://xiaoditx.github.io/pages/InstallGit/)
 2. 选择配置模式（初学者模式或高级模式）
 3. 按照引导完成配置选择
 4. 生成并查看个性化安装指南
@@ -200,7 +203,7 @@ git-install-guide/
 
 ## 📄 许可证
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+本项目采用 WTFPL 许可证 - 查看 [LICENSE](https://github.com/xiaoditx/xiaoditx.github.io/blob/main/license) 文件了解详情。
 
 ## 🙏 致谢
 
@@ -214,8 +217,8 @@ git-install-guide/
 ## 📞 联系方式
 
 - 项目维护者：Git安装配置指南团队
-- 邮箱：feedback@git-guide.com
-- 项目主页：[Git安装配置指南](https://your-domain.com)
+- 邮箱：552333302@qq.com
+- 项目主页：[Git安装配置指南](https://xiaoditx.github.io/pages/InstallGit/)
 
 ---
 
