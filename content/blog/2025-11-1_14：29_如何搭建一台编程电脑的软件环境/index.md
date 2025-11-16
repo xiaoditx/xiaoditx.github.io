@@ -92,7 +92,7 @@ Windows的很多功能是很杂乱的，一些问题也没有很好的解决方�
 
 我们需要引入一些安全的、无广告的且方便的软件：
 
-首先是国内安装比较方便的、产自较知名公司的软件产品
+首先是国内安装比较方便的、产自较知名公司的软件产品（我个人喜欢腾讯的，不图别的，就因为有一个“解除文件占用”）
 
 - [腾讯电脑管家](https://guanjia.qq.com/)
 - [微软电脑管家](https://pcmanager.microsoft.com/zh-cn)
@@ -234,9 +234,29 @@ CMake是**跨平台**构建工具，能自动生成适配系统的构建文件�
 
 #### 1.3.Git
 
+Git在开源领域是必不可少的领域，工作中也是必要的软件，用于版本控制
+
+安装很简单，但是选项很多且都是英文，新手很容易绕晕，所以这里给大家贴一篇文章，我第一次安装Git就是跟着这一篇走的：[Git 详细安装教程（详解 Git 安装过程的每一个步骤）_git安装-CSDN博客](https://blog.csdn.net/mukes/article/details/115693833)
+
+我这边也做了个配置指南生成网站：[Git安装配置指南 - 交互式配置工具](https://xiaoditx.github.io/pages/InstallGit/)，可以参考着安装
+
 #### 1.4.Vim
 
+vim是一款强大的文本编辑器，不过褒贬不一，喜欢的人特别喜欢甚至不肯换任何其他的编辑器，不喜欢的则极力排斥（当然，我属于中间地带）
+
+Vim的主要功能都是靠键盘完成的，据说能够提升效率（虽然我目前只在Git操作时感受到了一些便捷性），它是一个终端软件，也就是跑在命令行上的，所以很建议安装一个[Terminal](#110终端（Terminal）)
+
+官网安装界面是：[download : vim online](https://www.vim.org/download.php)
+
+但是Windows的安装似乎更应该从GitHub下载：[Releases · vim/vim-win32-installer](https://github.com/vim/vim-win32-installer/releases)
+
 #### 1.5.VScode
+
+VScode是很出名的编辑器了，轻量化可扩展，算是我现阶段最爱的编辑器，没有之一
+
+下载直接去官网：[Visual Studio Code - The open source AI code editor](https://code.visualstudio.com/)，点哪个中间的下载按钮就行
+
+你也可以去VSc的在线版：[Visual Studio Code](https://vscode.dev/?vscode-lang=zh-cn)
 
 #### 1.6.Visual Studio
 
