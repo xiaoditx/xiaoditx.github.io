@@ -354,29 +354,73 @@ Godot是一款使用简单的游戏引擎，相对于GameMaker，我反而更偏
 
 ### 3.软件逆向与调试
 
--------
+逆向软件调试软件于我而言跟手办一样，一直存在电脑里但实际上压根不会用，主打一个装饰作用，毕竟我汇编连hello world都不会写
 
-> [!note]
-> 
-> 今天先写到这里
+当然，有几个资源逆向的软件还是会用的，比如解包嘎啦给木
 
 #### 3.1.x64dbg
 
+x64dbg是一款非常强的逆向调试软件，官网：[x64dbg](https://x64dbg.com/)
+
+download直接下载就行，还算简单
+
 #### 3.2.ollydbg
+
+ollydbg是一款很老的调试软件了，官网下载：[Download](https://www.ollydbg.de/download.htm)，翻到最下面就是了
 
 #### 3.3.Resource Hacker
 
+这是一款Windows程序（好像是独占？）的资源编辑器，可以增删改查资源文件的内容并编译新版本（学过WIN32就知道这玩意是个rc修改器，只不过改的是编译并链接过的rc）
+
+找到一个网页，不知道是不是官网：[Resource Hacker](https://www.angusj.com/resourcehacker/)
+
+忘了从哪里能搞中文版了，好像还是下载站搞到的...
+
 #### 3.4.GARbro
+
+~~galgame的专家，柚子社千恋万花~~ GARbro是一个视觉小说资源文件浏览器，开源在[Releases · morkt/GARbro](https://github.com/morkt/GARbro)，对与大多游戏引擎开发的galgame都可以解包
 
 #### 3.5.Cheat Engine
 
+cheat engine是一款逆向软件（吧？），主要用途貌似是游戏作弊
+
+官网：[Cheat Engine](https://www.cheatengine.org/)
+
+> [!important]
+> 
+> 官网版会捆绑一款流氓软件，安装时需要注意不要勾选到对应的选项，如果对自己没信心可以上网寻找纯净版（当然这样也有可能下到毒..），或者参照下面的教程安装👇
+
+汉化懒得写了，参照这篇文章：[Cheat Engine安装&汉化教程 - 哔哩哔哩](https://www.bilibili.com/opus/987697832219639846)
+
 ### 4.语言环境
+
+下面是编程环境的安装配置
 
 #### Python
 
+Python是我见过最考验新手的软件，不过它本来似乎就是为了给那些高级开发者用来简化开发流程用的，似乎把它当成shell那样的东西更贴切一些
+
+官网：[Welcome to Python.org](https://www.python.org/)
+
+打开后选择download，从**Active Python releases**选取一个版本点击下载，你也可以再往下滑一点下一个老版本，随你，新版的bug会少一点，但最新版的就不一定了
+
+> python似乎出了一个叫`install manager`的东西，不过我不知道那是什么，貌似是一个版本管理器，用于统一不同的python解释器版本，不过我是用不上的因为我只有一个版本并且从来不更新
+
 #### Dev-C++
 
+Dev安装特别简单，下载安装一步到位，C++初学者适用
+
+[Dev-C++ download | SourceForge.net](https://sourceforge.net/projects/orwelldevcpp/)
+
 #### MSY32
+
+MSYS2是一个编译工具集合，一般C/C++常用
+
+官网：[MSYS2](https://www.msys2.org/)，打开后下滑到**Installation**选择合适的版本即可
+
+注意安装路径不可以使用中文
+
+安装后剩下的步骤比如安装MingGW需要按照自己的需求自行搜索教程
 
 ### 5.其他软件
 
@@ -386,11 +430,30 @@ Bz是一个开源的二进制编辑器，不过不是很出名（虽然使用范
 
 ### 5.2.wireshark
 
+网络抓包工具，官网在：[Wireshark • Go Deep | Download](https://www.wireshark.org/download.html)
+
+在官网找到**Download Wireshark**，右边就可以选择版本
+
 ## 八.办公软件
 
 ## 九.U盘/磁盘/移动硬盘工具
 
+懒得写了，这里只列举名字了
+
+- ChipGenius
+- DiskGenius
+- MyDiskTest
+- 白眼
+- 磁盘毁尸灭迹
+- 芯片无忧
+
 ## 十.桌宠
+
+Steam上可以下载一个**虚拟桌宠模拟器**
+
+GitHub上又[BongoCat](C:\Program Files\BongoCat)但和桌宠性质有点差别，这玩意主要用于键盘按键显示，我也做过一个类似的软件：[KeyBonk](https://github.com/xiaoditx/KeyBonk)
+
+还有[Neuro的桌宠](https://wwxf.lanzouu.com/ijb7G3885kxi)，需要java环境，对应的JAVA虚拟机安装包放到文件夹里了，没有的话自行安装即可
 
 ## 十一.游戏环境
 
@@ -410,10 +473,6 @@ Bz是一个开源的二进制编辑器，不过不是很出名（虽然使用范
 ### 3.Epic
 
 下载Epic（为了领取喜加一OvO），打开[官网](https://www.epicgames.com/site/zh-CN/home/)下载安装即可
-
-### 4.桌宠
-
-先在Steam下载虚拟桌宠模拟器，然后去GitHub下载[BongoCat](C:\Program Files\BongoCat)，最后下载[Neuro的桌宠](https://wwxf.lanzouu.com/ijb7G3885kxi)
 
 ## 十二.加速工具
 
