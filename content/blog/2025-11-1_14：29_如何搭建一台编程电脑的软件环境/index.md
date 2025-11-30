@@ -336,9 +336,21 @@ Inno Setup是用于制作软件安装包的简单工具，语言自由度很高�
 
 ### 2.游戏开发
 
+游戏开发工具我了解的不算多，也就几个，早些年研究游戏开发，现在也都抛弃了
+
+这里只给出GM和Godot这两个比较轻量化的游戏引擎，其它的姑且不谈（那种复杂的玩意我应该一辈子也不会学着去用）
+
 #### 2.1.GameMaker
 
+GameMaker现在转型成为免费软件了，可以直接从steam下载，steam安装参照本文：[十一.1.steam](#1steam)
+
+你也可以从官网下载[Make 2D Games With GameMaker | Free Video Game Maker](https://gamemaker.io/zh-CN)
+
 #### 2.2.Godot
+
+Godot是一款使用简单的游戏引擎，相对于GameMaker，我反而更偏好Godot，下面是官网链接：
+
+[Godot Engine - 免费开源的 2D 与 3D 游戏引擎](https://godotengine.org/zh-cn/)
 
 ### 3.软件逆向与调试
 
