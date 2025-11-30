@@ -250,6 +250,8 @@ Vim的主要功能都是靠键盘完成的，据说能够提升效率（虽然�
 
 但是Windows的安装似乎更应该从GitHub下载：[Releases · vim/vim-win32-installer](https://github.com/vim/vim-win32-installer/releases)
 
+关于vim的配置方面，后期可能会单独写文来介绍的，有些复杂，这里不展开了
+
 #### 1.5.VScode
 
 VScode是很出名的编辑器了，轻量化可扩展，算是我现阶段最爱的编辑器，没有之一
@@ -304,15 +306,33 @@ GitHub：[notepad-plus-plus/notepad-plus-plus: Notepad++ official repository](ht
 
 我不清楚这个软件有没有中文，我记得当时我是直接从某某软件园下载的
 
------
+#### 1.11.终端（Terminal）
+
+终端是微软开发的工具，默认将cmd和powershell集成到了里面，也就是相当于一个美化软件同时也提供了很多现代化的功能，你可以通过它来将各种终端集成在一起比如Git bash、乌班图终端
+
+安装很简单，直接微软商店就行了：[Windows Terminal| Microsoft Store](https://apps.microsoft.com/detail/9N0DX20HK701?hl=zh-cn&gl=CN&ocid=pdpshare)
+
+#### 1.12.Inno Setup
+
+Inno Setup是用于制作软件安装包的简单工具，语言自由度很高（虽然我一般都是直接用GUI向导解决）
+
+官网安装包下载：[Inno Setup Downloads](https://jrsoftware.org/isdl.php)
+
+打开后翻到Current Release栏目，下面应该有个蓝条条写着`filename`之类的东西，在右边的`download sites`选一个下载节点（随便哪个都行，有快有慢不过这两个节点在中国没啥区别）
+
+![]()
+
+下载下来后，会发现软件安装时没有中文选项，这就意味着需要面对着英语界面去开发，如果英语不好简直是折磨，不过问题不大，简体中文只是没有官方翻译，但官方同样在官网上提供了非官方的翻译版本，只是因为不知道质量没有默认自带，需要手动单独安装
+
+官方的翻译页面：[Inno Setup Translations](https://jrsoftware.org/files/istrans/)
+
+打开后，一直下翻到**Unofficial translations**板块，在最左侧栏目找到`Chinese (Simplified)`，然后点击第三栏（download）对应的链接，有时候网络不是很好，会显示*Request:An error occurred while sending the request.*，这里提供一个替代的链接：[下载5.6.0+](\txts\blogs\电脑开荒windows\ChineseSimplified.isl)
+
+文件内容复制到安装目录下的`Default.isl`中即可
 
 > [!note]
 > 
-> 今天先写到这里，不写了
-
-#### 1.11.终端（Terminal）
-
-#### 1.12.Inno Setup
+> 我似乎用的是另一版翻译，具体从哪来的我自己也不是很清楚，好想是某某下载园，我把我的default.isl放在下面的链接里了：[另一个版本](\txts\blogs\电脑开荒windows\Default.isl)
 
 ### 2.游戏开发
 
