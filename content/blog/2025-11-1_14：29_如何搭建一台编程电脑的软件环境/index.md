@@ -326,7 +326,7 @@ Inno Setup是用于制作软件安装包的简单工具，语言自由度很高�
 
 官方的翻译页面：[Inno Setup Translations](https://jrsoftware.org/files/istrans/)
 
-打开后，一直下翻到**Unofficial translations**板块，在最左侧栏目找到`Chinese (Simplified)`，然后点击第三栏（download）对应的链接，有时候网络不是很好，会显示*Request:An error occurred while sending the request.*，这里提供一个替代的链接：[下载5.6.0+](\txts\blogs\电脑开荒windows\ChineseSimplified.isl)
+打开后，一直下翻到**Unofficial translations**板块，在最左侧栏目找到`Chinese (Simplified)`，然后点击第三栏（download）对应的链接，有时候网络不是很好，会显示*Request:An error occurred while sending the request.*，这里提供一个替代的链接：[下载5.6.0+](/txts/blogs/电脑开荒windows/ChineseSimplified.isl)
 
 文件内容复制到安装目录下的`Default.isl`中即可
 
