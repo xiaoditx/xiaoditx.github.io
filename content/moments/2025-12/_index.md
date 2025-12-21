@@ -3,6 +3,15 @@ title: 2025年12月
 weight: 3
 ---
 
+## 下了个GitHub Desktop
+
+最近折腾电脑，想起来之前看过一个Github Desktop，下下来看了一下......
+
+[查看更多→](./21-1220)
+
+*<span style="color:gray">2025-12-21 12:20</span>*
+
+
 ## 发烧了
 
 如题
