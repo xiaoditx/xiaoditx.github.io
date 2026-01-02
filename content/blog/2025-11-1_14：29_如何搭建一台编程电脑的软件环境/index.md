@@ -220,7 +220,19 @@ ffmpeg属于一个非常知名且重要的软件了，它值得称得上是音�
 
 Make\.exe是一个知名的构建工具，用于软件项目的自动构建，可以在官网上看到详细的介绍：[Make - GNU Project - Free Software Foundation](https://www.gnu.org/software/make/)
 
-从官网找到合适的下载页面似乎很困难，这里我已经预先的找好了window版的下载页面：[window版的下载页面](https://sourceforge.net/projects/gnuwin32/)，点击**download**即可
+从官网找到合适的下载页面似乎很困难，这里我已经预先的找好了window版的下载页面：[window版的下载页面](https://sourceforge.net/projects/gnuwin32/)，点击**download**即可，当然，**如果对新语法有需求不要使用这个版本**
+
+由于make是Linux软件，Windows端的都是移植，官方认可的移植版本目前停留在3.81版本，但是make目前最新版本是4.41，所以如果想用新版只能找别的移植
+
+使用`winget search make`命令，可以找到一个软件叫ezwinports: make，这是make的一个移植版本，目前最新版本为4.41
+
+在命令行执行下面的命令安装：
+
+```powershell
+winget install --id ezwinports.make
+```
+
+进度条跑完后，使用`make -version`命令检查
 
 #### 1.2.CMake
 
@@ -436,6 +448,28 @@ Bz是一个开源的二进制编辑器，不过不是很出名（虽然使用范
 
 ## 八.办公软件
 
+一些办公软件还是很重要的，即使是程序员，有时也要处理些诸如Word、PDF、Excel之类的文件，缺了办公软件注定不可
+
+### 1.WPS
+
+WPS属于免费还行的那种办公软件，虽然会篡改图片查看器、可能有点广告、会员很烦人以外，它作为一个免费软件已经具备了很齐全的功能了
+
+官网：[WPS-支持多人在线协作编辑Word、Excel和PPT文档_WPS官方网站](https://www.wps.cn/)
+
+### 2.Microsoft Office
+
+微软的office是非常优秀的一套软件，不过属于付费软件，如果不想用盗版或者激活工具就只能从官网购买，价格不是很便宜
+
+官网：[Microsoft 365 - 用于获取生产力应用的订阅 | Microsoft 365](https://www.microsoft.com/zh-cn/microsoft-365)
+
+在官网点击**查看计划和定价**可以看到各个版本的价格，根据指示购买安装即可，比较建议购买专业版
+
+假如你并不想花钱（不管出于什么原因），需要采用另一种方式安装，这种方式将在[Office Tool Plus部分](#1OfficeToolPlus)讲到
+
+### 3.AcrobatProPortable
+
+这个暂时不讲，我忘了怎么安的了（2026/1/2留）
+
 ## 九.U盘/磁盘/移动硬盘工具
 
 懒得写了，这里只列举名字了
@@ -476,7 +510,84 @@ GitHub上又[BongoCat](C:\Program Files\BongoCat)但和桌宠性质有点差别�
 
 ## 十二.加速工具
 
+### 1.Watt Toolkit
+
+Watt Toolkit原名为steam++，用于Steam、Github等国内连接不稳定平台的加速，也兼具挂卡、Steam挂机等功能
+
+官网：[瓦特工具箱(Steam++官网) - Watt Toolkit](https://steampp.net/)
+
+点击下载Windows版本，在弹出的协议处点击接受并下载，根据个人情况选择下载，推荐微软商店或者蓝奏云，注意微软商店安装的程序一般不会创建桌面快捷方式
+
+### 2.小黑盒加速器
+
+这是一个steam加速器，专门性比Watt Toolkit更强，主打游戏加速，不止加速Steam商店，还对于很多联机游戏有专门的加速
+
+不过这玩意好想要收费？不是很清楚，我一般玩的都是单机所以没用过
+
+官网：[小黑盒加速器 - 全球专线加速，游戏网络专家](https://acc.xiaoheihe.cn/pc)
+
 ## 十三.其他工具
+
+### 1.Everything
+
+Windows的文件搜索一直被人诟病，因为速度实在是慢，于是Everything就诞生了
+官网：[下载 | Everything](https://www.voidtools.com/downloads/)
+
+一般来讲直接选择**安装版64位**，有其他需求可以选其他版本，向下划还有旧版本
+
+### 2.网易有道翻译
+
+有道是个挺好用的软件，把取词设置成双击Ctrl然后在看英文内容不懂的时候就可以唤出，我个人认为这个功能比较实用
+
+官网：[有道翻译桌面端_官方下载](https://fanyi.youdao.com/download-Windows)
+
+当然了，如果你只是查查词，使用不是很频繁，网页版倒也足够了：[网易有道](https://youdao.com/)
+
+### 3.ToDesk
+
+有些时候可能人不再电脑旁却需要使用电脑，这就需要ToDesk了，这是一个远程控制软件，其实相似的还有向日葵远程，不过我个人更偏好ToDesk
+
+官网：[ToDesk远程桌面软件-免费安全流畅的远程连接电脑手机](https://www.todesk.com/)
+
+手机从应用市场安装手机端后就可以控制电脑了（当然，需要绑定还是什么的，我忘记了，我早就把安全验证关了）
+
+### 4.7-zip
+
+7-zip是个很权威的软件了，可以压缩、解压缩各种压缩包，甚至还能打开PE结构，看到应用程序的资源文件，算是很强的一个软件了
+
+官网：[7-Zip](https://www.7-zip.org/)
+
+点最靠上的`download`就行，假如你要看更细致的下载列表，请去：[Download](https://www.7-zip.org/download.html)
+
+### 5.Project Graph
+
+这是一个我个人感觉很好的开源导图软件，用于绘制思维导图，附上GitHub链接
+
+[graphif/project-graph: A node-based visual tool for organizing thoughts and notes in a non-linear way.](https://github.com/graphif/project-graph)
+
+## 十四.激活工具与部署工具
+
+### 1.Office Tool Plus
+
+Office Tool Plus是office部署工具，可以省去Office安装过程的一些繁杂步骤
+
+我在网上没有找到当年我看到的那个官方网站，但找到了个更好看了的网站，可能是作者将网站改进了吧：[Office Tool Plus](https://www.officetool.plus/zh-cn/)
+
+> [!note]
+> 
+> 这网站做的居然比我的好看，可恶（其实我一开始也打算用那个模板搭的，但太麻烦了，所以我放弃了）
+
+具体下载，请参照：[下载 | Office Tool Plus](https://www.officetool.plus/zh-cn/introduction/download.html)
+
+部署教程请参阅：[初次安装 | Office Tool Plus](https://www.officetool.plus/zh-cn/usage/deploy/clean-deployment.html)
+
+### 2.HEU KMS Activator
+
+这是一款激活工具，主要作用就是在没有产品密钥的情况下激活Windows和Office，发布在GitHub但不开源
+
+下载：[Releases · zbezj/HEU_KMS_Activator](https://github.com/zbezj/HEU_KMS_Activator/releases)
+
+软件从刚刚下载应该就会被报毒，需要坚决的选择保留才能成功下载，此时关闭所有杀毒软件，或者给它的下载路径添加到杀毒软件白名单，运行，软件内的提示足以帮助你去激活了
 
 ## 常见问题的相关讨论
 
