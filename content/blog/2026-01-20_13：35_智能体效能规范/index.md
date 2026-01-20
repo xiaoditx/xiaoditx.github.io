@@ -17,7 +17,7 @@ authors:
 
 于是我火速写了个草稿，然后交给kimi改了一下（老板是不会自己写成稿的，嘻嘻），又让DeepSeek审查了一下，得到下面的东西
 
-![agents.md](\imgs\blogs\智能体效能规范\agentsmd.png)
+![agents.md](/imgs/blogs/智能体效能规范/agentsmd.png)
 
 我把它放到了我的项目KeyBonk里，项目链接：[GitHub | xiaoditx/KeyBonk:发声键盘](github.com/xiaoditx/KeyBonk)
 
