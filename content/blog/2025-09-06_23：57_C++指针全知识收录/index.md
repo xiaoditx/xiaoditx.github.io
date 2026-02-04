@@ -948,7 +948,6 @@ ptr2->ptr = ptr1;
 
 解决这一问题，请使用[weak_ptr](#14weakptr)进行弱引用，这样对象内部的成员就不会增加引用计次（这个行为貌似成为解耦合，不过我也不是很清楚来着，嘿嘿）
 
-
 ## 七.数组退化为指针
 
 数组在某种意义上是指针的特殊形式，其指向数组内容的开头，标记数据类型与数据的量，因此具有一些指针的性质
@@ -976,7 +975,50 @@ ptr = a;
 
 指针变量内容变化，朝向就会变化，我们可以用`++`、`--`来让指针向上或向下移动一位，这可以用于在数组中游走，不过有一点需要注意，指针变量`+1`不代表内存地址加一，而是意味着**内存地址加上一个对应数据类型的数据的大小的值**，比如假设`classA`的每个成员需要占据50块内存，`classA`的指针`+1`时地址就`+50`
 
-## 九.写在最后
+## 九.C++指针/引用多态
+
+对于C++，指针和引用有了多态性，假如我们有下面这两个类：
+
+```cpp
+class baseClass{
+pubilc:
+    virtual void show(){
+        std::cout<<"hello"<<std::endl;
+    }
+}
+
+class childClass : baseClass{
+pubilc:
+    void show(){
+        std::cout<<"ciallo"<<std::endl;
+    }
+}
+```
+
+`baseClass`是`childClass`的基类，`show`方法声明为了虚函数，此时对于一个`baseClass *`或一个`baseClass &`的数据，会根据实际指向的对象类型而产生不同的行为，如下：
+
+```cpp
+baseClass bc;
+childClass cc;
+baseClass *bp1=&bc,*bp2=&cc,&br1=bc,&br2=cc;
+bp1->show();
+bp2->show();
+br1.show();
+br2.show();
+```
+
+写出这样的代码后，如果编译，我们就可以看到这样的结果：
+
+```text
+hello
+ciallo
+hello
+ciallo
+```
+
+`show`方法的行为是由指针/引用指向的实际对象决定的，这就实现了多态，针对基类的代码可以直接使用在继承类上并且呈现出不同的行为。
+
+## 十.写在最后
 
 本文考虑篇幅，很多内容并没有细讲，再加上笔者本身实力有限，您可以阅读下面由笔者精选的内容进行更细致的学习：
 
@@ -999,6 +1041,8 @@ ptr = a;
 - [深入理解C和C++中的函数指针与回调机制 - 知乎](https://zhuanlan.zhihu.com/p/701845706)
 
 - [C语言指针进阶（一）——深入详解“函数指针”与“指针函数”-CSDN博客](https://blog.csdn.net/qq_27825451/article/details/103081289)
+
+- 《C++ primer plus》
 
 ---
 
