@@ -4,7 +4,7 @@ draft: falte  # 是否为草稿。设为 false 才会发布
 description: "采用分层窗口开发，实现异形窗口，背景图片支持多种格式，允许携带alpha信息"  # 文章摘要
 tags: ["C++", "WIN32","GUI"]  # 文章标签，用于分类和关联
 comments: true
-date: 2026-01-20
+date: 2026-02-06
 authors:
   - name: xiaoditx
     link: https://github.com/xiaoditx
