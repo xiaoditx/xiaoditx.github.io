@@ -516,6 +516,9 @@ int WINAPI wWinMain(HINSTANCE hInstance, [[maybe_unused]] HINSTANCE hPrevInstanc
 
 使用前需要把（应该是）第55行标有“!!!文件路径!!!”的位置改成自己的背景图片文件路径，否则会以纯红色的状态启动。 
 
+> [!important]
+> 如果使用自定义图片做背景，一定要注意尺寸不能太大，如果是在要用，请更换为[增加智能大小调控的版本](#更智能的版本)
+
 ```cpp
 #include <windows.h>
 #include <gdiplus.h>
@@ -622,3 +625,158 @@ int WINAPI wWinMain(HINSTANCE hInstance, [[maybe_unused]] HINSTANCE hPrevInstanc
 ```
 
 ## 总体梳理
+
+（暂无内容）
+
+## 更智能的版本
+
+这里有一个更智能的版本，该版本检查屏幕大小以缩放窗口
+
+```cpp
+#include <windows.h>
+#include <gdiplus.h>
+#include <algorithm>  // 添加这个头文件
+
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    switch (uMsg)
+    {
+    case WM_NCHITTEST:
+    {
+        return HTCAPTION;
+    }
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        break;
+    default:
+        return DefWindowProcW(hwnd, uMsg, wParam, lParam);
+    }
+    return 0;
+}
+
+int WINAPI wWinMain(HINSTANCE hInstance, [[maybe_unused]] HINSTANCE hPrevInstance, [[maybe_unused]] PWSTR pCmdLine, [[maybe_unused]]int nCmdShow)
+{
+    // 初始化GDI+
+    Gdiplus::GdiplusStartupInput gdiplusStartupInput;
+    ULONG_PTR gdiplusToken;
+    Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
+
+    const wchar_t CLASS_NAME[] = L"KeyBonk主窗口";
+    WNDCLASSEX wc = {};
+    wc.cbSize = sizeof(WNDCLASSEX);
+    wc.lpfnWndProc = WindowProc;
+    wc.hInstance = hInstance;
+    wc.lpszClassName = CLASS_NAME;
+    RegisterClassEx(&wc);
+    
+    HWND hwnd = CreateWindowExW(
+        WS_EX_LAYERED | WS_EX_TOPMOST | WS_EX_TOOLWINDOW,
+        CLASS_NAME,
+        L"KeyBonk主窗口",
+        WS_POPUP | WS_VISIBLE | WS_CLIPCHILDREN,
+        CW_USEDEFAULT, CW_USEDEFAULT, 160, 180,
+        NULL, NULL, hInstance, NULL
+    );
+
+    // 加载PNG
+    Gdiplus::Bitmap *pBitmap = Gdiplus::Bitmap::FromFile(L"C:\\Users\\Administrator\\Desktop\\透明窗口\\a.png");
+    if (!pBitmap || pBitmap->GetLastStatus() != Gdiplus::GpStatus::Ok)
+    {
+        // 图片加载失败，创建红色矩形作为替代
+        pBitmap = new Gdiplus::Bitmap(160, 180);
+        Gdiplus::Graphics g(pBitmap);
+        Gdiplus::SolidBrush brush(Gdiplus::Color(255, 255, 0, 0));
+        g.FillRectangle(&brush, 0, 0, 160, 180);
+    }
+
+    // 获取原始位图尺寸
+    int originalWidth = pBitmap->GetWidth();
+    int originalHeight = pBitmap->GetHeight();
+
+    // 获取屏幕尺寸
+    int screenWidth = GetSystemMetrics(SM_CXSCREEN);
+    int screenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+    // 计算最大允许尺寸
+    int maxWidth = screenWidth / 4;    // 屏幕宽的四分之一
+    int maxHeight = screenHeight / 2;  // 屏幕高的二分之一
+
+    // 计算缩放比例
+    float widthRatio = (float)originalWidth / maxWidth;
+    float heightRatio = (float)originalHeight / maxHeight;
+    float scaleRatio = std::max(widthRatio, heightRatio);
+    
+    // 计算缩放后的尺寸
+    int scaledWidth, scaledHeight;
+    if (scaleRatio > 1.0f)
+    {
+        // 需要缩放
+        scaledWidth = (int)(originalWidth / scaleRatio);
+        scaledHeight = (int)(originalHeight / scaleRatio);
+    }
+    else
+    {
+        // 不需要缩放
+        scaledWidth = originalWidth;
+        scaledHeight = originalHeight;
+    }
+
+    // 创建缩放后的位图
+    Gdiplus::Bitmap* scaledBitmap = new Gdiplus::Bitmap(scaledWidth, scaledHeight);
+    Gdiplus::Graphics graphics(scaledBitmap);
+    
+    // 设置高质量缩放
+    graphics.SetInterpolationMode(Gdiplus::InterpolationModeHighQualityBicubic);
+    graphics.SetSmoothingMode(Gdiplus::SmoothingModeAntiAlias);
+    graphics.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
+    
+    // 绘制缩放后的图像
+    graphics.DrawImage(pBitmap, 0, 0, scaledWidth, scaledHeight);
+    
+    // 清理原始位图
+    delete pBitmap;
+    pBitmap = scaledBitmap;  // 使用缩放后的位图
+
+    // 将GDI+位图转换为HBITMAP
+    HBITMAP hBmp;
+    pBitmap->GetHBITMAP(Gdiplus::Color(0, 0, 0, 0), &hBmp);
+
+    // 创建内存DC
+    HDC hdcScreen = GetDC(hwnd);
+    HDC memDC = CreateCompatibleDC(hdcScreen);
+    HBITMAP hOldBmp = (HBITMAP)SelectObject(memDC, hBmp);
+
+    // 使用缩放后的尺寸
+    SIZE size = {scaledWidth, scaledHeight};
+    POINT ptSrc = {0, 0};
+    BLENDFUNCTION bf = {AC_SRC_OVER, 0, 255, AC_SRC_ALPHA};
+    
+    // 设置窗口位置（可选：将窗口移动到屏幕中央）
+    int xPos = (screenWidth - scaledWidth) / 2;
+    int yPos = (screenHeight - scaledHeight) / 2;
+    SetWindowPos(hwnd, NULL, xPos, yPos, scaledWidth, scaledHeight, SWP_NOZORDER | SWP_NOACTIVATE);
+    
+    // 更新分层窗口
+    UpdateLayeredWindow(hwnd, hdcScreen, NULL, &size, memDC, &ptSrc, 0, &bf, ULW_ALPHA);
+
+    // 清理
+    SelectObject(memDC, hOldBmp);
+    DeleteDC(memDC);
+    ReleaseDC(hwnd, hdcScreen);
+    delete pBitmap;
+    DeleteObject(hBmp);
+
+    // 消息循环
+    MSG msg = {};
+    while (GetMessage(&msg, NULL, 0, 0) > 0)
+    {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
+
+    // 程序结束时关闭GDI库
+    Gdiplus::GdiplusShutdown(gdiplusToken);
+
+    return 0;
+}
+```
