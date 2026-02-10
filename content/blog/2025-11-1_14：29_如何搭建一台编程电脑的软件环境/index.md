@@ -579,7 +579,7 @@ Office Tool Plus是office部署工具，可以省去Office安装过程的一些�
 > 
 > 这网站做的居然比我的好看，可恶（其实我一开始也打算用那个模板搭的，但太麻烦了，所以我放弃了）
 
-新手教程：[\[新手必读\] Office Tool Plus 入门教程](https://blog.yerong.org/archives/42)
+新手教程：[\[新手必读] Office Tool Plus 入门教程](https://blog.yerong.org/archives/42)
 
 关于下载：[下载 | Office Tool Plus](https://www.officetool.plus/zh-cn/introduction/download.html)
 
