@@ -571,15 +571,19 @@ Windows的文件搜索一直被人诟病，因为速度实在是慢，于是Ever
 
 Office Tool Plus是office部署工具，可以省去Office安装过程的一些繁杂步骤
 
-我在网上没有找到当年我看到的那个官方网站，但找到了个更好看了的网站，可能是作者将网站改进了吧：[Office Tool Plus](https://www.officetool.plus/zh-cn/)
+软件的官方教程在这个网站上：[yerongの小窝](https://blog.yerong.org/)
+
+上面的网站是很久以前就有的了，我从前就是看着这个操作的，不过现在看似乎引入了一个更美观的网站（不过部分内容看上去似乎有些残缺）：[Office Tool Plus](https://www.officetool.plus/zh-cn/)
 
 > [!note]
 > 
 > 这网站做的居然比我的好看，可恶（其实我一开始也打算用那个模板搭的，但太麻烦了，所以我放弃了）
 
-具体下载，请参照：[下载 | Office Tool Plus](https://www.officetool.plus/zh-cn/introduction/download.html)
+新手教程：[\[新手必读\] Office Tool Plus 入门教程](https://blog.yerong.org/archives/42)
 
-部署教程请参阅：[初次安装 | Office Tool Plus](https://www.officetool.plus/zh-cn/usage/deploy/clean-deployment.html)
+关于下载：[下载 | Office Tool Plus](https://www.officetool.plus/zh-cn/introduction/download.html)
+
+关于部署：[初次安装 | Office Tool Plus](https://www.officetool.plus/zh-cn/usage/deploy/clean-deployment.html)
 
 ### 2.HEU KMS Activator
 
