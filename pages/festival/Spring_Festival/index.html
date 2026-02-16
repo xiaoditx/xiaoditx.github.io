@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>春节快乐</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Font Setup */
+        body {
+            font-family: 'Noto Serif SC', serif;
+        }
+        .artistic-font {
+            font-family: 'ZCOOL XiaoWei', serif;
+        }
+
+        /* Smooth Transitions */
+        .fade-enter {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .fade-enter-active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .fade-exit {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+        }
+        .fade-exit-active {
+            opacity: 0;
+            transform: scale(1.05);
+            pointer-events: none;
+        }
+
+        /* Image Handling Logic */
+        #bg-image {
+            /* 
+               Logic: Center the image, cover the screen.
+               The 'transform: scale' will be controlled by JS.
+            */
+            object-fit: cover;
+            object-position: center center;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.1s linear, filter 0.1s linear;
+            will-change: transform, filter;
+        }
+
+        /* Glassmorphism Panel */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Custom Range Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none; 
+            background: transparent; 
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #ffffff;
+            cursor: pointer;
+            margin-top: -6px; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="overflow-hidden bg-black text-white antialiased selection:bg-red-500 selection:text-white">
+
+    <!-- SCREEN 1: New Year's Eve Gift -->
+    <div id="screen-1" class="fixed inset-0 flex flex-col items-center justify-center z-50 bg-gradient-to-br from-red-600 via-red-500 to-rose-400 transition-all duration-700">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+            <div class="absolute top-10 left-10 w-32 h-32 rounded-full bg-yellow-300 blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-20 w-64 h-64 rounded-full bg-pink-400 blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="z-10 text-center space-y-8 p-6">
+            <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-lg artistic-font tracking-widest mb-4">
+                除夕快乐！
+            </h1>
+            <p class="text-xl md:text-2xl text-red-100 font-light tracking-wide mb-8">
+                送你一份礼物
+            </p>
+            
+            <button id="gift-btn" class="group relative px-8 py-4 bg-white text-red-600 font-bold text-lg rounded-full shadow-[0_0_20px_rgba(255,255,255,0.5)] hover:shadow-[0_0_40px_rgba(255,255,255,0.8)] hover:scale-105 transition-all duration-300 overflow-hidden">
+                <span class="relative z-10 flex items-center gap-2">
+                    点击领取
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </span>
+                <div class="absolute inset-0 bg-gradient-to-r from-red-100 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+        </div>
+    </div>
+
+    <!-- SCREEN 2: The "Gift" (Joke) -->
+    <div id="screen-2" class="fixed inset-0 z-40 opacity-0 pointer-events-none flex flex-col items-center justify-center">
+        
+        <!-- Background Container -->
+        <div class="absolute inset-0 z-0 bg-black overflow-hidden">
+            <!-- The Image Element -->
+            <img id="bg-image" src="background.webp" alt="Background" class="absolute inset-0 w-full h-full" style="transform: scale(1);">
+            
+            <!-- Fallback / Overlay for readability -->
+            <div id="overlay-tint" class="absolute inset-0 bg-black/60 transition-all duration-300" style="backdrop-filter: blur(7px);"></div>
+        </div>
+
+        <!-- Main Text Content -->
+        <div class="relative z-10 text-center px-4 max-w-2xl">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] artistic-font leading-tight">
+                我鸟都不鸟你
+            </h2>
+            <div class="w-16 h-1 bg-red-500 mx-auto mb-6 rounded-full"></div>
+            <p class="text-2xl md:text-3xl text-gray-200 font-light tracking-widest drop-shadow-md">
+                不过，新年快乐哦
+            </p>
+        </div>
+
+        <!-- Interactive Control Panel -->
+        <div id="controls" class="absolute bottom-8 right-8 z-50 glass-panel rounded-xl p-4 w-64 text-sm text-white transition-all duration-300 hover:bg-white/20">
+            <div class="flex justify-between items-center mb-3 border-b border-white/20 pb-2">
+                <span class="font-bold text-xs uppercase tracking-wider text-gray-300">背景设置</span>
+                <span id="img-status" class="text-[10px] px-2 py-0.5 rounded bg-white/20">检测中...</span>
+            </div>
+
+            <!-- Scale Control -->
+            <div class="mb-4">
+                <div class="flex justify-between mb-1">
+                    <label class="text-xs text-gray-300">缩放比例</label>
+                    <span id="scale-val" class="text-xs font-mono">1.0x</span>
+                </div>
+                <input type="range" id="scale-input" min="0.1" max="3.0" step="0.1" value="1.0" class="w-full h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer">
+            </div>
+
+            <!-- Blur Control -->
+            <div>
+                <div class="flex justify-between mb-1">
+                    <label class="text-xs text-gray-300">模糊度 (Blur)</label>
+                    <span id="blur-val" class="text-xs font-mono">7px</span>
+                </div>
+                <input type="range" id="blur-input" min="0" max="100" step="1" value="7" class="w-full h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer">
+            </div>
+            
+            <div class="mt-3 text-[10px] text-gray-400 text-center">
+                提示: 放置 background.png 到同目录
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const screen1 = document.getElementById('screen-1');
+        const screen2 = document.getElementById('screen-2');
+        const giftBtn = document.getElementById('gift-btn');
+        const bgImage = document.getElementById('bg-image');
+        const overlayTint = document.getElementById('overlay-tint');
+        const imgStatus = document.getElementById('img-status');
+        
+        // Controls
+        const scaleInput = document.getElementById('scale-input');
+        const blurInput = document.getElementById('blur-input');
+        const scaleValDisplay = document.getElementById('scale-val');
+        const blurValDisplay = document.getElementById('blur-val');
+
+        // State
+        let isImageLoaded = false;
+
+        // 1. Image Loading Logic
+        // We check if the image actually loads. If it fails (404), we hide it and keep the black background.
+        bgImage.onload = function() {
+            isImageLoaded = true;
+            imgStatus.textContent = "已加载";
+            imgStatus.className = "text-[10px] px-2 py-0.5 rounded bg-green-500/40 text-green-100";
+            // Ensure image is visible (opacity handled by CSS default)
+        };
+
+        bgImage.onerror = function() {
+            isImageLoaded = false;
+            bgImage.style.display = 'none'; // Hide broken image icon
+            imgStatus.textContent = "未找到";
+            imgStatus.className = "text-[10px] px-2 py-0.5 rounded bg-red-500/40 text-red-100";
+            console.log("background.png not found, using default black background.");
+        };
+
+        // 2. Transition Logic
+        giftBtn.addEventListener('click', () => {
+            // Animate Screen 1 Out
+            screen1.classList.add('fade-exit-active');
+            
+            // Wait for animation to finish slightly before showing next screen
+            setTimeout(() => {
+                screen1.style.display = 'none'; // Remove from flow
+                
+                // Setup Screen 2
+                screen2.classList.remove('pointer-events-none');
+                screen2.classList.add('fade-enter');
+                
+                // Trigger reflow
+                void screen2.offsetWidth; 
+                
+                screen2.classList.add('fade-enter-active');
+                screen2.classList.remove('opacity-0');
+            }, 500);
+        });
+
+        // 3. Interactive Controls Logic
+        
+        // Scale Handler
+        scaleInput.addEventListener('input', (e) => {
+            const val = e.target.value;
+            scaleValDisplay.textContent = val + 'x';
+            // Apply transform to the image
+            bgImage.style.transform = `scale(${val})`;
+        });
+
+        // Blur Handler
+        blurInput.addEventListener('input', (e) => {
+            const val = e.target.value;
+            blurValDisplay.textContent = val + 'px';
+            // Apply blur to the overlay div
+            overlayTint.style.backdropFilter = `blur(${val}px)`;
+            overlayTint.style.webkitBackdropFilter = `blur(${val}px)`; // Safari support
+        });
+
+        // Initial check for image status (in case it loads instantly from cache)
+        if (bgImage.complete && bgImage.naturalHeight !== 0) {
+            isImageLoaded = true;
+            imgStatus.textContent = "已加载";
+            imgStatus.className = "text-[10px] px-2 py-0.5 rounded bg-green-500/40 text-green-100";
+        } else if (bgImage.complete && bgImage.naturalHeight === 0) {
+            // Error happened immediately
+             isImageLoaded = false;
+             bgImage.style.display = 'none';
+             imgStatus.textContent = "未找到";
+             imgStatus.className = "text-[10px] px-2 py-0.5 rounded bg-red-500/40 text-red-100";
+        }
+
+    </script>
+</body>
+</html>
