@@ -8,5 +8,5 @@ title: "开发者文档"
 
 {{< cards >}}
   {{< card link="./beepmusic" title="BeepMusic开发者支持">}}
-  {{< card link="./KeyBonk" title="KeyBonk开发者文档">}}
+  {{< card link="./Keybonk" title="KeyBonk开发者文档">}}
 {{< /cards >}}

@@ -1,12 +1,12 @@
 ---
-next: docs/KeyBonk/makefileHelper
+next: docs/KeyBonk/makefilehelper
 ---
 
 <!-- markdownlint-disable -->
 
 <div align="center">
 
-<img alt="LOGO" src="./resource/icon.png" width="256" height="256" />
+<img alt="LOGO" src="https://raw.githubusercontent.com/xiaoditx/KeyBonk/refs/heads/master/resource/icon.png" width="256" height="256" />
 
 # 发声键盘 - KeyBonk
 
