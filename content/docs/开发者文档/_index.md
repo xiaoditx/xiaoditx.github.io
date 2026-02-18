@@ -9,4 +9,5 @@ title: "开发者文档"
 {{< cards >}}
   {{< card link="./beepmusic" title="BeepMusic开发者支持">}}
   {{< card link="./keybonk" title="KeyBonk开发者文档">}}
+  {{< card link="./desktopdanmaku" title="Desktop Danmaku开发者文档">}}
 {{< /cards >}}
