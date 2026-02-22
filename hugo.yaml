@@ -39,28 +39,95 @@ languages:
     weight: 1
     languageName: 中文
     title: 小狄同学呀
-    #params:
-    #  banner:
-    #    message: |
-    #      Hextra **v0.11** 发布啦！🎉 查看[更新内容]({{% ref "blog/v0.11" %}})
+    menu:
+      main:
+        - identifier: home
+          name: 首页
+          pageRef: /
+          weight: 1
+        - identifier: documentation
+          name: 文档
+          pageRef: /docs
+          weight: 2
+        - identifier: blog
+          name: 博客
+          pageRef: /blog
+          weight: 3
+        - identifier: moments
+          name: 动态
+          pageRef: /moments
+          weight: 4
+        - identifier: about
+          name: 关于
+          pageRef: /about
+          weight: 5
+        - name: Search
+          weight: 6
+          params:
+            type: search
+        - name: GitHub
+          weight: 7
+          url: "https://github.com/xiaoditx/"
+          params:
+            icon: github
+      sidebar:
+        - name: 更多内容 ↓
+          params:
+            type: separator
+          weight: 1
+        - name: "GitHub"
+          pageRef: "https://github.com/xiaoditx"
+          weight: 2
+        - name: "FTXUI"
+          url: "https://arthursonzogni.github.io/FTXUI/"
+          weight: 3
+
   en:
     weight: 2
     languageName: English
     title: XiaoDi
     menu:
       main:
-        - name: Home
+        - identifier: home
+          name: Home
           pageRef: /
           weight: 10
-        - name: Blog
+        - identifier: blog
+          name: Blog
           pageRef: /blog
           weight: 20
-        - name: Docs
+        - identifier: docs
+          name: Docs
           pageRef: /docs
           weight: 30
-        - name: Moments
+        - identifier: moments
+          name: Moments
           pageRef: /moments
           weight: 40
+        - identifier: about
+          name: About
+          pageRef: /about
+          weight: 50
+        - name: Search
+          weight: 60
+          params:
+            type: search
+        - name: GitHub
+          weight: 70
+          url: "https://github.com/xiaoditx/"
+          params:
+            icon: github
+      sidebar:
+        - name: "More ↓"
+          params:
+            type: separator
+          weight: 1
+        - name: "GitHub"
+          pageRef: "https://github.com/xiaoditx"
+          weight: 2
+        - name: "FTXUI"
+          url: "https://arthursonzogni.github.io/FTXUI/"
+          weight: 3
 
   ja:
     weight: 3
@@ -68,19 +135,46 @@ languages:
     title: 狄くん
     menu:
       main:
-        - name: ホーム
+        - identifier: home
+          name: ホーム
           pageRef: /
           weight: 10
-        - name: ブログ
+        - identifier: blog
+          name: ブログ
           pageRef: /blog
           weight: 20
-        - name: ドキュメント
+        - identifier: docs
+          name: ドキュメント
           pageRef: /docs
           weight: 30
-        - name: つぶやき
+        - identifier: moments
+          name: つぶやき
           pageRef: /moments
           weight: 40
-              
+        - identifier: about
+          name: このサイトについて
+          pageRef: /about
+          weight: 50
+        - name: 検索
+          weight: 60
+          params:
+            type: search
+        - name: GitHub
+          weight: 70
+          url: "https://github.com/xiaoditx/"
+          params:
+            icon: github
+      sidebar:
+        - name: "もっと見る ↓"
+          params:
+            type: separator
+          weight: 1
+        - name: "GitHub"
+          pageRef: "https://github.com/xiaoditx"
+          weight: 2
+        - name: "FTXUI"
+          url: "https://arthursonzogni.github.io/FTXUI/"
+          weight: 3
 
 # 开启hugo对数学公式的检索
 
@@ -98,50 +192,6 @@ markup:
         enable: true
 
 enableInlineShortcodes: true
-
-menu:
-  main:
-    - identifier: home
-      name: 首页
-      pageRef: /
-      weight: 1
-    - identifier: documentation
-      name: 文档
-      pageRef: /docs
-      weight: 2
-    - identifier: blog
-      name: 博客
-      pageRef: /blog
-      weight: 3
-    - identifier: moments
-      name: 动态
-      pageRef: /moments
-      weight: 4
-    - identifier: about
-      name: 关于
-      pageRef: /about
-      weight: 5
-    - name: Search
-      weight: 6
-      params:
-        type: search
-    - name: GitHub
-      weight: 7
-      url: "https://github.com/xiaoditx/"
-      params:
-        icon: github
-
-  sidebar:
-    - name: 更多内容 ↓
-      params:
-        type: separator
-      weight: 1
-    - name: "GitHub"
-      pageRef: "https://github.com/xiaoditx"
-      weight: 2
-    - name: "FTXUI"
-      url: "https://arthursonzogni.github.io/FTXUI/"
-      weight: 3
       
 params:
   description: 小狄同学呀的个人网站 | 开源软件、文档、博客、动态 | 立志做优秀开源者，最新项目：FreeOS
