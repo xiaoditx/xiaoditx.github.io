@@ -8,7 +8,7 @@ date: 2026-02-06
 authors:
   - name: xiaoditx
     link: https://github.com/xiaoditx
-    image: https://github.com/xiaoditx.
+    image: https://github.com/xiaoditx.png
 ---
 
 > [!important]

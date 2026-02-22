@@ -8,7 +8,7 @@ date: 2026-01-20
 authors:
   - name: xiaoditx
     link: https://github.com/xiaoditx
-    image: https://github.com/xiaoditx.
+    image: https://github.com/xiaoditx.png
 ---
 
 闲的没事，看到一篇帖子，给项目写了个`AGENTS.MD`，只有一句话：
