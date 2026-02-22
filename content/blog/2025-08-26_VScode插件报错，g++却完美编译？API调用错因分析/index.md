@@ -8,7 +8,7 @@ date: 2025-08-26
 authors:
   - name: xiaoditx
     link: https://github.com/xiaoditx
-    image: https://github.com/xiaoditx.png
+    image: /imgs/touxiang.jpg
 ---
  
 前一段时间写了个[小软件](https://github.com/xiaoditx/BeepMusic)，想给它加个读写配置项功能，刚学几天C++的我上网查了半天资料，找到两个Windows的API分别是读ini的`GetPrivateProfileString`和写ini的`WritePrivateProfileString`，根据网上的教程，我写出了下面这三行：
