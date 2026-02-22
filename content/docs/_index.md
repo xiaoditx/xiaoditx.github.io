@@ -10,6 +10,7 @@ title: "文档汇总"
   {{< card link="./开发者文档" title="首页">}}
   {{< card link="./开发者文档/beepmusic" title="BeepMusic开发者支持">}}
   {{< card link="./开发者文档/keybonk" title="KeyBonk开发者文档">}}
+  {{< card link="./desktopdanmaku" title="Desktop Danmaku开发者文档">}}
 {{< /cards >}}
 
 ## 组织文档
