@@ -293,3 +293,9 @@ params:
     width: normal
     # tabs:
     #   sync: true
+    contextMenu:
+      enable: true
+      #links:
+      #  - name: "Ask AI"
+      #    url: "https://example.com?content={markdown_url}"
+      #    icon: "sparkles"
