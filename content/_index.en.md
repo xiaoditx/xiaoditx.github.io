@@ -3,7 +3,7 @@ title: "Xiaodi | Open Source, Sharing, Education & Teaching, Leading Technology 
 layout: "hextra-home"
 ---
 
-{{< hextra/hero-container image="imgs/yumo.png" imageClass="hx-block hx-overflow-hidden hx-rounded-3xl" imageWidth="300" imageHeight="300" imageTitle="yumo" >}}
+{{< hextra/hero-container image="/imgs/yumo.png" imageClass="hx-block hx-overflow-hidden hx-rounded-3xl" imageWidth="300" imageHeight="300" imageTitle="yumo" >}}
 
 {{< hextra/hero-badge >}}
   <div class="hx:w-2 hx:h-2 hx:rounded-full hx:bg-primary-400"></div>
