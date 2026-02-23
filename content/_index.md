@@ -24,11 +24,8 @@ layout: "hextra-home"
 </div>
 
 <div class="hx:mb-6">
-	<a href="doc" class="not-prose hx-font-medium hx-cursor-pointer hx-select-none hx-px-10 hx-py-3 hx-rounded-lg hx-text-center hx-text-white hx-inline-block hx-bg-primary-600 hover:hx-bg-primary-700 dark:hx-bg-primary-600 dark:hover:hx-bg-primary-700 hx-transition-all hx-ease-in hx-duration-200 start-now-button">
-		查阅文档
-		<span class="arrow">&rarr;</span>
-	</a>
-	<a href="blog" class="not-prose hx-font-medium hx-cursor-pointer hx-select-none hx-px-10 hx-py-3 hx-rounded-lg hx-text-center hx-text-black dark:hx-text-white hx-inline-block not-sure-button hx-transition-all hx-ease-in hx-duration-200">看看博客？</a>
+{{< hextra/hero-button text="去查文档" link="docs" >}}
+{{< hextra/hero-button text="看看博客" link="blog" >}}
 </div>
 
 {{< /hextra/hero-container >}}
