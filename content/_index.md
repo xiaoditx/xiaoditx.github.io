@@ -25,7 +25,7 @@ layout: "hextra-home"
 
 <div class="hx:mb-6">
 {{< hextra/hero-button text="去查文档" link="docs" class="mr-4" >}}
-{{< hextra/hero-button text="看看博客" link="blog" >}}
+{{< hextra/hero-button text="看看博客" link="blog" class="mr-4" >}}
 </div>
 
 {{< /hextra/hero-container >}}
