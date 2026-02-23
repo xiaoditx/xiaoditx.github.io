@@ -2,7 +2,8 @@
 title: "C++ WIN32实现以带透明信息的图片为背景的异形窗口"  # 文章标题
 draft: falte  # 是否为草稿。设为 false 才会发布
 description: "采用分层窗口开发，实现异形窗口，背景图片支持多种格式，允许携带alpha信息"  # 文章摘要
-tags: ["C++", "WIN32","GUI"]  # 文章标签，用于分类和关联
+tags: ["C++", "WIN32","GUI","GDI+","分层窗口","位图","设备上下文"]  # 文章标签，用于分类和关联
+categories: ["C++","WIN32"]
 comments: true
 date: 2026-02-06
 authors:

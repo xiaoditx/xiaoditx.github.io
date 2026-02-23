@@ -3,6 +3,7 @@ title: "我给我的项目写了个AGENTS.MD"  # 文章标题
 draft: falte  # 是否为草稿。设为 false 才会发布
 description: "大模型看完直接一个激灵：完蛋，压榨到我头上来了？"  # 文章摘要
 tags: ["人工智能", "项目实战","搞笑"]  # 文章标签，用于分类和关联
+categories: ["娱乐"]
 comments: true
 date: 2026-01-20
 authors:

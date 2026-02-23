@@ -4,7 +4,7 @@ draft: false  # Whether it's a draft. Set to false to publish
 description: "Sometimes Git is used for lightweight purposes, so there's no need to bother with VS Code's visualization plugins. At this time, command line usage becomes particularly important. This article will introduce the basic usage of Git for simple projects"
   # Article summary
 tags: ["Software", "Environment Setup"]  # Article tags for categorization and association
-categories: ["Computer Technology from Zero to Pro"]  # Article categories
+categories: ["environment"]  # Article categories
 date: 2025-11-01
 comments: true
 authors:

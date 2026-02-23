@@ -3,7 +3,7 @@ title: "VScode Plugin Reports Error, but g++ Compiles Perfectly? Analyzing the C
 draft: false  # Is it a draft? Set to false to publish.
 description: "Using WritePrivateProfileString, VScode immediately reports an error, but g++ compiles it directly? We must analyze this."  # Article summary
 tags: ["Development Tools", "C++", "Error Analysis"]  # Article tags, for categorization and association
-categories: ["Code: Pitfall Diaries"]  # Article category
+categories: ["C++"]  # Article category
 date: 2025-08-26
 authors:
   - name: xiaoditx

@@ -2,12 +2,11 @@
 title: "小狄同学呀の博客"
 ---
 
-平时会从自己的CSDN、稀土掘金搬一些文章，但应该不会有网站独家博客
+一些个人博文和一些杂七杂八的东西
 
-> B站：小狄同学呀
->
-> Github：xiaoditx
->
-> ACfun：小狄同学呀
->
-> CSDN、稀土掘金：小狄同学呀
+## 文章查询
+
+{{< cards >}}
+  {{< card link="tags" title="按分类查询">}}
+  {{< card link="categories" title="按标签查询">}}
+{{< /cards >}}

@@ -2,7 +2,8 @@
 title: "C++ WIN32 Implementation of Irregular Window with Transparent Background"  # Article title
 draft: false  # Whether it's a draft. Set to false to publish
 description: "Using layered windows to develop with transparent images as background, allowing for irregular windows"  # Article summary
-tags: ["C++", "WIN32", "GUI"]  # Article tags for categorization and association
+tags: ["C++", "WIN32","GUI","GDI+","Bit map","Device context"]  # Article tags for categorization and association
+categories: ["C++","WIN32"]
 comments: true
 date: 2026-02-06
 authors:

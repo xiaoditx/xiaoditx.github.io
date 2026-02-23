@@ -4,7 +4,7 @@ draft: false  # Is it a draft? Set to false to publish.
 date: 2025-8-26
 description: "A classmate took the GESP exam and came back saying he got TLE on one problem. He wrote the problem down for me. Being a bit bored in class, I simply solved it. Tried it at home, made some changes, and AC'd smoothly."  # Article summary
 tags: ["Algorithms", "C++", "GESP", "Simulation"]  # Article tags, for categorization and association
-categories: ["Algorithm Learning Diary"]  # Article category
+categories: ["Algorithms"]  # Article category
 comments: true
 date: 2025-08-26
 authors:

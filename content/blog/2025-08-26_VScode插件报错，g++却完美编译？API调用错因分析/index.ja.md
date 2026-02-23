@@ -3,7 +3,7 @@ title: "VScodeプラグインはエラーを報告するのに、g++は完璧に
 draft: false  # 下書きか？ falseに設定で公開
 description: "WritePrivateProfileStringを使うと、VScodeは即座にエラーを報告するのに、g++は直接コンパイルを通す？これは分析必須だ"  # 記事要約
 tags: ["開発ツール", "C++", "エラー分析"]  # 記事タグ、分類と関連付け用
-categories: ["コード：トラブル日記"]  # 記事カテゴリ
+categories: ["C++"]  # 記事カテゴリ
 date: 2025-08-26
 authors:
   - name: xiaoditx

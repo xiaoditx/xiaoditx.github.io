@@ -4,7 +4,7 @@ draft: false  # 是否为草稿。设为 false 才会发布
 data: 2025-8-26
 description: "同学去考了GESP，回来给我说他有一题TLE了，顺手把题目写给我了，上课有些无聊，干脆把题做了，回家试了试又改了改，顺利AC。"  # 文章摘要
 tags: ["算法", "C++", "GESP","模拟"]  # 文章标签，用于分类和关联
-categories: ["算法学习日记"]  # 文章分类
+categories: ["算法"]  # 文章分类
 comments: true
 date: 2025-08-26
 authors:

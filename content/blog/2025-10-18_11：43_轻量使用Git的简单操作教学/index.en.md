@@ -3,8 +3,8 @@ title: "Lightweight Git Command Line Operation Tutorial"  # Article title
 draft: false  # Whether it's a draft. Set to false to publish
 description: "Sometimes Git is used for lightweight purposes, so there's no need to bother with VS Code's visualization plugins. At this time, command line usage becomes particularly important. This article will introduce the basic usage of Git for simple projects"
   # Article summary
-tags: ["Git", "Software", "Project Practice"]  # Article tags for categorization and association
-categories: ["Project Practice Collection"]  # Article categories
+tags: ["Git", "Software", "Project Practice","useful","tools"]  # Article tags for categorization and association
+categories: ["Git"]  # Article categories
 date: 2025-10-18
 comments: true
 authors:
