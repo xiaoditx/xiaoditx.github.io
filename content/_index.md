@@ -24,7 +24,7 @@ layout: "hextra-home"
 </div>
 
 <div class="hx:mb-6">
-{{< hextra/hero-button text="去查文档" link="docs" >}}
+{{< hextra/hero-button text="去查文档" link="docs" class="mr-4" >}}
 {{< hextra/hero-button text="看看博客" link="blog" >}}
 </div>
 
@@ -45,17 +45,20 @@ layout: "hextra-home"
     title="抽象小站"
     subtitle="一些抽象的项目会在这里放置"
     link="https://xiaoditx.github.io/chouxiang/"
+	style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
     title="Git在线闯关"
     subtitle="基于简单HTML开发实现的Git学习网站，采用交互式的操作进行学习"
     link="https://xiaoditx.github.io/OnlineGitGame/"
+	style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
   >}}
   
   {{< hextra/feature-card
     title="死了没"
     subtitle="查看站长存活状态"
     link="https://xiaoditx.github.io/pages/silemei/"
+	style="background: radial-gradient(ellipse at 50% 80%,rgba(221,210,59,0.15),hsla(0,0%,100%,0));"
   >}}
   
   
