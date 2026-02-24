@@ -14,7 +14,7 @@ title: "ドキュメントまとめ"
   {{< card link="./開発者ドキュメント" title="ホーム">}}
   {{< card link="./開発者ドキュメント/beepmusic" title="BeepMusic開発者サポート">}}
   {{< card link="./開発者ドキュメント/keybonk" title="KeyBonk開発者ドキュメント">}}
-  {{< card link="./desktopdanmaku" title="Desktop Danmaku開発者ドキュメント">}}
+  {{< card link="./開発者ドキュメント/desktopdanmaku" title="Desktop Danmaku開発者ドキュメント">}}
 {{< /cards >}}
 
 ## 組織ドキュメント

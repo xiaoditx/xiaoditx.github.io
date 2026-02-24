@@ -10,18 +10,18 @@ Here are all the documents I have participated in writing, including project des
 ## Developer Documentation
 
 {{< cards >}}
-  {{< card link="./开发者文档" title="Home">}}
-  {{< card link="./开发者文档/beepmusic" title="BeepMusic Developer Support">}}
-  {{< card link="./开发者文档/keybonk" title="KeyBonk Developer Documentation">}}
-  {{< card link="./desktopdanmaku" title="Desktop Danmaku Developer Documentation">}}
+  {{< card link="./developer-documentation" title="Home">}}
+  {{< card link="./developer-documentation/beepmusic" title="BeepMusic Developer Support">}}
+  {{< card link="./developer-documentation/keybonk" title="KeyBonk Developer Documentation">}}
+  {{< card link="./developer-documentation/desktopdanmaku" title="Desktop Danmaku Developer Documentation">}}
 {{< /cards >}}
 
 ## Organization Documentation
 
 {{< cards >}}
-  {{< card link="./组织文档" title="Home">}}
-  {{< card link="./组织文档/coviの技术神殿" title="Covi's Tech Sanctuary">}}
-  {{< card link="./组织文档/paper-lily中文社区" title="Paper Lily Simplified Chinese Community">}}
+  {{< card link="./organization-documentation" title="Home">}}
+  {{< card link="./organization-documentation/coviの技术神殿" title="Covi's Tech Sanctuary">}}
+  {{< card link="./organization-documentation/paper-lily中文社区" title="Paper Lily Simplified Chinese Community">}}
 {{< /cards >}}
 
 ## Others
