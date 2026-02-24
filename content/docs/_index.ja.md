@@ -11,18 +11,18 @@ title: "ドキュメントまとめ"
 ## 開発者ドキュメント
 
 {{< cards >}}
-  {{< card link="./開発者ドキュメント" title="ホーム">}}
-  {{< card link="./開発者ドキュメント/beepmusic" title="BeepMusic開発者サポート">}}
-  {{< card link="./開発者ドキュメント/keybonk" title="KeyBonk開発者ドキュメント">}}
-  {{< card link="./開発者ドキュメント/desktopdanmaku" title="Desktop Danmaku開発者ドキュメント">}}
+  {{< card link="./开发者文档" title="ホーム">}}
+  {{< card link="./开发者文档/beepmusic" title="BeepMusic開発者サポート">}}
+  {{< card link="./开发者文档/keybonk" title="KeyBonk開発者ドキュメント">}}
+  {{< card link="./开发者文档/desktopdanmaku" title="Desktop Danmaku開発者ドキュメント">}}
 {{< /cards >}}
 
 ## 組織ドキュメント
 
 {{< cards >}}
-  {{< card link="./組織ドキュメント" title="ホーム">}}
-  {{< card link="./組織ドキュメント/coviの技術神殿" title="Coviの技術神殿">}}
-  {{< card link="./組織ドキュメント/paper-lily中国語コミュニティ" title="Paper Lily 簡体字中国語コミュニティ">}}
+  {{< card link="./组织文档" title="ホーム">}}
+  {{< card link="./组织文档/coviの技術神殿" title="Coviの技術神殿">}}
+  {{< card link="./组织文档/paper-lily中国語コミュニティ" title="Paper Lily 簡体字中国語コミュニティ">}}
 {{< /cards >}}
 
 ## その他
