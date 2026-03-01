@@ -398,8 +398,8 @@
                 'DeleteEvent': '删除分支/标签',
                 'PullRequestEvent': 'Pull Request',
                 'PullRequestReviewEvent': 'PR 审查',
-                'IssuesEvent': '问题',
-                'IssueCommentEvent': '问题评论',
+                'IssuesEvent': 'Issue',
+                'IssueCommentEvent': 'Issue评论',
                 'WatchEvent': '星标仓库',
                 'ForkEvent': '复刻仓库',
                 'ReleaseEvent': '发布',
@@ -564,60 +564,60 @@
                 }
             }
             
-            // 生成活动图表
-            function generateActivityChart(activityItems) {
-                chartLoading.style.display = 'none';
-                chartBars.style.display = 'flex';
-                chartBars.innerHTML = '';
-                
-                // 计算最近7个月的活动
-                const months = [];
-                const now = new Date();
-                
-                for (let i = 6; i >= 0; i--) {
-                    const date = new Date(now.getFullYear(), now.getMonth() - i, 1);
-                    months.push({
-                        label: `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`,
-                        count: 0
-                    });
-                }
-                
-                // 统计每个月的活动数量
-                activityItems.forEach(activity => {
-                    const activityDate = new Date(activity.created_at);
-                    const monthKey = `${activityDate.getFullYear()}-${(activityDate.getMonth() + 1).toString().padStart(2, '0')}`;
-                    
-                    const monthData = months.find(m => m.label === monthKey);
-                    if (monthData) {
-                        monthData.count++;
-                    }
-                });
-                
-                // 找到最大值用于比例计算
-                const maxCount = Math.max(...months.map(m => m.count), 1);
-                
-                // 生成柱状图
-                months.forEach(month => {
-                    const bar = document.createElement('div');
-                    bar.className = 'bar';
-                    const height = (month.count / maxCount) * 100;
-                    bar.style.height = `${height}px`;
-                    
-                    const label = document.createElement('div');
-                    label.className = 'bar-label';
-                    label.textContent = month.label;
-                    
-                    const count = document.createElement('div');
-                    count.className = 'bar-label';
-                    count.textContent = month.count;
-                    count.style.bottom = '-45px';
-                    count.style.color = '#4cc9f0';
-                    
-                    bar.appendChild(label);
-                    bar.appendChild(count);
-                    chartBars.appendChild(bar);
-                });
-            }
+			function generateActivityChart(activityItems) {
+				chartLoading.style.display = 'none';
+				chartBars.style.display = 'flex';
+				chartBars.innerHTML = '';
+
+				// 生成最近7天的日期标签
+				const days = [];
+				const now = new Date();
+				for (let i = 6; i >= 0; i--) {
+					const date = new Date(now);
+					date.setDate(date.getDate() - i);
+					const label = `${date.getMonth()+1}/${date.getDate()}`;  // 例如 "4/1"
+					days.push({
+						label: label,
+						count: 0,
+						fullDate: date.toDateString() // 用于匹配
+					});
+				}
+
+				// 统计最近7天每天的活动数量
+				activityItems.forEach(activity => {
+					const activityDate = new Date(activity.created_at);
+					const dayStr = activityDate.toDateString();
+					const dayData = days.find(d => d.fullDate === dayStr);
+					if (dayData) {
+						dayData.count++;
+					}
+				});
+
+				// 找到最大值
+				const maxCount = Math.max(...days.map(d => d.count), 1);
+
+				// 生成柱状图
+				days.forEach(day => {
+					const bar = document.createElement('div');
+					bar.className = 'bar';
+					const height = (day.count / maxCount) * 100;
+					bar.style.height = `${height}px`;
+
+					const label = document.createElement('div');
+					label.className = 'bar-label';
+					label.textContent = day.label;
+
+					const count = document.createElement('div');
+					count.className = 'bar-label';
+					count.textContent = day.count;
+					count.style.bottom = '-45px';
+					count.style.color = '#4cc9f0';
+
+					bar.appendChild(label);
+					bar.appendChild(count);
+					chartBars.appendChild(bar);
+				});
+			}
             
             // 生成活动类型标签
             function generateActivityTypes(activityItems) {
