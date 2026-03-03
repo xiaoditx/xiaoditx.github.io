@@ -48,9 +48,9 @@ layout: "hextra-home"
 	style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
-    title="Git在线闯关"
-    subtitle="基于简单HTML开发实现的Git学习网站，采用交互式的操作进行学习"
-    link="https://xiaoditx.github.io/OnlineGitGame/"
+    title="yyjson文档中文翻译"
+    subtitle="个人对于yyjson文档的翻译，可能会落后于标准文档版本"
+    link="https://xiaoditx.github.io/yyjson-doc/"
 	style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
   >}}
   
@@ -60,7 +60,13 @@ layout: "hextra-home"
     link="https://xiaoditx.github.io/pages/silemei/"
 	style="background: radial-gradient(ellipse at 50% 80%,rgba(221,210,59,0.15),hsla(0,0%,100%,0));"
   >}}
-  
+
+  {{< hextra/feature-card
+    title="Git在线闯关"
+    subtitle="基于简单HTML开发实现的Git学习网站，采用交互式的操作进行学习"
+    link="https://xiaoditx.github.io/OnlineGitGame/"
+	style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
+  >}}
   
   {{< hextra/feature-card
     title="Git配置生成器"
