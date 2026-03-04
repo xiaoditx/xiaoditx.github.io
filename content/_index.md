@@ -65,7 +65,6 @@ layout: "hextra-home"
     title="Git在线闯关"
     subtitle="基于简单HTML开发实现的Git学习网站，采用交互式的操作进行学习"
     link="https://xiaoditx.github.io/OnlineGitGame/"
-	style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
   >}}
   
   {{< hextra/feature-card
