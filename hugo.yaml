@@ -16,6 +16,11 @@ defaultContentLanguage: 'zh-cn' # 网站的默认语言选项
 enableGitInfo: true # 允许从git文件读取更改日期
 enableRobotsTXT: true # 允许创建robot.txt(后期上线自己的服务器准备)
 
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+
 # 控制输出吧
 outputs:
   home: [html, llms]
