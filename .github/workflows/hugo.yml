@@ -45,7 +45,7 @@ jobs:
         run: |
           hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
-      # 添加这一步：复制额外的静态文件到 public 目录
+      # 复制额外的静态文件到public目录
       - name: Copy static folders
         run: |
           cp -r pages ./public/
@@ -55,6 +55,24 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+
+      - name: Submit sitemap to IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: |
+          BASE_URL="${SITE_URL%/}"
+          HOST=$(echo "$BASE_URL" | sed -e 's|^https\?://||')
+          # 从 public/sitemap.xml 中提取所有子站点地图的 <loc> 内容
+          # 注意：Hugo 生成的 sitemap 索引中每个 <sitemap> 都有一个 <loc>
+          # 使用 grep + sed 提取，排除根索引自身（不会出现）
+          SUB_URLS=$(grep -o '<loc>[^<]*</loc>' public/sitemap.xml | sed -e 's/<loc>//g' -e 's/<\/loc>//g')
+          # 将换行分隔转为逗号分隔的 JSON 数组
+          JSON_URLS=$(echo "$SUB_URLS" | awk '{printf "\"%s\",", $0}' | sed 's/,$//')
+          JSON_DATA="{\"host\":\"$HOST\",\"key\":\"$INDEXNOW_KEY\",\"urlList\":[$JSON_URLS]}"
+          curl -X POST "https://www.bing.com/indexnow" \
+            -H "Content-Type: application/json" \
+            -d "$JSON_DATA"
 
   deploy:
     environment:
