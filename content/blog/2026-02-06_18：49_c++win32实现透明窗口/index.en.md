@@ -13,10 +13,11 @@ authors:
 ---
 
 > [!important]
-> This article assumes readers have basic WIN32 development knowledge and basic mastery of C++ syntax, and will skip some basic content. If you have almost no experience in either of these two areas, there will be a dedicated version to explain later
+> This article assumes readers have basic WIN32 development knowledge and basic mastery of C++ syntax, and will skip some basic content. If you have almost no experience in either of these two areas, there will be a dedicated version to explain later ( I promise that I'll write it out within 90 years, trust me. )
 
 > [!Warning]
-> All compilation in this article uses g++. Users of other compilers such as MSVC should adjust accordingly
+> All compilation in this article uses g++.  
+> Users of other compilers such as MSVC should adjust accordingly
 >
 > This article (may) use some newer syntax features (compared to C++11). If they are not applicable, please modify them yourself
 
@@ -38,6 +39,8 @@ This is the background image we'll use. You can also use your own, but note that
 ## 0. Before Starting
 
 This article was inspired by the blog post [Win32窗口设置为透明 - 百足coder - 博客园](https://www.cnblogs.com/bzbk/p/17197596.html), but there seem to be some errors in the original article, so I conducted research and made modifications accordingly
+
+> PS: Bro, are you serious? It’s only been a few months and this article has just vanished from the entire internet—the link won’t open, and I can’t find it anywhere by searching. I’m done. 
 
 Let's first understand some basic terms
 
@@ -137,7 +140,7 @@ Otherwise, Windows won't be able to determine which version of the window class 
 
 ### 1.3. Window Styles
 
-To implement such a window, we need these window styles: `WS_POPUP | WS_VISIBLE | WS_CLIPCHILDREN`, `WS_EX_TOPMOST | WS_EX_TOOLWINDOW`. The first three are general window styles, and the last two are extended window styles, meaning respectively: popup window, visible, clip child windows (for optimization), topmost, tool window (hide taskbar icon)
+To implement such a window, we need these window styles: `WS_POPUP | WS_VISIBLE | WS_CLIPCHILDREN`, `WS_EX_TOPMOST | WS_EX_TOOLWINDOW`. The first three are general window styles, and the last two are extended window styles .
 
 A popup window is a pop-up window without a title bar or border, as opposed to an overlapped window (`WS_OVERLAPPED`)
 
@@ -156,7 +159,7 @@ Add this code to the message processing:
     }
 ```
 
-This code handles the `WM_NCHITTEST` message, whose full name should be "**W**indow **M**essage - **N**on-**C**lient **Hit Test**" (Window Message_Non-Client Area Click Test). When the mouse moves or clicks, Windows sends this message to the window to ask what area the mouse clicked on.
+This code handles the `WM_NCHITTEST` message, whose full name should be "**W**indow **M**essage - **N**on-**C**lient **Hit Test**". When the mouse moves or clicks, Windows sends this message to the window to ask what area the mouse clicked on.
 
 The purpose of this message is because of the diversity of software design. Many software may not use or not only use the system's default borders, and may not use the system's pre-made buttons, but the system doesn't know what areas the program wants to serve what purpose. Therefore, by design, the system should ask instead of assuming.
 
