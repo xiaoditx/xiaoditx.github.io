@@ -11,35 +11,26 @@ cascade:
 **最新动态板块**：
 
 {{< cards >}}
-    {{< card link="./2026-7" title="2026年7月的内容">}}
+    {{< card link="./2026-7" title="2026-7月的内容">}}
 {{< /cards >}}
 
 **历史板块**：
 
 {{< cards >}}
-    {{< card link="./2026-5" title="2026年5月的内容">}}
+    {{< card link="./2026-5" title="2026-5月的内容">}}
 {{< /cards >}}
-
 {{< cards >}}
-    {{< card link="./2026-3" title="2026年3月的内容">}}
+    {{< card link="./2026-3" title="2026-3月的内容">}}
 {{< /cards >}}
-
 {{< cards >}}
-    {{< card link="./2026-2" title="2026年2月的内容">}}
+    {{< card link="./2026-2" title="2026-2月的内容">}}
 {{< /cards >}}
-
 {{< cards >}}
-    {{< card link="./2026-1" title="2026年1月的内容">}}
+    {{< card link="./2026-1" title="2026-1月的内容">}}
 {{< /cards >}}
-
 {{< cards >}}
-    {{< card link="./2025-12" title="2025年12月的内容">}}
+    {{< card link="./2025-12" title="2025-12月的内容">}}
 {{< /cards >}}
-
 {{< cards >}}
-    {{< card link="./2025-11" title="2025年11月的内容">}}
-{{< /cards >}}
-
-{{< cards >}}
-    {{< card link="./2025-10" title="2025年10月的内容">}}
+    {{< card link="./2025-11" title="2025-11月的内容">}}
 {{< /cards >}}
