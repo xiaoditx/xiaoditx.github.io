@@ -11,11 +11,14 @@ cascade:
 **最新动态板块**：
 
 {{< cards >}}
-    {{< card link="./2026-8" title="2026年8月的内容">}}
+    {{< card link="./2026-9" title="2026年9月的内容">}}
 {{< /cards >}}
 
 **历史板块**：
 
+{{< cards >}}
+    {{< card link="./2026-8" title="2026年8月的内容">}}
+{{< /cards >}}
 {{< cards >}}
     {{< card link="./2026-7" title="2026年7月的内容">}}
 {{< /cards >}}
